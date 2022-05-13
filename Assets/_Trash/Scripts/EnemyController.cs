@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        // направления движения и скорость
+        // направление движения и скорость
         targetXpos = Random.Range(-5f, 5f);
         
     }
@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
         target = new Vector3(targetXpos, 0, 3);
         agent.SetDestination(transform.position - target);
         EnemyRotY = transform.localEulerAngles.y;
+        EnemyRotY = (EnemyRotY > 180) ? EnemyRotY - 360 : EnemyRotY;
         print(EnemyRotY);
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -25,6 +25,7 @@ public class EnemyAnimator : MonoBehaviour
         // animation by animator
         enemyController = enemyBody.GetComponent<EnemyController>();
         Angle = enemyController.EnemyRotY;
+        //Angle = (Angle > 180) ? Angle - 360 : Angle;
 
 
         animator.SetFloat("Angle", Mathf.Abs(Angle));
