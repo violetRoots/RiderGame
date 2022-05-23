@@ -3,9 +3,12 @@ using Leopotam.Ecs;
 using Voody.UniLeo;
 using RiderGame.Inputs;
 using RiderGame.Player;
+using RiderGame.SO;
 
 public class EcsStartup : MonoBehaviour
 {
+    [SerializeField] private GameConfiguration gameConfigs;
+
     private EcsWorld _ecsWorld;
     private EcsSystems _systems;
 
@@ -18,6 +21,7 @@ public class EcsStartup : MonoBehaviour
             .ConvertScene()
             .Add(new InputSystem())
             .Add(new PlayerMovementSystem())
+            .Inject(gameConfigs)
             .Init();
     }
 

@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using Voody.UniLeo;
-using RiderGame.Inputs;
 
 namespace RiderGame.Player
 {
@@ -11,6 +10,5 @@ namespace RiderGame.Player
     public struct PlayerMovement
     {
         public Rigidbody2D rigidbody;
-        public float speed;
     }
 }
