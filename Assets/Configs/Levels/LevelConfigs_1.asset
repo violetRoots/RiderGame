@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40ad72d48c48fa4094fcfdebddfc1c9, type: 3}
   m_Name: LevelConfigs_1
   m_EditorClassIdentifier: 
+  baseXSpeed: 5
   fixedStages:
-  - duration: 1
-    maxSpeed: 300
-    speedCurve:
+  - duration: 100
+    maxYSpeed: 10
+    ySpeedCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
@@ -32,37 +33,65 @@ MonoBehaviour:
         value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    obstacles:
+    - spawnObject: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+      maxCount: 1
+      countCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
   randomStages:
-  - duration: 1
-    maxSpeed: 300
-    speedCurve:
+  - duration: 10
+    maxYSpeed: 5
+    ySpeedCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: -2.528302
-        outSlope: -2.528302
-        tangentMode: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.1875
+        outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0
-        inSlope: -0.09543659
-        outSlope: -0.09543659
-        tangentMode: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.7166667
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 0
+      m_RotationOrder: 4
+    obstacles: []

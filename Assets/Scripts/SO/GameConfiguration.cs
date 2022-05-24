@@ -5,7 +5,6 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs")]
     public class GameConfiguration : ScriptableObject
     {
-        public PlayerConfiguration Player;
-        public LevelConfiguration Level;
+        public LevelConfiguration[] levels;
     }
 }

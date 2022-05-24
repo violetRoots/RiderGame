@@ -2,7 +2,6 @@ using UnityEngine;
 using Leopotam.Ecs;
 using Voody.UniLeo;
 using RiderGame.Inputs;
-using RiderGame.Player;
 using RiderGame.SO;
 using RiderGame.World;
 using RiderGame.Level;
@@ -29,8 +28,8 @@ public class EcsStartup : MonoBehaviour
             .Inject(_runtimeLevelData)
             .Add(new UpdateRuntimeLevelDataSystem())
             .Add(new InputSystem())
-            .Add(new PlayerMovementSystem())
             .Add(new MoveWorldObjectSystem())
+            .Add(new MoveBackgroundSystem())
             .Init();
     }
 

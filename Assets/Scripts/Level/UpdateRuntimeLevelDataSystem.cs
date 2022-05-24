@@ -7,13 +7,16 @@ namespace RiderGame.Level
 {
     public class UpdateRuntimeLevelDataSystem : IEcsRunSystem, IEcsInitSystem
     {
-        private GameConfiguration _configs;
-        private RuntimeLevelData _levelData;
+        private readonly GameConfiguration _configs;
+        private readonly RuntimeLevelData _levelData;
 
         private int _fixedStageIndex = 0;
 
         public void Init()
         {
+            //todo заменить на выбор левела из интерфейса игры
+            _levelData.currentLevelConfig = _configs.levels[0];
+
             SetNextStage();
         }
 
@@ -28,7 +31,7 @@ namespace RiderGame.Level
             {
                 var process = processTime / duration;
 
-                _levelData.currentWorldSpeed = stage.speedCurve.Evaluate(process) * stage.maxSpeed;
+                _levelData.currentWorldSpeed = stage.ySpeedCurve.Evaluate(process) * stage.maxYSpeed;
 
                 processTime += Time.deltaTime;
             }
@@ -42,15 +45,15 @@ namespace RiderGame.Level
         {
             ResetRuntimeStageValues();
 
-            if(_fixedStageIndex < _configs.Level.fixedStages.Length)
+            if(_fixedStageIndex < _levelData.currentLevelConfig.fixedStages.Length)
             {
-                _levelData.currentStage = _configs.Level.fixedStages[_fixedStageIndex];
+                _levelData.currentStage = _levelData.currentLevelConfig.fixedStages[_fixedStageIndex];
                 _fixedStageIndex++;
             }
             else
             {
-                var randomStageIndex = Random.Range(0, _configs.Level.randomStages.Length);
-                _levelData.currentStage = _configs.Level.randomStages[randomStageIndex];
+                var randomStageIndex = Random.Range(0, _levelData.currentLevelConfig.randomStages.Length);
+                _levelData.currentStage = _levelData.currentLevelConfig.randomStages[randomStageIndex];
             }
         }
 
