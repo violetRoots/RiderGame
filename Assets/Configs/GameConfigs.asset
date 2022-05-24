@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameConfigs
   m_EditorClassIdentifier: 
   Player: {fileID: 11400000, guid: b6d7214bf47e9524790b6df95ded2e0a, type: 2}
+  Level: {fileID: 11400000, guid: 76bd132b660bd4f4a8cd28028d4f5202, type: 2}

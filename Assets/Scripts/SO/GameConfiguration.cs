@@ -6,5 +6,6 @@ namespace RiderGame.SO
     public class GameConfiguration : ScriptableObject
     {
         public PlayerConfiguration Player;
+        public LevelConfiguration Level;
     }
 }
