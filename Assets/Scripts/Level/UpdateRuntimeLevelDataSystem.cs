@@ -15,7 +15,7 @@ namespace RiderGame.Level
         public void Init()
         {
             //todo заменить на выбор левела из интерфейса игры
-            _levelData.currentLevelConfig = _configs.levels[0];
+            _levelData.currentLevelConfig = _configs.levelConfigs[0];
 
             SetNextStage();
         }

@@ -8,8 +8,7 @@ using RiderGame.Level;
 
 public class EcsStartup : MonoBehaviour
 {
-    [SerializeField] private GameConfiguration gameConfigs;
-
+    private GameConfiguration _gameConfigs;
     private RuntimeLevelData _runtimeLevelData;
 
     private EcsWorld _ecsWorld;
@@ -20,11 +19,12 @@ public class EcsStartup : MonoBehaviour
         _ecsWorld = new EcsWorld();
         _systems = new EcsSystems(_ecsWorld);
 
+        _gameConfigs = GameConfiguration.Instance;
         _runtimeLevelData = new RuntimeLevelData();
 
         _systems
             .ConvertScene()
-            .Inject(gameConfigs)
+            .Inject(_gameConfigs)
             .Inject(_runtimeLevelData)
             .Add(new UpdateRuntimeLevelDataSystem())
             .Add(new InputSystem())

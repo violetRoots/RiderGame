@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using NaughtyAttributes;
 
 namespace RiderGame.SO
 {
@@ -10,29 +10,35 @@ namespace RiderGame.SO
         public float baseXSpeed = 5.0f;
 
         [Header("Runtime")]
+        [Space(5)]
+        [NonReorderable]
+        public GameObject[] poolObjects;
+
+        [ReorderableList]
         public LevelStage[] fixedStages;
+        [ReorderableList]
         public LevelStage[] randomStages;
-    }
 
-    [Serializable]
-    public class LevelStage
-    {
-        public float duration = 10.0f;
+        private void OnValidate()
+        {
+            UpdateStageValues();
+        }
 
-        [Header("World")]
-        public float maxYSpeed = 5.0f;
-        public AnimationCurve ySpeedCurve;
+        private void UpdateStageValues()
+        {
+            var generateAreasConfigs = GenerateAreaConfiguration.Instance;
 
-        [Space(10)]
-        public SpawnWorldObjectInfo[] obstacles;
-    }
+            foreach (var fixedStage in fixedStages)
+            {
+                fixedStage.UpdatePoolObjects(ref poolObjects);
+                fixedStage.UpdateGenerateAreas(ref generateAreasConfigs.generateAreas);
+            }
 
-    [Serializable]
-    public class SpawnWorldObjectInfo
-    {
-        public GameObject spawnObject;
-
-        public int maxCount = 1;
-        public AnimationCurve countCurve;
+            foreach (var randomStage in randomStages)
+            {
+                randomStage.UpdatePoolObjects(ref poolObjects);
+                randomStage.UpdateGenerateAreas(ref generateAreasConfigs.generateAreas);
+            }
+        }
     }
 }

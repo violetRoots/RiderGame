@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: LevelConfigs_1
   m_EditorClassIdentifier: 
   baseXSpeed: 5
+  poolObjects:
+  - {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
   fixedStages:
-  - duration: 100
-    maxYSpeed: 10
+  - duration: 10
+    maxYSpeed: 5
     ySpeedCurve:
       serializedVersion: 2
       m_Curve:
@@ -39,34 +41,43 @@ MonoBehaviour:
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
-    obstacles:
-    - spawnObject: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-      maxCount: 1
-      countCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
+      m_RotationOrder: 0
+    objectInfo:
+    - generateObject: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+      areaIndex: 0
+      areaValue:
+        point1: {x: -40, y: -50}
+        point2: {x: 40, y: -20}
+        color: {r: 0.75960636, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      count: 0
+  - duration: 10
+    maxYSpeed: 5
+    ySpeedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    objectInfo: []
   randomStages:
   - duration: 10
     maxYSpeed: 5
@@ -93,5 +104,5 @@ MonoBehaviour:
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
-    obstacles: []
+      m_RotationOrder: 0
+    objectInfo: []
