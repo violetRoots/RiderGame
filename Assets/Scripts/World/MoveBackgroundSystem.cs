@@ -22,8 +22,8 @@ namespace RiderGame.World
                 ref var input = ref _filter.Get1(i);
                 ref var background = ref _filter.Get2(i);
 
-                _textureOffset.y += -_levelData.currentWorldSpeed;
-                _textureOffset.x += input.horizontal * _levelData.currentLevelConfig.baseXSpeed;
+                _textureOffset.y += -_levelData.CurrentWorldSpeed;
+                _textureOffset.x += input.horizontal * _levelData.CurrentLevelConfig.XSpeed;
                 background.renderer.material.mainTextureOffset = _textureOffset * BackgroundSpeedMultiplier;
             }
         }

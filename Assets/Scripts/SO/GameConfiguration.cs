@@ -3,7 +3,7 @@ using UnityEngine;
 namespace RiderGame.SO
 {
     [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs")]
-    public class GameConfiguration : SingletonScriptableObject<GameConfiguration>
+    public class GameConfiguration : SingletonSOEditorOnly<GameConfiguration>
     {
         public LevelConfiguration[] levelConfigs;
     }

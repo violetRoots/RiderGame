@@ -5,10 +5,9 @@ namespace RiderGame.Level
 {
     public class RuntimeLevelData
     {
-        public LevelConfiguration currentLevelConfig;
-        public LevelStage currentStage;
-        public float processStageTime;
-        
-        public float currentWorldSpeed;
+        public LevelConfiguration CurrentLevelConfig { get; set; }
+        public float ProcessStageTime { get; set; }
+
+        public float CurrentWorldSpeed { get; set; }
     }
 }

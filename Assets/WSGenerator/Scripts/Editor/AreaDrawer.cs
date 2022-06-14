@@ -1,18 +1,17 @@
 using UnityEngine;
-using RiderGame.SO;
 using NaughtyAttributes;
-using UnityEditor;
 
-namespace RiderGame.CustomGizmos
+namespace SkyCrush.WSGenerator
 {
-    public class GenerateAreasDrawer : MonoBehaviour
+    public class AreaDrawer : MonoBehaviour
     {
-        [Button("Edit Area Configs")]
-        private void EditAreaConfigs() => GenerateAreaConfiguration.Select();
+        [Button("Settings")]
+        [SerializeField]
+        private void GoToSettings() => Settings.Select();
 
         private void OnDrawGizmos()
         {
-            foreach(var area in GenerateAreaConfiguration.Instance.generateAreas)
+            foreach(var area in Settings.Instance.AreaContainer.areas)
             {
                 if (!area.drawGizmos) continue;
 
@@ -20,7 +19,7 @@ namespace RiderGame.CustomGizmos
             }
         }
 
-        private void DrawGenerateArea(GenerateAreaInfo area)
+        private void DrawGenerateArea(AreaInfo area)
         {
             var point11 = new Vector2(-area.point1.x, area.point1.y);
             var point12 = new Vector2(-area.point1.x, area.point2.y);

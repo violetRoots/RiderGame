@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0600f84c62c8744493f465a2181da78, type: 3}
-  m_Name: GenerateAreaConfigs
+  m_Script: {fileID: 11500000, guid: b515ba08268ae064a9ac57a330be8149, type: 3}
+  m_Name: WSG_AreaContainer
   m_EditorClassIdentifier: 
-  generateAreas:
-  - point1: {x: -40, y: -50}
+  areas:
+  - point1: {x: -40, y: -40}
     point2: {x: 40, y: -20}
-    color: {r: 0.75960636, g: 0, b: 1, a: 1}
-    drawGizmos: 1
-  - point1: {x: -60, y: 0}
-    point2: {x: -40, y: -20}
-    color: {r: 0, g: 1, b: 0.14668608, a: 1}
+    color: {r: 0, g: 0.6484008, b: 1, a: 1}
     drawGizmos: 1
