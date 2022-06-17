@@ -7,12 +7,12 @@ namespace SkyCrush.WSGenerator
     {
         public void UpdateAreas(AreaContainer areaContainer)
         {
-            foreach (var objectInfo in objectInfo) objectInfo.UpdateAreaValue(areaContainer);
+            foreach (var objectInfo in generateObjects) objectInfo.UpdateAreaValue(areaContainer);
         }
 
-        public void UpdatePool(ref GameObject[] poolObjects)
+        public void UpdatePool(ref PoolInfo[] poolsInfo)
         {
-            foreach (var objectInfo in objectInfo) objectInfo.UpdatePool(ref poolObjects);
+            foreach (var objectInfo in generateObjects) objectInfo.UpdatePool(ref poolsInfo);
         }
     }
 }

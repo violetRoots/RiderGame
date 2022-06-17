@@ -12,7 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e64c783caedfa4280214dd18108495, type: 3}
   m_Name: WSG_Sequence
   m_EditorClassIdentifier: 
-  poolObjects:
-  - {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-  fixedStages: []
+  poolsInfo:
+  - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+    count: 0
+  fixedStages:
+  - duration: 0
+    data:
+      maxYSpeed: 0
+      ySpeedCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+    generateObjects:
+    - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+      areaIndex: 0
+      areaValue:
+        point1: {x: -40, y: -40}
+        point2: {x: 40, y: -20}
+        color: {r: 0, g: 0.6484008, b: 1, a: 1}
+        drawGizmos: 1
+      maxObjectsCount: 0
+      countCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
   randomStages: []

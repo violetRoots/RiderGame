@@ -1,5 +1,4 @@
 using UnityEngine;
-using NaughtyAttributes;
 using SkyCrush.WSGenerator;
 
 namespace RiderGame.SO
@@ -17,7 +16,6 @@ namespace RiderGame.SO
         [Space(5)]
 
         [SerializeField]
-        [Expandable]
         private Sequence sequence;
     }
 }

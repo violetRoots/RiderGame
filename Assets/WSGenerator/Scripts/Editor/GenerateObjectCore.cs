@@ -6,29 +6,36 @@ namespace SkyCrush.WSGenerator
 {
     public partial class GenerateObject
     {
-        private const string instanceDropdownName = nameof(poolObjects);
-        private const string areaDropdownName = nameof(areaIndexes);
+        private const string InstanceDropdownName = nameof(_instances);
+        private const string AreaDropdownName = nameof(_areaIndexes);
 
-        private GameObject[] poolObjects;
+        private GameObject[] _instances = new GameObject[1] { null };
+        private PoolInfo[] _poolsInfo;
 
-        private int[] areaIndexes;
-        private AreaInfo[] areaValues;
+        private int[] _areaIndexes;
+        private AreaInfo[] _areaValues;
 
         public void UpdateAreaValue(AreaContainer areaContainer)
         {
-            areaValues = areaContainer.areas;
+            _areaValues = areaContainer.areas;
 
-            areaIndexes = new int[areaValues.Length];
-            for (var i = 0; i < areaValues.Length; i++) areaIndexes[i] = i;
+            _areaIndexes = new int[_areaValues.Length];
+            for (var i = 0; i < _areaValues.Length; i++) _areaIndexes[i] = i;
 
-            areaIndex = Mathf.Clamp(areaIndex, 0, areaIndexes.Length - 1);
-            areaValue = areaValues[areaIndex];
+            areaIndex = Mathf.Clamp(areaIndex, 0, _areaIndexes.Length - 1);
+            areaValue = _areaValues[areaIndex];
         }
 
 
-        public void UpdatePool(ref GameObject[] poolObjects)
+        public void UpdatePool(ref PoolInfo[] poolsInfo)
         {
-            this.poolObjects = poolObjects;
+            _poolsInfo = poolsInfo;
+            _instances = new GameObject[_poolsInfo.Length];
+
+            for (var i = 0; i < _poolsInfo.Length; i++)
+            {
+                _instances[i] = _poolsInfo[i].instance;
+            }
         }
     }
 }

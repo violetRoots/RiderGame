@@ -10,15 +10,14 @@ namespace SkyCrush.WSGenerator
     {
         [Header("Instance")]
 
-        [Dropdown(instanceDropdownName)]
+        [Dropdown(InstanceDropdownName)]
         [AllowNesting]
         [SerializeField]
         private GameObject instance;
 
         [Header("Generate Area")]
 
-        [OnValueChanged("UpdateGenerateAreaValue")]
-        [Dropdown(areaDropdownName)]
+        [Dropdown(AreaDropdownName)]
         [AllowNesting]
         [SerializeField]
         private int areaIndex;

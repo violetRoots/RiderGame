@@ -10,8 +10,9 @@ namespace SkyCrush.WSGenerator
         [SerializeField]
         private void GoToSettings() => Settings.Select();
 
+        [ReorderableList]
         [SerializeField]
-        private GameObject[] poolObjects;
+        private PoolInfo[] poolsInfo;
 
         //todo добавить легкое переключение и отрисовку пользовательских классов с данными
             //[SerializeField]

@@ -17,6 +17,6 @@ namespace SkyCrush.WSGenerator
         [Space(10)]
         [NonReorderable]
         [SerializeField]
-        private GenerateObject[] objectInfo;
+        private GenerateObject[] generateObjects;
     }
 }

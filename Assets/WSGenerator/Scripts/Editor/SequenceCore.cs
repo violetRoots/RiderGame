@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEditor;
 
 namespace SkyCrush.WSGenerator
 {
@@ -10,6 +11,8 @@ namespace SkyCrush.WSGenerator
     {
         //private const string TypeIndexDropdownName = nameof(typeIndexes);
         //private const string OnChangeTypeIndexMethodName = nameof(UpdateAdditionalDataType);
+
+        public ref PoolInfo[] PoolsInfo => ref poolsInfo;
 
         //private int[] typeIndexes;
         //private List<Type> dataTypes;
@@ -58,13 +61,13 @@ namespace SkyCrush.WSGenerator
 
             foreach (var fixedStage in fixedStages)
             {
-                fixedStage.UpdatePool(ref poolObjects);
+                fixedStage.UpdatePool(ref poolsInfo);
                 fixedStage.UpdateAreas(areaContainer);
             }
 
             foreach (var randomStage in randomStages)
             {
-                randomStage.UpdatePool(ref poolObjects);
+                randomStage.UpdatePool(ref poolsInfo);
                 randomStage.UpdateAreas(areaContainer);
             }
         }
