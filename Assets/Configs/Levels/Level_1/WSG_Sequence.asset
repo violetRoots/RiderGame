@@ -14,16 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-    count: 0
+    count: 10
+  - instance: {fileID: 1665555950478066616, guid: f353e210dfe664167b7f53442425c836, type: 3}
+    count: 10
   fixedStages:
   - duration: 0
     data:
-      maxYSpeed: 0
       ySpeedCurve:
         serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 200.47174
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 100
+          value: 200.47174
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
         m_RotationOrder: 0
     generateObjects:
     - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
@@ -33,11 +52,29 @@ MonoBehaviour:
         point2: {x: 40, y: -20}
         color: {r: 0, g: 0.6484008, b: 1, a: 1}
         drawGizmos: 1
-      maxObjectsCount: 0
-      countCurve:
+      frequencyCurve:
         serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 10
+          value: 0
+          inSlope: -6.702829
+          outSlope: -6.702829
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.017241383
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      generatedObjectsCount: 55
   randomStages: []

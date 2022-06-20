@@ -6,6 +6,11 @@ namespace SkyCrush.WSGenerator
 {
     public partial class GenerateObject
     {
+        public const float CurveRange = 10.0f;
+
+        public GameObject Instance => instance;
+        public AnimationCurve FrequencyCurve => frequencyCurve;
+
         private const string InstanceDropdownName = nameof(_instances);
         private const string AreaDropdownName = nameof(_areaIndexes);
 
@@ -36,6 +41,22 @@ namespace SkyCrush.WSGenerator
             {
                 _instances[i] = _poolsInfo[i].instance;
             }
+        }
+
+        public void UpdateCurveDescription()
+        {
+            x = $"time: 1 unit = duration / {CurveRange}";
+            y = $"frequency: 1 unit = 1 obj / {Settings.Instance.FrequencySecondsPerUnit} sec";
+
+            var count = 0.0f;
+            for (var i = 0; i <= CurveRange; i++)
+            {
+                count += frequencyCurve.Evaluate(i);
+            }
+
+            generatedObjectsCount = (int) count;
+
+
         }
     }
 }

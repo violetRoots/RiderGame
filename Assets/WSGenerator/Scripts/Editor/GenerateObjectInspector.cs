@@ -28,11 +28,20 @@ namespace SkyCrush.WSGenerator
 
 
         [Header("Generate Process")]
-
-        [Range(1, 100)]
+        [AllowNesting]
         [SerializeField]
-        private int maxObjectsCount = 1;
-        public AnimationCurve countCurve;
+        [CurveRange(0, 0, CurveRange, CurveRange, EColor.Red)]
+        private AnimationCurve frequencyCurve;
+
+        [AllowNesting]
+        [ReadOnly]
+        [SerializeField]
+        private string x, y;
+
+        [AllowNesting]
+        [ReadOnly]
+        [SerializeField]
+        private int generatedObjectsCount;
     }
 }
 
