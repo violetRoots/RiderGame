@@ -33,6 +33,7 @@ namespace RiderGame
                 .Inject(_runtimeLevelData)
                 .Add(new UpdateRuntimeLevelDataSystem())
                 .Add(new InputSystem())
+                .Add(new ObjectActivationSystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
                 .Init();

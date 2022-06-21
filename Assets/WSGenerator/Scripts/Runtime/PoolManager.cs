@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,9 @@ namespace SkyCrush.WSGenerator
 {
     public class PoolManager
     {
+        public event Action<GameObject> OnReturnToPools;
+        public event Action<GameObject> OnTakeFromPools;
+
         private const string PoolsContainersParentName = "Pools";
 
         private List<PoolContainer> _poolContainers = new List<PoolContainer>();
@@ -17,7 +20,12 @@ namespace SkyCrush.WSGenerator
 
             foreach(var poolInfo in sequence.PoolsInfo)
             {
-                _poolContainers.Add(new PoolContainer(poolInfo, poolsContainersParent.transform));
+                var container = new PoolContainer(poolInfo, poolsContainersParent.transform);
+
+                container.OnTakeFromPool += GetCallback;
+                container.OnReturnToPool += ReleaseCallback;
+
+                _poolContainers.Add(container);
             }
         }
 
@@ -35,10 +43,23 @@ namespace SkyCrush.WSGenerator
             return res;
         }
 
+        private void GetCallback(GameObject poolObject)
+        {
+            OnTakeFromPools?.Invoke(poolObject);
+        }
+
+        private void ReleaseCallback(GameObject poolObject)
+        {
+            OnReturnToPools?.Invoke(poolObject);
+        }
+
         public void Clear()
         {
             foreach (var poolContainer in _poolContainers)
             {
+                poolContainer.OnTakeFromPool -= GetCallback;
+                poolContainer.OnReturnToPool -= ReleaseCallback;
+
                 GameObject.Destroy(poolContainer.Container.gameObject);
 
                 poolContainer.CLear();

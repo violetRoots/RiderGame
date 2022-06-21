@@ -15,10 +15,8 @@ MonoBehaviour:
   poolsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
     count: 10
-  - instance: {fileID: 1665555950478066616, guid: f353e210dfe664167b7f53442425c836, type: 3}
-    count: 10
   fixedStages:
-  - duration: 5
+  - duration: 20
     customData:
       ySpeed: 10
     generateObjects:
@@ -53,7 +51,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      x: 'time: 1 unit = duration / 10 (0,5 sec)'
+      x: 'time: 1 unit = duration / 10 (2 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 7+-1
+      objectsCount: 27+-1
   randomStages: []

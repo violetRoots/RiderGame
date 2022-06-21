@@ -7,6 +7,7 @@ namespace SkyCrush.WSGenerator
     {
         public Sequence Sequence => sequence;
         public StageManager StageManager => _stageManager;
+        public PoolManager PoolManager => _poolManager;
         public bool IsInitilized { get; private set; }
 
         [SerializeField] private Settings settings;
