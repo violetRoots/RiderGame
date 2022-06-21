@@ -18,8 +18,8 @@ namespace RiderGame.World
                 ref var input = ref _filter.Get1(i);
                 ref var moveObject = ref _filter.Get2(i);
 
-                moveObject.transform.Translate(new Vector2(-input.horizontal * _levelData.CurrentLevelConfig.XSpeed, 
-                    _levelData.CurrentWorldSpeed) * Time.deltaTime);
+                moveObject.transform.Translate(new Vector2(-input.horizontal * _levelData.XSpeed, 
+                    _levelData.YSpeed) * Time.deltaTime);
             }
         }
     }

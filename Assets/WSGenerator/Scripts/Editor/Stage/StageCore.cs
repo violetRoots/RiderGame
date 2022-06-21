@@ -6,6 +6,7 @@ namespace SkyCrush.WSGenerator
     public partial class Stage
     {
         public float Duration => duration;
+        public CustomStageData CustomData => customData;
         public GenerateObject[] GenerateObjects => generateObjects;
         public void UpdateAreas(AreaContainer areaContainer)
         {

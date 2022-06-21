@@ -11,9 +11,9 @@ namespace SkyCrush.WSGenerator
         public float Process => _process;
 
         public event Action<Stage, float> OnUpdateStageValues;
-        public event Action<Stage> OnChangeStage;
+        public event Action<Stage> OnStartStage;
+        public event Action<Stage> OnEndStage;
 
-        private Settings _settings;
         private Generator _generator;
         private Sequence _sequence;
         private Stage _stage;
@@ -21,9 +21,8 @@ namespace SkyCrush.WSGenerator
 
         private int _fixedStageIndex;
 
-        public void Init(Settings settings, Generator generator, Sequence sequence)
+        public void Init(Generator generator, Sequence sequence)
         {
-            _settings = settings;
             _generator = generator;
             _sequence = sequence;
 
@@ -57,11 +56,19 @@ namespace SkyCrush.WSGenerator
         {
             PauseUpdateProcess();
 
+            if(_stage != null)
+            {
+                OnEndStage?.Invoke(_stage);
+            }
+            
             _stage = GetNextStage();
             _process = 0;
-            OnChangeStage?.Invoke(_stage);
 
-            if (isStartUpdateStage && _stage != null) StartUpdateProcess();
+            if (_stage != null)
+            {
+                OnStartStage?.Invoke(_stage);
+                if(isStartUpdateStage) StartUpdateProcess();
+            }
         }
 
         private Stage GetNextStage()

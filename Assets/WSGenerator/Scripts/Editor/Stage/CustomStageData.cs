@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using NaughtyAttributes;
 
 namespace SkyCrush.WSGenerator
 {
@@ -8,10 +7,9 @@ namespace SkyCrush.WSGenerator
     [Serializable]
     public class CustomStageData
     {
-        [Header("World")]
-        [AllowNesting]
-        [CurveRange(0, 0, 100, 1000, EColor.Blue)]
+        public float YSpeed => ySpeed;
+
         [SerializeField]
-        private AnimationCurve ySpeedCurve;
+        private float ySpeed;
     }
 }

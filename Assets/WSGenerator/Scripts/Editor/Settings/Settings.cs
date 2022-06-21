@@ -15,7 +15,6 @@ namespace SkyCrush.WSGenerator
         private float maxFrequencyGenerationValue = 100.0f;
 
         [Header("Area Settings")]
-        [Expandable]
         [SerializeField]
         private AreaContainer areaContainer;
     }

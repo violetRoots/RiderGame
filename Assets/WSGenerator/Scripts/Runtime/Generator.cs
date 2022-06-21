@@ -6,24 +6,25 @@ namespace SkyCrush.WSGenerator
     public class Generator : MonoBehaviour
     {
         public Sequence Sequence => sequence;
+        public StageManager StageManager => _stageManager;
         public bool IsInitilized { get; private set; }
 
         [SerializeField] private Settings settings;
 
         [Space(10)]
         [SerializeField] private Sequence sequence;
-        [SerializeField] private bool playOnAwake = true;
+        [SerializeField] private bool autoPlay = true;
 
         private PoolManager _poolManager = new PoolManager();
         private StageManager _stageManager = new StageManager();
 
         private GenerateProcess[] _processes;
 
-        private void Awake()
+        private void Start()
         {
             Init(sequence);
 
-            if (playOnAwake)
+            if (autoPlay)
             {
                 StartGeneration();
             }
@@ -35,10 +36,11 @@ namespace SkyCrush.WSGenerator
 
             _poolManager.Init(sequence, transform);
 
-            _stageManager.OnChangeStage += InitGenerateProcesses;
+            _stageManager.OnStartStage += StartGenerateProcesses;
+            _stageManager.OnEndStage += StopGenerateProcesses;
             _stageManager.OnUpdateStageValues += UpdateGenerateProcesses;
 
-            _stageManager.Init(settings, this, sequence);
+            _stageManager.Init(this, sequence);
 
             IsInitilized = true;
         }
@@ -64,24 +66,26 @@ namespace SkyCrush.WSGenerator
 
             _poolManager.Clear();
 
-            _stageManager.OnChangeStage -= InitGenerateProcesses;
+            _stageManager.OnStartStage -= StartGenerateProcesses;
+            _stageManager.OnEndStage -= StopGenerateProcesses;
             _stageManager.OnUpdateStageValues -= UpdateGenerateProcesses;
 
             IsInitilized = false;
         }
 
-        private void InitGenerateProcesses(Stage stage)
+        private void StopGenerateProcesses(Stage stage)
         {
-            if(_processes != null)
+            if (_processes != null)
             {
                 for (var i = 0; i < _processes.Length; i++)
                 {
                     _processes[i].Stop();
                 }
             }
+        }
 
-            if (stage == null) return;
-
+        private void StartGenerateProcesses(Stage stage)
+        {
             var objects = stage.GenerateObjects;
             _processes = new GenerateProcess[objects.Length];
 

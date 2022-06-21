@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: b2bb7285286360c48825d836df68732e, type: 2}
   sequence: {fileID: 11400000, guid: 7bf049780a5079d40898b944bdaa3407, type: 2}
-  playOnAwake: 1
+  autoPlay: 1
 --- !u!1 &497610988
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameConfigs: {fileID: 11400000, guid: c0dd451aa8f965747873da3a9494a38f, type: 2}
+  _generator: {fileID: 467351792}
 --- !u!1 &974188854
 GameObject:
   m_ObjectHideFlags: 3

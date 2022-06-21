@@ -12,7 +12,7 @@ namespace SkyCrush.WSGenerator
 
         //todo переделать - генератор не должен иметь никаких ссылок на RiderGame
         [SerializeField]
-        private CustomStageData data;
+        private CustomStageData customData;
 
         [Space(10)]
         [NonReorderable]

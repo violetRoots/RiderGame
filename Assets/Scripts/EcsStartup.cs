@@ -5,13 +5,15 @@ using RiderGame.Inputs;
 using RiderGame.SO;
 using RiderGame.World;
 using RiderGame.Level;
+using SkyCrush.WSGenerator;
 
 namespace RiderGame
 {
     public class EcsStartup : MonoBehaviour
     {
-        [SerializeField]
-        private GameConfiguration _gameConfigs;
+        [SerializeField] private GameConfiguration _gameConfigs;
+        [SerializeField] private Generator _generator;
+
         private RuntimeLevelData _runtimeLevelData;
 
         private EcsWorld _ecsWorld;
@@ -27,6 +29,7 @@ namespace RiderGame
             _systems
                 .ConvertScene()
                 .Inject(_gameConfigs)
+                .Inject(_generator)
                 .Inject(_runtimeLevelData)
                 .Add(new UpdateRuntimeLevelDataSystem())
                 .Add(new InputSystem())

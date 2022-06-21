@@ -1,13 +1,25 @@
-using UnityEngine;
 using RiderGame.SO;
 
 namespace RiderGame.Level
 {
     public class RuntimeLevelData
     {
-        public LevelConfiguration CurrentLevelConfig { get; set; }
-        public float ProcessStageTime { get; set; }
+        public float YSpeed => _ySpeed;
+        public float XSpeed => _levelConfig.XSpeed;
 
-        public float CurrentWorldSpeed { get; set; }
+        private LevelConfiguration _levelConfig;
+
+        private float _ySpeed;
+
+        public void Init(LevelConfiguration levelConfiguration)
+        {
+            _levelConfig = levelConfiguration;
+            _ySpeed = 0;
+        }
+
+        public void SetYSpeed(float speed)
+        {
+            _ySpeed = speed;
+        }
     }
 }
