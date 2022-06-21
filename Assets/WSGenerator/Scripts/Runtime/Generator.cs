@@ -14,11 +14,6 @@ namespace SkyCrush.WSGenerator
         [SerializeField] private Sequence sequence;
         [SerializeField] private bool playOnAwake = true;
 
-        [Space(10)]
-        [ReadOnly]
-        [SerializeField]
-        private float frequency;
-
         private PoolManager _poolManager = new PoolManager();
         private StageManager _stageManager = new StageManager();
 
@@ -84,6 +79,8 @@ namespace SkyCrush.WSGenerator
                     _processes[i].Stop();
                 }
             }
+
+            if (stage == null) return;
 
             var objects = stage.GenerateObjects;
             _processes = new GenerateProcess[objects.Length];

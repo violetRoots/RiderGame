@@ -18,7 +18,7 @@ MonoBehaviour:
   - instance: {fileID: 1665555950478066616, guid: f353e210dfe664167b7f53442425c836, type: 3}
     count: 10
   fixedStages:
-  - duration: 0
+  - duration: 5
     data:
       ySpeedCurve:
         serializedVersion: 2
@@ -57,24 +57,26 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 5
+          inSlope: 1.973399
+          outSlope: 1.973399
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.09561129
+        - serializedVersion: 3
+          time: 10
+          value: 5
           inSlope: 0
           outSlope: 0
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 10
-          value: 0
-          inSlope: -6.702829
-          outSlope: -6.702829
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.017241383
+          inWeight: 0.33333334
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      generatedObjectsCount: 55
+      x: 'time: 1 unit = duration / 10'
+      y: 'frequency: 1 unit = 1 obj / 5 sec'
+      generatedObjectsCount: 71
   randomStages: []

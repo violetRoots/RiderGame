@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf062aed0e887c409c1031ca8a6477e, type: 3}
   m_Name: WSG_Settings
   m_EditorClassIdentifier: 
+  frequencySecondsPerUnit: 5
+  minFrequencyGenerationValue: 0.1
+  useCustomTimeInterval: 1
+  updateStageInterval: 0.01
   areaContainer: {fileID: 11400000, guid: 85562700ca031534db77bf1886475488, type: 2}

@@ -59,14 +59,29 @@ namespace SkyCrush.WSGenerator
 
                 Generate();
 
-                var waitTime = (float) (1 / Frequency);
-                yield return new WaitForSeconds(waitTime);
+                var clampFrequency = Mathf.Clamp(Frequency, _settings.MinFrequencyGenerationValue, _settings.MaxFrequencyGenerationValue);
+                var pastTime = 0.0f;
+                var waitTime = (float) (1 / clampFrequency);
+                while(pastTime < waitTime)
+                {
+                    waitTime = (float)(1 / clampFrequency);
+
+                    yield return null;
+
+                    pastTime += Time.deltaTime;
+                }
             }
         }
 
         private void Generate()
         {
-            PoolContainer.Get();
+            var generatedObject = PoolContainer.Get();
+
+            Vector3 pos = new Vector3();
+            pos.x = Random.Range(GenerateObjectInfo.Area.point1.x, GenerateObjectInfo.Area.point2.x);
+            pos.y = Random.Range(GenerateObjectInfo.Area.point1.y, GenerateObjectInfo.Area.point2.y);
+
+            generatedObject.transform.position = pos;
         }
     }
 }

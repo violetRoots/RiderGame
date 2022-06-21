@@ -8,8 +8,7 @@ namespace SkyCrush.WSGenerator
     {
         public float FrequencySecondsPerUnit => frequencySecondsPerUnit;
         public float MinFrequencyGenerationValue => minFrequencyGenerationValue;
-        public bool UseCustomTimeInterval => useCustomTimeInterval;
-        public float UpdateStageInterval => updateStageInterval;
+        public float MaxFrequencyGenerationValue => maxFrequencyGenerationValue;
         public AreaContainer AreaContainer => areaContainer;
 
         public static void Select()

@@ -59,10 +59,9 @@ namespace SkyCrush.WSGenerator
 
             _stage = GetNextStage();
             _process = 0;
-
-            if (isStartUpdateStage) StartUpdateProcess();
-
             OnChangeStage?.Invoke(_stage);
+
+            if (isStartUpdateStage && _stage != null) StartUpdateProcess();
         }
 
         private Stage GetNextStage()
@@ -76,6 +75,8 @@ namespace SkyCrush.WSGenerator
             }
             else
             {
+                if (_sequence.RandomStages.Length < 1) return null;
+
                 var randomStageIndex = UnityEngine.Random.Range(0, _sequence.RandomStages.Length);
                 res = _sequence.RandomStages[randomStageIndex];
             }
@@ -85,16 +86,15 @@ namespace SkyCrush.WSGenerator
 
         private IEnumerator UpdateProcess()
         {
+            var processTime = 0.0f;
             while(_process < 1)
             {
-                var updateInterval = _settings.UseCustomTimeInterval ? _settings.UpdateStageInterval : Time.deltaTime;
-                var processStep = (float) (updateInterval / _stage.Duration);
-
                 OnUpdateStageValues?.Invoke(_stage, _process);
 
-                yield return new WaitForSeconds(updateInterval);
+                yield return null;
 
-                _process = Mathf.Clamp01(_process + processStep);
+                processTime += Time.deltaTime;
+                _process = Mathf.Clamp01((float)(processTime / _stage.Duration));
             }
 
             SetNextStage();

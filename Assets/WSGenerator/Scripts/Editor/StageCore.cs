@@ -19,7 +19,7 @@ namespace SkyCrush.WSGenerator
 
         public void UpdateCurveDescription()
         {
-            foreach (var objectInfo in generateObjects) objectInfo.UpdateCurveDescription();
+            foreach (var objectInfo in generateObjects) objectInfo.UpdateCurveDescription(duration);
         }
     }
 }

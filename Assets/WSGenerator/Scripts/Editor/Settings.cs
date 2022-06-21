@@ -10,14 +10,9 @@ namespace SkyCrush.WSGenerator
         [SerializeField]
         private float frequencySecondsPerUnit = 5.0f;
         [SerializeField]
-        private float minFrequencyGenerationValue = 0.01f;
-
+        private float minFrequencyGenerationValue = 0.01f;        
         [SerializeField]
-        private bool useCustomTimeInterval = true;
-
-        [ShowIf(nameof(useCustomTimeInterval))]
-        [SerializeField]
-        private float updateStageInterval = 0.01f;
+        private float maxFrequencyGenerationValue = 100.0f;
 
         [Header("Area Settings")]
         [Expandable]

@@ -41,7 +41,7 @@ namespace SkyCrush.WSGenerator
         [AllowNesting]
         [ReadOnly]
         [SerializeField]
-        private int generatedObjectsCount;
+        private string objectsCount;
     }
 }
 
