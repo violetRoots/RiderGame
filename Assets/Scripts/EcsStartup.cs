@@ -28,6 +28,7 @@ namespace RiderGame
 
             _systems
                 .ConvertScene()
+                .Inject(_ecsWorld)
                 .Inject(_gameConfigs)
                 .Inject(_generator)
                 .Inject(_runtimeLevelData)

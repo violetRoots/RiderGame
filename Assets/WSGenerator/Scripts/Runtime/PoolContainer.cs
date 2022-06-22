@@ -8,7 +8,7 @@ namespace SkyCrush.WSGenerator
     {
         public GameObject Instance { get; private set; }
         public Transform Container { get; private set; }
-        public bool CollectionCheck { get; private set; }
+        public bool CollectionCheck { get; private set; } = false;
 
         public event Action<GameObject> OnReturnToPool;
         public event Action<GameObject> OnTakeFromPool;
@@ -25,7 +25,7 @@ namespace SkyCrush.WSGenerator
 
             for (var i = 1; i <= poolInfo.count; i++)
             {
-                _pool = new ObjectPool<GameObject>(CreatePoolInstance, GetCallback, ReleaseCallback, DestroyCallback, CollectionCheck, poolInfo.count, poolInfo.count);
+                _pool = new ObjectPool<GameObject>(CreatePoolInstance, GetCallback, ReleaseCallback, DestroyCallback, CollectionCheck, poolInfo.count);
             }
         }
 
@@ -47,12 +47,16 @@ namespace SkyCrush.WSGenerator
 
         private void ReleaseCallback(GameObject poolObject)
         {
+            if (poolObject == null) return;
+
             poolObject.SetActive(false);
             OnReturnToPool?.Invoke(poolObject);
         }
 
         private void GetCallback(GameObject poolObject)
         {
+            if (poolObject == null) return;
+
             poolObject.SetActive(true);
             OnTakeFromPool?.Invoke(poolObject);
         }

@@ -29,13 +29,20 @@ namespace SkyCrush.WSGenerator
             }
         }
 
-        public PoolContainer GetPoolContainer(GameObject instance)
+        public PoolContainer GetPoolContainer(string name, bool isFormat = false)
         {
             PoolContainer res = null;
 
             foreach(var poolContainer in _poolContainers)
             {
-                if (poolContainer.Instance != instance) continue;
+                var instanceName = poolContainer.Instance.name;
+
+                if (isFormat)
+                {
+                    instanceName = string.Format("{0}(Clone)", instanceName);
+                }
+
+                if (name != instanceName) continue;
 
                 res = poolContainer;
             }

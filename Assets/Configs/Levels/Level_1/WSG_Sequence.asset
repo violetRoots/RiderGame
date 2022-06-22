@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-    count: 10
+    count: 100
   fixedStages:
-  - duration: 20
+  - duration: 30
     customData:
       ySpeed: 10
     generateObjects:
     - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
       areaIndex: 0
       areaValue:
-        point1: {x: -40, y: -100}
-        point2: {x: 40, y: -80}
+        point1: {x: -80, y: -100}
+        point2: {x: 80, y: -80}
         color: {r: 0, g: 0.6484008, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -32,18 +32,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 5
-          inSlope: 1.973399
-          outSlope: 1.973399
-          tangentMode: 0
+          value: 4.9764137
+          inSlope: 0.009434128
+          outSlope: 0.009434128
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.09561129
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 10
-          value: 5
-          inSlope: 0
-          outSlope: 0
+          value: 5.070755
+          inSlope: 0.009434128
+          outSlope: 0.009434128
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -51,7 +51,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      x: 'time: 1 unit = duration / 10 (2 sec)'
+      x: 'time: 1 unit = duration / 10 (3 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 27+-1
+      objectsCount: 31+-1
   randomStages: []

@@ -9,16 +9,16 @@ namespace RiderGame.World
     {
         private readonly RuntimeLevelData _levelData;
 
-        private EcsFilter<Input, MoveWorldObject> _filter;
+        private EcsFilter<Input, EcsGameObject, MoveWorldObject> _filter;
 
         public void Run()
         {
             foreach (var i in _filter)
             {
                 ref var input = ref _filter.Get1(i);
-                ref var moveObject = ref _filter.Get2(i);
+                ref var gameObject = ref _filter.Get2(i);
 
-                moveObject.transform.Translate(new Vector2(-input.horizontal * _levelData.XSpeed, 
+                gameObject.instance.transform.Translate(new Vector2(-input.horizontal * _levelData.XSpeed, 
                     _levelData.YSpeed) * Time.deltaTime);
             }
         }

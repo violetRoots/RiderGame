@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WSG_AreaContainer
   m_EditorClassIdentifier: 
   areas:
-  - point1: {x: -40, y: -100}
-    point2: {x: 40, y: -80}
+  - point1: {x: -80, y: -100}
+    point2: {x: 80, y: -80}
     color: {r: 0, g: 0.6484008, b: 1, a: 1}
     drawGizmos: 1
