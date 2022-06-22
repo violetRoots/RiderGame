@@ -1,11 +1,8 @@
 {
-    "name": "RiderGame",
-    "rootNamespace": "RiderGame",
+    "name": "RiderGame.Editor",
+    "rootNamespace": "RiderGame.Editor",
     "references": [
-        "GUID:656c2c43d3cfe4855bd40e058874b0be",
-        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
-        "GUID:f88fb04354076c646a4107a491394033",
-        "GUID:75cb327fbf8447f4e97f3310c0305859"
+        "GUID:bba831faf0625d5469f6435ea322ea50"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
