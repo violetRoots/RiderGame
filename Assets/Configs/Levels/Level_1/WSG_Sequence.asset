@@ -15,16 +15,18 @@ MonoBehaviour:
   poolsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
     count: 100
+  - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+    count: 100
   fixedStages:
-  - duration: 30
+  - duration: 100
     customData:
-      ySpeed: 10
+      ySpeed: 15
     generateObjects:
     - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
       areaIndex: 0
       areaValue:
-        point1: {x: -80, y: -100}
-        point2: {x: 80, y: -80}
+        center: {x: -15, y: -60}
+        size: {x: 30, y: 10}
         color: {r: 0, g: 0.6484008, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -32,26 +34,60 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 4.9764137
-          inSlope: 0.009434128
-          outSlope: 0.009434128
+          value: 10
+          inSlope: 0
+          outSlope: 0
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0.33333334
+          outWeight: 0
         - serializedVersion: 3
           time: 10
-          value: 5.070755
-          inSlope: 0.009434128
-          outSlope: 0.009434128
+          value: 10
+          inSlope: 0
+          outSlope: 0
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
-      x: 'time: 1 unit = duration / 10 (3 sec)'
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (10 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 31+-1
+      objectsCount: 200+-10
+    - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+      areaIndex: 1
+      areaValue:
+        center: {x: 15, y: -60}
+        size: {x: 30, y: 10}
+        color: {r: 0, g: 1, b: 0.18816328, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 10
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 10
+          value: 10
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (10 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
+      objectsCount: 200+-10
   randomStages: []

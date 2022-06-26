@@ -18,6 +18,7 @@ namespace SkyCrush.WSGenerator
         [Header("Generate Area")]
 
         [Dropdown(AreaDropdownName)]
+        [OnValueChanged(nameof(UpdateAreaValue))]
         [AllowNesting]
         [SerializeField]
         private int areaIndex;

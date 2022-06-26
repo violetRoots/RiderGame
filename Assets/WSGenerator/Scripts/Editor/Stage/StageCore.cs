@@ -8,9 +8,9 @@ namespace SkyCrush.WSGenerator
         public float Duration => duration;
         public CustomStageData CustomData => customData;
         public GenerateObject[] GenerateObjects => generateObjects;
-        public void UpdateAreas(AreaContainer areaContainer)
+        public void UpdateAreas()
         {
-            foreach (var objectInfo in generateObjects) objectInfo.UpdateAreaValue(areaContainer);
+            foreach (var objectInfo in generateObjects) objectInfo.UpdateAreaValue();
         }
 
         public void UpdatePool(ref PoolInfo[] poolsInfo)

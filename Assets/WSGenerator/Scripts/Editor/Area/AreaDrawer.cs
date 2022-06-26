@@ -21,16 +21,16 @@ namespace SkyCrush.WSGenerator
 
         private void DrawGenerateArea(AreaInfo area)
         {
-            var point11 = new Vector2(-area.point1.x, area.point1.y);
-            var point12 = new Vector2(-area.point1.x, area.point2.y);
-            var point21 = new Vector2(-area.point2.x, area.point1.y);
-            var point22 = new Vector2(-area.point2.x, area.point2.y);
+            var point1 = area.center + (new Vector2(-1, -1) * area.size/2);
+            var point2 = area.center + (new Vector2(-1, 1) * area.size / 2);
+            var point3 = area.center + (new Vector2(1, 1) * area.size / 2);
+            var point4 = area.center + (new Vector2(1, -1) * area.size / 2);
 
             Gizmos.color = area.color;
-            Gizmos.DrawLine(point11, point12);
-            Gizmos.DrawLine(point12, point22);
-            Gizmos.DrawLine(point22, point21);
-            Gizmos.DrawLine(point21, point11);
+            Gizmos.DrawLine(point1, point2);
+            Gizmos.DrawLine(point2, point3);
+            Gizmos.DrawLine(point3, point4);
+            Gizmos.DrawLine(point4, point1);
         }
     }
 }

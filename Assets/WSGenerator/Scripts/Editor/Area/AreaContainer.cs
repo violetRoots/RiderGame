@@ -15,8 +15,8 @@ namespace SkyCrush.WSGenerator
     [Serializable]
     public struct AreaInfo
     {
-        public Vector2 point1;
-        public Vector2 point2;
+        public Vector2 center;
+        public Vector2 size;
         public Color color;
         public bool drawGizmos;
     }

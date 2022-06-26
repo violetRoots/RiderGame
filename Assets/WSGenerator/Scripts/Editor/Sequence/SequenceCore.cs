@@ -20,19 +20,17 @@ namespace SkyCrush.WSGenerator
 
         private void UpdateStageValues()
         {
-            var areaContainer = Settings.Instance.AreaContainer;
-
             foreach (var fixedStage in fixedStages)
             {
                 fixedStage.UpdatePool(ref poolsInfo);
-                fixedStage.UpdateAreas(areaContainer);
+                fixedStage.UpdateAreas();
                 fixedStage.UpdateCurveDescription();
             }
 
             foreach (var randomStage in randomStages)
             {
                 randomStage.UpdatePool(ref poolsInfo);
-                randomStage.UpdateAreas(areaContainer);
+                randomStage.UpdateAreas();
                 randomStage.UpdateCurveDescription();
             }
         }

@@ -76,10 +76,11 @@ namespace SkyCrush.WSGenerator
         private void Generate()
         {
             var generatedObject = PoolContainer.Get();
+            var area = GenerateObjectInfo.Area;
 
             Vector3 pos = new Vector3();
-            pos.x = Random.Range(GenerateObjectInfo.Area.point1.x, GenerateObjectInfo.Area.point2.x);
-            pos.y = Random.Range(GenerateObjectInfo.Area.point1.y, GenerateObjectInfo.Area.point2.y);
+            pos.x = Random.Range(area.center.x - (area.size.x / 2.0f), area.center.x + (area.size.x / 2.0f));
+            pos.y = Random.Range(area.center.y - (area.size.y / 2.0f), area.center.y + (area.size.y / 2.0f));
 
             generatedObject.transform.position = pos;
         }
