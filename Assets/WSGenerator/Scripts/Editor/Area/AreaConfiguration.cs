@@ -5,7 +5,7 @@ using NaughtyAttributes;
 namespace SkyCrush.WSGenerator
 {
     [CreateAssetMenu(fileName = "WSG_AreaContainer", menuName = "WSGenerator/AreaContainer", order = 2)]
-    public class AreaContainer : ScriptableObject
+    public class AreaConfiguration : ScriptableObject
     {
         [Header("Area Settings")]
         [ReorderableList]

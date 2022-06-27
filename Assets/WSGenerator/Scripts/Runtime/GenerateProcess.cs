@@ -5,7 +5,7 @@ namespace SkyCrush.WSGenerator
 {
     public class GenerateProcess
     {
-        public GenerateObject GenerateObjectInfo { get; private set; }
+        public GenerateObjectInfo GenerateObjectInfo { get; private set; }
         public PoolContainer PoolContainer { get; private set; }
         public float Frequency { get; private set; }
 
@@ -15,7 +15,7 @@ namespace SkyCrush.WSGenerator
         private bool _isStopped;
         private bool _isFrequencyAboveZero;
 
-        public GenerateProcess(Settings settings, Generator generator, GenerateObject objectInfo, PoolContainer poolContainer)
+        public GenerateProcess(Settings settings, Generator generator, GenerateObjectInfo objectInfo, PoolContainer poolContainer)
         {
             _settings = settings;
             _generator = generator;

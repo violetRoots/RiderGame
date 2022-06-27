@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: WSG_AreaContainer
   m_EditorClassIdentifier: 
   areas:
-  - center: {x: -15, y: -60}
-    size: {x: 30, y: 10}
+  - center: {x: -15, y: -90}
+    size: {x: 30, y: 20}
     color: {r: 0, g: 0.6484008, b: 1, a: 1}
     drawGizmos: 1
-  - center: {x: 15, y: -60}
-    size: {x: 30, y: 10}
+  - center: {x: 15, y: -90}
+    size: {x: 30, y: 20}
     color: {r: 0, g: 1, b: 0.18816328, a: 1}
+    drawGizmos: 1
+  - center: {x: 0, y: -90}
+    size: {x: 100, y: 50}
+    color: {r: 0.9772253, g: 0, b: 1, a: 1}
     drawGizmos: 1

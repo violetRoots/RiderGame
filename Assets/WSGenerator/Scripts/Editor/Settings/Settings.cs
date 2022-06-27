@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEditor;
-using NaughtyAttributes;
 
 namespace SkyCrush.WSGenerator
 {
     [CreateAssetMenu(fileName = "WSG_Settings", menuName = "WSGenerator/Settings", order = 0)]
-    public partial class Settings : SingletonSOEditorOnly<Settings>
+    public partial class Settings : SingletonSettings<Settings>
     {
         [SerializeField]
         private float frequencySecondsPerUnit = 5.0f;
@@ -16,6 +14,6 @@ namespace SkyCrush.WSGenerator
 
         [Header("Area Settings")]
         [SerializeField]
-        private AreaContainer areaContainer;
+        private AreaConfiguration areaContainer;
     }
 }

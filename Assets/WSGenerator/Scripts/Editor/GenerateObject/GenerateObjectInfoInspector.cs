@@ -6,7 +6,7 @@ namespace SkyCrush.WSGenerator
 {
 
     [Serializable]
-    public partial class GenerateObject
+    public partial class GenerateObjectInfo
     {
         [Header("Instance")]
 

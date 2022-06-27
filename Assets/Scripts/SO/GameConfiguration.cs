@@ -1,9 +1,10 @@
 using UnityEngine;
+using SkyCrush.Utility;
 
 namespace RiderGame.SO
 {
     [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs")]
-    public class GameConfiguration : SingletonSOEditorOnly<GameConfiguration>
+    public class GameConfiguration : SingletonConfiguration<GameConfiguration>
     {
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public LevelConfiguration[] Levels => _levelConfigs;

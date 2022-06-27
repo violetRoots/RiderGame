@@ -3,7 +3,7 @@ using UnityEditor;
 using System.Collections;
 using System.IO;
 
-namespace RiderGame.SO
+namespace SkyCrush.Utility
 {
     public class SingletonSOEditorOnly<T> : ScriptableObject where T : SingletonSOEditorOnly<T>
     {
@@ -19,8 +19,7 @@ namespace RiderGame.SO
             }
         }
 
-        public static string LoadPath { get; protected set; } = "Configs/Singletons/";
-
+        public static string LoadPath { get; protected set; } = "";
         private static T instance;
 
 #if UNITY_EDITOR
@@ -29,7 +28,7 @@ namespace RiderGame.SO
             var assets = LoadAssetsAtPath<T>(LoadPath);
             if (assets == null || assets.Length == 0)
             {
-                Debug.LogError($"The instance of {typeof(T).FullName} cannot be load. Check existing of this file.");
+                Debug.LogError($"The instance of {typeof(T).FullName} cannot be load. Check existing of this file. \n Path: {LoadPath}");
             }
             if (assets.Length > 1)
             {
@@ -62,6 +61,6 @@ namespace RiderGame.SO
 
             return result;
         }
-    }
 #endif
+    }
 }

@@ -4,7 +4,7 @@ using NaughtyAttributes;
 
 namespace SkyCrush.WSGenerator
 {
-    public partial class GenerateObject
+    public partial class GenerateObjectInfo
     {
         public const float CurveRange = 10.0f;
 

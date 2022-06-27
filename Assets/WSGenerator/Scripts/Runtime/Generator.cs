@@ -103,7 +103,7 @@ namespace SkyCrush.WSGenerator
 
             for (var i = 0; i < objects.Length; i++)
             {
-                var freq = (float) (objects[i].FrequencyCurve.Evaluate(process * GenerateObject.CurveRange) / settings.FrequencySecondsPerUnit);
+                var freq = (float) (objects[i].FrequencyCurve.Evaluate(process * GenerateObjectInfo.CurveRange) / settings.FrequencySecondsPerUnit);
                 _processes[i].UpdateFrequency(freq);
             }
         }

@@ -1,10 +1,7 @@
 {
-    "name": "RiderGame.Editor",
-    "rootNamespace": "RiderGame.Editor",
-    "references": [
-        "GUID:bba831faf0625d5469f6435ea322ea50",
-        "GUID:ba03aafb364514a4f85c06c785501b7a"
-    ],
+    "name": "SkyCrush.Utility",
+    "rootNamespace": "SkyCrush.Utility",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
