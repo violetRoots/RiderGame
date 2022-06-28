@@ -23,7 +23,7 @@ namespace SkyCrush.WSGenerator
 
         public void UpdateAreaValue()
         {
-            _areaValues = Settings.Instance.AreaContainer.areas;
+            _areaValues = Settings.Instance.AreaSettings.Areas;
 
             _areaIndexes = new int[_areaValues.Length];
             for (var i = 0; i < _areaValues.Length; i++) _areaIndexes[i] = i;

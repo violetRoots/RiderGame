@@ -14,6 +14,6 @@ namespace SkyCrush.WSGenerator
 
         [Header("Area Settings")]
         [SerializeField]
-        private AreaConfiguration areaContainer;
+        private AreaSettings areaSettings;
     }
 }

@@ -5,11 +5,15 @@ using NaughtyAttributes;
 namespace SkyCrush.WSGenerator
 {
     [CreateAssetMenu(fileName = "WSG_AreaContainer", menuName = "WSGenerator/AreaContainer", order = 2)]
-    public class AreaConfiguration : ScriptableObject
+    public partial class AreaSettings : ScriptableObject
     {
         [Header("Area Settings")]
+        [SerializeField]
+        private Area2D areaPrefab;
+
         [ReorderableList]
-        public AreaInfo[] areas;
+        [SerializeField]
+        private AreaInfo[] areas;
     }
 
     [Serializable]

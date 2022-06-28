@@ -9,7 +9,7 @@ namespace SkyCrush.WSGenerator
         public float FrequencySecondsPerUnit => frequencySecondsPerUnit;
         public float MinFrequencyGenerationValue => minFrequencyGenerationValue;
         public float MaxFrequencyGenerationValue => maxFrequencyGenerationValue;
-        public AreaConfiguration AreaContainer => areaContainer;
+        public AreaSettings AreaSettings => areaSettings;
 
         public static void Select()
         {
@@ -18,7 +18,7 @@ namespace SkyCrush.WSGenerator
 
         public static void SelectAreaContainer()
         {
-            Selection.activeObject = Instance.AreaContainer;
+            Selection.activeObject = Instance.AreaSettings;
         }
     }
 }

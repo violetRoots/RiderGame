@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b515ba08268ae064a9ac57a330be8149, type: 3}
-  m_Name: WSG_AreaContainer
+  m_Name: WSG_AreaSettings
   m_EditorClassIdentifier: 
+  areaPrefab: {fileID: 8260062634424805506, guid: 93d6dafc25a2f7a429ae3a855b07eafb, type: 3}
   areas:
   - center: {x: -15, y: -90}
     size: {x: 30, y: 20}
