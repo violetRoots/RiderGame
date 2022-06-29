@@ -10,14 +10,19 @@ namespace SkyCrush.WSGenerator
     {
         [Header("Instance")]
 
-        [Dropdown(InstanceDropdownName)]
+        [Dropdown(nameof(InstanceNames))]
+        [OnValueChanged(nameof(UpdatePool))]
         [AllowNesting]
         [SerializeField]
-        private GameObject instance;
+        private string instanceName;
+        [ReadOnly]
+        [AllowNesting]
+        [SerializeField]
+        private PoolObjectInfo poolObjectValue;
 
         [Header("Generate Area")]
 
-        [Dropdown(AreaDropdownName)]
+        [Dropdown(nameof(AreaIndexes))]
         [OnValueChanged(nameof(UpdateAreaValue))]
         [AllowNesting]
         [SerializeField]
@@ -27,8 +32,8 @@ namespace SkyCrush.WSGenerator
         [SerializeField]
         private AreaInfo areaValue;
 
-
         [Header("Generate Process")]
+
         [AllowNesting]
         [SerializeField]
         [CurveRange(0, 0, CurveRange, CurveRange, EColor.Red)]

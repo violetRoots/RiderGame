@@ -4,7 +4,7 @@ using NaughtyAttributes;
 
 namespace SkyCrush.WSGenerator
 {
-    [CreateAssetMenu(fileName = "WSG_AreaContainer", menuName = "WSGenerator/AreaContainer", order = 2)]
+    [CreateAssetMenu(fileName = "WSG_AreaSettings", menuName = "WSGenerator/AreaSettings", order = 2)]
     public partial class AreaSettings : ScriptableObject
     {
         [Header("Area Settings")]

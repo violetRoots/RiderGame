@@ -15,7 +15,7 @@ namespace SkyCrush.WSGenerator
 
         private ObjectPool<GameObject> _pool;
 
-        public PoolContainer(PoolInfo poolInfo, Transform parent)
+        public PoolContainer(PoolObjectInfo poolInfo, Transform parent)
         {
             Instance = poolInfo.instance;
 

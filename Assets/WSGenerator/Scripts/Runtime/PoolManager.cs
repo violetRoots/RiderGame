@@ -11,14 +11,17 @@ namespace SkyCrush.WSGenerator
 
         private const string PoolsContainersParentName = "Pools";
 
+        private PoolSettings _poolSettings;
         private List<PoolContainer> _poolContainers = new List<PoolContainer>();
 
         public void Init(Sequence sequence, Transform transform)
         {
+            _poolSettings = Settings.Instance.PoolSettings;
+
             var poolsContainersParent = new GameObject(PoolsContainersParentName);
             poolsContainersParent.transform.SetParent(transform);
 
-            foreach(var poolInfo in sequence.PoolsInfo)
+            foreach (var poolInfo in _poolSettings.PoolsInfo)
             {
                 var container = new PoolContainer(poolInfo, poolsContainersParent.transform);
 

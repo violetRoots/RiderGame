@@ -10,15 +10,11 @@ namespace SkyCrush.WSGenerator
         public float MinFrequencyGenerationValue => minFrequencyGenerationValue;
         public float MaxFrequencyGenerationValue => maxFrequencyGenerationValue;
         public AreaSettings AreaSettings => areaSettings;
+        public PoolSettings PoolSettings => poolSettings;
 
         public static void Select()
         {
             Selection.activeObject = Instance;
-        }
-
-        public static void SelectAreaContainer()
-        {
-            Selection.activeObject = Instance.AreaSettings;
         }
     }
 }

@@ -13,9 +13,9 @@ namespace SkyCrush.WSGenerator
             foreach (var objectInfo in generateObjects) objectInfo.UpdateAreaValue();
         }
 
-        public void UpdatePool(ref PoolInfo[] poolsInfo)
+        public void UpdatePool()
         {
-            foreach (var objectInfo in generateObjects) objectInfo.UpdatePool(ref poolsInfo);
+            foreach (var objectInfo in generateObjects) objectInfo.UpdatePool();
         }
 
         public void UpdateCurveDescription()

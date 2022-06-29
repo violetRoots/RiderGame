@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
-using NaughtyAttributes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SkyCrush.WSGenerator
 {
@@ -8,40 +8,43 @@ namespace SkyCrush.WSGenerator
     {
         public const float CurveRange = 10.0f;
 
-        public GameObject Instance => instance;
         public AreaInfo Area => areaValue;
+        public PoolObjectInfo Pool => poolObjectValue;
         public AnimationCurve FrequencyCurve => frequencyCurve;
 
-        private const string InstanceDropdownName = nameof(_instances);
-        private const string AreaDropdownName = nameof(_areaIndexes);
+        private string[] InstanceNames => _poolDictionary.Keys.ToArray();
+        private int[] AreaIndexes => _areaDictionary.Keys.ToArray();
 
-        private GameObject[] _instances = new GameObject[1] { null };
-        private PoolInfo[] _poolsInfo;
-
-        private int[] _areaIndexes;
-        private AreaInfo[] _areaValues;
-
+        private Dictionary<string, PoolObjectInfo> _poolDictionary = new Dictionary<string, PoolObjectInfo> { { "no name", new PoolObjectInfo() } };
+        private Dictionary<int, AreaInfo> _areaDictionary = new Dictionary<int, AreaInfo> { { 0 , new AreaInfo() } };
         public void UpdateAreaValue()
         {
-            _areaValues = Settings.Instance.AreaSettings.Areas;
+            var areaValues = Settings.Instance.AreaSettings.Areas;
 
-            _areaIndexes = new int[_areaValues.Length];
-            for (var i = 0; i < _areaValues.Length; i++) _areaIndexes[i] = i;
+            _areaDictionary = new Dictionary<int, AreaInfo>();
+            for (var i = 0; i < areaValues.Length; i++)
+            {
+                _areaDictionary.Add(i, areaValues[i]);
+            }
 
-            areaIndex = Mathf.Clamp(areaIndex, 0, _areaIndexes.Length - 1);
-            areaValue = _areaValues[areaIndex];
+            areaIndex = Mathf.Clamp(areaIndex, 0, AreaIndexes.Length - 1);
+            areaValue = areaValues[areaIndex];
         }
 
 
-        public void UpdatePool(ref PoolInfo[] poolsInfo)
+        public void UpdatePool()
         {
-            _poolsInfo = poolsInfo;
-            _instances = new GameObject[_poolsInfo.Length];
+            var poolsInfo = Settings.Instance.PoolSettings.PoolsInfo;
+            _poolDictionary = new Dictionary<string, PoolObjectInfo>();
 
-            for (var i = 0; i < _poolsInfo.Length; i++)
+            for (var i = 0; i < poolsInfo.Length; i++)
             {
-                _instances[i] = _poolsInfo[i].instance;
+                if (poolsInfo[i].instance == null) continue;
+
+                _poolDictionary.Add(poolsInfo[i].instance.name, poolsInfo[i]);
             }
+
+            poolObjectValue = _poolDictionary[instanceName];
         }
 
         public void UpdateCurveDescription(float duration)

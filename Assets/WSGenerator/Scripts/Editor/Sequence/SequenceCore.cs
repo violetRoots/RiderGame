@@ -11,7 +11,6 @@ namespace SkyCrush.WSGenerator
     {
         public Stage[] FixedStages => fixedStages;
         public Stage[] RandomStages => randomStages;
-        public ref PoolInfo[] PoolsInfo => ref poolsInfo;
 
         private void OnValidate()
         {
@@ -22,14 +21,14 @@ namespace SkyCrush.WSGenerator
         {
             foreach (var fixedStage in fixedStages)
             {
-                fixedStage.UpdatePool(ref poolsInfo);
+                fixedStage.UpdatePool();
                 fixedStage.UpdateAreas();
                 fixedStage.UpdateCurveDescription();
             }
 
             foreach (var randomStage in randomStages)
             {
-                randomStage.UpdatePool(ref poolsInfo);
+                randomStage.UpdatePool();
                 randomStage.UpdateAreas();
                 randomStage.UpdateCurveDescription();
             }

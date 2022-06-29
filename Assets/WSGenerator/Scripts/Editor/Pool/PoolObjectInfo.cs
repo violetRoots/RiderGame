@@ -4,9 +4,10 @@ using UnityEngine;
 namespace SkyCrush.WSGenerator
 {
     [Serializable]
-    public struct PoolInfo
+    public struct PoolObjectInfo
     {
         public GameObject instance;
+        public Vector2 spawnBounds;
         public int count;
     }
 }

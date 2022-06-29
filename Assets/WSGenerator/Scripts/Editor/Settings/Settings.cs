@@ -15,5 +15,9 @@ namespace SkyCrush.WSGenerator
         [Header("Area Settings")]
         [SerializeField]
         private AreaSettings areaSettings;
+
+        [Header("Pool Settings")]
+        [SerializeField]
+        private PoolSettings poolSettings;
     }
 }
