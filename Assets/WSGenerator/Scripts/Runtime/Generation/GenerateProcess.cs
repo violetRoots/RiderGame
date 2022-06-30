@@ -91,6 +91,11 @@ namespace SkyCrush.WSGenerator
                     pastTime += Time.deltaTime;
                 }
             }
+
+            if(_pointer != null)
+            {
+                GameObject.Destroy(_pointer.gameObject);
+            }
         }
 
         private void Generate()
@@ -102,7 +107,7 @@ namespace SkyCrush.WSGenerator
 
         private IEnumerator GenerateByPointer()
         {
-            yield return new WaitUntil(() => _pointer.ReadyToSpawn || _spawnAttempts > MaxSpawnAttempts);
+            yield return new WaitUntil(() => _pointer != null && (_pointer.ReadyToSpawn || _spawnAttempts > MaxSpawnAttempts));
 
             if(_spawnAttempts > MaxSpawnAttempts)
             {

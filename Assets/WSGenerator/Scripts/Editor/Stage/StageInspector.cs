@@ -8,6 +8,9 @@ namespace SkyCrush.WSGenerator
     {
         [Space(10)]
         [SerializeField]
+        private string name = "No Named Stage";
+
+        [SerializeField]
         private float duration;
 
         //todo переделать - генератор не должен иметь никаких ссылок на RiderGame
