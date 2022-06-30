@@ -14,19 +14,18 @@ namespace SkyCrush.WSGenerator
         public event Action<GameObject> OnTakeFromPool;
 
         private ObjectPool<GameObject> _pool;
+        private PoolSettings _poolSettings;
 
-        public PoolContainer(PoolObjectInfo poolInfo, Transform parent)
+        public PoolContainer(PoolSettings poolSettings, PoolObjectInfo poolInfo, Transform parent)
         {
+            _poolSettings = poolSettings;
             Instance = poolInfo.instance;
 
             var poolObject = new GameObject($"Pool Container [{Instance.name}]");
             Container = poolObject.transform;
             Container.SetParent(parent);
 
-            for (var i = 1; i <= poolInfo.count; i++)
-            {
-                _pool = new ObjectPool<GameObject>(CreatePoolInstance, GetCallback, ReleaseCallback, DestroyCallback, CollectionCheck, poolInfo.count);
-            }
+            _pool = new ObjectPool<GameObject>(CreatePoolInstance, GetCallback, ReleaseCallback, DestroyCallback, CollectionCheck, poolSettings.DefaultPoolSize);
         }
 
         public GameObject Get() => _pool.Get();

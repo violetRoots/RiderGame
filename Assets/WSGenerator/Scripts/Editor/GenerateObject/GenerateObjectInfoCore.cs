@@ -8,9 +8,12 @@ namespace SkyCrush.WSGenerator
     {
         public const float CurveRange = 10.0f;
 
-        public AreaInfo Area => areaValue;
+        public AreaInfo AreaInfo => areaValue;
         public PoolObjectInfo Pool => poolObjectValue;
         public AnimationCurve FrequencyCurve => frequencyCurve;
+        public string InstanceName => instanceName;
+        public GameObject Instance => poolObjectValue.instance;
+        public int AreaIndex => areaIndex;
 
         private string[] InstanceNames => _poolDictionary.Keys.ToArray();
         private int[] AreaIndexes => _areaDictionary.Keys.ToArray();
@@ -19,7 +22,7 @@ namespace SkyCrush.WSGenerator
         private Dictionary<int, AreaInfo> _areaDictionary = new Dictionary<int, AreaInfo> { { 0 , new AreaInfo() } };
         public void UpdateAreaValue()
         {
-            var areaValues = Settings.Instance.AreaSettings.Areas;
+            var areaValues = Settings.Instance.AreaSettings.AreasInfo;
 
             _areaDictionary = new Dictionary<int, AreaInfo>();
             for (var i = 0; i < areaValues.Length; i++)
@@ -34,7 +37,7 @@ namespace SkyCrush.WSGenerator
 
         public void UpdatePool()
         {
-            var poolsInfo = Settings.Instance.PoolSettings.PoolsInfo;
+            var poolsInfo = Settings.Instance.PoolSettings.PoolObjectsInfo;
             _poolDictionary = new Dictionary<string, PoolObjectInfo>();
 
             for (var i = 0; i < poolsInfo.Length; i++)
@@ -44,7 +47,10 @@ namespace SkyCrush.WSGenerator
                 _poolDictionary.Add(poolsInfo[i].instance.name, poolsInfo[i]);
             }
 
-            poolObjectValue = _poolDictionary[instanceName];
+            if (_poolDictionary.TryGetValue(instanceName, out PoolObjectInfo poolObjectInfo))
+            {
+                poolObjectValue = poolObjectInfo;
+            }
         }
 
         public void UpdateCurveDescription(float duration)

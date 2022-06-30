@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fff10a3c6f690f44b3c97dc68b6cdd4, type: 3}
   m_Name: WSG_PoolSettings
   m_EditorClassIdentifier: 
-  poolsInfo: []
+  poolObjectsInfo:
+  - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+  - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+  - instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}

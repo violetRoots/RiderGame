@@ -11,6 +11,7 @@ namespace SkyCrush.WSGenerator
         public float MaxFrequencyGenerationValue => maxFrequencyGenerationValue;
         public AreaSettings AreaSettings => areaSettings;
         public PoolSettings PoolSettings => poolSettings;
+        public SpawnPointer2D SpawnPointer2D => spawnPointer2D;
 
         public static void Select()
         {

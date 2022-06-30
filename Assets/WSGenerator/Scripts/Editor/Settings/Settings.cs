@@ -19,5 +19,9 @@ namespace SkyCrush.WSGenerator
         [Header("Pool Settings")]
         [SerializeField]
         private PoolSettings poolSettings;
+
+        [Header("Spawn Settings")]
+        [SerializeField]
+        private SpawnPointer2D spawnPointer2D;
     }
 }

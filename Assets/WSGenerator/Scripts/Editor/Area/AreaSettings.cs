@@ -15,13 +15,4 @@ namespace SkyCrush.WSGenerator
         [SerializeField]
         private AreaInfo[] areas;
     }
-
-    [Serializable]
-    public struct AreaInfo
-    {
-        public Vector2 center;
-        public Vector2 size;
-        public Color color;
-        public bool drawGizmos;
-    }
 }

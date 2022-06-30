@@ -21,9 +21,9 @@ namespace SkyCrush.WSGenerator
             var poolsContainersParent = new GameObject(PoolsContainersParentName);
             poolsContainersParent.transform.SetParent(transform);
 
-            foreach (var poolInfo in _poolSettings.PoolsInfo)
+            foreach (var poolInfo in _poolSettings.PoolObjectsInfo)
             {
-                var container = new PoolContainer(poolInfo, poolsContainersParent.transform);
+                var container = new PoolContainer(_poolSettings, poolInfo, poolsContainersParent.transform);
 
                 container.OnTakeFromPool += GetCallback;
                 container.OnReturnToPool += ReleaseCallback;

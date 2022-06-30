@@ -18,6 +18,7 @@ namespace SkyCrush.WSGenerator
 
         private PoolManager _poolManager = new PoolManager();
         private StageManager _stageManager = new StageManager();
+        private AreaManager _areaManager = new AreaManager();
 
         private GenerateProcess[] _processes;
 
@@ -35,6 +36,7 @@ namespace SkyCrush.WSGenerator
         {
             this.sequence = sequence;
 
+            _areaManager.Init(settings, this);
             _poolManager.Init(sequence, transform);
 
             _stageManager.OnStartStage += StartGenerateProcesses;
@@ -92,7 +94,7 @@ namespace SkyCrush.WSGenerator
 
             for (var i = 0; i < objects.Length; i++)
             {
-                _processes[i] = new GenerateProcess(settings, this, objects[i], _poolManager.GetPoolContainer(objects[i].Pool.instance.name));
+                _processes[i] = new GenerateProcess(settings, this, objects[i], _poolManager.GetPoolContainer(objects[i].InstanceName), _areaManager.GetArea(objects[i].AreaIndex));
                 _processes[i].Start();
             }
         }

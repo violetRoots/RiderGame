@@ -16,3 +16,5 @@ MonoBehaviour:
   minFrequencyGenerationValue: 0.1
   maxFrequencyGenerationValue: 100
   areaSettings: {fileID: 11400000, guid: 85562700ca031534db77bf1886475488, type: 2}
+  poolSettings: {fileID: 11400000, guid: 7ca74be20e07f3a4790a464908b08d4b, type: 2}
+  spawnPointer2D: {fileID: -6979314674022946624, guid: 5bd80f5635857124b8c5762fcfdecbfd, type: 3}

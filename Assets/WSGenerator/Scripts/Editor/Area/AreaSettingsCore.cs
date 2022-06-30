@@ -6,7 +6,7 @@ namespace SkyCrush.WSGenerator
     public partial class AreaSettings
     {
         public Area2D AreaPrefab => areaPrefab;
-        public AreaInfo[] Areas => areas;
+        public AreaInfo[] AreasInfo => areas;
 
         private AreaSettingsUpdater _settingsUpdater;
 

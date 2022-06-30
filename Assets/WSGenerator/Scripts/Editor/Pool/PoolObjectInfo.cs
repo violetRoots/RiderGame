@@ -7,7 +7,5 @@ namespace SkyCrush.WSGenerator
     public struct PoolObjectInfo
     {
         public GameObject instance;
-        public Vector2 spawnBounds;
-        public int count;
     }
 }

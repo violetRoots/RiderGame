@@ -4,6 +4,7 @@ namespace SkyCrush.WSGenerator
 {
     public partial class PoolSettings
     {
-        public ref PoolObjectInfo[] PoolsInfo => ref poolsInfo;
+        public int DefaultPoolSize => defaultPoolSize;
+        public ref PoolObjectInfo[] PoolObjectsInfo => ref poolObjectsInfo;
     }
 }
