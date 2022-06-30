@@ -40,6 +40,19 @@ namespace RiderGame.World
                 _filter2.GetEntity(i).Replace(new InactiveObject());
             }
 
+            _generator.StartCoroutine(DeactivateOnEndOfFrame());
+        }
+
+        public void Destroy()
+        {
+            _generator.PoolManager.OnTakeFromPools -= ActivateCallback;
+            _generator.PoolManager.OnReturnToPools -= DeactivateCallback;
+        }
+
+        private IEnumerator DeactivateOnEndOfFrame()
+        {
+            yield return new WaitForEndOfFrame();
+
             foreach (var i in _filter3)
             {
                 var gameObject = _filter3.Get1(i);
@@ -47,12 +60,6 @@ namespace RiderGame.World
                 _filter3.GetEntity(i).Del<InactiveObject>();
                 _generator.PoolManager.GetPoolContainer(gameObject.instance.name, true).Release(gameObject.instance);
             }
-        }
-
-        public void Destroy()
-        {
-            _generator.PoolManager.OnTakeFromPools -= ActivateCallback;
-            _generator.PoolManager.OnReturnToPools -= DeactivateCallback;
         }
 
         private void ActivateCallback(GameObject poolObject)
