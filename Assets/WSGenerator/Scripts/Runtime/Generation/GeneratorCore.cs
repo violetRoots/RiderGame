@@ -49,6 +49,25 @@ namespace SkyCrush.WSGenerator
             IsInitilized = true;
         }
 
+        public override string ToString()
+        {
+            if(StageManager.CurrentStage == null)
+            {
+                return "stage: null";
+            }
+
+            var res = $"stage: {StageManager.CurrentStage.Name}\n";
+            res += $"process: {(StageManager.Process * 100.0f).ToString("0.00")}%\n";
+
+            for(var i = 0; i < _processes.Length; i++)
+            {
+                var process = _processes[i];
+                res += $"object: {process.GenerateObjectInfo.InstanceName} area: {process.GenerateObjectInfo.AreaIndex} frequency: {process.Frequency.ToString("0.00")}\n";
+            }
+
+            return res;
+        }
+
         public void Clear()
         {
             sequence = null;
