@@ -49,7 +49,7 @@ namespace SkyCrush.WSGenerator
             IsInitilized = true;
         }
 
-        public override string ToString()
+        public string GetDebugStageInfo()
         {
             if(StageManager.CurrentStage == null)
             {
@@ -57,12 +57,12 @@ namespace SkyCrush.WSGenerator
             }
 
             var res = $"stage: {StageManager.CurrentStage.Name}\n";
-            res += $"process: {(StageManager.Process * 100.0f).ToString("0.00")}%\n";
+            res += $"process: {(StageManager.Process * 100.0f):0.00)}%\n";
 
             for(var i = 0; i < _processes.Length; i++)
             {
                 var process = _processes[i];
-                res += $"object: {process.GenerateObjectInfo.InstanceName} area: {process.GenerateObjectInfo.AreaIndex} frequency: {process.Frequency.ToString("0.00")}\n";
+                res += $"object: {process.GenerateObjectInfo.InstanceName} area: {process.GenerateObjectInfo.AreaIndex} frequency: {process.Frequency:0.00} o/s\n";
             }
 
             return res;

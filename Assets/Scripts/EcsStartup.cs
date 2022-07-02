@@ -28,13 +28,13 @@ namespace RiderGame
 
             _systems
                 .ConvertScene()
-                .Inject(_ecsWorld)
                 .Inject(_gameConfigs)
                 .Inject(_generator)
                 .Inject(_runtimeLevelData)
                 .Add(new UpdateRuntimeLevelDataSystem())
                 .Add(new InputSystem())
                 .Add(new ObjectActivationSystem())
+                .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
                 .Init();

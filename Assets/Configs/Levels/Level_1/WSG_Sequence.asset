@@ -14,107 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedStages:
   - name: First Stage
-    duration: 15
+    duration: 100
     customData:
-      ySpeed: 15
+      ySpeed: 10
     generateObjects:
     - instanceName: Obstacle_1
       poolObjectValue:
         instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-      areaIndex: 0
-      areaValue:
-        center: {x: -25, y: -150}
-        size: {x: 50, y: 50}
-        color: {r: 0, g: 0.6484008, b: 1, a: 1}
-        drawGizmos: 1
-      frequencyCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 3.4857178
-          inSlope: 1.015863
-          outSlope: 1.015863
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 6.4125605
-          value: 10
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 10
-          value: 10
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
-      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 25+-1
-    - instanceName: Obstacle_2
-      poolObjectValue:
-        instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
-      areaIndex: 1
-      areaValue:
-        center: {x: 25, y: -150}
-        size: {x: 50, y: 50}
-        color: {r: 0, g: 1, b: 0.18816328, a: 1}
-        drawGizmos: 1
-      frequencyCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 3.2380676
-          inSlope: 1.092187
-          outSlope: 1.092187
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 6.191185
-          value: 10
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 10
-          value: 10
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
-      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 25+-1
-    - instanceName: Obstacle_3
-      poolObjectValue:
-        instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
       areaIndex: 2
       areaValue:
-        center: {x: 0, y: -100}
-        size: {x: 150, y: 50}
+        center: {x: 0, y: -80}
+        size: {x: 50, y: 50}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -122,27 +32,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.5714111
-          inSlope: 1.1831868
-          outSlope: 1.1831868
+          value: 1.3576164
+          inSlope: -0.013245011
+          outSlope: -0.013245011
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 6.278458
-          value: 10
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
           time: 10
-          value: 10
-          inSlope: 0
-          outSlope: 0
+          value: 1.2251663
+          inSlope: -0.013245011
+          outSlope: -0.013245011
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -150,111 +51,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
+      x: 'time: 1 unit = duration / 10 (10 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 24+-1
-  - name: Second Stage
-    duration: 15
-    customData:
-      ySpeed: 15
-    generateObjects:
-    - instanceName: Obstacle_1
-      poolObjectValue:
-        instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
-      areaIndex: 0
-      areaValue:
-        center: {x: -25, y: -150}
-        size: {x: 50, y: 50}
-        color: {r: 0, g: 0.6484008, b: 1, a: 1}
-        drawGizmos: 1
-      frequencyCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 10
-          inSlope: -3.360841
-          outSlope: -3.360841
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 2.4474773
-          value: 1.7744184
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 10
-          value: 2.9523807
-          inSlope: 0.3124896
-          outSlope: 0.3124896
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.21943574
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
-      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 10+-1
+      objectsCount: 26+-1
     - instanceName: Obstacle_2
       poolObjectValue:
         instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
-      areaIndex: 1
-      areaValue:
-        center: {x: 25, y: -150}
-        size: {x: 50, y: 50}
-        color: {r: 0, g: 1, b: 0.18816328, a: 1}
-        drawGizmos: 1
-      frequencyCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 10
-          inSlope: -2.0585046
-          outSlope: -2.0585046
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 3.3054392
-          value: 3.195738
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 9.780579
-          value: 2.2095222
-          inSlope: -0.15230805
-          outSlope: -0.15230805
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
-      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 13+-1
-    - instanceName: Obstacle_3
-      poolObjectValue:
-        instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
       areaIndex: 2
       areaValue:
-        center: {x: 0, y: -100}
-        size: {x: 150, y: 50}
+        center: {x: 0, y: -80}
+        size: {x: 50, y: 50}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -262,27 +68,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 10
-          inSlope: -2.7766051
-          outSlope: -2.7766051
+          value: 1.3576164
+          inSlope: -0.013245011
+          outSlope: -0.013245011
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 2.6891303
-          value: 2.5333471
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
           time: 10
-          value: 2.4571428
-          inSlope: -0.010423425
-          outSlope: -0.010423425
+          value: 1.2251663
+          inSlope: -0.013245011
+          outSlope: -0.013245011
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -290,7 +87,43 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1,5 sec)'
+      x: 'time: 1 unit = duration / 10 (10 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 11+-1
+      objectsCount: 26+-1
+    - instanceName: Obstacle_3
+      poolObjectValue:
+        instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
+      areaIndex: 2
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 50, y: 50}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1.3576164
+          inSlope: -0.013245011
+          outSlope: -0.013245011
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 10
+          value: 1.2251663
+          inSlope: -0.013245011
+          outSlope: -0.013245011
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (10 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
+      objectsCount: 26+-1
   randomStages: []

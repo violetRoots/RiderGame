@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 274725414346001983}
   - component: {fileID: 2400238536106885614}
+  - component: {fileID: 469749172734669700}
   m_Layer: 0
-  m_Name: L2_obs_L_2
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &469749172734669700
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664530469880118537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.21, y: 2.15}
+  m_Size: {x: 6.75, y: 4.24}
+  m_Direction: 1
 --- !u!1 &6362932393906131555
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +110,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673510720160043395}
+  - component: {fileID: 6263822753302230500}
+  - component: {fileID: 669322902154284272}
+  - component: {fileID: 9172324106799462944}
+  - component: {fileID: 2980118282374966127}
   m_Layer: 0
   m_Name: Obstacle_2
   m_TagString: Untagged
@@ -117,6 +138,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6263822753302230500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362932393906131555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  convertMode: 0
+--- !u!114 &669322902154284272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362932393906131555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689440deae118ee47a0dba1c6c398714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    instance: {fileID: 6362932393906131555}
+--- !u!114 &9172324106799462944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362932393906131555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41f493f714b4e4b8c7339f1c8c7d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    spriteRenderer: {fileID: 2400238536106885614}
+    layerEdgeOffset: 4.27
+--- !u!114 &2980118282374966127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362932393906131555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7897842520507623487
 PrefabInstance:
   m_ObjectHideFlags: 0

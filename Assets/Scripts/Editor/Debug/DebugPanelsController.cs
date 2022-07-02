@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RiderGame.Editor
+namespace RiderGame.Editor.Debug
 {
     public class DebugPanelsController : MonoBehaviour
     {
