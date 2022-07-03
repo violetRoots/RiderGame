@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7112712221519961771}
   - component: {fileID: 4862443086523820774}
-  - component: {fileID: 6782403788257579869}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -85,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6782403788257579869
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183815775041913707}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.68}
-  m_Size: {x: 8.92, y: 5.41}
-  m_Direction: 1
 --- !u!1 &6767068810095633567
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +97,8 @@ GameObject:
   - component: {fileID: 421054232876744090}
   - component: {fileID: 6764765128973675896}
   - component: {fileID: 4506076183681428069}
+  - component: {fileID: 7772090329855946196}
+  - component: {fileID: 6520015236618883569}
   m_Layer: 0
   m_Name: Obstacle_3
   m_TagString: Untagged
@@ -179,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     spriteRenderer: {fileID: 4862443086523820774}
-    layerEdgeOffset: 5.17
+    layerEdgeOffset: 4.69
 --- !u!114 &4506076183681428069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +177,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7772090329855946196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767068810095633567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8a84e617405f54ab4e91e7d91b00f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &6520015236618883569
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767068810095633567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 2.68}
+  m_Size: {x: 8.92, y: 5.41}
+  m_Direction: 1
 --- !u!1001 &5122719167625736511
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,11 +1,14 @@
 using UnityEngine;
 using Leopotam.Ecs;
 using Voody.UniLeo;
+using LeoEcsPhysics;
+using SkyCrush.WSGenerator;
 using RiderGame.Inputs;
 using RiderGame.SO;
 using RiderGame.World;
 using RiderGame.Level;
-using SkyCrush.WSGenerator;
+using RiderGame.Physics;
+using RiderGame.Gameplay;
 
 namespace RiderGame
 {
@@ -16,21 +19,29 @@ namespace RiderGame
 
         private RuntimeLevelData _runtimeLevelData;
 
+        private EcsStartup _ecsStartupObject;
         private EcsWorld _ecsWorld;
         private EcsSystems _systems;
 
         private void Start()
         {
+            _ecsStartupObject = this;
+
             _ecsWorld = new EcsWorld();
             _systems = new EcsSystems(_ecsWorld);
+
+            EcsPhysicsEvents.ecsWorld = _ecsWorld;
 
             _runtimeLevelData = new RuntimeLevelData();
 
             _systems
                 .ConvertScene()
+                .Inject(_ecsStartupObject)
                 .Inject(_gameConfigs)
                 .Inject(_generator)
                 .Inject(_runtimeLevelData)
+                .Add(new OneFramePhysicsSystem())
+                .Add(new PlayerCollisionSystem())
                 .Add(new UpdateRuntimeLevelDataSystem())
                 .Add(new InputSystem())
                 .Add(new ObjectActivationSystem())
@@ -48,6 +59,7 @@ namespace RiderGame
 
         private void OnDestroy()
         {
+            EcsPhysicsEvents.ecsWorld = null;
             _systems?.Destroy();
             _systems = null;
             _ecsWorld?.Destroy();

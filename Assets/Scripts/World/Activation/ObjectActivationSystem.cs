@@ -12,6 +12,8 @@ namespace RiderGame.World
     {
         private readonly GameConfiguration _gameConfigs;
         private readonly Generator _generator;
+        private readonly EcsStartup _ecsStartupObject;
+
 
         private readonly EcsFilter<EcsGameObject> _filter1;
         private readonly EcsFilter<EcsGameObject, MoveWorldObject> _filter2;
@@ -40,7 +42,7 @@ namespace RiderGame.World
                 _filter3.GetEntity(i).Replace(new InactiveObject());
             }
 
-            _generator.StartCoroutine(DeactivateOnEndOfFrame());
+            _ecsStartupObject.StartCoroutine(DeactivateOnEndOfFrame());
         }
 
         public void Destroy()
@@ -64,7 +66,7 @@ namespace RiderGame.World
 
         private void ActivateCallback(GameObject poolObject)
         {
-            _generator.StartCoroutine(ActivateProcess(poolObject));
+            _ecsStartupObject.StartCoroutine(ActivateProcess(poolObject));
         }
 
         private IEnumerator ActivateProcess(GameObject poolObject)
