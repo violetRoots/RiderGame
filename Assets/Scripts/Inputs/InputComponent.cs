@@ -4,10 +4,7 @@ using Voody.UniLeo;
 
 namespace RiderGame.Inputs
 {
-    public sealed class InputComponent : MonoProvider<Input>
-    {
-        public Input Value => value;
-    }
+    public sealed class InputComponent : MonoProvider<Input> { }
 
     public struct Input
     {

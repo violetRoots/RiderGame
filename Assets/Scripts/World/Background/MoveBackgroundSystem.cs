@@ -22,7 +22,6 @@ namespace RiderGame.World
                 ref var background = ref _filter.Get1(i);
 
                 var offset = Quaternion.Euler(0, 0, _levelData.MovementDirection) * new Vector3(0, _levelData.MovementSpeed, 0);
-                Debug.Log(offset);
                 _textureOffset -= offset;
                 background.renderer.material.mainTextureOffset = _textureOffset * BackgroundSpeedMultiplier;
             }

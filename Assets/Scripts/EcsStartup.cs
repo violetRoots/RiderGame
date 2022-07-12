@@ -50,6 +50,7 @@ namespace RiderGame
                 .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
+                .Add(new CharacterAnimationSystem())
                 .Init();
 
             _gizmosSystems = new EcsSystems(_ecsWorld);

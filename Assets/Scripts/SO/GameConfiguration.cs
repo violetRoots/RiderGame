@@ -3,7 +3,7 @@ using SkyCrush.Utility;
 
 namespace RiderGame.SO
 {
-    [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs")]
+    [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs", order = 0)]
     public class GameConfiguration : SingletonConfiguration<GameConfiguration>
     {
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
