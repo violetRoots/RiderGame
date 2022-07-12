@@ -16,7 +16,7 @@ MonoBehaviour:
   - name: First Stage
     duration: 100
     customData:
-      ySpeed: 10
+      movementSpeed: 10
     generateObjects:
     - instanceName: Obstacle_1
       poolObjectValue:

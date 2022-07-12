@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RiderGame.Editor.CustomGizmos
 {
-    public class ChangeLayerEdgeGizmos : MonoBehaviour
+    public class ChangeLayerEdgeDrawer : BaseGizmosDrawer
     {
 #if UNITY_EDITOR
         private const float XPointPos = 1000.0f;

@@ -4,22 +4,29 @@ namespace RiderGame.Level
 {
     public class RuntimeLevelData
     {
-        public float YSpeed => _ySpeed;
-        public float XSpeed => _levelConfig.XSpeed;
+        public float MovementSpeed => _movementSpeed;
+        public float MovementDirection => _movementDirection;
 
         private LevelConfiguration _levelConfig;
 
-        private float _ySpeed;
+        private float _movementSpeed;
+        private float _movementDirection;
 
         public void Init(LevelConfiguration levelConfiguration)
         {
             _levelConfig = levelConfiguration;
-            _ySpeed = 0;
+            _movementSpeed = 0;
+            _movementDirection = 0;
         }
 
-        public void SetYSpeed(float speed)
+        public void SetMovementSpeed(float speed)
         {
-            _ySpeed = speed;
+            _movementSpeed = speed;
+        }
+
+        public void SetMovementDirection(float direction)
+        {
+            _movementDirection = direction;
         }
     }
 }

@@ -12,18 +12,18 @@ namespace RiderGame.World
 
         private readonly RuntimeLevelData _levelData;
 
-        private EcsFilter<Input, Background> _filter;
-        private Vector2 _textureOffset;
+        private EcsFilter<Background> _filter;
+        private Vector3 _textureOffset;
 
         public void Run()
         {
             foreach(var i in _filter)
             {
-                ref var input = ref _filter.Get1(i);
-                ref var background = ref _filter.Get2(i);
+                ref var background = ref _filter.Get1(i);
 
-                _textureOffset.y += -_levelData.YSpeed;
-                _textureOffset.x += input.horizontal * _levelData.XSpeed;
+                var offset = Quaternion.Euler(0, 0, _levelData.MovementDirection) * new Vector3(0, _levelData.MovementSpeed, 0);
+                Debug.Log(offset);
+                _textureOffset -= offset;
                 background.renderer.material.mainTextureOffset = _textureOffset * BackgroundSpeedMultiplier;
             }
         }

@@ -2,7 +2,7 @@ using SkyCrush.WSGenerator;
 using UnityEngine;
 using TMPro;
 
-namespace RiderGame.Editor.Debug
+namespace RiderGame.Editor.DebugUI
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class DebugStageInfoPanel : MonoBehaviour

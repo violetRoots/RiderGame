@@ -1,18 +1,19 @@
+using RiderGame.World;
 using UnityEditor;
 using UnityEngine;
 
 namespace RiderGame.Editor.CustomGizmos
 {
-    public class ObjectLayerEdgeGizmos : MonoBehaviour
+    public class ObjectLayerDrawer : BaseGizmosDrawer
     {
 #if UNITY_EDITOR
         private const float XPointPos = 15.0f;
 
         private Overlay _overlayValue;
 
-        private void Awake()
+        public void UpdateValue(Overlay newValue)
         {
-            _overlayValue = GetComponent<OverlayComponent>().Value;
+            _overlayValue = newValue;
         }
 
         private void OnDrawGizmos()

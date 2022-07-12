@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3922247801618602770}
   - component: {fileID: 1787628148917851698}
   - component: {fileID: 1047680040981287371}
+  - component: {fileID: 8731828182283582614}
   - component: {fileID: 1495459501871581157}
   - component: {fileID: 133091875780067470}
   - component: {fileID: 9035512836481144325}
@@ -165,6 +166,20 @@ MonoBehaviour:
   value:
     spriteRenderer: {fileID: 9028799586203459198}
     layerEdgeOffset: 2.99
+--- !u!114 &8731828182283582614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541395732058719004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    drawer: {fileID: 1495459501871581157}
 --- !u!114 &1495459501871581157
 MonoBehaviour:
   m_ObjectHideFlags: 0

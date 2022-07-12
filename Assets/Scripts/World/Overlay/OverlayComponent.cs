@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Voody.UniLeo;
 
-namespace RiderGame
+namespace RiderGame.World
 {
     public class OverlayComponent : MonoProvider<Overlay> 
     {

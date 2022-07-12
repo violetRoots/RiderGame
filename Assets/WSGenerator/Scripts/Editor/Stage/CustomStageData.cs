@@ -7,9 +7,9 @@ namespace SkyCrush.WSGenerator
     [Serializable]
     public class CustomStageData
     {
-        public float YSpeed => ySpeed;
+        public float MovementSpeed => movementSpeed;
 
         [SerializeField]
-        private float ySpeed;
+        private float movementSpeed;
     }
 }
