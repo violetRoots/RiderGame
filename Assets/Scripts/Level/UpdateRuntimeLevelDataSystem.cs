@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using Leopotam.Ecs;
 using SkyCrush.WSGenerator;
 using SkyCrush.Utility;
@@ -28,7 +29,19 @@ namespace RiderGame.Level
             {
                 ref var input = ref _inputFilter.Get1(i);
 
-                var direction = _levelData.MovementDirection + (input.mouseDelta.x * _gameConfigs.DirectionSensitivity);
+                var direction = _levelData.MovementDirection;
+#if UNITY_EDITOR
+                if (EditorApplication.isRemoteConnected)
+                {
+                    direction += input.mouseDelta.x * _gameConfigs.TouchDirectionSensitivity;
+                }
+                else
+                {
+                    direction += input.mouseDelta.x * _gameConfigs.MouseDirectionSensitivity;
+                }
+#elif UNITY_ANDROID || UNITY_IOS
+                direction += input.mouseDelta.x * _gameConfigs.TouchDirectionSensitivity;
+#endif
                 direction = CustomMath.ClampAngle(direction, -_gameConfigs.ClampDirectionAngle, _gameConfigs.ClampDirectionAngle);
                 _levelData.SetMovementDirection(direction);
             }

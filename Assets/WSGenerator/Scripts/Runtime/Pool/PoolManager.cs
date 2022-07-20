@@ -14,9 +14,9 @@ namespace SkyCrush.WSGenerator
         private PoolSettings _poolSettings;
         private List<PoolContainer> _poolContainers = new List<PoolContainer>();
 
-        public void Init(Sequence sequence, Transform transform)
+        public void Init(Settings settings, Sequence sequence, Transform transform)
         {
-            _poolSettings = Settings.Instance.PoolSettings;
+            _poolSettings = settings.PoolSettings;
 
             var poolsContainersParent = new GameObject(PoolsContainersParentName);
             poolsContainersParent.transform.SetParent(transform);

@@ -8,6 +8,7 @@ namespace RiderGame.Inputs
         private readonly EcsFilter<Input> _filter;
 
         private Vector2 _previousMousePos;
+        private Vector2 _mouseDelta;
 
         public void Run()
         {
@@ -23,10 +24,16 @@ namespace RiderGame.Inputs
                 {
                     Vector2 mousePos = UnityEngine.Input.mousePosition;
 
-                    input.mouseDelta = mousePos - _previousMousePos;
+                    _mouseDelta = mousePos - _previousMousePos;
 
                     _previousMousePos = mousePos;
                 }
+                else if (UnityEngine.Input.GetMouseButtonUp(0))
+                {
+                    _mouseDelta = Vector2.zero;
+                }
+
+                input.mouseDelta = _mouseDelta;
             }
         }
     }

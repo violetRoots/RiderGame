@@ -7,6 +7,7 @@ namespace SkyCrush.Utility
 {
     public class SingletonSOEditorOnly<T> : ScriptableObject where T : SingletonSOEditorOnly<T>
     {
+#if UNITY_EDITOR
         public static T Instance
         {
             get
@@ -22,7 +23,6 @@ namespace SkyCrush.Utility
         public static string LoadPath { get; protected set; } = "";
         private static T instance;
 
-#if UNITY_EDITOR
         private static T LoadInstance()
         {
             var assets = LoadAssetsAtPath<T>(LoadPath);

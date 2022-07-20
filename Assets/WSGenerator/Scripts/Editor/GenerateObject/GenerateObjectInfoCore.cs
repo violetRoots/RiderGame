@@ -20,8 +20,11 @@ namespace SkyCrush.WSGenerator
 
         private Dictionary<string, PoolObjectInfo> _poolDictionary = new Dictionary<string, PoolObjectInfo> { { "no name", new PoolObjectInfo() } };
         private Dictionary<int, AreaInfo> _areaDictionary = new Dictionary<int, AreaInfo> { { 0 , new AreaInfo() } };
+
         public void UpdateAreaValue()
         {
+#if UNITY_EDITOR
+
             var areaValues = Settings.Instance.AreaSettings.AreasInfo;
 
             _areaDictionary = new Dictionary<int, AreaInfo>();
@@ -32,11 +35,13 @@ namespace SkyCrush.WSGenerator
 
             areaIndex = Mathf.Clamp(areaIndex, 0, AreaIndexes.Length - 1);
             areaValue = areaValues[areaIndex];
+#endif
         }
 
 
         public void UpdatePool()
         {
+#if UNITY_EDITOR
             var poolsInfo = Settings.Instance.PoolSettings.PoolObjectsInfo;
             _poolDictionary = new Dictionary<string, PoolObjectInfo>();
 
@@ -51,10 +56,12 @@ namespace SkyCrush.WSGenerator
             {
                 poolObjectValue = poolObjectInfo;
             }
+#endif
         }
 
         public void UpdateCurveDescription(float duration)
         {
+#if UNITY_EDITOR
             x = $"time: 1 unit = duration / {CurveRange} ({(float) (duration / CurveRange)} sec)";
             y = $"frequency: 1 unit = 1 obj / {Settings.Instance.FrequencySecondsPerUnit} sec ({(float)(1 / Settings.Instance.FrequencySecondsPerUnit)} obj/sec)";
 
@@ -73,6 +80,7 @@ namespace SkyCrush.WSGenerator
             var countSize = count.ToString().Length;
             var correction = countSize < 3 ? 1 : Mathf.Pow(10, (countSize-2));
             objectsCount = $"{count}+-{correction}";
+#endif
         }
     }
 }

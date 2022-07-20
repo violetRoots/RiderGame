@@ -60,6 +60,6 @@ namespace SkyCrush.WSGenerator
         {
             CustomGizmos.DrawRect(transform.position + (Vector3)BoxCollider.offset, BoxCollider.size, Color.yellow);
         }
-    }
 #endif
+    }
 }

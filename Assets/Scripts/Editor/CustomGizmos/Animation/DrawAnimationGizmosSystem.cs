@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace RiderGame.Editor.CustomGizmos
 {
+#if UNITY_EDITOR
     public class DrawAnimationGizmosSystem : IEcsRunSystem
     {
         private readonly RuntimeLevelData _runtimeLevelData;
@@ -35,4 +36,5 @@ namespace RiderGame.Editor.CustomGizmos
             }
         }
     }
+#endif
 }

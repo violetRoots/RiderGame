@@ -4,10 +4,11 @@ using SkyCrush.Utility;
 
 namespace SkyCrush.WSGenerator
 {
-#if UNITY_EDITOR
+
     [ExecuteInEditMode]
     public class AreaSettingsUpdater : MonoBehaviour
     {
+#if UNITY_EDITOR
         private const string AreaContainerName = "Areas";
 
         [Button("Settings")]
@@ -65,6 +66,6 @@ namespace SkyCrush.WSGenerator
                 _areas[i] = newArea;
             }
         }
-    }
 #endif
+    }
 }

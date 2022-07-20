@@ -38,7 +38,7 @@ namespace SkyCrush.WSGenerator
             this.sequence = sequence;
 
             _areaManager.Init(settings, this);
-            _poolManager.Init(sequence, transform);
+            _poolManager.Init(settings, sequence, transform);
 
             _stageManager.OnStartStage += StartGenerateProcesses;
             _stageManager.OnEndStage += StopGenerateProcesses;

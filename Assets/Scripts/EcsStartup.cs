@@ -52,7 +52,7 @@ namespace RiderGame
                 .Add(new MoveBackgroundSystem())
                 .Add(new CharacterAnimationSystem())
                 .Init();
-
+#if UNITY_EDITOR
             _gizmosSystems = new EcsSystems(_ecsWorld);
             _gizmosSystems
                 .Inject(_ecsStartupObject)
@@ -62,6 +62,7 @@ namespace RiderGame
                 .Add(new DrawAnimationGizmosSystem())
                 .Add(new DrawOverlayGizmosSystem())
                 .Init();
+#endif
         }
 
 
@@ -70,6 +71,7 @@ namespace RiderGame
             _updateSystems?.Run();
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
 
@@ -77,6 +79,7 @@ namespace RiderGame
 
             _gizmosSystems.Run();
         }
+#endif
 
         private void OnDestroy()
         {

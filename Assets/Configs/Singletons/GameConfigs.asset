@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxActiveObjectPosition: 100
   changeLayerEdgePosition: 0
-  directionSensitivity: 0.03
+  mouseDirectionSensitivity: 0.1
+  touchDirectionSensitivity: 0.25
   clampDirectionAngle: 60
   _levelConfigs:
   - {fileID: 11400000, guid: 76bd132b660bd4f4a8cd28028d4f5202, type: 2}

@@ -13,9 +13,11 @@ namespace SkyCrush.WSGenerator
         public PoolSettings PoolSettings => poolSettings;
         public SpawnPointer2D SpawnPointer2D => spawnPointer2D;
 
+#if UNITY_EDITOR
         public static void Select()
         {
             Selection.activeObject = Instance;
         }
+#endif
     }
 }

@@ -10,6 +10,8 @@ namespace SkyCrush.WSGenerator
 
         private AreaSettingsUpdater _settingsUpdater;
 
+#if UNITY_EDITOR
+
         private void OnValidate()
         {
             if (_settingsUpdater == null) return;
@@ -24,5 +26,6 @@ namespace SkyCrush.WSGenerator
         {
             _settingsUpdater = updater;
         }
+#endif
     }
 }

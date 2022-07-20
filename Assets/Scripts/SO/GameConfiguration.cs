@@ -8,7 +8,8 @@ namespace RiderGame.SO
     {
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public float ChangeLayerEdge => changeLayerEdgePosition;
-        public float DirectionSensitivity => directionSensitivity;
+        public float MouseDirectionSensitivity => mouseDirectionSensitivity;
+        public float TouchDirectionSensitivity => touchDirectionSensitivity;
         public float ClampDirectionAngle => clampDirectionAngle;
         public LevelConfiguration[] Levels => _levelConfigs;
 
@@ -20,7 +21,9 @@ namespace RiderGame.SO
 
         [Header("Gameplay")]
         [SerializeField]
-        private float directionSensitivity = 0.01f;
+        private float mouseDirectionSensitivity = 0.1f;
+        [SerializeField]
+        private float touchDirectionSensitivity = 0.5f;
         [SerializeField]
         private float clampDirectionAngle = 60.0f;
 

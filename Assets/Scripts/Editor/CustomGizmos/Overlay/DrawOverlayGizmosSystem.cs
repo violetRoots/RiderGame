@@ -3,6 +3,7 @@ using RiderGame.World;
 
 namespace RiderGame.Editor.CustomGizmos
 {
+#if UNITY_EDITOR
     public class DrawOverlayGizmosSystem : IEcsRunSystem
     {
         private readonly EcsFilter<CustomGizmos, Overlay> _customGizmosFilter;
@@ -18,4 +19,5 @@ namespace RiderGame.Editor.CustomGizmos
             }
         }
     }
+#endif
 }

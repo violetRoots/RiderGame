@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
-  m_Name: SpriteAnimation_15
+  m_Name: SpriteAnimation_30
   m_EditorClassIdentifier: 
-  fps: 60
+  fps: 30
   frames:
-  - {fileID: 21300000, guid: 03cc9916562f2496599cf2387f887789, type: 3}
-  - {fileID: 21300000, guid: d5826e00f3b724bea96a2e7e0af03005, type: 3}
-  - {fileID: 21300000, guid: fab6da2b9c72a4a2f9c5a63204b49a9b, type: 3}
+  - {fileID: 21300000, guid: af54cd013f03a4d46a4d0b4e78366ea6, type: 3}
+  - {fileID: 21300000, guid: 13fb4fb2414574fb4b2306a05721aa65, type: 3}
+  - {fileID: 21300000, guid: 4a700a56319794140b70331ed60a5c3a, type: 3}
   triggers: []

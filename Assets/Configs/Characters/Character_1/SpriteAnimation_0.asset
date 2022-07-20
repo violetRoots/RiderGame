@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: SpriteAnimation_0
   m_EditorClassIdentifier: 
-  fps: 60
+  fps: 30
   frames:
   - {fileID: 21300000, guid: bf4686059fdd6437b967936864c38f01, type: 3}
   - {fileID: 21300000, guid: f8669a4a184cb487a8819123bb56f6de, type: 3}
