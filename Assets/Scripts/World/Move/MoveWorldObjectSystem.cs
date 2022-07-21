@@ -1,13 +1,13 @@
 using UnityEngine;
 using Leopotam.Ecs;
-using RiderGame.Level;
+using RiderGame.RuntimeData;
 using Input = RiderGame.Inputs.Input;
 
 namespace RiderGame.World
 {
     public class MoveWorldObjectSystem : IEcsRunSystem
     {
-        private readonly RuntimeLevelData _levelData;
+        private readonly GameplayRuntimeData _levelData;
 
         private EcsFilter<Input, EcsGameObject, MoveWorldObject> _filter;
 

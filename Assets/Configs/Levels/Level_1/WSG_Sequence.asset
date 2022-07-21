@@ -127,3 +127,39 @@ MonoBehaviour:
       x: 'time: 1 unit = duration / 10 (1 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
       objectsCount: 3+-1
+    - instanceName: Coin
+      poolObjectValue:
+        instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+      areaIndex: 2
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 100, y: 50}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 10
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 10
+          value: 10
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (1 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
+      objectsCount: 20+-1

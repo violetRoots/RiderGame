@@ -6,13 +6,13 @@ using SkyCrush.Utility;
 using RiderGame.SO;
 using Input = RiderGame.Inputs.Input;
 
-namespace RiderGame.Level
+namespace RiderGame.RuntimeData
 {
-    public class UpdateRuntimeLevelDataSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
+    public class UpdateRuntimeDataSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
         private readonly GameConfiguration _gameConfigs;
         private readonly Generator _generator;
-        private readonly RuntimeLevelData _levelData;
+        private readonly GameplayRuntimeData _levelData;
 
         private readonly EcsFilter<Input> _inputFilter;
 

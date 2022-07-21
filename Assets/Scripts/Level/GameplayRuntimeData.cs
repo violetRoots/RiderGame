@@ -1,8 +1,8 @@
 using RiderGame.SO;
 
-namespace RiderGame.Level
+namespace RiderGame.RuntimeData
 {
-    public class RuntimeLevelData
+    public class GameplayRuntimeData
     {
         public float MovementSpeed => _movementSpeed;
         public float MovementDirection => _movementDirection;

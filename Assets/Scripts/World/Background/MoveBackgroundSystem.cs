@@ -1,6 +1,6 @@
 using UnityEngine;
 using Leopotam.Ecs;
-using RiderGame.Level;
+using RiderGame.RuntimeData;
 using RiderGame.SO;
 using Input = RiderGame.Inputs.Input;
 
@@ -10,7 +10,7 @@ namespace RiderGame.World
     {
         private const float BackgroundSpeedMultiplier = 0.0004f;
 
-        private readonly RuntimeLevelData _levelData;
+        private readonly GameplayRuntimeData _levelData;
 
         private EcsFilter<Background> _filter;
         private Vector3 _textureOffset;

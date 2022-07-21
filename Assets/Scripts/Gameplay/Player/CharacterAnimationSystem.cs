@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using Leopotam.Ecs;
-using RiderGame.Level;
+using RiderGame.RuntimeData;
 using SkyCrush.Utility;
 using AnimationInfo = RiderGame.SO.AnimationInfo;
 
@@ -9,7 +9,7 @@ namespace RiderGame.Gameplay
 {
     public class CharacterAnimationSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly RuntimeLevelData _levelData;
+        private readonly GameplayRuntimeData _levelData;
 
         private readonly EcsFilter<Player, CharacterAnimation> _animationFilter;
 

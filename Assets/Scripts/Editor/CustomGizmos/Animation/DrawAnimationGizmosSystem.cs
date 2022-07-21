@@ -1,6 +1,6 @@
 using Leopotam.Ecs;
 using RiderGame.Gameplay;
-using RiderGame.Level;
+using RiderGame.RuntimeData;
 using RiderGame.World;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ namespace RiderGame.Editor.CustomGizmos
 #if UNITY_EDITOR
     public class DrawAnimationGizmosSystem : IEcsRunSystem
     {
-        private readonly RuntimeLevelData _runtimeLevelData;
+        private readonly GameplayRuntimeData _runtimeLevelData;
 
         private readonly EcsFilter<EcsGameObject, Player, CustomGizmos> _playerFilter;
 

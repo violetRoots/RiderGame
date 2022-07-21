@@ -6,7 +6,7 @@ using SkyCrush.WSGenerator;
 using RiderGame.Inputs;
 using RiderGame.SO;
 using RiderGame.World;
-using RiderGame.Level;
+using RiderGame.RuntimeData;
 using RiderGame.Physics;
 using RiderGame.Gameplay;
 using RiderGame.Editor.CustomGizmos;
@@ -15,10 +15,9 @@ namespace RiderGame
 {
     public class EcsStartup : MonoBehaviour
     {
-        [SerializeField] private GameConfiguration _gameConfigs;
-        [SerializeField] private Generator _generator;
-
-        private RuntimeLevelData _runtimeLevelData;
+        [SerializeField] private SessionStartup sessionStartup;
+        [SerializeField] private GameConfiguration gameConfigs;
+        [SerializeField] private Generator generator;
 
         private EcsStartup _ecsStartupObject;
         private EcsWorld _ecsWorld;
@@ -34,21 +33,20 @@ namespace RiderGame
 
             EcsPhysicsEvents.ecsWorld = _ecsWorld;
 
-            _runtimeLevelData = new RuntimeLevelData();
-
             _updateSystems
                 .ConvertScene()
                 .Inject(_ecsStartupObject)
-                .Inject(_gameConfigs)
-                .Inject(_generator)
-                .Inject(_runtimeLevelData)
+                .Inject(gameConfigs)
+                .Inject(generator)
+                .Inject(sessionStartup.GameplayRuntimeData)
+                .Inject(sessionStartup.SessionRuntimeData)
 
                 //Physics
                 .Add(new OneFramePhysicsSystem())
                 .Add(new ObstacleCollisionSystem())
 
                 //Runtime data updating
-                .Add(new UpdateRuntimeLevelDataSystem())
+                .Add(new UpdateRuntimeDataSystem())
 
                 //Input
                 .Add(new InputSystem())
@@ -63,14 +61,16 @@ namespace RiderGame
                 .Add(new CharacterAnimationSystem())
                 .Add(new BaseEffectSystem())
                 .Add(new InvulnerabilitySystem())
+                .Add(new CoinCollectionSystem())
                 .Init();
 #if UNITY_EDITOR
             _gizmosSystems = new EcsSystems(_ecsWorld);
             _gizmosSystems
                 .Inject(_ecsStartupObject)
-                .Inject(_gameConfigs)
-                .Inject(_generator)
-                .Inject(_runtimeLevelData)
+                .Inject(gameConfigs)
+                .Inject(generator)
+                .Inject(sessionStartup.GameplayRuntimeData)
+
                 .Add(new DrawAnimationGizmosSystem())
                 .Add(new DrawOverlayGizmosSystem())
                 .Init();
