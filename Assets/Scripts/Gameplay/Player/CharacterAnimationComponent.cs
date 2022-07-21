@@ -6,15 +6,11 @@ using SkyCrush.Utility;
 
 namespace RiderGame.Gameplay
 {
-    public sealed class CharacterAnimationComponent : MonoProvider<CharacterAnimation>
-    {
-        public CharacterAnimation Value => value;
-    }
+    public sealed class CharacterAnimationComponent : MonoProvider<CharacterAnimation> { }
 
     [Serializable]
     public struct CharacterAnimation
     {
-        public CharacterConfiguration character;
         public SpriteAnimator spriteAnimator;
     }
 }

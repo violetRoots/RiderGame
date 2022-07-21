@@ -11,21 +11,21 @@ namespace RiderGame.Editor.CustomGizmos
     {
         public const float LineLength = 10.0f;
 
-        private CharacterAnimation _characterAnimationValue;
+        private Player _playerValue;
 
-        public void UpdateValue(CharacterAnimation newValue)
+        public void UpdateValue(Player newValue)
         {
-            _characterAnimationValue = newValue;
+            _playerValue = newValue;
         }
 
         private void OnDrawGizmos()
         {
             if (!Application.isPlaying)
             {
-                _characterAnimationValue = GetComponent<CharacterAnimationComponent>().Value;
+                _playerValue = GetComponent<PlayerComponent>().Value;
             }
 
-            foreach(var animation in _characterAnimationValue.character.AnimationsInfo)
+            foreach(var animation in _playerValue.character.AnimationsInfo)
             {
                 var endPos = Quaternion.Euler(0, 0, animation.angle) * Vector3.down * LineLength;
 

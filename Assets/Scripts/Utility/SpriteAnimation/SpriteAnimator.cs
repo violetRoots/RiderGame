@@ -41,13 +41,13 @@ namespace SkyCrush.Utility
             CurrentAnimation = null;
         }
 
-        public void Play(SpriteAnimation animation, bool loop = true, int startFrame = 0)
+        public void Play(SpriteAnimation animation, bool loop = true, bool continueFrame = false, int startFrame = 0)
         {
             if (animation != null)
             {
                 if (animation != CurrentAnimation)
                 {
-                    ForcePlay(animation, loop, startFrame);
+                    ForcePlay(animation, loop, continueFrame, startFrame);
                 }
             }
             else
@@ -56,14 +56,21 @@ namespace SkyCrush.Utility
             }
         }
 
-        public void ForcePlay(SpriteAnimation animation, bool loop = true, int startFrame = 0)
+        public void ForcePlay(SpriteAnimation animation, bool loop = true, bool continueFrame = false, int startFrame = 0)
         {
             if (animation != null)
             {
                 this.loop = loop;
                 CurrentAnimation = animation;
                 Playing = true;
-                CurrentFrame = startFrame;
+                if (!continueFrame)
+                {
+                    CurrentFrame = startFrame;
+                }
+                else
+                {
+                    NextFrame(animation);
+                }
                 spriteRenderer.sprite = animation.frames[CurrentFrame];
                 StopAllCoroutines();
                 StartCoroutine(PlayAnimation(CurrentAnimation));
@@ -76,11 +83,11 @@ namespace SkyCrush.Utility
             {
                 if (CurrentAnimation != null && CurrentAnimation.name == otherNames[i])
                 {
-                    Play(animation, true, CurrentFrame);
+                    Play(animation, true, false, CurrentFrame);
                     break;
                 }
             }
-            Play(animation, true, wantFrame);
+            Play(animation, true, false, wantFrame);
         }
 
         public bool IsPlaying(SpriteAnimation animation)

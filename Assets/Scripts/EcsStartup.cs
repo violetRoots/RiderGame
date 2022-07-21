@@ -25,7 +25,7 @@ namespace RiderGame
         private EcsSystems _updateSystems;
         private EcsSystems _gizmosSystems;
 
-        private void Start()
+        private void Awake()
         {
             _ecsStartupObject = this;
 
@@ -42,15 +42,27 @@ namespace RiderGame
                 .Inject(_gameConfigs)
                 .Inject(_generator)
                 .Inject(_runtimeLevelData)
+
+                //Physics
                 .Add(new OneFramePhysicsSystem())
-                .Add(new PlayerCollisionSystem())
+                .Add(new ObstacleCollisionSystem())
+
+                //Runtime data updating
                 .Add(new UpdateRuntimeLevelDataSystem())
+
+                //Input
                 .Add(new InputSystem())
+
+                //World
                 .Add(new ObjectActivationSystem())
                 .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
+
+                //Player
                 .Add(new CharacterAnimationSystem())
+                .Add(new BaseEffectSystem())
+                .Add(new InvulnerabilitySystem())
                 .Init();
 #if UNITY_EDITOR
             _gizmosSystems = new EcsSystems(_ecsWorld);
@@ -64,7 +76,6 @@ namespace RiderGame
                 .Init();
 #endif
         }
-
 
         private void Update()
         {

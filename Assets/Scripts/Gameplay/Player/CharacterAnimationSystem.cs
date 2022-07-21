@@ -11,7 +11,7 @@ namespace RiderGame.Gameplay
     {
         private readonly RuntimeLevelData _levelData;
 
-        private readonly EcsFilter<CharacterAnimation> _animationFilter;
+        private readonly EcsFilter<Player, CharacterAnimation> _animationFilter;
 
         private AnimationInfo _currentAnimationInfo;
 
@@ -19,9 +19,10 @@ namespace RiderGame.Gameplay
         {
             foreach (var i in _animationFilter)
             {
-                ref var animationComponent = ref _animationFilter.Get1(i);
+                ref var player = ref _animationFilter.Get1(i);
+                ref var animationComponent = ref _animationFilter.Get2(i);
 
-                var animationsInfo = animationComponent.character.AnimationsInfo;
+                var animationsInfo = player.character.AnimationsInfo;
                 SpriteAnimation[] animations = new SpriteAnimation[animationsInfo.Length]; ;
 
                 for (var j = 0; j < animationsInfo.Length; j++)
@@ -37,10 +38,11 @@ namespace RiderGame.Gameplay
         {
             foreach(var i in _animationFilter)
             {
-                ref var animationComponent = ref _animationFilter.Get1(i);
+                ref var player = ref _animationFilter.Get1(i);
+                ref var animationComponent = ref _animationFilter.Get2(i);
 
                 var minDifference = float.MaxValue;
-                foreach(var animationInfo in animationComponent.character.AnimationsInfo)
+                foreach(var animationInfo in player.character.AnimationsInfo)
                 {
                     var difference = Mathf.Abs(_levelData.MovementDirection - animationInfo.angle);
 
@@ -57,7 +59,7 @@ namespace RiderGame.Gameplay
 
                 var flipValue = _currentAnimationInfo.isFlip ? -1 : 1;
                 animator.FlipTo(flipValue);
-                animator.Play(_currentAnimationInfo.animation);
+                animator.Play(_currentAnimationInfo.animation, continueFrame: true);
             }
         }
     }

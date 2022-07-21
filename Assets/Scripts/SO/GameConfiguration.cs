@@ -6,6 +6,7 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs", order = 0)]
     public class GameConfiguration : SingletonConfiguration<GameConfiguration>
     {
+        public PlayerConfiguration PlayerConfiguration => playerConfiguration;
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public float ChangeLayerEdge => changeLayerEdgePosition;
         public float MouseDirectionSensitivity => mouseDirectionSensitivity;
@@ -20,6 +21,9 @@ namespace RiderGame.SO
         private float changeLayerEdgePosition = 0.0f;
 
         [Header("Gameplay")]
+        [SerializeField]
+        private PlayerConfiguration playerConfiguration;
+        [Space(10)]
         [SerializeField]
         private float mouseDirectionSensitivity = 0.1f;
         [SerializeField]

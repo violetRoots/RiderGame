@@ -11,22 +11,17 @@ namespace RiderGame.Editor.CustomGizmos
     {
         private readonly RuntimeLevelData _runtimeLevelData;
 
-        private readonly EcsFilter<EcsGameObject, Player> _playerFilter;
-        private readonly EcsFilter<CustomGizmos, CharacterAnimation> _animationFilter;
+        private readonly EcsFilter<EcsGameObject, Player, CustomGizmos> _playerFilter;
 
         public void Run()
         {
-            foreach (var i in _animationFilter)
-            {
-                ref var customGizmos = ref _animationFilter.Get1(i);
-                ref var animation = ref _animationFilter.Get2(i);
-
-                ((CharacterAnimationDrawer)customGizmos.drawer).UpdateValue(animation);
-            }
-
             foreach (var i in _playerFilter)
             {
                 ref var gameObject = ref _playerFilter.Get1(i);
+                ref var player = ref _playerFilter.Get2(i);
+                ref var customGizmos = ref _playerFilter.Get3(i);
+
+                ((CharacterAnimationDrawer)customGizmos.drawer).UpdateValue(player);
 
                 var transform = gameObject.instance.transform;
                 var endPos = Quaternion.Euler(0, 0, _runtimeLevelData.MovementDirection) * Vector3.down * CharacterAnimationDrawer.LineLength;

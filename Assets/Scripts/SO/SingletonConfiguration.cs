@@ -7,7 +7,7 @@ namespace RiderGame.SO
     public class SingletonConfiguration<T> : SingletonSOEditorOnly<T> where T : SingletonSOEditorOnly<T>
     {
 #if UNITY_EDITOR
-        private const string NewLoadPath = "Configs/Singletons/";
+        private const string NewLoadPath = "Configs/Common/";
 
         public static new T Instance
         {

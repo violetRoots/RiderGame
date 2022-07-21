@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxActiveObjectPosition: 100
   changeLayerEdgePosition: 0
+  playerConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}
   mouseDirectionSensitivity: 0.1
   touchDirectionSensitivity: 0.25
   clampDirectionAngle: 60
