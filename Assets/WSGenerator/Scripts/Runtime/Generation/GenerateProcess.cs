@@ -5,7 +5,7 @@ namespace SkyCrush.WSGenerator
 {
     public class GenerateProcess
     {
-        private const int MaxSpawnAttempts = 10000;
+        private const int MaxSpawnAttempts = 1000;
         public GenerateObjectInfo GenerateObjectInfo { get; private set; }
         public PoolContainer PoolContainer { get; private set; }
         public float Frequency { get; private set; }

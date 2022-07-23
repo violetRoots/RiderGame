@@ -16,3 +16,7 @@ MonoBehaviour:
   pushTime: 0.2
   invunerabilityDuration: 2
   invunerabilityBlinkInterval: 0.25
+  coinPrefab: {fileID: 2215449248134015509, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+  coinsDropCount: {x: 4, y: 8}
+  coinsDropRadius: 7.5
+  coinsDropTime: 0.1

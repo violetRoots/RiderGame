@@ -1,4 +1,6 @@
 using UnityEngine;
+using NaughtyAttributes;
+using RiderGame.Gameplay;
 
 namespace RiderGame.SO
 {
@@ -9,6 +11,10 @@ namespace RiderGame.SO
         public float PushTime => pushTime;
         public float InvunerabilityDuration => invunerabilityDuration;
         public float InvunerabilityBlinkInterval => invunerabilityBlinkInterval;
+        public CoinComponent CoinPrefab => coinPrefab;
+        public Vector2Int CoinsDropCount => coinsDropCount;
+        public float CoinsDropRadius => coinsDropRadius;
+        public float CoinsDropTime => coinsDropTime;
 
         [Header("Collision with obstacle")]
         [SerializeField]
@@ -19,5 +25,14 @@ namespace RiderGame.SO
         private float invunerabilityDuration = 2.0f;
         [SerializeField]
         private float invunerabilityBlinkInterval = 0.25f;
+        [SerializeField]
+        private CoinComponent coinPrefab;
+        [MinMaxSlider(0, 50)]
+        [SerializeField]
+        private Vector2Int coinsDropCount;
+        [SerializeField]
+        private float coinsDropRadius = 1.0f;
+        [SerializeField]
+        private float coinsDropTime = 0.1f;
     }
 }

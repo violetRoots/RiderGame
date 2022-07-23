@@ -2,9 +2,9 @@ namespace RiderGame.RuntimeData
 {
     public class SessionRuntimeData
     {
-        public float CoinsCount { get; private set; }
+        public int CoinsCount { get; private set; }
 
-        public void SetCoinsCount(float value)
+        public void SetCoinsCount(int value)
         {
             CoinsCount = value;
         }

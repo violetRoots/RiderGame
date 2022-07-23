@@ -10,94 +10,94 @@ namespace RiderGame.World
 {
     public class ObjectActivationSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
+        private static readonly List<GameObject> ActivateObjects = new List<GameObject>();
+
         private readonly GameConfiguration _gameConfigs;
         private readonly Generator _generator;
         private readonly EcsStartup _ecsStartupObject;
 
+        private readonly EcsFilter<EcsGameObject> _fGameObjects;
+        private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
+        private readonly EcsFilter<EcsGameObject, ActiveObject> _fActiveObject;
+        private readonly EcsFilter<EcsGameObject, InactiveObject> _fInactiveObject;
 
-        private readonly EcsFilter<EcsGameObject> _filter1;
-        private readonly EcsFilter<EcsGameObject, MoveWorldObject> _filter2;
-        private readonly EcsFilter<EcsGameObject, ActiveObject> _filter3;
-        private readonly EcsFilter<EcsGameObject, InactiveObject> _filter4;
+        private Transform _worldObject;
 
-        private Transform _moveWorldObject;
+        public static GameObject Instantiate(GameObject gameObject, Vector2 position)
+        {
+            var instantiatedObject = GameObject.Instantiate(gameObject, position, Quaternion.identity);
+            ActivateObjects.Add(instantiatedObject);
+            return instantiatedObject;
+        }
 
         public void Init()
         {
-            _moveWorldObject = _filter2.Get1(0).instance.transform;
+            _worldObject = _fWorldObject.Get1(0).instance.transform;
 
-            _generator.PoolManager.OnTakeFromPools += ActivateCallback;
-            _generator.PoolManager.OnReturnToPools += DeactivateCallback;
+            _generator.PoolManager.OnTakeFromPools += ActivateCallbak;
+            _generator.PoolManager.OnReturnToPools += Deactivate;
         }
 
         public void Run()
         {
-            foreach(var i in _filter3)
+            foreach(var i in _fActiveObject)
             {
-                ref var gameObject = ref _filter3.Get1(i);
+                ref var gameObject = ref _fActiveObject.Get1(i);
 
                 if (gameObject.instance == null || gameObject.instance.transform.position.y <= _gameConfigs.MaxActiveObjectPosition) continue;
 
-                _filter3.GetEntity(i).Del<ActiveObject>();
-                _filter3.GetEntity(i).Replace(new InactiveObject());
+                _fActiveObject.GetEntity(i).Del<ActiveObject>();
+                _fActiveObject.GetEntity(i).Replace(new InactiveObject());
             }
 
+            _ecsStartupObject.StartCoroutine(ActivateOnEndOfFrame());
             _ecsStartupObject.StartCoroutine(DeactivateOnEndOfFrame());
         }
 
         public void Destroy()
         {
-            _generator.PoolManager.OnTakeFromPools -= ActivateCallback;
-            _generator.PoolManager.OnReturnToPools -= DeactivateCallback;
+            _generator.PoolManager.OnTakeFromPools -= ActivateCallbak;
+            _generator.PoolManager.OnReturnToPools -= Deactivate;
+        }
+
+        private void ActivateCallbak(GameObject poolObject)
+        {
+            ActivateObjects.Add(poolObject);
+        }
+
+        private IEnumerator ActivateOnEndOfFrame()
+        {
+            yield return new WaitForEndOfFrame();
+
+            foreach (var i in _fGameObjects)
+            {
+                var gameObject = _fGameObjects.Get1(i);
+
+                if (!ActivateObjects.Contains(gameObject.instance)) continue;
+
+                var entity = _fGameObjects.GetEntity(i);
+                entity.Replace(new ActiveObject());
+
+                gameObject.instance.transform.SetParent(_worldObject);
+
+                ActivateObjects.Remove(gameObject.instance);
+            }
         }
 
         private IEnumerator DeactivateOnEndOfFrame()
         {
             yield return new WaitForEndOfFrame();
 
-            foreach (var i in _filter4)
+            foreach (var i in _fInactiveObject)
             {
-                var gameObject = _filter4.Get1(i);
+                var gameObject = _fInactiveObject.Get1(i);
 
-                _filter4.GetEntity(i).Del<InactiveObject>();
+                _fInactiveObject.GetEntity(i).Del<InactiveObject>();
                 _generator.PoolManager.GetPoolContainer(gameObject.instance.name, true).Release(gameObject.instance);
             }
         }
 
-        private void ActivateCallback(GameObject poolObject)
-        {
-            _ecsStartupObject.StartCoroutine(ActivateProcess(poolObject));
-        }
-
-        private IEnumerator ActivateProcess(GameObject poolObject)
-        {
-            yield return null;
-
-            foreach (var i in _filter1)
-            {
-                var gameObject = _filter1.Get1(i);
-
-                if (gameObject.instance != poolObject) continue;
-
-                var entity = _filter1.GetEntity(i);
-                entity.Replace(new ActiveObject());
-            }
-
-            poolObject.transform.SetParent(_moveWorldObject);
-        }
-
-        private EcsEntity AddNeededComponentsToEntity(ref EcsEntity entity, GameObject poolObject)
-        {
-            var gameObject = new EcsGameObject();
-            gameObject.instance = poolObject;
-
-            entity.Replace(gameObject);
-            entity.Replace(new ActiveObject());
-
-            return entity;
-        }
-
-        private void DeactivateCallback(GameObject poolObject)
+        private void Deactivate(GameObject poolObject)
         {
             poolObject.transform.SetParent(_generator.PoolManager.GetPoolContainer(poolObject.name, true).Container);
         }

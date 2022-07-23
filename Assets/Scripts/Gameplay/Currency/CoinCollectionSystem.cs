@@ -16,7 +16,7 @@ namespace RiderGame.Gameplay
         private readonly Generator _generator;
         private readonly SessionRuntimeData _sessionData;
 
-        private readonly EcsFilter<EcsGameObject, Coin> _fCoin;
+        private readonly EcsFilter<EcsGameObject, ActiveObject, Coin> _fCoin;
         private readonly EcsFilter<CoinCollectionArea> _fCollectionArea;
         private readonly EcsFilter<OnTriggerEnter2DEvent> _fOnTriggerEnter;
 
