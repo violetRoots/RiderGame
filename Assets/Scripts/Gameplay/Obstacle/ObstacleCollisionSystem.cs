@@ -53,7 +53,7 @@ namespace RiderGame.Gameplay
             {
                 ref var eventData = ref _fCollisionEnter.Get1(i);
 
-                if (eventData.senderGameObject != _playerObject) return;
+                if (eventData.senderGameObject != _playerObject) continue;
 
                 var collisionObject = eventData.collider2D.gameObject;
 
@@ -70,7 +70,7 @@ namespace RiderGame.Gameplay
         private void PushPlayer(ref OnCollisionEnter2DEvent eventData)
         {
             Vector3 offset = eventData.firstContactPoint2D.normal * _playerConfigs.PushForce;
-            _worldObject.transform.DOMove(_worldObject.transform.position - offset, _playerConfigs.PushTime);
+            _worldObject.transform.DOMove(_worldObject.transform.position - offset, _playerConfigs.PushTime).SetEase(Ease.OutExpo);
         }
 
         private void DropCoins(ref OnCollisionEnter2DEvent eventData)

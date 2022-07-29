@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40ad72d48c48fa4094fcfdebddfc1c9, type: 3}
-  m_Name: LevelConfigs_1
+  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
+  m_Name: Enemy_1
   m_EditorClassIdentifier: 
-  sequence: {fileID: 11400000, guid: 7bf049780a5079d40898b944bdaa3407, type: 2}
+  clampAngle: 60
+  movementSpeed: 3
+  pushForce: 0.1
+  pushTime: 0.1

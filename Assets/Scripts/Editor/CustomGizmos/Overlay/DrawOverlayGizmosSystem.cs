@@ -15,7 +15,8 @@ namespace RiderGame.Editor.CustomGizmos
                 ref var customGizmo = ref _customGizmosFilter.Get1(i);
                 ref var overlay = ref _customGizmosFilter.Get2(i);
 
-                ((ObjectLayerDrawer) customGizmo.drawer).UpdateValue(overlay);
+                var objectLayerDrawer = customGizmo.drawer as ObjectLayerDrawer;
+                objectLayerDrawer?.UpdateValue(overlay);
             }
         }
     }

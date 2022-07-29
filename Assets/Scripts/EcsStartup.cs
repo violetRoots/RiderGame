@@ -44,6 +44,7 @@ namespace RiderGame
                 //Physics
                 .Add(new OneFramePhysicsSystem())
                 .Add(new ObstacleCollisionSystem())
+                .Add(new EnemyCollisionSystem())
 
                 //Runtime data updating
                 .Add(new UpdateRuntimeDataSystem())
@@ -58,10 +59,18 @@ namespace RiderGame
                 .Add(new MoveBackgroundSystem())
 
                 //Player
-                .Add(new CharacterAnimationSystem())
+                .Add(new PlayerAnimationSystem())
                 .Add(new BaseEffectSystem())
                 .Add(new InvulnerabilitySystem())
                 .Add(new CoinCollectionSystem())
+
+                //Enemy
+                .Add(new EnemyMovementSystem())
+                .Add(new EnemyAnimationSystem())
+
+                //Animation
+                .Add(new MovementAnimationSystem())
+
                 .Init();
 #if UNITY_EDITOR
             _gizmosSystems = new EcsSystems(_ecsWorld);
@@ -71,7 +80,7 @@ namespace RiderGame
                 .Inject(generator)
                 .Inject(sessionStartup.GameplayRuntimeData)
 
-                .Add(new DrawAnimationGizmosSystem())
+                .Add(new DrawMovementAnimationGizmosSystem())
                 .Add(new DrawOverlayGizmosSystem())
                 .Init();
 #endif

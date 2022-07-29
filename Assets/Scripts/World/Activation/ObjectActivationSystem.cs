@@ -73,14 +73,21 @@ namespace RiderGame.World
             {
                 var gameObject = _fGameObjects.Get1(i);
 
-                if (!ActivateObjects.Contains(gameObject.instance)) continue;
-
                 var entity = _fGameObjects.GetEntity(i);
-                entity.Replace(new ActiveObject());
 
-                gameObject.instance.transform.SetParent(_worldObject);
+                if (!ActivateObjects.Contains(gameObject.instance))
+                {
+                    if (entity.Has<SpawnEvent>()) entity.Del<SpawnEvent>();
+                }
+                else
+                {
+                    entity.Replace(new SpawnEvent());
+                    entity.Replace(new ActiveObject());
 
-                ActivateObjects.Remove(gameObject.instance);
+                    gameObject.instance.transform.SetParent(_worldObject);
+
+                    ActivateObjects.Remove(gameObject.instance);
+                }
             }
         }
 

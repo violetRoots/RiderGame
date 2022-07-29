@@ -7,6 +7,7 @@ namespace SkyCrush.Utility
     public class SpriteAnimator : MonoBehaviour
     {
         public bool Playing { get; private set; }
+        public bool Flipped { get; private set; }
         public SpriteAnimation[] Animations => animations;
         public SpriteAnimation CurrentAnimation { get; private set; }
         public int CurrentFrame { get; private set; }
@@ -146,7 +147,8 @@ namespace SkyCrush.Utility
 
         public void FlipTo(float dir)
         {
-            if (dir < 0f)
+            Flipped = dir > 0.0f;
+            if (!Flipped)
                 spriteRenderer.transform.localScale = new Vector3(-1f, 1f, 1f);
             else
                 spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
@@ -155,7 +157,8 @@ namespace SkyCrush.Utility
         public void FlipTo(Vector3 position)
         {
             float diff = position.x - transform.position.x;
-            if (diff < 0f)
+            Flipped = diff > 0.0f;
+            if (!Flipped)
                 spriteRenderer.transform.localScale = new Vector3(-1f, 1f, 1f);
             else
                 spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);

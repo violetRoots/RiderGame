@@ -12,31 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094c16e7aaab447bc1e4f73b6d1cce, type: 3}
   m_Name: Character_1
   m_EditorClassIdentifier: 
-  animationsInfo:
-  - angle: -60
-    animation: {fileID: 11400000, guid: 4a6929a7e0d94d345b09145004cbad69, type: 2}
-    isFlip: 1
-  - angle: -45
-    animation: {fileID: 11400000, guid: a64c756b3458aaf499c9f424faca296d, type: 2}
-    isFlip: 1
-  - angle: -30
-    animation: {fileID: 11400000, guid: 55ec873941a074049bc0c83c84582477, type: 2}
-    isFlip: 1
-  - angle: -15
-    animation: {fileID: 11400000, guid: 2142b023d73058b409b6c0bb4d7d1a9d, type: 2}
-    isFlip: 1
-  - angle: 0
-    animation: {fileID: 11400000, guid: 8b754327c99619e459dd040292a1d657, type: 2}
-    isFlip: 0
-  - angle: 15
-    animation: {fileID: 11400000, guid: 2142b023d73058b409b6c0bb4d7d1a9d, type: 2}
-    isFlip: 0
-  - angle: 30
-    animation: {fileID: 11400000, guid: 55ec873941a074049bc0c83c84582477, type: 2}
-    isFlip: 0
-  - angle: 45
-    animation: {fileID: 11400000, guid: a64c756b3458aaf499c9f424faca296d, type: 2}
-    isFlip: 0
-  - angle: 60
-    animation: {fileID: 11400000, guid: 4a6929a7e0d94d345b09145004cbad69, type: 2}
-    isFlip: 0
+  animationConfiguration: {fileID: 11400000, guid: 657bafb189817ed4f9f505d68d84ba4a, type: 2}
