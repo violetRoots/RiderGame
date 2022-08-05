@@ -77,8 +77,8 @@ namespace RiderGame.Gameplay
         {
             int droppedCoinsCount = Random.Range(_playerConfigs.CoinsDropCount.x, _playerConfigs.CoinsDropCount.y);
 
-            droppedCoinsCount = Mathf.Clamp(droppedCoinsCount, 0, _sessionRuntimeData.CoinsCount);
-            _sessionRuntimeData.SetCoinsCount(_sessionRuntimeData.CoinsCount - droppedCoinsCount);
+            droppedCoinsCount = Mathf.Clamp(droppedCoinsCount, 0, _sessionRuntimeData.CoinsCount.Value);
+            _sessionRuntimeData.CoinsCount.Value = droppedCoinsCount;
 
             var coinColliderRadius = _playerConfigs.CoinPrefab.Value.collider.radius;
             var dropCoinsSpawnPos = eventData.firstContactPoint2D.point;

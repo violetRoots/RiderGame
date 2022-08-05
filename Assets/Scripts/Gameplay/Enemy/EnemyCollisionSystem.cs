@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Leopotam.Ecs;
 using LeoEcsPhysics;
 using DG.Tweening;
 using RiderGame.World;
+using RiderGame.RuntimeData;
 
 namespace RiderGame.Gameplay
 {
     public class EnemyCollisionSystem : IEcsInitSystem, IEcsRunSystem
     {
+        private readonly SessionRuntimeData _sessionData;
+
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, Enemy, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
@@ -39,8 +41,7 @@ namespace RiderGame.Gameplay
 
                 if (collisionObject == _playerObject)
                 {
-                    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                    Debug.Log("Session End");
+                    _sessionData.Status.Value = SessionStatus.Ended;
                 }
                 else
                 {

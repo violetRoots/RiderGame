@@ -8,7 +8,7 @@ using Input = RiderGame.Inputs.Input;
 
 namespace RiderGame.RuntimeData
 {
-    public class UpdateRuntimeDataSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
+    public class UpdateGameplayDataSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
         private readonly GameConfiguration _gameConfigs;
         private readonly Generator _generator;

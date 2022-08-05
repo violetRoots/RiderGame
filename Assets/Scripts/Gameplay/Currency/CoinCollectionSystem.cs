@@ -66,7 +66,7 @@ namespace RiderGame.Gameplay
 
             sequence.OnComplete(() =>
             {
-                _sessionData.SetCoinsCount(_sessionData.CoinsCount + 1);
+                _sessionData.CoinsCount.Value += 1;
 
                 var container = _generator.PoolManager.GetPoolContainer(coin.name, true);
                 container.Release(coin.gameObject);

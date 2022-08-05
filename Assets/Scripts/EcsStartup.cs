@@ -10,6 +10,7 @@ using RiderGame.RuntimeData;
 using RiderGame.Physics;
 using RiderGame.Gameplay;
 using RiderGame.Editor.CustomGizmos;
+using RiderGame.UI;
 
 namespace RiderGame
 {
@@ -21,7 +22,8 @@ namespace RiderGame
 
         private EcsStartup _ecsStartupObject;
         private EcsWorld _ecsWorld;
-        private EcsSystems _updateSystems;
+        private EcsSystems _UISystems;
+        private EcsSystems _gameplaySystems;
         private EcsSystems _gizmosSystems;
 
         private void Awake()
@@ -29,12 +31,23 @@ namespace RiderGame
             _ecsStartupObject = this;
 
             _ecsWorld = new EcsWorld();
-            _updateSystems = new EcsSystems(_ecsWorld);
+            _UISystems = new EcsSystems(_ecsWorld);
+            _gameplaySystems = new EcsSystems(_ecsWorld);
 
             EcsPhysicsEvents.ecsWorld = _ecsWorld;
 
-            _updateSystems
+            _UISystems
                 .ConvertScene()
+                .Inject(sessionStartup.SessionRuntimeData)
+
+                //UI
+                .Add(new UpperPanelSystem())
+                .Add(new EndSessionPanelSystem())
+
+                .Init();
+
+
+            _gameplaySystems
                 .Inject(_ecsStartupObject)
                 .Inject(gameConfigs)
                 .Inject(generator)
@@ -47,7 +60,8 @@ namespace RiderGame
                 .Add(new EnemyCollisionSystem())
 
                 //Runtime data updating
-                .Add(new UpdateRuntimeDataSystem())
+                .Add(new UpdateSessionDataSystem())
+                .Add(new UpdateGameplayDataSystem())
 
                 //Input
                 .Add(new InputSystem())
@@ -88,13 +102,16 @@ namespace RiderGame
 
         private void Update()
         {
-            _updateSystems?.Run();
+            _UISystems?.Run();
+
+            if(sessionStartup.SessionRuntimeData != null &&
+                sessionStartup.SessionRuntimeData.Status.Value == SessionStatus.Playing) 
+                _gameplaySystems?.Run();
         }
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
-
             if (!Application.isPlaying) return;
 
             _gizmosSystems.Run();
@@ -106,8 +123,10 @@ namespace RiderGame
             EcsPhysicsEvents.ecsWorld = null;
             _gizmosSystems?.Destroy();
             _gizmosSystems = null;
-            _updateSystems?.Destroy();
-            _updateSystems = null;
+            _gameplaySystems?.Destroy();
+            _gameplaySystems = null;
+            _UISystems?.Destroy();
+            _UISystems = null;
             _ecsWorld?.Destroy();
             _ecsWorld = null;
         }

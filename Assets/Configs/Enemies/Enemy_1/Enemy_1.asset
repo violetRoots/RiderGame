@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clampAngle: 60
   movementSpeed: 3
-  pushForce: 0.1
-  pushTime: 0.1
+  pushForce: 0.5
+  pushTime: 0.05
