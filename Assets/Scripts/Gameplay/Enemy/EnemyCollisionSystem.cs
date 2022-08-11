@@ -18,10 +18,13 @@ namespace RiderGame.Gameplay
 
         private readonly List<GameObject> _enemies = new List<GameObject>();
         private readonly Dictionary<GameObject, OnCollisionEnter2DEvent> _collisionEnemies = new Dictionary<GameObject, OnCollisionEnter2DEvent>();
+
+        private EcsEntity _playerEntity;
         private GameObject _playerObject;
 
         public void Init()
         {
+            _playerEntity = _fPlayer.GetEntity(0);
             _playerObject = _fPlayer.Get1(0).instance;
         }
 
@@ -39,7 +42,7 @@ namespace RiderGame.Gameplay
 
                 if (_collisionEnemies.ContainsKey(senderObject)) continue;
 
-                if (collisionObject == _playerObject)
+                if (collisionObject == _playerObject && !_playerEntity.Has<Invulnerability>())
                 {
                     _sessionData.Status.Value = SessionStatus.Ended;
                 }
@@ -60,8 +63,16 @@ namespace RiderGame.Gameplay
                 if (!_collisionEnemies.ContainsKey(gameObject.instance)) continue;
 
                 var eventData = _collisionEnemies.GetValueOrDefault(gameObject.instance);
-                ChangeDirection(ref enemy, eventData);
-                PushEnemy(ref enemy, gameObject.instance, eventData);
+
+                if (enemy.state == EnemyState.Normal)
+                {
+                    ChangeDirection(ref enemy, eventData);
+                    PushEnemy(ref enemy, gameObject.instance, eventData);
+                }
+                else if(enemy.state == EnemyState.Agressive)
+                {
+                    StunEnemy(ref enemy);
+                }
             }
         }
 
@@ -78,6 +89,11 @@ namespace RiderGame.Gameplay
         {
             Vector3 offset = eventData.firstContactPoint2D.normal * enemy.enemyConfiguration.PushForce;
             enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, enemy.enemyConfiguration.PushTime).SetEase(Ease.Linear);
+        }
+
+        private void StunEnemy(ref Enemy enemy)
+        {
+            EnemyStateSystem.SetStunnedState(ref enemy);
         }
     }
 }

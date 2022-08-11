@@ -18,6 +18,20 @@ namespace RiderGame.Gameplay
 
         public EnemyConfiguration enemyConfiguration;
 
+        [Space(10)]
+        public SpriteRenderer agressionIcon;
+        public SpriteRenderer stunnedIcon;
+
+        [HideInInspector]
+        public EnemyState state;
+
         private float movementDirectionAngle;
+    }
+
+    public enum EnemyState
+    {
+        Normal,
+        Agressive,
+        Stunned
     }
 }

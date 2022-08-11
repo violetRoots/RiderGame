@@ -80,6 +80,7 @@ namespace RiderGame
 
                 //Enemy
                 .Add(new EnemyMovementSystem())
+                .Add(new EnemyStateSystem())
                 .Add(new EnemyAnimationSystem())
 
                 //Animation

@@ -12,6 +12,8 @@ namespace RiderGame.World
     {
         private static readonly List<GameObject> ActivateObjects = new List<GameObject>();
 
+        private bool IsEventHandling { get; set; } = true;
+
         private readonly GameConfiguration _gameConfigs;
         private readonly Generator _generator;
         private readonly EcsStartup _ecsStartupObject;
@@ -19,7 +21,7 @@ namespace RiderGame.World
         private readonly EcsFilter<EcsGameObject> _fGameObjects;
         private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
         private readonly EcsFilter<EcsGameObject, ActiveObject> _fActiveObject;
-        private readonly EcsFilter<EcsGameObject, InactiveObject> _fInactiveObject;
+        private readonly EcsFilter<EcsGameObject, DeactivationEvent> _fDeactivationEvent;
 
         private Transform _worldObject;
 
@@ -36,6 +38,8 @@ namespace RiderGame.World
 
             _generator.PoolManager.OnTakeFromPools += ActivateCallbak;
             _generator.PoolManager.OnReturnToPools += Deactivate;
+
+            _ecsStartupObject.StartCoroutine(EventsProcessingOnEndOfFrame());
         }
 
         public void Run()
@@ -47,11 +51,9 @@ namespace RiderGame.World
                 if (gameObject.instance == null || gameObject.instance.transform.position.y <= _gameConfigs.MaxActiveObjectPosition) continue;
 
                 _fActiveObject.GetEntity(i).Del<ActiveObject>();
+                _fActiveObject.GetEntity(i).Replace(new DeactivationEvent());
                 _fActiveObject.GetEntity(i).Replace(new InactiveObject());
             }
-
-            _ecsStartupObject.StartCoroutine(ActivateOnEndOfFrame());
-            _ecsStartupObject.StartCoroutine(DeactivateOnEndOfFrame());
         }
 
         public void Destroy()
@@ -65,10 +67,19 @@ namespace RiderGame.World
             ActivateObjects.Add(poolObject);
         }
 
-        private IEnumerator ActivateOnEndOfFrame()
+        private IEnumerator EventsProcessingOnEndOfFrame()
         {
-            yield return new WaitForEndOfFrame();
+            while (IsEventHandling)
+            {
+                yield return new WaitForEndOfFrame();
 
+                ActivateOnEndOfFrame();
+                DeactivateOnEndOfFrame();
+            }
+        }
+
+        private void ActivateOnEndOfFrame()
+        {
             foreach (var i in _fGameObjects)
             {
                 var gameObject = _fGameObjects.Get1(i);
@@ -77,11 +88,13 @@ namespace RiderGame.World
 
                 if (!ActivateObjects.Contains(gameObject.instance))
                 {
-                    if (entity.Has<SpawnEvent>()) entity.Del<SpawnEvent>();
+                    if (entity.Has<ActivationEvent>()) entity.Del<ActivationEvent>();
                 }
                 else
                 {
-                    entity.Replace(new SpawnEvent());
+                    if (entity.Has<InactiveObject>()) entity.Del<InactiveObject>();
+
+                    entity.Replace(new ActivationEvent());
                     entity.Replace(new ActiveObject());
 
                     gameObject.instance.transform.SetParent(_worldObject);
@@ -91,16 +104,14 @@ namespace RiderGame.World
             }
         }
 
-        private IEnumerator DeactivateOnEndOfFrame()
+        private void DeactivateOnEndOfFrame()
         {
-            yield return new WaitForEndOfFrame();
-
-            foreach (var i in _fInactiveObject)
+            foreach (var i in _fDeactivationEvent)
             {
-                var gameObject = _fInactiveObject.Get1(i);
+                var gameObject = _fDeactivationEvent.Get1(i);
 
-                _fInactiveObject.GetEntity(i).Del<InactiveObject>();
                 _generator.PoolManager.GetPoolContainer(gameObject.instance.name, true).Release(gameObject.instance);
+                _fDeactivationEvent.GetEntity(i).Del<DeactivationEvent>();
             }
         }
 

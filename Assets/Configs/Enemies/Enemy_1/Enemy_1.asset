@@ -16,3 +16,5 @@ MonoBehaviour:
   movementSpeed: 3
   pushForce: 0.5
   pushTime: 0.05
+  agressionRadius: 10
+  agressionMovementSpeed: 7

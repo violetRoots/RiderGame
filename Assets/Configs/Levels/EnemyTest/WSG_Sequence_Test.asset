@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e64c783caedfa4280214dd18108495, type: 3}
   m_Name: WSG_Sequence_Test
   m_EditorClassIdentifier: 
-  fixedStages:
+  fixedStages: []
+  randomStages:
   - name: First Random Stage
-    duration: 10
+    duration: 25
     customData:
-      movementSpeed: 0
+      movementSpeed: 15
     generateObjects:
     - instanceName: Enemy_1
       poolObjectValue:
         instance: {fileID: 714289481862489155, guid: 26c11ce0cf6b9d3469021c7fe686a008, type: 3}
       areaIndex: 3
       areaValue:
-        center: {x: 0, y: -10}
-        size: {x: 15, y: 10}
+        center: {x: 0, y: -40}
+        size: {x: 30, y: 20}
         color: {r: 1, g: 0, b: 0.030305386, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -32,16 +33,16 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 5.0331154
-          inSlope: -20.075092
-          outSlope: -20.075092
+          value: 5.000001
+          inSlope: -0.015638314
+          outSlope: -0.015638314
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.25071442
-          value: 0
+          time: 4.234734
+          value: 4.933777
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -50,9 +51,9 @@ MonoBehaviour:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 10
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: 4.9668884
+          inSlope: 0.005743286
+          outSlope: 0.005743286
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -60,7 +61,6 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-      x: 'time: 1 unit = duration / 10 (1 sec)'
+      x: 'time: 1 unit = duration / 10 (2,5 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-      objectsCount: 2+-1
-  randomStages: []
+      objectsCount: 25+-1
