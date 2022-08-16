@@ -10,7 +10,8 @@ namespace RiderGame.World
 {
     public class ObjectActivationSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
-        private static readonly List<GameObject> ActivateObjects = new List<GameObject>();
+        public static readonly List<EcsEntity> ActiveObjectEntities = new List<EcsEntity>();
+        private static readonly List<GameObject> ObjectsToActivate = new List<GameObject>();
 
         private bool IsEventHandling { get; set; } = true;
 
@@ -28,7 +29,7 @@ namespace RiderGame.World
         public static GameObject Instantiate(GameObject gameObject, Vector2 position)
         {
             var instantiatedObject = GameObject.Instantiate(gameObject, position, Quaternion.identity);
-            ActivateObjects.Add(instantiatedObject);
+            ObjectsToActivate.Add(instantiatedObject);
             return instantiatedObject;
         }
 
@@ -44,15 +45,19 @@ namespace RiderGame.World
 
         public void Run()
         {
+            ActiveObjectEntities.Clear();
             foreach(var i in _fActiveObject)
             {
+                ref var entity = ref _fActiveObject.GetEntity(i);
                 ref var gameObject = ref _fActiveObject.Get1(i);
+
+                ActiveObjectEntities.Add(entity);
 
                 if (gameObject.instance == null || gameObject.instance.transform.position.y <= _gameConfigs.MaxActiveObjectPosition) continue;
 
-                _fActiveObject.GetEntity(i).Del<ActiveObject>();
-                _fActiveObject.GetEntity(i).Replace(new DeactivationEvent());
-                _fActiveObject.GetEntity(i).Replace(new InactiveObject());
+                entity.Del<ActiveObject>();
+                entity.Replace(new DeactivationEvent());
+                entity.Replace(new InactiveObject());
             }
         }
 
@@ -64,7 +69,7 @@ namespace RiderGame.World
 
         private void ActivateCallbak(GameObject poolObject)
         {
-            ActivateObjects.Add(poolObject);
+            ObjectsToActivate.Add(poolObject);
         }
 
         private IEnumerator EventsProcessingOnEndOfFrame()
@@ -86,7 +91,7 @@ namespace RiderGame.World
 
                 var entity = _fGameObjects.GetEntity(i);
 
-                if (!ActivateObjects.Contains(gameObject.instance))
+                if (!ObjectsToActivate.Contains(gameObject.instance))
                 {
                     if (entity.Has<ActivationEvent>()) entity.Del<ActivationEvent>();
                 }
@@ -99,7 +104,7 @@ namespace RiderGame.World
 
                     gameObject.instance.transform.SetParent(_worldObject);
 
-                    ActivateObjects.Remove(gameObject.instance);
+                    ObjectsToActivate.Remove(gameObject.instance);
                 }
             }
         }

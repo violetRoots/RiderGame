@@ -16,44 +16,19 @@ namespace RiderGame.Gameplay
         private readonly Generator _generator;
         private readonly SessionRuntimeData _sessionData;
 
-        private readonly EcsFilter<EcsGameObject, ActiveObject, Coin> _fCoin;
-        private readonly EcsFilter<CoinCollectionArea> _fCollectionArea;
         private readonly EcsFilter<OnTriggerEnter2DEvent> _fOnTriggerEnter;
-
-        private readonly List<GameObject> _coins = new List<GameObject>();
-        private readonly List<Collider2D> _coinAreas = new List<Collider2D>();
 
         public void Run()
         {
-            _coins.Clear();
-            foreach(var i in _fCoin)
-            {
-                ref var gameObject = ref _fCoin.Get1(i);
-                _coins.Add(gameObject.instance);
-            }
-
-            _coinAreas.Clear();
-            foreach (var i in _fCollectionArea)
-            {
-                ref var area = ref _fCollectionArea.Get1(i);
-                _coinAreas.Add(area.collider);
-            }
-
             foreach (var i in _fOnTriggerEnter)
             {
                 ref var eventData = ref _fOnTriggerEnter.Get1(i);
 
-                foreach(var area in _coinAreas)
-                {
-                    if (area.gameObject != eventData.senderGameObject) continue;
+                if (!eventData.senderGameObject.FindActiveEntityWithComponent(out CoinCollectionArea area)) continue;
 
-                    foreach(var coin in _coins)
-                    {
-                        if (coin != eventData.collider2D.gameObject) continue;
+                if (!eventData.collider2D.gameObject.FindActiveEntityWithComponent<Coin>()) continue;
 
-                        OnCollectCoin(area, eventData.collider2D);
-                    }
-                }
+                OnCollectCoin(area.collider, eventData.collider2D);
             }
         }
 

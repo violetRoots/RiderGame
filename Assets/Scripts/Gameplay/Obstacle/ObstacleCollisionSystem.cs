@@ -18,51 +18,35 @@ namespace RiderGame.Gameplay
         private readonly SessionRuntimeData _sessionRuntimeData;
         private readonly GameConfiguration _gameConfigs;
 
-        private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
-        private readonly EcsFilter<EcsGameObject, ActiveObject, Obstacle> _fObstacle;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fCollisionEnter;
 
         private PlayerConfiguration _playerConfigs;
-        private EcsEntity _playerEntity;
-        private Player _player;
-        private GameObject _playerObject;
         private GameObject _worldObject;
-        private readonly List<GameObject> _obstacles = new List<GameObject>();
 
         public void Init()
         {
             _playerConfigs = _gameConfigs.PlayerConfiguration;
-            _playerEntity = _fPlayer.GetEntity(0);
-            _playerObject = _fPlayer.Get1(0).instance;
-            _player = _fPlayer.Get2(0);
             _worldObject = _fWorldObject.Get1(0).instance;
         }
 
         public void Run()
         {
-            _obstacles.Clear();
-            foreach (var i in _fObstacle)
-            {
-                ref var gameObject = ref _fObstacle.Get1(i);
-
-                _obstacles.Add(gameObject.instance);
-            }
-
             foreach (var i in _fCollisionEnter)
             {
                 ref var eventData = ref _fCollisionEnter.Get1(i);
 
-                if (eventData.senderGameObject != _playerObject) continue;
+                if (!eventData.senderGameObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity)) continue;
 
                 var collisionObject = eventData.collider2D.gameObject;
+                ref var player = ref playerEntity.Get<Player>();
 
-                if (_obstacles.Contains(collisionObject) && !_playerEntity.Has<Invulnerability>())
+                if (collisionObject.FindActiveEntityWithComponent<Obstacle>() && !playerEntity.Has<Invulnerability>())
                 {
                     PushPlayer(ref eventData);
                     DropCoins(ref eventData);
 
-                    InvulnerabilitySystem.AddInvulnerablility(ref _playerEntity, _playerConfigs, _player.renderer);
+                    InvulnerabilitySystem.AddInvulnerablility(ref playerEntity, _playerConfigs, player.renderer);
                 }
             }
         }

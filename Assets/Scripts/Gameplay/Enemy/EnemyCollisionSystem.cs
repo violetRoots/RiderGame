@@ -8,25 +8,14 @@ using RiderGame.RuntimeData;
 
 namespace RiderGame.Gameplay
 {
-    public class EnemyCollisionSystem : IEcsInitSystem, IEcsRunSystem
+    public class EnemyCollisionSystem : IEcsRunSystem
     {
         private readonly SessionRuntimeData _sessionData;
 
-        private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, Enemy, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
 
-        private readonly List<GameObject> _enemies = new List<GameObject>();
         private readonly Dictionary<GameObject, OnCollisionEnter2DEvent> _collisionEnemies = new Dictionary<GameObject, OnCollisionEnter2DEvent>();
-
-        private EcsEntity _playerEntity;
-        private GameObject _playerObject;
-
-        public void Init()
-        {
-            _playerEntity = _fPlayer.GetEntity(0);
-            _playerObject = _fPlayer.Get1(0).instance;
-        }
 
         public void Run()
         {
@@ -38,11 +27,11 @@ namespace RiderGame.Gameplay
                 var senderObject = eventData.senderGameObject;
                 var collisionObject = eventData.collider2D.gameObject;
 
-                if (!_enemies.Contains(senderObject)) continue;
+                if (!senderObject.FindActiveEntityWithComponent<Enemy>()) continue;
 
                 if (_collisionEnemies.ContainsKey(senderObject)) continue;
 
-                if (collisionObject == _playerObject && !_playerEntity.Has<Invulnerability>())
+                if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
                 {
                     _sessionData.Status.Value = SessionStatus.Ended;
                 }
@@ -52,13 +41,10 @@ namespace RiderGame.Gameplay
                 }
             }
 
-            _enemies.Clear();
             foreach (var i in _fEnemy)
             {
                 ref var gameObject = ref _fEnemy.Get1(i);
                 ref var enemy = ref _fEnemy.Get2(i);
-
-                _enemies.Add(gameObject.instance);
 
                 if (!_collisionEnemies.ContainsKey(gameObject.instance)) continue;
 
