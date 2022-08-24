@@ -12,23 +12,19 @@ namespace SkyCrush.WSGenerator
         private const string PoolsContainersParentName = "Pools";
 
         private PoolSettings _poolSettings;
+        private Transform _poolsContainersParent;
         private List<PoolContainer> _poolContainers = new List<PoolContainer>();
 
         public void Init(Settings settings, Sequence sequence, Transform transform)
         {
             _poolSettings = settings.PoolSettings;
 
-            var poolsContainersParent = new GameObject(PoolsContainersParentName);
-            poolsContainersParent.transform.SetParent(transform);
+            _poolsContainersParent = new GameObject(PoolsContainersParentName).transform;
+            _poolsContainersParent.SetParent(transform);
 
             foreach (var poolInfo in _poolSettings.PoolObjectsInfo)
             {
-                var container = new PoolContainer(_poolSettings, poolInfo, poolsContainersParent.transform);
-
-                container.OnTakeFromPool += GetCallback;
-                container.OnReturnToPool += ReleaseCallback;
-
-                _poolContainers.Add(container);
+                CreateContainer(poolInfo);
             }
         }
 
@@ -51,6 +47,18 @@ namespace SkyCrush.WSGenerator
             }
 
             return res;
+        }
+
+        private PoolContainer CreateContainer(PoolObjectInfo poolInfo)
+        {
+            var container = new PoolContainer(_poolSettings, _poolsContainersParent, poolInfo);
+
+            container.OnTakeFromPool += GetCallback;
+            container.OnReturnToPool += ReleaseCallback;
+
+            _poolContainers.Add(container);
+
+            return container;
         }
 
         private void GetCallback(GameObject poolObject)

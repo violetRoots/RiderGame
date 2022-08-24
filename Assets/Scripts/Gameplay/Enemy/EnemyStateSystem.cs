@@ -12,7 +12,6 @@ namespace RiderGame.Gameplay
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, Enemy, ActiveObject> _fEnemy;
-        private readonly EcsFilter<EcsGameObject, Enemy, ActivationEvent> _fEnemyActivationEvent;
         private readonly EcsFilter<EcsGameObject, Enemy, DeactivationEvent> _fEnemyDeactivationEvent;
 
         private GameObject _playerObject;

@@ -47,7 +47,7 @@ namespace SkyCrush.WSGenerator
 
             for (var i = 0; i < poolsInfo.Length; i++)
             {
-                if (poolsInfo[i].instance == null) continue;
+                if (poolsInfo[i].instance == null || poolsInfo[i].hideInSpawnMenu) continue;
 
                 _poolDictionary.Add(poolsInfo[i].instance.name, poolsInfo[i]);
             }

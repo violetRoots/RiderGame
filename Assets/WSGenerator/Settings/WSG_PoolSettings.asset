@@ -14,7 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolObjectsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+    hideInSpawnMenu: 0
   - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+    hideInSpawnMenu: 0
   - instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
+    hideInSpawnMenu: 0
   - instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+    hideInSpawnMenu: 0
   - instance: {fileID: 714289481862489155, guid: 26c11ce0cf6b9d3469021c7fe686a008, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
+    hideInSpawnMenu: 0

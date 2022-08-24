@@ -7,5 +7,6 @@ namespace SkyCrush.WSGenerator
     public struct PoolObjectInfo
     {
         public GameObject instance;
+        public bool hideInSpawnMenu;
     }
 }

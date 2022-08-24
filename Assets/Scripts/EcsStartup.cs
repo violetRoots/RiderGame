@@ -38,10 +38,12 @@ namespace RiderGame
 
             _UISystems
                 .ConvertScene()
+                .Inject(sessionStartup.GameplayRuntimeData)
                 .Inject(sessionStartup.SessionRuntimeData)
 
                 //UI
                 .Add(new UpperPanelSystem())
+                .Add(new WayPointPanelSystem())
                 .Add(new EndSessionPanelSystem())
 
                 .Init();
@@ -77,6 +79,7 @@ namespace RiderGame
                 .Add(new BaseEffectSystem())
                 .Add(new InvulnerabilitySystem())
                 .Add(new CoinCollectionSystem())
+                .Add(new BringQuestSystem())
 
                 //Enemy
                 .Add(new EnemyMovementSystem())
