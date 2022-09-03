@@ -10,6 +10,6 @@ namespace RiderGame.UI
     [Serializable]
     public struct WayPointPanel
     {
-        public GameObject wayPointIcon;
+
     }
 }

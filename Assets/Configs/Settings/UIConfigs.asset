@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9418cf3eea23b469086ea96f1ca774, type: 3}
+  m_Name: UIConfigs
+  m_EditorClassIdentifier: 
+  yWayPointOffset: 2.5
+  wayPointIcon: {fileID: 1208942210003739228, guid: bb55cefb588f05f4ca2599e5878ada4b, type: 3}
+  questIcon: {fileID: 1208942210003739228, guid: 103c9edd657e88a45a300f8fa07d2d8a, type: 3}

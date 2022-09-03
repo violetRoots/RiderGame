@@ -1,38 +1,46 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.UI;
 using UniRx;
 using Leopotam.Ecs;
+using DG.Tweening;
 using RiderGame.RuntimeData;
 using RiderGame.Gameplay;
-using System;
+using RiderGame.SO;
+using RiderGame.World;
+using System.Collections;
+using Voody.UniLeo;
 
 namespace RiderGame.UI
 {
     public class WayPointPanelSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
-        private const float YWayPointOffset = 2.5f;
-
+        private readonly UIConfiguration _uiConfigs;
         private readonly GameplayRuntimeData _gameplayRuntimeData;
 
+        private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<UIElement, WayPointPanel> _fWayPointPanel;
         private readonly EcsFilter<UIElement, WayPointIcon> _fWayPointIcon;
 
         private readonly Dictionary<GameObject, BringQuest> _wayPointQuests = new Dictionary<GameObject, BringQuest>();
         private NotifyCollectionChangedEventHandler _questCollectionHandler;
         private Camera _camera;
-        private Vector2 _position;
+        private Transform _playerTransform;
 
         public void Init()
         {
             _questCollectionHandler = new NotifyCollectionChangedEventHandler(OnQuestCollectionChanged);
             _gameplayRuntimeData.Quests.CollectionChanged += _questCollectionHandler;
 
+            _playerTransform = _fPlayer.Get1(0).instance.transform;
             _camera = Camera.main;
         }
 
         public void Run()
         {
+            Debug.Log(_fWayPointIcon.GetEntitiesCount());
             foreach(var i in _fWayPointIcon)
             {
                 ref var uiElement = ref _fWayPointIcon.Get1(i);
@@ -45,14 +53,14 @@ namespace RiderGame.UI
                 float minX = pointIcon.image.GetPixelAdjustedRect().width / 2;
                 float maxX = Screen.width - minX;
 
-                float minY = pointIcon.image.GetPixelAdjustedRect().height / 2;
+                float minY = pointIcon.image.GetPixelAdjustedRect().height / 1.5f;
                 float maxY = Screen.height - minY;
 
-                _position = _camera.WorldToScreenPoint(quest.Target.position + new Vector3(0, YWayPointOffset, 0));
-                _position.x = Mathf.Clamp(_position.x, minX, maxX);
-                _position.y = Mathf.Clamp(_position.y, minY, maxY);
+                var position = _camera.WorldToScreenPoint(quest.Target.position + new Vector3(0, _uiConfigs.YWayPointOffset, 0));
+                position.x = Mathf.Clamp(position.x, minX, maxX);
+                position.y = Mathf.Clamp(position.y, minY, maxY);
 
-                uiElement.instance.transform.position = _position;
+                uiElement.instance.transform.position = position;
             }
         }
 
@@ -81,13 +89,13 @@ namespace RiderGame.UI
             foreach (var i in _fWayPointPanel)
             {
                 ref var uiElement = ref _fWayPointPanel.Get1(i);
-                ref var wayPointPanel = ref _fWayPointPanel.Get2(i);
 
-                var wayPointIcon = GameObject.Instantiate(wayPointPanel.wayPointIcon, uiElement.content.transform);
+                var wayPointIcon = GameObject.Instantiate(_uiConfigs.WayPointIcon, uiElement.content.transform);
+                wayPointIcon.transform.localScale = Vector3.zero;
 
                 quest.Status.Subscribe((newStatus) => OnQuestStatusChanged(quest.Status, wayPointIcon, newStatus));
 
-                _wayPointQuests.Add(wayPointIcon.gameObject, quest);
+                _wayPointQuests.Add(wayPointIcon, quest);
             }
         }
 
@@ -96,13 +104,71 @@ namespace RiderGame.UI
             Debug.Log(newStatus);
             if (newStatus == QuestStatus.InProgress)
             {
-                wayPoint.SetActive(true);
+                ShowWayPoint(wayPoint);
             }
             else if (newStatus == QuestStatus.Completed || newStatus == QuestStatus.Failed)
             {
                 property.Dispose();
-                GameObject.Destroy(wayPoint);
+
+                SetWayPointIconVisible(wayPoint.transform, false, () => GameObject.Destroy(wayPoint));
             }
+        }
+
+        private void ShowWayPoint(GameObject wayPoint)
+        {
+            foreach (var i in _fWayPointPanel)
+            {
+                ref var uiElement = ref _fWayPointPanel.Get1(i);
+
+                var questIconTransform = GameObject.Instantiate(_uiConfigs.QuestIcon, uiElement.content.transform).transform;
+
+                questIconTransform.position = _camera.WorldToScreenPoint(_playerTransform.position);
+                var questIconImage = questIconTransform.GetComponent<Image>();
+
+                ShowQuestIconAbovePlayer(questIconTransform, questIconImage, _playerTransform, 
+                    () => MoveIconToWayPoint(questIconTransform, questIconImage, wayPoint.transform));
+            }
+        }
+
+        private void ShowQuestIconAbovePlayer(Transform icon, Image iconImage, Transform player, Action onComplete)
+        {
+
+            var yOffset = 5.0f;
+            var timeToOffset = 0.5f;
+
+            iconImage.color = new Color(1, 1, 1, 0);
+
+            var sequence = DOTween.Sequence();
+            sequence.Append(icon.DOMove(_camera.WorldToScreenPoint(player.position + new Vector3(0.0f, yOffset)), timeToOffset).SetEase(Ease.Linear));
+            sequence.Join(iconImage.DOFade(1.0f, timeToOffset));
+            sequence.OnComplete(() => onComplete?.Invoke());
+        }
+
+        private void MoveIconToWayPoint(Transform icon, Image questIcon, Transform wayPoint)
+        {
+            var timeToMoveToWayPoint = 1.0f;
+            var endScale = new Vector3(0.5f, 0.5f, 1.0f);
+
+
+            var sequence = DOTween.Sequence();
+            sequence.Append(icon.DOMove(wayPoint.position, timeToMoveToWayPoint).SetEase(Ease.Linear));
+            sequence.Join(icon.DOScale(endScale, timeToMoveToWayPoint).SetEase(Ease.Linear));
+            sequence.Join(questIcon.DOFade(0.0f, timeToMoveToWayPoint).SetEase(Ease.InBack));
+            sequence.OnComplete(() =>
+            {
+
+                SetWayPointIconVisible(wayPoint, true);
+
+                GameObject.Destroy(icon.gameObject);
+            });
+        }
+
+        private static void SetWayPointIconVisible(Transform wayPoint, bool value, Action onComplete = null)
+        {
+            var targetScale = value ? Vector3.one : Vector3.zero;
+            var timeToScale = 0.1f;
+
+            wayPoint.DOScale(targetScale, timeToScale).OnComplete(() => onComplete?.Invoke());
         }
     }
 }

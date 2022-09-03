@@ -13,11 +13,14 @@ namespace RiderGame.Gameplay
     public class BringQuestSystem : IEcsInitSystem, IEcsRunSystem
     {
         private const float MaxAngleOffset = 15.0f;
+        private const float QuestFailedDistanceOffset = 2.0f;
 
         private readonly GameplayRuntimeData _gameplayRuntimeData;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, StartBringQuest, ActivationEvent> _fQuestActivationEvent;
+        private readonly EcsFilter<EcsGameObject, CompleteBringQuest, ActiveObject> _fCompleteQuest;
+        private readonly EcsFilter<EcsGameObject, StartBringQuest, DeactivationEvent> _fQuestDeactivationEvent;
         private readonly EcsFilter<OnTriggerEnter2DEvent> _fTriggerEnter;
 
         private ObservableCollection<IQuest> _quests;
@@ -62,6 +65,27 @@ namespace RiderGame.Gameplay
                     CompleteQuest(collider.gameObject);
                 }
             }
+
+            foreach(var i in _fCompleteQuest)
+            {
+                ref var gameObject = ref _fCompleteQuest.Get1(i);
+                ref var startQuestComponent = ref _fCompleteQuest.Get2(i);
+
+                if (!FindQuestByTarget(gameObject.instance, out IQuest quest)) continue;
+
+                var failedPos = gameObject.instance.transform.position.y - startQuestComponent.collider.bounds.size.y - QuestFailedDistanceOffset;
+                if (failedPos >= _playerObject.transform.position.y)
+                {
+                    quest.Status.Value = QuestStatus.Failed;
+                }
+            }
+
+            foreach (var i in _fQuestDeactivationEvent)
+            {
+                ref var startQuestComponent = ref _fQuestDeactivationEvent.Get2(i);
+
+                startQuestComponent.collider.enabled = true;
+            }
         }
 
         private void StartQuest(GameObject startObject)
@@ -74,11 +98,16 @@ namespace RiderGame.Gameplay
             quest.Status.Value = QuestStatus.InProgress;
         }
 
+        private bool FindQuestByTarget(GameObject completeObject, out IQuest quest)
+        {
+            quest = _quests.ToList().Find((q) => q is BringQuest bq && bq.Target == completeObject.transform);
+
+            return quest != null;
+        }
+
         private void CompleteQuest(GameObject completeObject)
         {
-            var quest = _quests.ToList().Find((q) => q is BringQuest bq && bq.Target == completeObject.transform);
-
-            if (quest == null) return;
+            if (!FindQuestByTarget(completeObject, out IQuest quest)) return;
 
             Debug.Log("Complete Quest");
             quest.Status.Value = QuestStatus.Completed;

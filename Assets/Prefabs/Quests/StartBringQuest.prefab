@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     questConfigs: {fileID: 11400000, guid: 728d27c23a13f3c46beec5abd1d87465, type: 2}
+    collider: {fileID: 624859114981993152}
 --- !u!58 &624859114981993152
 CircleCollider2D:
   m_ObjectHideFlags: 0

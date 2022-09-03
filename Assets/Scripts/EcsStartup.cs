@@ -17,6 +17,7 @@ namespace RiderGame
     public class EcsStartup : MonoBehaviour
     {
         [SerializeField] private SessionStartup sessionStartup;
+        [SerializeField] private UIConfiguration uiConfigs;
         [SerializeField] private GameConfiguration gameConfigs;
         [SerializeField] private Generator generator;
 
@@ -38,6 +39,7 @@ namespace RiderGame
 
             _UISystems
                 .ConvertScene()
+                .Inject(uiConfigs)
                 .Inject(sessionStartup.GameplayRuntimeData)
                 .Inject(sessionStartup.SessionRuntimeData)
 

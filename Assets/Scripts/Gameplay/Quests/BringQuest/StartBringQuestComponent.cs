@@ -11,5 +11,7 @@ namespace RiderGame.Gameplay
     public struct StartBringQuest
     {
         public BringQuestConfiguration questConfigs;
+        [Space(10)]
+        public Collider2D collider;
     }
 }

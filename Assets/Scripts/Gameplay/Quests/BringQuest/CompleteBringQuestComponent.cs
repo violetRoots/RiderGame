@@ -10,6 +10,6 @@ namespace RiderGame.Gameplay
     [Serializable]
     public struct CompleteBringQuest
     {
-        
+        public Collider2D collider;
     }
 }
