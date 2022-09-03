@@ -12,16 +12,18 @@ namespace SkyCrush.WSGenerator
 
         private Settings _settings;
         private Generator _generator;
+        private Stage _stage;
         private Area2D _area;
         private SpawnPointer2D _pointer;
         private bool _isPaused;
         private bool _isStopped;
         private int _spawnAttempts;
 
-        public GenerateProcess(Settings settings, Generator generator, GenerateObjectInfo objectInfo, PoolContainer poolContainer, Area2D area)
+        public GenerateProcess(Settings settings, Generator generator, Stage stage, GenerateObjectInfo objectInfo, PoolContainer poolContainer, Area2D area)
         {
             _settings = settings;
             _generator = generator;
+            _stage = stage;
             GenerateObjectInfo = objectInfo;
             PoolContainer = poolContainer;
             _area = area;
@@ -58,16 +60,22 @@ namespace SkyCrush.WSGenerator
 
         private IEnumerator Generation()
         {
+            var processTime = 0.0f;
+
             while (!_isStopped)
             {
-                if (_isPaused)
-                {
-                    yield return new WaitUntil(() => !_isPaused);
-                }
+                while (_isPaused) yield return null;
 
-                if(Frequency < _settings.MinFrequencyGenerationValue)
+                processTime += Time.deltaTime;
+
+                while (Frequency < _settings.MinFrequencyGenerationValue)
                 {
-                    yield return new WaitUntil(() => Frequency > _settings.MinFrequencyGenerationValue);
+                    if (processTime < _stage.Duration) yield return null;
+                    else
+                    {
+                        DestroyPointer();
+                        yield break;
+                    }
                 }
 
                 if(_pointer == null)
@@ -90,9 +98,14 @@ namespace SkyCrush.WSGenerator
 
                     pastTime += Time.deltaTime;
                 }
-            }
 
-            if(_pointer != null)
+                DestroyPointer();
+            }
+        }
+
+        private void DestroyPointer()
+        {
+            if (_pointer != null)
             {
                 GameObject.Destroy(_pointer.gameObject);
             }

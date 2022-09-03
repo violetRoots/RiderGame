@@ -99,7 +99,7 @@ namespace SkyCrush.WSGenerator
 
             for (var i = 0; i < objects.Length; i++)
             {
-                _processes[i] = new GenerateProcess(settings, this, objects[i], _poolManager.GetPoolContainer(objects[i].InstanceName), _areaManager.GetArea(objects[i].AreaIndex));
+                _processes[i] = new GenerateProcess(settings, this, stage, objects[i], _poolManager.GetPoolContainer(objects[i].InstanceName), _areaManager.GetArea(objects[i].AreaIndex));
                 _processes[i].Start();
             }
         }
