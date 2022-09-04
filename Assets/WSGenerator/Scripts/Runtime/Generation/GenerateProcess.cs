@@ -78,7 +78,7 @@ namespace SkyCrush.WSGenerator
                     }
                 }
 
-                if(_pointer == null)
+                if (_pointer == null)
                 {
                     Generate();
                 }
@@ -98,9 +98,9 @@ namespace SkyCrush.WSGenerator
 
                     pastTime += Time.deltaTime;
                 }
-
-                DestroyPointer();
             }
+
+            DestroyPointer();
         }
 
         private void DestroyPointer()

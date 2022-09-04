@@ -19,9 +19,10 @@ MonoBehaviour:
     customData:
       movementSpeed: 10
     generateObjects:
-    - instanceName: Quest
+    - instanceName: StartBringQuest
       poolObjectValue:
         instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 3
       areaValue:
         center: {x: 0, y: -40}
@@ -33,18 +34,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 5.000001
-          inSlope: -192.50085
-          outSlope: -192.50085
+          value: 10
+          inSlope: -40.666664
+          outSlope: -40.666664
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.025973916
+          time: 0.24590166
           value: 0
-          inSlope: -0.020830028
-          outSlope: -0.020830028
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334

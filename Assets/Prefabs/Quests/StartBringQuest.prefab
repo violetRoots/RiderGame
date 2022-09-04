@@ -193,7 +193,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    questConfigs: {fileID: 11400000, guid: 728d27c23a13f3c46beec5abd1d87465, type: 2}
+    questConfigs:
+      questIcon: {fileID: 21300000, guid: b54be0fe531c00e4ba9bd4eea43e28cc, type: 3}
+      wayPointIcon: {fileID: 21300000, guid: b54be0fe531c00e4ba9bd4eea43e28cc, type: 3}
+      completeQuestPrefab: {fileID: 2918728100335336490, guid: ea46bf3a4530e984a852b0baa67b4d5e, type: 3}
+      distance: {x: 60, y: 100}
     collider: {fileID: 624859114981993152}
 --- !u!58 &624859114981993152
 CircleCollider2D:

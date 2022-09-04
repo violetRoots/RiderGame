@@ -10,8 +10,6 @@ using RiderGame.RuntimeData;
 using RiderGame.Gameplay;
 using RiderGame.SO;
 using RiderGame.World;
-using System.Collections;
-using Voody.UniLeo;
 
 namespace RiderGame.UI
 {
@@ -40,7 +38,6 @@ namespace RiderGame.UI
 
         public void Run()
         {
-            Debug.Log(_fWayPointIcon.GetEntitiesCount());
             foreach(var i in _fWayPointIcon)
             {
                 ref var uiElement = ref _fWayPointIcon.Get1(i);
@@ -90,31 +87,33 @@ namespace RiderGame.UI
             {
                 ref var uiElement = ref _fWayPointPanel.Get1(i);
 
-                var wayPointIcon = GameObject.Instantiate(_uiConfigs.WayPointIcon, uiElement.content.transform);
-                wayPointIcon.transform.localScale = Vector3.zero;
+                var wayPoint = GameObject.Instantiate(_uiConfigs.WayPointIcon, uiElement.content.transform);
+                var wayPointImage = wayPoint.GetComponent<Image>();
 
-                quest.Status.Subscribe((newStatus) => OnQuestStatusChanged(quest.Status, wayPointIcon, newStatus));
+                wayPoint.transform.localScale = Vector3.zero;
+                wayPointImage.sprite = quest.Configs.wayPointIcon;
 
-                _wayPointQuests.Add(wayPointIcon, quest);
+                quest.Status.Subscribe((newStatus) => OnQuestStatusChanged(wayPoint, quest, newStatus));
+
+                _wayPointQuests.Add(wayPoint, quest);
             }
         }
 
-        private void OnQuestStatusChanged(IDisposable property, GameObject wayPoint, QuestStatus newStatus)
+        private void OnQuestStatusChanged(GameObject wayPoint, BringQuest quest, QuestStatus newStatus)
         {
-            Debug.Log(newStatus);
             if (newStatus == QuestStatus.InProgress)
             {
-                ShowWayPoint(wayPoint);
+                ShowWayPoint(wayPoint, quest);
             }
             else if (newStatus == QuestStatus.Completed || newStatus == QuestStatus.Failed)
             {
-                property.Dispose();
+                quest.Status.Dispose();
 
                 SetWayPointIconVisible(wayPoint.transform, false, () => GameObject.Destroy(wayPoint));
             }
         }
 
-        private void ShowWayPoint(GameObject wayPoint)
+        private void ShowWayPoint(GameObject wayPoint, BringQuest quest)
         {
             foreach (var i in _fWayPointPanel)
             {
@@ -124,6 +123,7 @@ namespace RiderGame.UI
 
                 questIconTransform.position = _camera.WorldToScreenPoint(_playerTransform.position);
                 var questIconImage = questIconTransform.GetComponent<Image>();
+                questIconImage.sprite = quest.Configs.questIcon;
 
                 ShowQuestIconAbovePlayer(questIconTransform, questIconImage, _playerTransform, 
                     () => MoveIconToWayPoint(questIconTransform, questIconImage, wayPoint.transform));
@@ -132,7 +132,6 @@ namespace RiderGame.UI
 
         private void ShowQuestIconAbovePlayer(Transform icon, Image iconImage, Transform player, Action onComplete)
         {
-
             var yOffset = 5.0f;
             var timeToOffset = 0.5f;
 

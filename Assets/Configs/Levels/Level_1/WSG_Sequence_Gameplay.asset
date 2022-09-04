@@ -22,6 +22,7 @@ MonoBehaviour:
     - instanceName: Obstacle_1
       poolObjectValue:
         instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 2
       areaValue:
         center: {x: 0, y: -80}
@@ -58,6 +59,7 @@ MonoBehaviour:
     - instanceName: Obstacle_2
       poolObjectValue:
         instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 2
       areaValue:
         center: {x: 0, y: -80}
@@ -94,6 +96,7 @@ MonoBehaviour:
     - instanceName: Obstacle_3
       poolObjectValue:
         instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 2
       areaValue:
         center: {x: 0, y: -80}
@@ -130,6 +133,7 @@ MonoBehaviour:
     - instanceName: Coin
       poolObjectValue:
         instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 2
       areaValue:
         center: {x: 0, y: -80}
@@ -166,6 +170,44 @@ MonoBehaviour:
     - instanceName: Enemy_1
       poolObjectValue:
         instance: {fileID: 714289481862489155, guid: 26c11ce0cf6b9d3469021c7fe686a008, type: 3}
+        hideInSpawnMenu: 0
+      areaIndex: 2
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 100, y: 50}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 2.682106
+          inSlope: -0.0827816
+          outSlope: -0.0827816
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 10
+          value: 1.85429
+          inSlope: -0.0827816
+          outSlope: -0.0827816
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (1 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
+      objectsCount: 5+-1
+    - instanceName: StartBringQuest
+      poolObjectValue:
+        instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
+        hideInSpawnMenu: 0
       areaIndex: 2
       areaValue:
         center: {x: 0, y: -80}

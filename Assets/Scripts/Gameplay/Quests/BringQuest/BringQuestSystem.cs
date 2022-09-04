@@ -69,14 +69,14 @@ namespace RiderGame.Gameplay
             foreach(var i in _fCompleteQuest)
             {
                 ref var gameObject = ref _fCompleteQuest.Get1(i);
-                ref var startQuestComponent = ref _fCompleteQuest.Get2(i);
+                ref var completeQuestComponent = ref _fCompleteQuest.Get2(i);
 
                 if (!FindQuestByTarget(gameObject.instance, out IQuest quest)) continue;
 
-                var failedPos = gameObject.instance.transform.position.y - startQuestComponent.collider.bounds.size.y - QuestFailedDistanceOffset;
+                var failedPos = gameObject.instance.transform.position.y - completeQuestComponent.collider.bounds.size.y - QuestFailedDistanceOffset;
                 if (failedPos >= _playerObject.transform.position.y)
                 {
-                    quest.Status.Value = QuestStatus.Failed;
+                    FailQuest(quest);
                 }
             }
 
@@ -94,7 +94,6 @@ namespace RiderGame.Gameplay
 
             if (quest == null) return;
 
-            Debug.Log("Start Quest");
             quest.Status.Value = QuestStatus.InProgress;
         }
 
@@ -109,8 +108,13 @@ namespace RiderGame.Gameplay
         {
             if (!FindQuestByTarget(completeObject, out IQuest quest)) return;
 
-            Debug.Log("Complete Quest");
             quest.Status.Value = QuestStatus.Completed;
+            _quests.Remove(quest);
+        }
+
+        private void FailQuest(IQuest quest)
+        {
+            quest.Status.Value = QuestStatus.Failed;
             _quests.Remove(quest);
         }
 
@@ -120,7 +124,7 @@ namespace RiderGame.Gameplay
             var angleOffset = Random.Range(-MaxAngleOffset, MaxAngleOffset);
             pos += Quaternion.Euler(0, 0, angleOffset) * Vector2.down * questConfigs.Distance;
 
-            return ObjectActivationSystem.Instantiate(questConfigs.CompleteQuestPrefab, pos);
+            return ObjectActivationSystem.Instantiate(questConfigs.completeQuestPrefab, pos);
         }
     }
 }
