@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaPrefab: {fileID: 8260062634424805506, guid: 93d6dafc25a2f7a429ae3a855b07eafb, type: 3}
   areas:
-  - center: {x: 0, y: -38.85}
-    size: {x: 62.6, y: 22.6}
+  - center: {x: 0, y: -35}
+    size: {x: 60, y: 20}
     color: {r: 1, g: 0, b: 0.030305386, a: 1}
     drawGizmos: 1
   - center: {x: 0, y: -80}
-    size: {x: 100, y: 50}
+    size: {x: 120, y: 60}
     color: {r: 0.9772253, g: 0, b: 1, a: 1}
     drawGizmos: 1
   - center: {x: -25, y: -150}

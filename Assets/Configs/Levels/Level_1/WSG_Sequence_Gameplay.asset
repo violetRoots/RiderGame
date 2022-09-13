@@ -26,7 +26,7 @@ MonoBehaviour:
       areaIndex: 1
       areaValue:
         center: {x: 0, y: -80}
-        size: {x: 100, y: 50}
+        size: {x: 120, y: 60}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -34,18 +34,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.219407
-          inSlope: -0.023401737
-          outSlope: -0.023401737
+          value: 1.8490152
+          inSlope: -0.064334966
+          outSlope: -0.064334966
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 10
-          value: 1.9853897
-          inSlope: -0.023401737
-          outSlope: -0.023401737
+          value: 1.2056656
+          inSlope: -0.064334966
+          outSlope: -0.064334966
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -63,7 +63,7 @@ MonoBehaviour:
       areaIndex: 1
       areaValue:
         center: {x: 0, y: -80}
-        size: {x: 100, y: 50}
+        size: {x: 120, y: 60}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -71,18 +71,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.0593681
-          inSlope: 0.023791123
-          outSlope: 0.023791123
+          value: 1.1821709
+          inSlope: -0.011296165
+          outSlope: -0.011296165
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 10
-          value: 2.2972794
-          inSlope: 0.023791123
-          outSlope: 0.023791123
+          value: 1.0692092
+          inSlope: -0.011296165
+          outSlope: -0.011296165
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -100,7 +100,7 @@ MonoBehaviour:
       areaIndex: 1
       areaValue:
         center: {x: 0, y: -80}
-        size: {x: 100, y: 50}
+        size: {x: 120, y: 60}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -108,18 +108,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.351757
-          inSlope: -0.021069257
-          outSlope: -0.021069257
+          value: 1.2211418
+          inSlope: 0.017943954
+          outSlope: 0.017943954
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 9.987183
-          value: 2.1413345
-          inSlope: -0.021069257
-          outSlope: -0.021069257
+          time: 10
+          value: 1.4005814
+          inSlope: 0.017943954
+          outSlope: 0.017943954
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -137,7 +137,7 @@ MonoBehaviour:
       areaIndex: 1
       areaValue:
         center: {x: 0, y: -80}
-        size: {x: 100, y: 50}
+        size: {x: 120, y: 60}
         color: {r: 0.9772253, g: 0, b: 1, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -182,9 +182,9 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.682106
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          value: 2.0193286
+          inSlope: -0.01650386
+          outSlope: -0.01650386
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
@@ -192,8 +192,8 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 10
           value: 1.85429
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          inSlope: -0.01650386
+          outSlope: -0.01650386
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -203,7 +203,7 @@ MonoBehaviour:
         m_RotationOrder: 0
       x: 'time: 1 unit = duration / 10 (0.2 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-      objectsCount: 2+-1
+      objectsCount: 1+-1
     - instanceName: Enemy_2
       poolObjectValue:
         instance: {fileID: 714289481862489155, guid: 1e4ad40aee07e46238a51797979689cf, type: 3}
@@ -219,9 +219,9 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.682106
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          value: 1.9608536
+          inSlope: -0.010656357
+          outSlope: -0.010656357
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
@@ -229,8 +229,8 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 10
           value: 1.85429
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          inSlope: -0.010656357
+          outSlope: -0.010656357
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -240,15 +240,15 @@ MonoBehaviour:
         m_RotationOrder: 0
       x: 'time: 1 unit = duration / 10 (0.2 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-      objectsCount: 2+-1
+      objectsCount: 1+-1
     - instanceName: StartCatchQuest
       poolObjectValue:
         instance: {fileID: 624859114981993154, guid: beb0f1439965c48a588a7d97751d00ea, type: 3}
         hideInSpawnMenu: 0
       areaIndex: 0
       areaValue:
-        center: {x: 0, y: -38.85}
-        size: {x: 62.6, y: 22.6}
+        center: {x: 0, y: -35}
+        size: {x: 60, y: 20}
         color: {r: 1, g: 0, b: 0.030305386, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -256,18 +256,18 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 2.682106
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          value: 1.0446854
+          inSlope: 0.02832985
+          outSlope: 0.02832985
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 10
-          value: 1.85429
-          inSlope: -0.0827816
-          outSlope: -0.0827816
+          value: 1.3279839
+          inSlope: 0.02832985
+          outSlope: 0.02832985
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -277,15 +277,15 @@ MonoBehaviour:
         m_RotationOrder: 0
       x: 'time: 1 unit = duration / 10 (0.2 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-      objectsCount: 2+-1
+      objectsCount: 1+-1
     - instanceName: Enemy_4
       poolObjectValue:
         instance: {fileID: 714289481862489155, guid: 892fe377a77f5409dabd856f39022bbc, type: 3}
         hideInSpawnMenu: 0
       areaIndex: 0
       areaValue:
-        center: {x: 0, y: -38.85}
-        size: {x: 62.6, y: 22.6}
+        center: {x: 0, y: -35}
+        size: {x: 60, y: 20}
         color: {r: 1, g: 0, b: 0.030305386, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -315,3 +315,114 @@ MonoBehaviour:
       x: 'time: 1 unit = duration / 10 (0.2 sec)'
       y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
       objectsCount: 3+-1
+    - instanceName: Obstacle_4-1
+      poolObjectValue:
+        instance: {fileID: 6767068810095633567, guid: 4b57a8623df954f52afcd38bfa1142c4, type: 3}
+        hideInSpawnMenu: 0
+      areaIndex: 1
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 120, y: 60}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1.8633804
+          inSlope: 0.0049411776
+          outSlope: 0.0049411776
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 10
+          value: 1.9127922
+          inSlope: 0.0049411776
+          outSlope: 0.0049411776
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (0.2 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+      objectsCount: 1+-1
+    - instanceName: Obstacle_4-2
+      poolObjectValue:
+        instance: {fileID: 6767068810095633567, guid: 6b886c81e1d2f454681b1698992102cc, type: 3}
+        hideInSpawnMenu: 0
+      areaIndex: 1
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 120, y: 60}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 2.0582962
+          inSlope: 0.010802191
+          outSlope: 0.010802191
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 9.987183
+          value: 2.1661797
+          inSlope: 0.010802191
+          outSlope: 0.010802191
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (0.2 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+      objectsCount: 1+-1
+    - instanceName: Obstacle_4-3
+      poolObjectValue:
+        instance: {fileID: 6767068810095633567, guid: f9da69eda267e42c291d58fea1399e96, type: 3}
+        hideInSpawnMenu: 0
+      areaIndex: 1
+      areaValue:
+        center: {x: 0, y: -80}
+        size: {x: 120, y: 60}
+        color: {r: 0.9772253, g: 0, b: 1, a: 1}
+        drawGizmos: 1
+      frequencyCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 2.007801
+          inSlope: -0.0058546723
+          outSlope: -0.0058546723
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 9.987183
+          value: 1.9493294
+          inSlope: -0.0058546723
+          outSlope: -0.0058546723
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      x: 'time: 1 unit = duration / 10 (0.2 sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+      objectsCount: 1+-1
