@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 624859114981993153, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: value.questConfigs.completeQuestPrefab
       value: 
-      objectReference: {fileID: 4045716138727058721, guid: 20e865198ff1b774b9597c5e98aff7fc, type: 3}
+      objectReference: {fileID: 714289481862489155, guid: 26c11ce0cf6b9d3469021c7fe686a008, type: 3}
     - target: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: m_Name
       value: StartBringQuest_Leek
@@ -78,7 +78,7 @@ PrefabInstance:
     - target: {fileID: 3657627334560098256, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ad0064931cddd614fa49a42aaddff173, type: 3}
+      objectReference: {fileID: 21300000, guid: a41ada0cb1ca0bf4cb8ded2bfdb29147, type: 3}
     - target: {fileID: 3657627334560098256, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668932592001855403, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3668932592001855403, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
       propertyPath: m_Offset.y

@@ -31,3 +31,11 @@ MonoBehaviour:
     hideInSpawnMenu: 0
   - instance: {fileID: 4045716138727058721, guid: 20e865198ff1b774b9597c5e98aff7fc, type: 3}
     hideInSpawnMenu: 1
+  - instance: {fileID: 714289481862489155, guid: 1e4ad40aee07e46238a51797979689cf, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 624859114981993154, guid: beb0f1439965c48a588a7d97751d00ea, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 2918728100335336490, guid: 058147b1d37e74f60970ba0ab6142b08, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 714289481862489155, guid: 8e171e17eca5f45f4a84a91b887924c4, type: 3}
+    hideInSpawnMenu: 0
