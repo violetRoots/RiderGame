@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    enemyConfiguration: {fileID: 11400000, guid: 9985261ac0257df47ba54deed16d3eff, type: 2}
+    enemyConfiguration: {fileID: 11400000, guid: f3be7ce38de15460b92ed2472947bd48, type: 2}
     agressionIcon: {fileID: 8130358587690751633}
     stunnedIcon: {fileID: 1087452321690915767}
     state: 0
