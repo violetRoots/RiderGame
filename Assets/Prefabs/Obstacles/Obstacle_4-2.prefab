@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183815775041913707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 10.3, z: 0}
-  m_LocalScale: {x: 4.09, y: 4.09, z: 4.09}
+  m_LocalPosition: {x: 0.5, y: 7.94, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5756532602607234157}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 30.24, y: 40.319996}
+  m_Size: {x: 7.2, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -254,8 +254,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15, y: 0.99}
-  m_Size: {x: 7.09, y: 3.07}
+  m_Offset: {x: -0.15, y: 0.94}
+  m_Size: {x: 2.48, y: 1.34}
   m_Direction: 1
 --- !u!1001 &5122719167625736511
 PrefabInstance:
@@ -314,15 +314,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.x
-      value: 9.55
+      value: 10.08
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.y
-      value: 23.72
+      value: 20.63
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Offset.y
-      value: -5.01
+      value: -6.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26cc6bea953627740a7881f82037487d, type: 3}

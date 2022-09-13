@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
+  m_Name: Character_3_AnimationConfigs
+  m_EditorClassIdentifier: 
+  animationsInfo:
+  - angle: -60
+    animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}
+    isFlip: 0
+  - angle: -45
+    animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}
+    isFlip: 0
+  - angle: -30
+    animation: {fileID: 11400000, guid: 88bce7b7d826e4cf3a4f3559684e6b07, type: 2}
+    isFlip: 0
+  - angle: -15
+    animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
+    isFlip: 0
+  - angle: 0
+    animation: {fileID: 11400000, guid: 89d5734d4f64943f1b6f712b38e09ff2, type: 2}
+    isFlip: 0
+  - angle: 15
+    animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
+    isFlip: 1
+  - angle: 30
+    animation: {fileID: 11400000, guid: 88bce7b7d826e4cf3a4f3559684e6b07, type: 2}
+    isFlip: 1
+  - angle: 45
+    animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}
+    isFlip: 1
+  - angle: 60
+    animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}
+    isFlip: 1

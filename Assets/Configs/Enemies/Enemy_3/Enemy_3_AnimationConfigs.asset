@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: Enemy_3_AnimationConfigs
   m_EditorClassIdentifier: 
   animationsInfo:
-  - angle: -60
-    animation: {fileID: 11400000, guid: 17380b38a0033ec45814cb5fb8ee2017, type: 2}
+  - angle: 60
+    animation: {fileID: 11400000, guid: 41530bdf1ed90427da8c6100e33ed562, type: 2}
     isFlip: 1
-  - angle: -45
-    animation: {fileID: 11400000, guid: a54fd0ace9241ed47ad0c004a31d8f26, type: 2}
+  - angle: 45
+    animation: {fileID: 11400000, guid: 41530bdf1ed90427da8c6100e33ed562, type: 2}
     isFlip: 1
-  - angle: -30
-    animation: {fileID: 11400000, guid: e6259d20b24709843896203bccffa48f, type: 2}
+  - angle: 30
+    animation: {fileID: 11400000, guid: e2f81fa9a7fec4f2aa2d82a12ebe27e2, type: 2}
     isFlip: 1
-  - angle: -15
-    animation: {fileID: 11400000, guid: c5a738be66ff6c64f951248e099523d8, type: 2}
+  - angle: 15
+    animation: {fileID: 11400000, guid: fd58a0f128a004c1094ba24b4117b54b, type: 2}
     isFlip: 1
   - angle: 0
-    animation: {fileID: 11400000, guid: a29afc9b8e8a8da4bb504db17e0f0f89, type: 2}
+    animation: {fileID: 11400000, guid: ec0079ac0630c483e97d62e5e6eaf3e5, type: 2}
     isFlip: 0
-  - angle: 15
-    animation: {fileID: 11400000, guid: c5a738be66ff6c64f951248e099523d8, type: 2}
+  - angle: -15
+    animation: {fileID: 11400000, guid: fd58a0f128a004c1094ba24b4117b54b, type: 2}
     isFlip: 0
-  - angle: 30
-    animation: {fileID: 11400000, guid: e6259d20b24709843896203bccffa48f, type: 2}
+  - angle: -30
+    animation: {fileID: 11400000, guid: e2f81fa9a7fec4f2aa2d82a12ebe27e2, type: 2}
     isFlip: 0
-  - angle: 45
-    animation: {fileID: 11400000, guid: a54fd0ace9241ed47ad0c004a31d8f26, type: 2}
+  - angle: -45
+    animation: {fileID: 11400000, guid: 41530bdf1ed90427da8c6100e33ed562, type: 2}
     isFlip: 0
-  - angle: 60
-    animation: {fileID: 11400000, guid: 17380b38a0033ec45814cb5fb8ee2017, type: 2}
+  - angle: -60
+    animation: {fileID: 11400000, guid: 41530bdf1ed90427da8c6100e33ed562, type: 2}
     isFlip: 0

@@ -15,9 +15,11 @@ MonoBehaviour:
   poolObjectsInfo:
   - instance: {fileID: 5541395732058719004, guid: 57c27e8cd4502284884699836794436d, type: 3}
     hideInSpawnMenu: 0
-  - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
-    hideInSpawnMenu: 0
   - instance: {fileID: 6767068810095633567, guid: de3218d15c98d2741951350a5145c06e, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 6767068810095633567, guid: d0cc185a45e3546e2b75753f7120bf6d, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 6767068810095633567, guid: 233b8e1850c7e435d854e301ca79fbf7, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
     hideInSpawnMenu: 0
@@ -26,16 +28,14 @@ MonoBehaviour:
   - instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 2918728100335336490, guid: ea46bf3a4530e984a852b0baa67b4d5e, type: 3}
-    hideInSpawnMenu: 1
-  - instance: {fileID: 9072107594776939580, guid: b5d4f8190b16ac546a11d241f286e231, type: 3}
-    hideInSpawnMenu: 0
-  - instance: {fileID: 4045716138727058721, guid: 20e865198ff1b774b9597c5e98aff7fc, type: 3}
-    hideInSpawnMenu: 1
-  - instance: {fileID: 714289481862489155, guid: 1e4ad40aee07e46238a51797979689cf, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 624859114981993154, guid: beb0f1439965c48a588a7d97751d00ea, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 2918728100335336490, guid: 058147b1d37e74f60970ba0ab6142b08, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 714289481862489155, guid: 1e4ad40aee07e46238a51797979689cf, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 714289481862489155, guid: 8e171e17eca5f45f4a84a91b887924c4, type: 3}
     hideInSpawnMenu: 0
@@ -46,4 +46,12 @@ MonoBehaviour:
   - instance: {fileID: 6767068810095633567, guid: 6b886c81e1d2f454681b1698992102cc, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 6767068810095633567, guid: f9da69eda267e42c291d58fea1399e96, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 6362932393906131555, guid: efcc541023e50414cb9adfe9f711d580, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 6362932393906131555, guid: 12532bbd20f4d4193871722a2f5eea6f, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 6767068810095633567, guid: a4eeb0eebdf244b39a401dbc24ba5f36, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
     hideInSpawnMenu: 0

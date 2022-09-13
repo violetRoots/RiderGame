@@ -25,9 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137040384338075571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.01, y: 9.02, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4479358943375399143}
   m_RootOrder: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 552a2c3301e384112a25a4096e349f14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cd4f604a3b8e49a1afa7574e87b9cf4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 42.550003, y: 30.001076}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     spriteRenderer: {fileID: 9028799586203459198}
-    layerEdgeOffset: 2.99
+    layerEdgeOffset: 0.29
 --- !u!114 &8731828182283582614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,8 +204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8a84e617405f54ab4e91e7d91b00f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value:
-    dropCoins: 1
 --- !u!70 &9035512836481144325
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -219,8 +217,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 1.81}
-  m_Size: {x: 7.41, y: 4.3}
+  m_Offset: {x: 0.1, y: 0.46}
+  m_Size: {x: 3.16, y: 1.51}
   m_Direction: 1
 --- !u!1001 &5155037662688437937
 PrefabInstance:
