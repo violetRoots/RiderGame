@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine;
 using Leopotam.Ecs;
 using SkyCrush.WSGenerator;
 using RiderGame.SO;
@@ -11,7 +12,7 @@ namespace RiderGame.World
     public class ObjectActivationSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
         public static readonly List<EcsEntity> ActiveObjectEntities = new List<EcsEntity>();
-        private static readonly List<GameObject> ObjectsToActivate = new List<GameObject>();
+        private static readonly List<ObjectActivationInfo> ObjectsToActivate = new List<ObjectActivationInfo>();
 
         private bool IsEventHandling { get; set; } = true;
 
@@ -29,7 +30,7 @@ namespace RiderGame.World
         public static GameObject Instantiate(GameObject gameObject, Vector2 position)
         {
             var instantiatedObject = GameObject.Instantiate(gameObject, position, Quaternion.identity);
-            ObjectsToActivate.Add(instantiatedObject);
+            ActivateCallback(instantiatedObject);
             return instantiatedObject;
         }
 
@@ -37,7 +38,7 @@ namespace RiderGame.World
         {
             _worldObject = _fWorldObject.Get1(0).instance.transform;
 
-            _generator.PoolManager.OnTakeFromPools += ActivateCallbak;
+            _generator.PoolManager.OnTakeFromPools += ActivateCallback;
             _generator.PoolManager.OnReturnToPools += Deactivate;
 
             _ecsStartupObject.StartCoroutine(EventsProcessingOnEndOfFrame());
@@ -54,8 +55,6 @@ namespace RiderGame.World
                 ActiveObjectEntities.Add(entity);
 
                 if (gameObject.instance == null || gameObject.instance.transform.position.y <= _gameConfigs.MaxActiveObjectPosition) continue;
-
-                entity.Del<ActiveObject>();
                 entity.Replace(new DeactivationEvent());
                 entity.Replace(new InactiveObject());
             }
@@ -63,13 +62,22 @@ namespace RiderGame.World
 
         public void Destroy()
         {
-            _generator.PoolManager.OnTakeFromPools -= ActivateCallbak;
+            _generator.PoolManager.OnTakeFromPools -= ActivateCallback;
             _generator.PoolManager.OnReturnToPools -= Deactivate;
         }
 
-        private void ActivateCallbak(GameObject poolObject)
+        private static void ActivateCallback(GameObject poolObject)
         {
-            ObjectsToActivate.Add(poolObject);
+
+            ObjectsToActivate.Add(new ObjectActivationInfo(poolObject, false));
+
+            var nestedObjectsToActivate = poolObject.GetComponentsInChildren<ConvertToEntity>();
+            foreach(var nested in nestedObjectsToActivate)
+            {
+                if (nested.gameObject == poolObject) continue;
+
+                ObjectsToActivate.Add(new ObjectActivationInfo(nested.gameObject, true));
+            }
         }
 
         private IEnumerator EventsProcessingOnEndOfFrame()
@@ -91,7 +99,9 @@ namespace RiderGame.World
 
                 var entity = _fGameObjects.GetEntity(i);
 
-                if (!ObjectsToActivate.Contains(gameObject.instance))
+                var info = ObjectsToActivate.Find((info) => info.Instance == gameObject.instance);
+
+                if (info == null)
                 {
                     if (entity.Has<ActivationEvent>()) entity.Del<ActivationEvent>();
                 }
@@ -99,12 +109,14 @@ namespace RiderGame.World
                 {
                     if (entity.Has<InactiveObject>()) entity.Del<InactiveObject>();
 
+                    var activeObject = new ActiveObject() { isNested = info.IsNested };
+
+                    if(!activeObject.isNested) gameObject.instance.transform.SetParent(_worldObject);
+
                     entity.Replace(new ActivationEvent());
-                    entity.Replace(new ActiveObject());
+                    entity.Replace(activeObject);
 
-                    gameObject.instance.transform.SetParent(_worldObject);
-
-                    ObjectsToActivate.Remove(gameObject.instance);
+                    ObjectsToActivate.Remove(info);
                 }
             }
         }
@@ -113,16 +125,34 @@ namespace RiderGame.World
         {
             foreach (var i in _fDeactivationEvent)
             {
+                var entity = _fDeactivationEvent.GetEntity(i);
                 var gameObject = _fDeactivationEvent.Get1(i);
+                
+                if(entity.Has<ActiveObject>() && entity.Get<ActiveObject>().isNested == false)
+                {
+                    _generator.PoolManager.GetPoolContainer(gameObject.instance.name, true).Release(gameObject.instance);
+                }
 
-                _generator.PoolManager.GetPoolContainer(gameObject.instance.name, true).Release(gameObject.instance);
-                _fDeactivationEvent.GetEntity(i).Del<DeactivationEvent>();
+                if (entity.Has<ActiveObject>()) entity.Del<ActiveObject>();
+                entity.Del<DeactivationEvent>();
             }
         }
 
         private void Deactivate(GameObject poolObject)
         {
             poolObject.transform.SetParent(_generator.PoolManager.GetPoolContainer(poolObject.name, true).Container);
+        }
+    }
+
+    public class ObjectActivationInfo
+    {
+        public GameObject Instance { get; private set; }
+        public bool IsNested { get; private set; }
+
+        public ObjectActivationInfo(GameObject instance, bool isNested)
+        {
+            Instance = instance;
+            IsNested = isNested;
         }
     }
 }

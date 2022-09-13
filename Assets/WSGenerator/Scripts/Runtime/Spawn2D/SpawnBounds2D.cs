@@ -26,7 +26,7 @@ namespace SkyCrush.WSGenerator
         {
             if ((Application.isEditor && !Application.isPlaying) || (Application.isPlaying && _areaContacts > 0))
             {
-                CustomGizmos.DrawRect(transform.position + (Vector3) BoxCollider.offset, BoxCollider.size, Color.red);
+                CustomGizmos.DrawRect(transform.position + (Vector3) BoxCollider.offset, BoxCollider.size * transform.lossyScale, Color.red);
             }
         }
 

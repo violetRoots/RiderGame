@@ -27,3 +27,7 @@ MonoBehaviour:
     hideInSpawnMenu: 0
   - instance: {fileID: 2918728100335336490, guid: ea46bf3a4530e984a852b0baa67b4d5e, type: 3}
     hideInSpawnMenu: 1
+  - instance: {fileID: 9072107594776939580, guid: b5d4f8190b16ac546a11d241f286e231, type: 3}
+    hideInSpawnMenu: 0
+  - instance: {fileID: 4045716138727058721, guid: 20e865198ff1b774b9597c5e98aff7fc, type: 3}
+    hideInSpawnMenu: 1

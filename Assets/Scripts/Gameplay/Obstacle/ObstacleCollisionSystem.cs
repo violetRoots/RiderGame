@@ -20,6 +20,7 @@ namespace RiderGame.Gameplay
 
         private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fCollisionEnter;
+        private readonly EcsFilter<EcsGameObject, Obstacle> _fObstacle;
 
         private PlayerConfiguration _playerConfigs;
         private GameObject _worldObject;

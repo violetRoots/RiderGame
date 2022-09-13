@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8a84e617405f54ab4e91e7d91b00f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value:
+    dropCoins: 1
 --- !u!70 &6520015236618883569
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

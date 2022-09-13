@@ -132,13 +132,17 @@ namespace RiderGame.UI
 
         private void ShowQuestIconAbovePlayer(Transform icon, Image iconImage, Transform player, Action onComplete)
         {
-            var yOffset = 5.0f;
+            var yStartOffset = 5.0f;
+            var yEndOffset = 7.0f;
             var timeToOffset = 0.5f;
 
             iconImage.color = new Color(1, 1, 1, 0);
 
+            var startPos = _camera.WorldToScreenPoint(player.position + new Vector3(0.0f, yStartOffset));
+            var endPos = _camera.WorldToScreenPoint(player.position + new Vector3(0.0f, yEndOffset));
+
             var sequence = DOTween.Sequence();
-            sequence.Append(icon.DOMove(_camera.WorldToScreenPoint(player.position + new Vector3(0.0f, yOffset)), timeToOffset).SetEase(Ease.Linear));
+            sequence.Append(icon.DOMove(endPos, timeToOffset).SetEase(Ease.Linear));
             sequence.Join(iconImage.DOFade(1.0f, timeToOffset));
             sequence.OnComplete(() => onComplete?.Invoke());
         }
@@ -148,14 +152,12 @@ namespace RiderGame.UI
             var timeToMoveToWayPoint = 1.0f;
             var endScale = new Vector3(0.5f, 0.5f, 1.0f);
 
-
             var sequence = DOTween.Sequence();
             sequence.Append(icon.DOMove(wayPoint.position, timeToMoveToWayPoint).SetEase(Ease.Linear));
             sequence.Join(icon.DOScale(endScale, timeToMoveToWayPoint).SetEase(Ease.Linear));
-            sequence.Join(questIcon.DOFade(0.0f, timeToMoveToWayPoint).SetEase(Ease.InBack));
+            //sequence.Join(questIcon.DOFade(0.0f, timeToMoveToWayPoint).SetEase(Ease.InBack));
             sequence.OnComplete(() =>
             {
-
                 SetWayPointIconVisible(wayPoint, true);
 
                 GameObject.Destroy(icon.gameObject);
