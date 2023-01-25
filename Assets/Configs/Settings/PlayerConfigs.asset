@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ffc5bdd0b67e24fa3dfab5f0ea90d1, type: 3}
   m_Name: PlayerConfigs
   m_EditorClassIdentifier: 
-  pushForce: 1
+  pushForce: 0.2
   pushTime: 0.2
   invunerabilityDuration: 2
   invunerabilityBlinkInterval: 0.25

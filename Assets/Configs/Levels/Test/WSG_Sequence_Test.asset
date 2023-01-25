@@ -17,16 +17,16 @@ MonoBehaviour:
   - name: First Random Stage
     duration: 10
     customData:
-      movementSpeed: 10
+      movementSpeed: 8
     generateObjects:
     - instanceName: StartBringQuest
       poolObjectValue:
         instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
         hideInSpawnMenu: 0
-      areaIndex: 3
+      areaIndex: 0
       areaValue:
-        center: {x: 0, y: -40}
-        size: {x: 30, y: 20}
+        center: {x: 0, y: -35}
+        size: {x: 80, y: 20}
         color: {r: 1, g: 0, b: 0.030305386, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -63,5 +63,5 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 0
       x: 'time: 1 unit = duration / 10 (1 sec)'
-      y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
+      y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
       objectsCount: 2+-1
