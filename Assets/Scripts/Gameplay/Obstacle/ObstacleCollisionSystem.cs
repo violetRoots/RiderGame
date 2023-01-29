@@ -54,8 +54,8 @@ namespace RiderGame.Gameplay
 
         private void PushPlayer(ref OnCollisionEnter2DEvent eventData)
         {
-            Vector3 offset = eventData.firstContactPoint2D.normal * _playerConfigs.PushForce;
-            _worldObject.transform.DOMove(_worldObject.transform.position - offset, _playerConfigs.PushTime).SetEase(Ease.OutExpo);
+            Vector3 offset = -eventData.firstContactPoint2D.normal * _playerConfigs.PushForce;
+            MoveWorldObjectSystem.MoveWorldObjectByOffset(offset, _playerConfigs.PushTime, Ease.OutExpo);
         }
 
         private void DropCoins(ref OnCollisionEnter2DEvent eventData)

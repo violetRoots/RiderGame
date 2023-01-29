@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745b99898b382eb46beb48cfe632fa6a, type: 3}
   m_Name: GameConfigs
   m_EditorClassIdentifier: 
-  maxActiveObjectPosition: 100
-  changeLayerEdgePosition: 0
-  playerConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}
   mouseDirectionSensitivity: 0.1
   touchDirectionSensitivity: 0.25
+  swipeDetectTime: 0.1
+  swipeSensitivity: 0.7
+  maxActiveObjectPosition: 100
+  changeLayerEdgePosition: 0
   clampDirectionAngle: 60
+  playerConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}
   _levelConfigs:
   - {fileID: 11400000, guid: 76bd132b660bd4f4a8cd28028d4f5202, type: 2}

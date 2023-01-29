@@ -78,6 +78,7 @@ namespace RiderGame
 
                 //Player
                 .Add(new PlayerAnimationSystem())
+                .Add(new PlayerDashSystem())
                 .Add(new BaseEffectSystem())
                 .Add(new InvulnerabilitySystem())
                 .Add(new CoinCollectionSystem())
@@ -90,6 +91,9 @@ namespace RiderGame
 
                 //Animation
                 .Add(new MovementAnimationSystem())
+
+                //Event
+                .Add(new OneFrameEventSystem())
 
                 .Init();
 #if UNITY_EDITOR

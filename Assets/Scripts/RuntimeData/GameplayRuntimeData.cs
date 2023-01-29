@@ -10,12 +10,15 @@ namespace RiderGame.RuntimeData
         public ObservableCollection<IQuest> Quests => _quests;
         public float MovementSpeed => _movementSpeed;
         public float MovementDirection => _movementDirection;
+        public float DashLastUseTime => _dashLastUseTime;
+
 
         private LevelConfiguration _levelConfig;
 
         private readonly ObservableCollection<IQuest> _quests = new ObservableCollection<IQuest>();
         private float _movementSpeed;
         private float _movementDirection;
+        private float _dashLastUseTime;
 
         public void Init(LevelConfiguration levelConfiguration)
         {
@@ -32,6 +35,11 @@ namespace RiderGame.RuntimeData
         public void SetMovementDirection(float direction)
         {
             _movementDirection = direction;
+        }
+
+        public void SetDashLastUseTime(float cooldown)
+        {
+            _dashLastUseTime = cooldown;
         }
     }
 }

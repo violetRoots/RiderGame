@@ -10,7 +10,8 @@ namespace RiderGame.World
     public struct Background 
     {
         public SpriteRenderer renderer;
+
+        [HideInInspector]
+        public Vector3 backgroundTextureOffset;
     }
 }
-
-

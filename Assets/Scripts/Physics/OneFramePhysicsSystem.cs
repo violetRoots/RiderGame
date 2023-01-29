@@ -1,7 +1,6 @@
 using LeoEcsPhysics;
 using Leopotam.Ecs;
 using System.Collections;
-using UnityEngine;
 
 namespace RiderGame.Physics
 {

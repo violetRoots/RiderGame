@@ -9,5 +9,6 @@ namespace RiderGame.Inputs
     public struct Input
     {
         public Vector2 mouseDelta;
+        public bool swipeDown;
     }
 }

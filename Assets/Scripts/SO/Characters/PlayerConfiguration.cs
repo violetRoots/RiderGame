@@ -7,6 +7,10 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "PlayerConfigs", menuName = "RiderGame/PlayerConfigs", order = 2)]
     public class PlayerConfiguration : ScriptableObject
     {
+        public float DashDistance => dashDistance;
+        public float DashTime => dashTime;
+        public float DashCooldown => dashCooldown;
+
         public float PushForce => pushForce;
         public float PushTime => pushTime;
         public float InvunerabilityDuration => invunerabilityDuration;
@@ -15,6 +19,15 @@ namespace RiderGame.SO
         public Vector2Int CoinsDropCount => coinsDropCount;
         public float CoinsDropRadius => coinsDropRadius;
         public float CoinsDropTime => coinsDropTime;
+
+        [Header("Dash")]
+        [SerializeField]
+        private float dashDistance = 1.0f;
+        [SerializeField]
+        private float dashTime = 0.25f;
+        [SerializeField]
+        private float dashCooldown = 1.0f;
+
 
         [Header("Collision with obstacle")]
         [SerializeField]
