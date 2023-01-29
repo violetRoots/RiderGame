@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GameConfigs
   m_EditorClassIdentifier: 
   mouseDirectionSensitivity: 0.1
-  touchDirectionSensitivity: 0.25
+  touchDirectionSensitivity: 0.1
   swipeDetectTime: 0.1
-  swipeSensitivity: 0.7
+  swipeSensitivity: 0.95
   maxActiveObjectPosition: 100
   changeLayerEdgePosition: 0
   clampDirectionAngle: 60
