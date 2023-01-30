@@ -19,14 +19,14 @@ MonoBehaviour:
     customData:
       movementSpeed: 8
     generateObjects:
-    - instanceName: StartBringQuest
+    - instanceName: Resources_AcidHills_Crystal_1
       poolObjectValue:
-        instance: {fileID: 624859114981993154, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
+        instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
         hideInSpawnMenu: 0
       areaIndex: 0
       areaValue:
-        center: {x: 0, y: -35}
-        size: {x: 80, y: 20}
+        center: {x: 0, y: -40}
+        size: {x: 140, y: 40}
         color: {r: 1, g: 0, b: 0.030305386, a: 1}
         drawGizmos: 1
       frequencyCurve:
@@ -34,16 +34,7 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 10
-          inSlope: -40.666664
-          outSlope: -40.666664
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.24590166
-          value: 0
+          value: 0.78677726
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -53,8 +44,8 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 10
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: -0.07867773
+          outSlope: -0.07867773
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334

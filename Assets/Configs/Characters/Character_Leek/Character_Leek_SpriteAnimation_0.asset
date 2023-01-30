@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
-  m_Name: Character_3_SpriteAnimation_30
+  m_Name: Character_Leek_SpriteAnimation_0
   m_EditorClassIdentifier: 
   fps: 8
   frames:
-  - {fileID: 21300000, guid: a29a48c037aa847d586778079702d4b4, type: 3}
-  - {fileID: 21300000, guid: 3c24a296ca7e14d09ab3a771038b12ac, type: 3}
-  - {fileID: 21300000, guid: e68b2d95779ed43159a48df8257f9f25, type: 3}
-  - {fileID: 21300000, guid: 492a4824f0923496d83fee95b21c3a61, type: 3}
+  - {fileID: 21300000, guid: 89fb01eb36b7a4d1cbd404946bb1e0b2, type: 3}
+  - {fileID: 21300000, guid: 77b89cf1690644d0bb6db0e92b4c5418, type: 3}
+  - {fileID: 21300000, guid: fc6857312c7da4895b1d1287f2ee5e9c, type: 3}
+  - {fileID: 21300000, guid: 0618c89d72d2c491b9a6d900f68ba305, type: 3}
   triggers: []
