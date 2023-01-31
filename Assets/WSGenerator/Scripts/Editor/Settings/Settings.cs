@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SkyCrush.WSGenerator
 {
-    [CreateAssetMenu(fileName = "WSG_Settings", menuName = "WSGenerator/Settings", order = 0)]
+    [CreateAssetMenu(fileName = "WSG_Settings", menuName = "WSGenerator/Settings", order = 2)]
     public partial class Settings : SingletonSettings<Settings>
     {
         [SerializeField]

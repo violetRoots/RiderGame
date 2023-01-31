@@ -3,7 +3,7 @@ using NaughtyAttributes;
 
 namespace SkyCrush.WSGenerator
 {
-    [CreateAssetMenu(fileName = "WSG_Sequence", menuName = "WSGenerator/Sequence", order = 1)]
+    [CreateAssetMenu(fileName = "WSG_Sequence", menuName = "WSGenerator/Sequence", order = 0)]
     public partial class Sequence : ScriptableObject
     {
 #if UNITY_EDITOR

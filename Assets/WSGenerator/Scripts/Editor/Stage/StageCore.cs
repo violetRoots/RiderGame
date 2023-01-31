@@ -9,6 +9,14 @@ namespace SkyCrush.WSGenerator
         public float Duration => duration;
         public CustomStageData CustomData => customData;
         public GenerateObjectInfo[] GenerateObjects => generateObjects;
+
+        private void OnValidate()
+        {
+            UpdateAreas();
+            UpdatePool();
+            UpdateCurveDescription();
+        }
+
         public void UpdateAreas()
         {
             foreach (var objectInfo in generateObjects) objectInfo.UpdateAreaValue();
