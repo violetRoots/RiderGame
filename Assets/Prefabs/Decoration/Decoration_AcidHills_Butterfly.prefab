@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 714289480939590230}
   animations: []
-  playAnimationOnStart: {fileID: 0}
+  playAnimationOnStart: {fileID: 11400000, guid: 198ce36b4ad7449ab80a3e3e3e0798c1, type: 2}
   loop: 1
 --- !u!1 &714289481862489155
 GameObject:
