@@ -22,8 +22,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -50,8 +50,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -78,8 +78,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -87,7 +87,16 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.7738686
+        value: 0.7017555
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 9.923096
+        value: 0.79923177
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -106,8 +115,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 1
     areaValue:
-      center: {x: 0, y: -80}
-      size: {x: 140, y: 40}
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
       color: {r: 0.9772253, g: 0, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -134,8 +143,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 2
     areaValue:
-      center: {x: -40, y: -125}
-      size: {x: 80, y: 40}
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
       color: {r: 0, g: 0.6484008, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -160,11 +169,11 @@ MonoBehaviour:
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 1e0c3cc08a8724b589b1d7d1418cccd9, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 3
+    areaIndex: 2
     areaValue:
-      center: {x: 40, y: -125}
-      size: {x: 80, y: 40}
-      color: {r: 0, g: 1, b: 0.18816328, a: 1}
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
@@ -172,12 +181,21 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0.64328766
-        inSlope: -0.027290344
-        outSlope: -0.027290344
+        inSlope: -0.0078085633
+        outSlope: -0.0078085633
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 9.98718
+        value: 0.56530213
+        inSlope: -0.0078085633
+        outSlope: -0.0078085633
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
@@ -190,8 +208,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 1
     areaValue:
-      center: {x: 0, y: -80}
-      size: {x: 140, y: 40}
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
       color: {r: 0.9772253, g: 0, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -218,8 +236,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 1
     areaValue:
-      center: {x: 0, y: -80}
-      size: {x: 140, y: 40}
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
       color: {r: 0.9772253, g: 0, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -227,7 +245,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.0272903
+        value: 0.6042862
         inSlope: -0.027290344
         outSlope: -0.027290344
         tangentMode: 34
@@ -246,8 +264,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 2
     areaValue:
-      center: {x: -40, y: -125}
-      size: {x: 80, y: 40}
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
       color: {r: 0, g: 0.6484008, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -255,27 +273,36 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.035103
-        inSlope: -0.027290344
-        outSlope: -0.027290344
+        value: 1.3645401
+        inSlope: 0.001950046
+        outSlope: 0.001950046
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 9.98718
+        value: 1.3840156
+        inSlope: 0.001950046
+        outSlope: 0.001950046
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 2+-1
+    objectsCount: 1+-1
   - instanceName: Decoration_AcidHills_Moss_1
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: bbe4534dc725448ad8c23ae2f4f0b19d, type: 3}
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -283,9 +310,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.0272903
-        inSlope: -0.027290344
-        outSlope: -0.027290344
+        value: 1.5789566
+        inSlope: 0.017543029
+        outSlope: 0.017543029
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -293,8 +320,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 10
         value: 1.7543869
-        inSlope: -0.027290344
-        outSlope: -0.027290344
+        inSlope: 0.017543029
+        outSlope: 0.017543029
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -311,8 +338,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -348,8 +375,8 @@ MonoBehaviour:
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
-      center: {x: 0, y: -42.3}
-      size: {x: 140, y: 29.7}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
       color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
@@ -374,24 +401,33 @@ MonoBehaviour:
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 8c031d07ae06247e586b0c2bbda08c67, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 2
+    areaIndex: 1
     areaValue:
-      center: {x: -40, y: -125}
-      size: {x: 80, y: 40}
-      color: {r: 0, g: 0.6484008, b: 1, a: 1}
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
+      color: {r: 0.9772253, g: 0, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.0526373
-        inSlope: 0.072106145
-        outSlope: 0.072106145
+        value: 0.56530213
+        inSlope: -0.0019493162
+        outSlope: -0.0019493162
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 0.545809
+        inSlope: -0.0019493162
+        outSlope: -0.0019493162
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
@@ -402,18 +438,18 @@ MonoBehaviour:
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: e6d3f4647733c45aaacb282c68d17d73, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 3
+    areaIndex: 2
     areaValue:
-      center: {x: 40, y: -125}
-      size: {x: 80, y: 40}
-      color: {r: 0, g: 1, b: 0.18816328, a: 1}
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4093554
+        value: 4.8538036
         inSlope: 0.003897071
         outSlope: 0.003897071
         tangentMode: 34
@@ -425,4 +461,32 @@ MonoBehaviour:
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 2+-1
+  - instanceName: AgressiveEnemy_AcidHills_Caterpillar
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 0
+    areaValue:
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
+      color: {r: 1, g: 0, b: 0.030305386, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.3333056
+        inSlope: 0.003897071
+        outSlope: 0.003897071
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
