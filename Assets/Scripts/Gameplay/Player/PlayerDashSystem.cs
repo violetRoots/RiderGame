@@ -21,7 +21,10 @@ namespace RiderGame.Gameplay
                 ref var input = ref _fInput.Get1(i);
                 var playerConfigs = _gameConfigs.PlayerConfiguration;
 
-                if (!input.swipeDown || Mathf.Abs(Time.time - _gameplayRuntimeData.DashLastUseTime) <= playerConfigs.DashCooldown) continue;
+                if (!input.tap.ended
+                    || input.tap.endedTime - input.tap.startedTime >= playerConfigs.DashDetectTime
+                    || Mathf.Abs(Time.time - _gameplayRuntimeData.DashLastUseTime) <= playerConfigs.DashCooldown) 
+                        continue;
 
                 var offset = Quaternion.Euler(0, 0, _gameplayRuntimeData.MovementDirection) * Vector2.up * playerConfigs.DashDistance;
                 var time = playerConfigs.DashTime;

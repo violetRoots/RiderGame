@@ -8,7 +8,16 @@ namespace RiderGame.Inputs
 
     public struct Input
     {
-        public Vector2 mouseDelta;
+        public struct TapInfo
+        {
+            public bool started;
+            public float startedTime;
+            public bool ended;
+            public float endedTime;
+        }
+
+        public TapInfo tap;
         public bool swipeDown;
+        public Vector2 mouseDelta;
     }
 }

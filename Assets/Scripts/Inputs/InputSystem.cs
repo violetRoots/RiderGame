@@ -4,7 +4,7 @@ using RiderGame.SO;
 
 namespace RiderGame.Inputs
 {
-    public class InputSystem : IEcsRunSystem
+    public class InputSystem : IEcsInitSystem, IEcsRunSystem
     {
         private readonly GameConfiguration _gameConfigs;
 
@@ -18,10 +18,20 @@ namespace RiderGame.Inputs
         private float _swipeDetectTime;
         private bool _swipeDown;
 
+        private Input.TapInfo _tapInfo;
+
+        public void Init()
+        {
+            _tapInfo = new Input.TapInfo();
+        }
+
         public void Run()
         {
             if (UnityEngine.Input.GetMouseButtonDown(0))
             {
+                _tapInfo.started = true;
+                _tapInfo.startedTime = Time.time;
+
                 _previousMousePos = UnityEngine.Input.mousePosition;
                 _startSwipeMousePos = _previousMousePos;
             }
@@ -43,24 +53,30 @@ namespace RiderGame.Inputs
                 _swipeDown = _swipeOffset.y < 0 && Mathf.Abs(_swipeOffset.y / Screen.height) >= 1 - _gameConfigs.SwipeSensitivity;
 
                 if (_swipeDown)
-                {
                     _startSwipeMousePos = mousePos;
-                }
             }
             else if (UnityEngine.Input.GetMouseButtonUp(0))
             {
+                _tapInfo.ended = Mathf.Abs(Time.time - _tapInfo.startedTime) >= _gameConfigs.TapLockTime;
+                if (_tapInfo.ended)
+                    _tapInfo.endedTime = Time.time;
+
                 _mouseDelta = Vector2.zero;
                 _swipeOffset = Vector2.zero;
-                _swipeDown = false;
             }
 
             foreach (var i in _filter)
             {
                 ref var input = ref _filter.Get1(i);
 
+                input.tap = _tapInfo;
                 input.mouseDelta = _mouseDelta;
                 input.swipeDown = _swipeDown;
             }
+
+            _tapInfo.started = false;
+            _tapInfo.ended = false;
+            _swipeDown = false;
         }
     }
 }

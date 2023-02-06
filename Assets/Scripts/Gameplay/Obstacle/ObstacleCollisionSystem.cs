@@ -47,7 +47,7 @@ namespace RiderGame.Gameplay
                     PushPlayer(ref eventData);
                     DropCoins(ref eventData);
 
-                    InvulnerabilitySystem.AddInvulnerablility(ref playerEntity, _playerConfigs, player.renderer);
+                    InvulnerabilitySystem.AddInvulnerablility(ref playerEntity, player.renderer, _playerConfigs.InvunerabilityDuration, _playerConfigs.InvunerabilityBlinkInterval);
                 }
             }
         }
