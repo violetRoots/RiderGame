@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Character_Leek_SpriteAnimation_Jump_15
+  m_EditorClassIdentifier: 
+  fps: 8
+  frames:
+  - {fileID: 21300000, guid: f8237b0941181445995df03725a4af89, type: 3}
+  - {fileID: 21300000, guid: 64c3f36fc14b0405c8b4fabc125bb30e, type: 3}
+  - {fileID: 21300000, guid: 0d2c63bc09096454fa437f72c02dda9b, type: 3}
+  - {fileID: 21300000, guid: d76835b1e05fb47c0a5cffc1576f6ff7, type: 3}
+  - {fileID: 21300000, guid: 693f0e85ef0e34f19b1f78d2793b78a8, type: 3}
+  - {fileID: 21300000, guid: b293fccfdde5f46b196a7919afff09e7, type: 3}
+  - {fileID: 21300000, guid: db37dcc1147464ec4b11cbf6a843666b, type: 3}
+  - {fileID: 21300000, guid: 57fc99021145b4e83880775de0f1fc10, type: 3}
+  triggers: []
