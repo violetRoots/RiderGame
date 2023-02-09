@@ -11,7 +11,9 @@ namespace RiderGame.SO
         public float TapLockTime => tapLockTime;
         public float SwipeDetectTime => swipeDetectTime;
         public float SwipeSensitivity => swipeSensitivity;
+
         public PlayerConfiguration PlayerConfiguration => playerConfiguration;
+
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public float ChangeLayerEdge => changeLayerEdgePosition;
         public float ClampDirectionAngle => clampDirectionAngle;

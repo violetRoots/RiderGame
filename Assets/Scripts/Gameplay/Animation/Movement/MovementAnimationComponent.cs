@@ -17,15 +17,11 @@ namespace RiderGame.Gameplay
     {
         public bool setCustomAnimations;
 
-        public SpriteAnimator spriteAnimator;
         public bool drawGizmos;
 
         [Space(10)]
         [AllowNesting]
         [ShowIf(nameof(setCustomAnimations))]
         public SpriteAnimationConfiguration animationConfiguration;
-
-        [HideInInspector]
-        public float directionAngle;
     }
 }

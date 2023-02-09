@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
-  m_Name: Character_Leek_SpriteAnimation_45
+  m_Name: Character_Leek_SpriteAnimation_Walk_45
   m_EditorClassIdentifier: 
   fps: 8
   frames:

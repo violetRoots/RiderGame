@@ -8,18 +8,18 @@ namespace RiderGame.Gameplay
     {
         private readonly GameplayRuntimeData _gameplayData;
 
-        private readonly EcsFilter<Player, MovementAnimation> _fPlayer;
+        private readonly EcsFilter<Player, Movement, MovementAnimation>.Exclude<IgnoreMovementAnimation> _fPlayer;
 
         public void Init()
         {
             foreach (var i in _fPlayer)
             {
                 ref var player = ref _fPlayer.Get1(i);
-                ref var animationComponent = ref _fPlayer.Get2(i);
+                ref var animationComponent = ref _fPlayer.Get3(i);
 
                 if (!animationComponent.setCustomAnimations)
                 {
-                    animationComponent.animationConfiguration = player.character.AnimationConfiguration;
+                    animationComponent.animationConfiguration = player.character.WalkAnimationConfigs;
                 }
             }
         }
@@ -28,9 +28,9 @@ namespace RiderGame.Gameplay
         {
             foreach(var i in _fPlayer)
             {
-                ref var animationComponent = ref _fPlayer.Get2(i);
+                ref var movement = ref _fPlayer.Get2(i);
 
-                animationComponent.directionAngle = _gameplayData.MovementDirection;
+                movement.DirectionAngle = _gameplayData.MovementDirection;
             }
         }
     }

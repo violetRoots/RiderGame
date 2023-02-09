@@ -10,12 +10,6 @@ namespace RiderGame.Gameplay
     [Serializable]
     public struct Enemy
     {
-        public float MovementDirectionAngle
-        {
-            get => movementDirectionAngle;
-            set => movementDirectionAngle = Mathf.Clamp(value, -enemyConfiguration.ClampAngle, enemyConfiguration.ClampAngle);
-        }
-
         public EnemyConfiguration enemyConfiguration;
 
         [Space(10)]
@@ -24,8 +18,6 @@ namespace RiderGame.Gameplay
 
         [HideInInspector]
         public EnemyState state;
-
-        private float movementDirectionAngle;
     }
 
     public enum EnemyState

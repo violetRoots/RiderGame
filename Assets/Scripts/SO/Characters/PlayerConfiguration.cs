@@ -8,9 +8,6 @@ namespace RiderGame.SO
     public class PlayerConfiguration : ScriptableObject
     {
         public float DashDetectTime => dashDetectTime;
-        public float DashDistance => dashDistance;
-        public float DashTime => dashTime;
-        public float DashCooldown => dashCooldown;
 
         public float PushForce => pushForce;
         public float PushTime => pushTime;
@@ -21,16 +18,9 @@ namespace RiderGame.SO
         public float CoinsDropRadius => coinsDropRadius;
         public float CoinsDropTime => coinsDropTime;
 
-        [Header("Dash")]
+        [Header("Mechanics: Dash")]
         [SerializeField]
         private float dashDetectTime = 0.2f;
-        [SerializeField]
-        private float dashDistance = 1.0f;
-        [SerializeField]
-        private float dashTime = 0.25f;
-        [SerializeField]
-        private float dashCooldown = 1.0f;
-
 
         [Header("Collision with obstacle")]
         [SerializeField]

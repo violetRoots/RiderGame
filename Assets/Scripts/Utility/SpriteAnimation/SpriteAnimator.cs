@@ -1,5 +1,6 @@
-using UnityEngine;
+using System;
 using System.Collections;
+using UnityEngine;
 using NaughtyAttributes;
 
 namespace SkyCrush.Utility
@@ -10,7 +11,17 @@ namespace SkyCrush.Utility
         public bool Flipped { get; private set; }
         public SpriteAnimation[] Animations => animations;
         public SpriteAnimation CurrentAnimation { get; private set; }
-        public int CurrentFrame { get; private set; }
+        public int CurrentFrame
+        {
+            get => _currentFrame;
+            private set
+            {
+                _currentFrame = value;
+
+                if (IsLastFrameOfAnimation())
+                    _onEndAnimationAction?.Invoke();
+            }
+        }
 
         [SerializeField]
         private SpriteRenderer spriteRenderer;
@@ -23,6 +34,9 @@ namespace SkyCrush.Utility
         private SpriteAnimation playAnimationOnStart;
         [SerializeField] 
         private bool loop;
+
+        private Action _onEndAnimationAction;
+        private int _currentFrame;
 
         void Awake()
         {
@@ -39,15 +53,21 @@ namespace SkyCrush.Utility
         void OnDisable()
         {
             Playing = false;
-            CurrentAnimation = null;
+            DisableAnimation();
         }
 
-        public void Play(SpriteAnimation animation, bool loop = true, bool continueFrame = false, int startFrame = 0)
+        public void Play(SpriteAnimation animation, 
+                         bool loop = true, 
+                         bool continueFrame = false, 
+                         int startFrame = 0,
+                         Action onEndAnimationAction = null)
         {
             if (animation != null)
             {
                 if (animation != CurrentAnimation)
                 {
+                    _onEndAnimationAction = onEndAnimationAction;
+
                     ForcePlay(animation, loop, continueFrame, startFrame);
                 }
             }
@@ -57,7 +77,10 @@ namespace SkyCrush.Utility
             }
         }
 
-        public void ForcePlay(SpriteAnimation animation, bool loop = true, bool continueFrame = false, int startFrame = 0)
+        public void ForcePlay(SpriteAnimation animation, 
+                              bool loop = true, 
+                              bool continueFrame = false, 
+                              int startFrame = 0)
         {
             if (animation != null)
             {
@@ -73,6 +96,7 @@ namespace SkyCrush.Utility
                     NextFrame(animation);
                 }
                 spriteRenderer.sprite = animation.frames[CurrentFrame];
+
                 StopAllCoroutines();
                 StartCoroutine(PlayAnimation(CurrentAnimation));
             }
@@ -100,7 +124,7 @@ namespace SkyCrush.Utility
         {
             float timer = 0f;
             float delay = 1f / (float)animation.fps;
-            while (loop || CurrentFrame < animation.frames.Length - 1)
+            while (loop || !IsLastFrameOfAnimation())
             {
 
                 while (timer < delay)
@@ -117,7 +141,7 @@ namespace SkyCrush.Utility
                 spriteRenderer.sprite = animation.frames[CurrentFrame];
             }
 
-            CurrentAnimation = null;
+            DisableAnimation();
         }
 
         void NextFrame(SpriteAnimation animation)
@@ -131,7 +155,7 @@ namespace SkyCrush.Utility
                 }
             }
 
-            if (CurrentFrame >= animation.frames.Length)
+            if (IsLastFrameOfAnimation())
             {
                 if (loop)
                     CurrentFrame = 0;
@@ -162,6 +186,17 @@ namespace SkyCrush.Utility
                 spriteRenderer.transform.localScale = new Vector3(-1f, 1f, 1f);
             else
                 spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+
+        private bool IsLastFrameOfAnimation()
+        {
+            return CurrentAnimation != null && CurrentFrame >= CurrentAnimation.frames.Length - 1;
+        }
+
+        private void DisableAnimation()
+        {
+            CurrentAnimation = null;
+            _onEndAnimationAction = null;
         }
     }
 }

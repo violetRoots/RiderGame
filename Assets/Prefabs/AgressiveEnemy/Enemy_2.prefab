@@ -116,6 +116,8 @@ GameObject:
   - component: {fileID: 6019604115984068091}
   - component: {fileID: 279385890246780532}
   - component: {fileID: 8536998393854301056}
+  - component: {fileID: 458436323183430592}
+  - component: {fileID: 2625101048030874011}
   - component: {fileID: 714289481862489159}
   - component: {fileID: 714289481862489152}
   - component: {fileID: 714289481862489153}
@@ -233,6 +235,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &458436323183430592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8441472720aec40b17ae9b27461ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2625101048030874011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6969e897abd1d4381b6842d7603324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    spriteAnimator: {fileID: 714289480939590231}
 --- !u!114 &714289481862489159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,10 +275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     setCustomAnimations: 1
-    spriteAnimator: {fileID: 714289480939590231}
     drawGizmos: 1
     animationConfiguration: {fileID: 11400000, guid: 601d7b1b324169f4a9ca1777490c656f, type: 2}
-    directionAngle: 0
 --- !u!114 &714289481862489152
 MonoBehaviour:
   m_ObjectHideFlags: 0

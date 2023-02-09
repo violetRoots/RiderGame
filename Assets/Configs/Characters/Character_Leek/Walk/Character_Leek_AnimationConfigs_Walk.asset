@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
-  m_Name: Character_Leek_AnimationConfigs
+  m_Name: Character_Leek_AnimationConfigs_Walk
   m_EditorClassIdentifier: 
   animationsInfo:
   - angle: -60
@@ -20,7 +20,7 @@ MonoBehaviour:
     animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}
     isFlip: 0
   - angle: -30
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
     isFlip: 0
   - angle: -15
     animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
@@ -32,7 +32,7 @@ MonoBehaviour:
     animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
     isFlip: 1
   - angle: 30
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: f8e2c0dbc5a6347efbc07fe1d97c6bcd, type: 2}
     isFlip: 1
   - angle: 45
     animation: {fileID: 11400000, guid: 777cd60ed4a624747ba08a0500e844f8, type: 2}

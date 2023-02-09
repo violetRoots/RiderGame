@@ -80,16 +80,15 @@ namespace RiderGame
                 .Add(new PlayerAnimationSystem())
                 .Add(new PlayerDashSystem())
                 .Add(new BaseEffectSystem())
-                .Add(new InvulnerabilitySystem())
                 .Add(new CoinCollectionSystem())
                 .Add(new BringQuestSystem())
 
                 //Enemy
                 .Add(new EnemyMovementSystem())
                 .Add(new EnemyStateSystem())
-                .Add(new EnemyAnimationSystem())
 
                 //Animation
+                .Add(new BaseAnimatorControllerSystem())
                 .Add(new MovementAnimationSystem())
 
                 //Event

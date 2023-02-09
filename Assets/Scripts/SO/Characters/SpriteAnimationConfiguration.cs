@@ -8,19 +8,34 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "SpriteAnimationConfigs", menuName = "RiderGame/AnimationConfiguration", order = 4)]
     public class SpriteAnimationConfiguration : ScriptableObject
     {
-        public AnimationInfo[] AnimationsInfo => animationsInfo;
+        [Serializable]
+        public struct AnimationConfigurationInfo
+        {
+            public float angle;
+            public SpriteAnimation animation;
+            public bool isFlip;
+        }
 
         [Header("Animation")]
         [ReorderableList]
-        [SerializeField]
-        private AnimationInfo[] animationsInfo;
-    }
+        public AnimationConfigurationInfo[] animationsInfo;
 
-    [Serializable]
-    public struct AnimationInfo
-    {
-        public float angle;
-        public SpriteAnimation animation;
-        public bool isFlip;
+        public AnimationConfigurationInfo GetAnimationByAngle(float angle)
+        {
+            AnimationConfigurationInfo res = default;
+            var minDifference = float.MaxValue;
+            foreach (var animationInfo in animationsInfo)
+            {
+                var difference = Mathf.Abs(angle - animationInfo.angle);
+
+                if (difference < minDifference)
+                {
+                    minDifference = difference;
+                    res = animationInfo;
+                }
+            }
+
+            return res;
+        }
     }
 }

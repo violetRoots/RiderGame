@@ -11,15 +11,16 @@ namespace RiderGame.Editor.CustomGizmos
     {
         private readonly GameplayRuntimeData _runtimeLevelData;
 
-        private readonly EcsFilter<EcsGameObject, MovementAnimation, CustomGizmos> _animationFilter;
+        private readonly EcsFilter<EcsGameObject, Movement, MovementAnimation, CustomGizmos> _animationFilter;
 
         public void Run()
         {
             foreach (var i in _animationFilter)
             {
                 ref var gameObject = ref _animationFilter.Get1(i);
-                ref var animation = ref _animationFilter.Get2(i);
-                ref var customGizmos = ref _animationFilter.Get3(i);
+                ref var movement = ref _animationFilter.Get2(i);
+                ref var animation = ref _animationFilter.Get3(i);
+                ref var customGizmos = ref _animationFilter.Get4(i);
 
                 if (!animation.drawGizmos) continue;
 
@@ -27,7 +28,7 @@ namespace RiderGame.Editor.CustomGizmos
                 movementAnimationDrawer?.UpdateValue(animation);
 
                 var transform = gameObject.instance.transform;
-                var endPos = Quaternion.Euler(0, 0, animation.directionAngle) * Vector3.down * MovementAnimationDrawer.LineLength;
+                var endPos = Quaternion.Euler(0, 0, movement.DirectionAngle) * Vector3.down * MovementAnimationDrawer.LineLength;
 
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(transform.position, transform.position + endPos);

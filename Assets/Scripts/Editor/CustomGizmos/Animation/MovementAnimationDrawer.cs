@@ -25,10 +25,10 @@ namespace RiderGame.Editor.CustomGizmos
 
             if (!_animationValue.setCustomAnimations && TryGetComponent(out PlayerComponent player))
             {
-                _animationValue.animationConfiguration = player.Value.character.AnimationConfiguration;
+                _animationValue.animationConfiguration = player.Value.character.WalkAnimationConfigs;
             }
 
-            foreach(var animation in _animationValue.animationConfiguration.AnimationsInfo)
+            foreach(var animation in _animationValue.animationConfiguration.animationsInfo)
             {
                 var endPos = Quaternion.Euler(0, 0, animation.angle) * Vector3.down * LineLength;
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
-  m_Name: Character_Leek_SpriteAnimation_Jump_15
+  m_Name: Character_Leek_SpriteAnimation_Dash_15
   m_EditorClassIdentifier: 
-  fps: 8
+  fps: 16
   frames:
   - {fileID: 21300000, guid: f8237b0941181445995df03725a4af89, type: 3}
   - {fileID: 21300000, guid: 64c3f36fc14b0405c8b4fabc125bb30e, type: 3}

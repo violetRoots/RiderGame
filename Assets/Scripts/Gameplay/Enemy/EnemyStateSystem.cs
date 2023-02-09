@@ -11,7 +11,7 @@ namespace RiderGame.Gameplay
         private const float MaxAgressionRadius = 15.0f;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
-        private readonly EcsFilter<EcsGameObject, Enemy, ActiveObject> _fEnemy;
+        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fEnemy;
         private readonly EcsFilter<EcsGameObject, Enemy, DeactivationEvent> _fEnemyDeactivationEvent;
 
         private GameObject _playerObject;
@@ -27,6 +27,7 @@ namespace RiderGame.Gameplay
             {
                 ref var gameObject = ref _fEnemy.Get1(i);
                 ref var enemy = ref _fEnemy.Get2(i);
+                ref var movement = ref _fEnemy.Get3(i);
 
                 if (enemy.state == EnemyState.Normal)
                 {
@@ -51,7 +52,7 @@ namespace RiderGame.Gameplay
                 {
                     var toPlayer = _playerObject.transform.position - gameObject.instance.transform.position;
                     var movementAngle = Vector2.SignedAngle(Vector2.down, toPlayer);
-                    enemy.MovementDirectionAngle = movementAngle;
+                    movement.DirectionAngle = movementAngle;
 
                     if (toPlayer.magnitude > MaxAgressionRadius)
                     {

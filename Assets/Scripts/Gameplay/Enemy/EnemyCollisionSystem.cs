@@ -12,7 +12,7 @@ namespace RiderGame.Gameplay
     {
         private readonly SessionRuntimeData _sessionData;
 
-        private readonly EcsFilter<EcsGameObject, Enemy, ActiveObject> _fEnemy;
+        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
 
         private readonly Dictionary<GameObject, OnCollisionEnter2DEvent> _collisionEnemies = new Dictionary<GameObject, OnCollisionEnter2DEvent>();
@@ -45,6 +45,7 @@ namespace RiderGame.Gameplay
             {
                 ref var gameObject = ref _fEnemy.Get1(i);
                 ref var enemy = ref _fEnemy.Get2(i);
+                ref var movement = ref _fEnemy.Get3(i);
 
                 if (!_collisionEnemies.ContainsKey(gameObject.instance)) continue;
 
@@ -52,7 +53,7 @@ namespace RiderGame.Gameplay
 
                 if (enemy.state == EnemyState.Normal)
                 {
-                    ChangeDirection(ref enemy, eventData);
+                    ChangeDirection(ref movement, eventData);
                     PushEnemy(ref enemy, gameObject.instance, eventData);
                 }
                 else if(enemy.state == EnemyState.Agressive)
@@ -62,13 +63,13 @@ namespace RiderGame.Gameplay
             }
         }
 
-        private void ChangeDirection(ref Enemy enemy, OnCollisionEnter2DEvent eventData)
+        private void ChangeDirection(ref Movement movement, OnCollisionEnter2DEvent eventData)
         {
-            var direction = Quaternion.Euler(0, 0, enemy.MovementDirectionAngle) * Vector2.down;
+            var direction = Quaternion.Euler(0, 0, movement.DirectionAngle) * Vector2.down;
             direction = Vector2.Reflect(direction, eventData.firstContactPoint2D.normal);
 
             var resAngle = Vector2.SignedAngle(Vector2.down, direction);
-            enemy.MovementDirectionAngle = resAngle;
+            movement.DirectionAngle = resAngle;
         }
 
         private void PushEnemy(ref Enemy enemy, GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
