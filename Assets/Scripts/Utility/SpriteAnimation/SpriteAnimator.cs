@@ -155,7 +155,7 @@ namespace SkyCrush.Utility
                 }
             }
 
-            if (IsLastFrameOfAnimation())
+            if (CurrentFrame >= animation.frames.Length)
             {
                 if (loop)
                     CurrentFrame = 0;
