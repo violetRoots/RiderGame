@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseDirectionSensitivity: 0.1
   touchDirectionSensitivity: 0.1
+  tapDetectTime: 0.01
+  maxTapOffset: 0.05
   swipeDetectTime: 0.1
   swipeSensitivity: 0.95
   maxActiveObjectPosition: 100

@@ -1,8 +1,7 @@
 using UnityEngine;
 using Voody.UniLeo;
-using RiderGame.SO;
 
-namespace RiderGame
+namespace RiderGame.Gameplay
 {
     public class MovementComponent : MonoProvider<Movement> { }
 
@@ -11,8 +10,10 @@ namespace RiderGame
         public float DirectionAngle
         {
             get => directionAngle;
-            set => directionAngle = Mathf.Clamp(value, -GameConfiguration.Instance.ClampDirectionAngle, GameConfiguration.Instance.ClampDirectionAngle);
+            set => directionAngle = Mathf.Clamp(value, -60, 60);
         }
+
+        public float clampAngle;
 
         private float directionAngle;
     }

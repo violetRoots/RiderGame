@@ -6,10 +6,14 @@ namespace RiderGame.Inputs
 {
     public class InputSystem : IEcsInitSystem, IEcsRunSystem
     {
+        private static readonly 
+            float ScreenDiagonal = new Vector2(Screen.width, Screen.height).magnitude;
+
         private readonly GameConfiguration _gameConfigs;
 
         private readonly EcsFilter<Input> _filter;
 
+        private Vector2 _startMousePos;
         private Vector2 _previousMousePos;
         private Vector2 _mouseDelta;
 
@@ -27,18 +31,19 @@ namespace RiderGame.Inputs
 
         public void Run()
         {
+            Vector2 mousePos = UnityEngine.Input.mousePosition;
+
             if (UnityEngine.Input.GetMouseButtonDown(0))
             {
                 _tapInfo.started = true;
                 _tapInfo.startedTime = Time.time;
 
-                _previousMousePos = UnityEngine.Input.mousePosition;
-                _startSwipeMousePos = _previousMousePos;
+                _startMousePos = mousePos;
+                _previousMousePos = mousePos;
+                _startSwipeMousePos = mousePos;
             }
             else if (UnityEngine.Input.GetMouseButton(0))
             {
-                Vector2 mousePos = UnityEngine.Input.mousePosition;
-
                 _mouseDelta = mousePos - _previousMousePos;
 
                 _previousMousePos = mousePos;
@@ -57,7 +62,8 @@ namespace RiderGame.Inputs
             }
             else if (UnityEngine.Input.GetMouseButtonUp(0))
             {
-                _tapInfo.ended = Mathf.Abs(Time.time - _tapInfo.startedTime) >= _gameConfigs.TapLockTime;
+                _tapInfo.ended = Mathf.Abs(Time.time - _tapInfo.startedTime) >= _gameConfigs.TapDetectTime
+                                 && (mousePos - _startMousePos).magnitude <= _gameConfigs.MaxTapOffset * ScreenDiagonal;
                 if (_tapInfo.ended)
                     _tapInfo.endedTime = Time.time;
 

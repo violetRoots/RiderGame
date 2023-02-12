@@ -8,7 +8,8 @@ namespace RiderGame.SO
     {
         public float MouseDirectionSensitivity => mouseDirectionSensitivity;
         public float TouchDirectionSensitivity => touchDirectionSensitivity;
-        public float TapLockTime => tapLockTime;
+        public float TapDetectTime => tapDetectTime;
+        public float MaxTapOffset => maxTapOffset;
         public float SwipeDetectTime => swipeDetectTime;
         public float SwipeSensitivity => swipeSensitivity;
 
@@ -25,7 +26,9 @@ namespace RiderGame.SO
         [SerializeField]
         private float touchDirectionSensitivity = 0.5f;
         [SerializeField]
-        private float tapLockTime = 0.1f;
+        private float tapDetectTime = 0.1f;
+        [SerializeField]
+        private float maxTapOffset = 0.05f;
         [SerializeField]
         private float swipeDetectTime = 0.2f;
         [Range(0.0f, 1.0f)]

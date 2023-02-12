@@ -75,6 +75,7 @@ namespace RiderGame
                 .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
+                //.Add(new ClampMovementSystem())
 
                 //Player
                 .Add(new PlayerAnimationSystem())
