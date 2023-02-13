@@ -16,6 +16,7 @@ namespace RiderGame.SO
         public PlayerConfiguration PlayerConfiguration => playerConfiguration;
 
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
+        public float BackgroundSpeedMultiplier => backgroundSpeedMultiplier;
         public float ChangeLayerEdge => changeLayerEdgePosition;
         public float ClampDirectionAngle => clampDirectionAngle;
         public LevelConfiguration[] Levels => _levelConfigs;
@@ -38,6 +39,8 @@ namespace RiderGame.SO
         [Header("World")]
         [SerializeField]
         private float maxActiveObjectPosition = 100.0f;
+        [SerializeField]
+        private float backgroundSpeedMultiplier = 0.00035f;
         [SerializeField]
         private float changeLayerEdgePosition = 0.0f;
         [SerializeField]

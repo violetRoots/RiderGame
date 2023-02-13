@@ -19,6 +19,7 @@ MonoBehaviour:
   swipeDetectTime: 0.1
   swipeSensitivity: 0.95
   maxActiveObjectPosition: 100
+  backgroundSpeedMultiplier: 0.021
   changeLayerEdgePosition: 0
   clampDirectionAngle: 60
   playerConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}

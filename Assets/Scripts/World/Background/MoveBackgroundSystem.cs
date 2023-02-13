@@ -1,30 +1,29 @@
+using System.Collections;
 using UnityEngine;
 using Leopotam.Ecs;
 using RiderGame.RuntimeData;
+using RiderGame.SO;
 
 namespace RiderGame.World
 {
     public class MoveBackgroundSystem : IEcsRunSystem
     {
-        private const float BackgroundSpeedMultiplier = 0.0004f;
-        private const float BackgroundOffsetMultiplier = 10f;
-
+        private readonly EcsStartup _ecsStartup;
+        private readonly GameConfiguration _gameConfigs;
         private readonly GameplayRuntimeData _levelData;
 
         private EcsFilter<MoveWorldObject, Background> _fBackground;
-        private EcsFilter<MoveWorldObject, Background, MoveWorldObjectOffsetEvent> _fMoveWorldObjectEvent;
+        private EcsFilter<MoveWorldObject, Background, MoveWorldObjectOffsetEvent> _fMoveBackgroundOffsetEvent;
 
         public void Run()
         {
-            foreach(var i in _fMoveWorldObjectEvent)
+            foreach(var i in _fMoveBackgroundOffsetEvent)
             {
-                ref var moveComponent = ref _fMoveWorldObjectEvent.Get1(i);
-                ref var background = ref _fMoveWorldObjectEvent.Get2(i);
-                ref var eventData = ref _fMoveWorldObjectEvent.Get3(i);
+                ref var moveComponent = ref _fMoveBackgroundOffsetEvent.Get1(i);
+                ref var background = ref _fMoveBackgroundOffsetEvent.Get2(i);
+                ref var eventData = ref _fMoveBackgroundOffsetEvent.Get3(i);
 
-                var offset = eventData.offset * BackgroundOffsetMultiplier;
-
-                MoveBackground(ref background, offset);
+                MoveBackgroundOffset(ref background, eventData);
             }
 
             foreach(var i in _fBackground)
@@ -34,17 +33,35 @@ namespace RiderGame.World
 
                 if (moveComponent.moveOnUpdate)
                 {
-                    var offset = Quaternion.Euler(0, 0, _levelData.MovementDirection) * Vector2.up * _levelData.MovementSpeed;
-
-                    MoveBackground(ref background, offset);
+                    var offset = Quaternion.Euler(0, 0, _levelData.MovementDirection) * Vector2.up * _levelData.MovementSpeed * Time.deltaTime;
+                    background.backgroundTextureOffset -= offset;
+                    background.renderer.material.mainTextureOffset = background.backgroundTextureOffset * _gameConfigs.BackgroundSpeedMultiplier;
                 }
             }
         }
 
-        private void MoveBackground(ref Background background, Vector3 offset)
+        private void MoveBackgroundOffset(ref Background background, 
+                                          MoveWorldObjectOffsetEvent eventData)
         {
-            background.backgroundTextureOffset -= offset;
-            background.renderer.material.mainTextureOffset = background.backgroundTextureOffset * BackgroundSpeedMultiplier;
+            _ecsStartup.StopCoroutine(nameof(MoveBackgroundOffsetProcess));
+
+            var startOffset = background.backgroundTextureOffset;
+            background.backgroundTextureOffset -= eventData.offset;
+            _ecsStartup.StartCoroutine(MoveBackgroundOffsetProcess(background.renderer, startOffset, background.backgroundTextureOffset, eventData));
+        }
+
+        private IEnumerator MoveBackgroundOffsetProcess(SpriteRenderer renderer, Vector3 startOffset, Vector3 endOffset, MoveWorldObjectOffsetEvent eventData)
+        {
+            var count = 0.0f;
+            while(count <= eventData.time)
+            {
+                var currentOffset = Vector3.Lerp(startOffset, endOffset, count / eventData.time);
+                renderer.material.mainTextureOffset = currentOffset * _gameConfigs.BackgroundSpeedMultiplier;
+
+                yield return null;
+
+                count += Time.deltaTime;
+            }
         }
     }
 }

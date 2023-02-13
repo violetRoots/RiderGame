@@ -11,6 +11,5 @@ namespace RiderGame.World
         public Vector3 offset;
         public float time;
         public Ease ease;
-        public bool stopMovement;
     }
 }

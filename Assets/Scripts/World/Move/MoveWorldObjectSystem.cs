@@ -17,7 +17,7 @@ namespace RiderGame.World
         private EcsFilter<Input, EcsGameObject, MoveWorldObject> _fWorldObject;
         private EcsFilter<EcsGameObject, MoveWorldObject, MoveWorldObjectOffsetEvent> _fMoveWorldOjectEvent;
 
-        public static void MoveWorldObjectByOffset(Vector3 offset, float movementTime, Ease ease = Ease.Linear, bool stopMovement = true)
+        public static void MoveWorldObjectByOffset(Vector3 offset, float movementTime, Ease ease = Ease.Linear)
         {
             foreach (var gameObject in WorldObjects)
             {
@@ -25,7 +25,6 @@ namespace RiderGame.World
                 {
                     offset = offset,
                     time = movementTime,
-                    stopMovement = stopMovement,
                     ease = ease
                 };
 

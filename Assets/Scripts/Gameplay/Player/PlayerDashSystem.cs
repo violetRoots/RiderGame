@@ -60,6 +60,7 @@ namespace RiderGame.Gameplay
                 var duration = _character.DashDuration;
 
                 IgnoreMovementAnimationEffect.AddToEntity(entity, duration);
+                InvulnerabilityEffect.AddToEntity(entity, duration);
 
                 var dashAnimationInfo = player.character.DashAnimationConfigs.GetAnimationByAngle(movement.DirectionAngle);
                 BaseAnimatorControllerSystem.AddAnimation(entity, dashAnimationInfo.animation, CharacterAnimationPriority.Dash);
