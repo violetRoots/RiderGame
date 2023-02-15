@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Leopotam.Ecs;
@@ -10,7 +11,8 @@ namespace RiderGame.Gameplay
 {
     public class EnemyCollisionSystem : IEcsRunSystem
     {
-        private readonly SessionRuntimeData _sessionData;
+        private readonly GameplayRuntimeData _gameplayRuntimeData;
+        private readonly SessionRuntimeData _sessionRuntimeData;
 
         private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
@@ -33,7 +35,13 @@ namespace RiderGame.Gameplay
 
                 if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
                 {
-                    _sessionData.Status.Value = SessionStatus.Ended;
+                    _gameplayRuntimeData.SetWorldIsMovingValue(false);
+
+                    Action endSessionCallback = () => _sessionRuntimeData.Status.Value = SessionStatus.Ended;
+
+                    ref var player = ref playerEntity.Get<Player>();
+                    var enemyCollisionAnimation = player.character.EnemyCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
+                    BaseAnimatorControllerSystem.AddAnimation(playerEntity, enemyCollisionAnimation.animation, CharacterAnimationPriority.EnemyCollision, onEndPlay: endSessionCallback);
                 }
                 else
                 {

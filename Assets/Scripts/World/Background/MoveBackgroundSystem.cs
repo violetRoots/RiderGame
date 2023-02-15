@@ -10,7 +10,7 @@ namespace RiderGame.World
     {
         private readonly EcsStartup _ecsStartup;
         private readonly GameConfiguration _gameConfigs;
-        private readonly GameplayRuntimeData _levelData;
+        private readonly GameplayRuntimeData _gameplayRuntimeData;
 
         private EcsFilter<MoveWorldObject, Background> _fBackground;
         private EcsFilter<MoveWorldObject, Background, MoveWorldObjectOffsetEvent> _fMoveBackgroundOffsetEvent;
@@ -31,9 +31,9 @@ namespace RiderGame.World
                 ref var moveComponent = ref _fBackground.Get1(i);
                 ref var background = ref _fBackground.Get2(i);
 
-                if (moveComponent.moveOnUpdate)
+                if (_gameplayRuntimeData.IsWorldMoving.Value)
                 {
-                    var offset = Quaternion.Euler(0, 0, _levelData.MovementDirection) * Vector2.up * _levelData.MovementSpeed * Time.deltaTime;
+                    var offset = Quaternion.Euler(0, 0, _gameplayRuntimeData.MovementDirection) * Vector2.up * _gameplayRuntimeData.MovementSpeed * Time.deltaTime;
                     background.backgroundTextureOffset -= offset;
                     background.renderer.material.mainTextureOffset = background.backgroundTextureOffset * _gameConfigs.BackgroundSpeedMultiplier;
                 }

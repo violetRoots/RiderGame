@@ -10,38 +10,31 @@ namespace RiderGame.World
 {
     public class MoveWorldObjectSystem : IEcsInitSystem, IEcsRunSystem
     {
-        private readonly GameplayRuntimeData _levelData;
+        private static GameObject WorldObject;
 
-        private readonly static List<GameObject> WorldObjects = new List<GameObject>();
+        private readonly GameplayRuntimeData _gameplayRuntimeData;
 
         private EcsFilter<Input, EcsGameObject, MoveWorldObject> _fWorldObject;
         private EcsFilter<EcsGameObject, MoveWorldObject, MoveWorldObjectOffsetEvent> _fMoveWorldOjectEvent;
 
         public static void MoveWorldObjectByOffset(Vector3 offset, float movementTime, Ease ease = Ease.Linear)
         {
-            foreach (var gameObject in WorldObjects)
+            var moveEvent = new MoveWorldObjectOffsetEvent()
             {
-                var moveEvent = new MoveWorldObjectOffsetEvent()
-                {
-                    offset = offset,
-                    time = movementTime,
-                    ease = ease
-                };
+                offset = offset,
+                time = movementTime,
+                ease = ease
+            };
 
-                var entity = gameObject.GetComponent<ConvertToEntity>().TryGetEntity();
-                OneFrameEventSystem.AddOneFrameEvent(entity.Value, moveEvent);
-            }
+            var entity = WorldObject.GetComponent<ConvertToEntity>().TryGetEntity();
+            OneFrameEventSystem.AddOneFrameEvent(entity.Value, moveEvent);
         }
 
         public void Init()
         {
-            WorldObjects.Clear();
-            foreach (var i in _fWorldObject)
-            {
-                ref var gameObject = ref _fWorldObject.Get2(i);
+            WorldObject = _fWorldObject.Get2(0).instance;
 
-                WorldObjects.Add(gameObject.instance);
-            }
+            _gameplayRuntimeData.SetWorldIsMovingValue(true);
         }
 
         public void Run()
@@ -51,10 +44,9 @@ namespace RiderGame.World
                 ref var entity = ref _fMoveWorldOjectEvent.GetEntity(i);
 
                 ref var gameObject = ref _fMoveWorldOjectEvent.Get1(i);
-                ref var moveComponent = ref _fMoveWorldOjectEvent.Get2(i);
                 ref var eventData = ref _fMoveWorldOjectEvent.Get3(i);
 
-                MoveByOffset(gameObject.instance, ref moveComponent, ref eventData);
+                MoveByOffset(gameObject.instance, ref eventData);
             }
 
             foreach (var i in _fWorldObject)
@@ -63,35 +55,21 @@ namespace RiderGame.World
                 ref var gameObject = ref _fWorldObject.Get2(i);
                 ref var moveComponent = ref _fWorldObject.Get3(i);
 
-                if (!moveComponent.moveOnUpdate) continue;
+                if (!_gameplayRuntimeData.IsWorldMoving.Value) continue;
 
-                var translation = Quaternion.Euler(0, 0, _levelData.MovementDirection) * new Vector3(0, _levelData.MovementSpeed, 0) * Time.deltaTime;
+                var translation = Quaternion.Euler(0, 0, _gameplayRuntimeData.MovementDirection) * new Vector3(0, _gameplayRuntimeData.MovementSpeed, 0) * Time.deltaTime;
                 gameObject.instance.transform.Translate(translation);
             }
         }
 
         private void MoveByOffset(GameObject  gameObject, 
-                                  ref MoveWorldObject moveComponent, 
                                   ref MoveWorldObjectOffsetEvent eventData)
         {
-            moveComponent.moveOnUpdate = false;
+            _gameplayRuntimeData.SetWorldIsMovingValue(false);
 
             gameObject.transform.DOMove(gameObject.transform.position + eventData.offset, eventData.time)
                                 .SetEase(eventData.ease)
-                                .OnComplete(() => SetMoveOnUpdateValue(gameObject, true));
-        }
-
-        private void SetMoveOnUpdateValue(GameObject target, bool value)
-        {
-            foreach (var i in _fWorldObject)
-            {
-                ref var gameObject = ref _fWorldObject.Get2(i);
-                ref var moveComponent = ref _fWorldObject.Get3(i);
-
-                if (gameObject.instance != target) continue;
-
-                moveComponent.moveOnUpdate = value;
-            }
+                                .OnComplete(() => _gameplayRuntimeData.SetWorldIsMovingValue(true));
         }
     }
 }

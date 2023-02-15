@@ -81,6 +81,28 @@ namespace SkyCrush.WSGenerator
             IsInitilized = false;
         }
 
+        public void Pause()
+        {
+            if (_processes != null)
+            {
+                for (var i = 0; i < _processes.Length; i++)
+                {
+                    _processes[i].Pause();
+                }
+            }
+        }
+
+        public void Unpause()
+        {
+            if (_processes != null)
+            {
+                for (var i = 0; i < _processes.Length; i++)
+                {
+                    _processes[i].Unpause();
+                }
+            }
+        }
+
         private void StopGenerateProcesses(Stage stage)
         {
             if (_processes != null)

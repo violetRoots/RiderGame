@@ -6,6 +6,7 @@ namespace RiderGame.Gameplay
     {
         Movement = 0,
         Dash = 10,
-        ObstacleCollision = 20
+        ObstacleCollision = 20,
+        EnemyCollision = 30
     }
 }

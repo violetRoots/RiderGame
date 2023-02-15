@@ -53,6 +53,11 @@ namespace SkyCrush.WSGenerator
             _isPaused = true;
         }
 
+        public void Unpause()
+        {
+            _isPaused = false;
+        }
+
         public void Stop()
         {
             _isStopped = true;

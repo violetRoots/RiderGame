@@ -15,6 +15,7 @@ MonoBehaviour:
   walkAnimationConfigs: {fileID: 11400000, guid: 357696b8954f54495bb0188e3ff23eae, type: 2}
   dashAnimationConfigs: {fileID: 11400000, guid: f9fbaee05e3c04c4db23979600401608, type: 2}
   obstacleCollisionAnimationConfigs: {fileID: 11400000, guid: 0cf371c8252db904b930080a20c32718, type: 2}
+  enemyCollisionAnimationConfigs: {fileID: 11400000, guid: fff5e88852254be41bd95bed492e63c1, type: 2}
   dashDistance: 7
   dashDuration: 0.25
   dashCooldown: 0.5
