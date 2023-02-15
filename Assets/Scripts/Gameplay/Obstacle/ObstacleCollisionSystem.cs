@@ -16,9 +16,9 @@ namespace RiderGame.Gameplay
         private const int MaxSpawnAttempts = 100;
 
         private readonly SessionRuntimeData _sessionRuntimeData;
+        private readonly GameplayRuntimeData _gameplayRuntimeData;
         private readonly GameConfiguration _gameConfigs;
 
-        private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fCollisionEnter;
         private readonly EcsFilter<EcsGameObject, Obstacle> _fObstacle;
 
@@ -28,7 +28,6 @@ namespace RiderGame.Gameplay
         public void Init()
         {
             _playerConfigs = _gameConfigs.PlayerConfiguration;
-            _worldObject = _fWorldObject.Get1(0).instance;
         }
 
         public void Run()
@@ -49,6 +48,9 @@ namespace RiderGame.Gameplay
 
                     InvulnerabilityEffect.AddToEntity(playerEntity, _playerConfigs.InvunerabilityDuration);
                     BlinkingEffect.AddToEntity(playerEntity, _playerConfigs.InvunerabilityDuration, _playerConfigs.InvunerabilityBlinkInterval, player.renderer);
+
+                    var collisionAnimation = player.character.ObstacleCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
+                    BaseAnimatorControllerSystem.AddAnimation(playerEntity, collisionAnimation.animation, CharacterAnimationPriority.ObstacleCollision);
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace RiderGame.Gameplay
         private readonly GameConfiguration _gameConfigs;
         private readonly GameplayRuntimeData _gameplayRuntimeData;
 
-        private EcsFilter<Player, Movement> _fPlayer;
+        private EcsFilter<Player> _fPlayer;
         private EcsFilter<Input> _fInput;
 
         private CharacterConfiguration _character;
@@ -55,14 +55,13 @@ namespace RiderGame.Gameplay
             {
                 var entity = _fPlayer.GetEntity(i);
                 ref var player = ref _fPlayer.Get1(i);
-                ref var movement = ref _fPlayer.Get2(i);
 
                 var duration = _character.DashDuration;
 
                 IgnoreMovementAnimationEffect.AddToEntity(entity, duration);
                 InvulnerabilityEffect.AddToEntity(entity, duration);
 
-                var dashAnimationInfo = player.character.DashAnimationConfigs.GetAnimationByAngle(movement.DirectionAngle);
+                var dashAnimationInfo = player.character.DashAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
                 BaseAnimatorControllerSystem.AddAnimation(entity, dashAnimationInfo.animation, CharacterAnimationPriority.Dash);
             }
         }

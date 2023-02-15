@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Character_Leek_SpriteAnimation_ObstacleCollision
+  m_EditorClassIdentifier: 
+  fps: 10
+  frames:
+  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
+  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
+  triggers: []
