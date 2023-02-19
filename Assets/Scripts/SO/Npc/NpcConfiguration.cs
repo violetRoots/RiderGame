@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+using RiderGame.Gameplay;
 
 namespace RiderGame.SO
 {
-    [CreateAssetMenu(fileName = "Enemy_1", menuName = "RiderGame/Enemy", order = 3)]
-    public class EnemyConfiguration : ScriptableObject
+    [CreateAssetMenu(fileName = "Npc_1", menuName = "RiderGame/Npc", order = 3)]
+    public partial class NpcConfiguration : ScriptableObject
     {
         public float ClampAngle => clampAngle;
         public float MovementSpeed => movementSpeed;
@@ -17,15 +20,24 @@ namespace RiderGame.SO
         private float clampAngle;
         [SerializeField]
         private float movementSpeed = 10.0f;
-        [Header("Collision")]
-        [SerializeField]
-        private float pushForce = 1.0f;
-        [SerializeField]
-        private float pushTime = 0.1f;
         [Header("Agression Mode")]
         [SerializeField]
         private float agressionRadius = 3.0f;
         [SerializeField]
         private float agressionMovementSpeed = 10.0f;
+
+        [Header("Collision")]
+        [SerializeField]
+        private float pushForce = 1.0f;
+        [SerializeField]
+        private float pushTime = 0.1f;
+
+        [ReorderableList]
+        [SerializeField]
+        private List<StateContainer> states;
+
+        [ReorderableList]
+        [SerializeField]
+        private List<ModifierContainer> modifiers;
     }
 }

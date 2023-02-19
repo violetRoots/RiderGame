@@ -14,7 +14,7 @@ namespace RiderGame.Gameplay
         private readonly GameplayRuntimeData _gameplayRuntimeData;
         private readonly SessionRuntimeData _sessionRuntimeData;
 
-        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fEnemy;
+        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
 
         private readonly Dictionary<GameObject, OnCollisionEnter2DEvent> _collisionEnemies = new Dictionary<GameObject, OnCollisionEnter2DEvent>();
@@ -29,7 +29,7 @@ namespace RiderGame.Gameplay
                 var senderObject = eventData.senderGameObject;
                 var collisionObject = eventData.collider2D.gameObject;
 
-                if (!senderObject.FindActiveEntityWithComponent<Enemy>()) continue;
+                if (!senderObject.FindActiveEntityWithComponent<Npc>()) continue;
 
                 if (_collisionEnemies.ContainsKey(senderObject)) continue;
 
@@ -80,13 +80,13 @@ namespace RiderGame.Gameplay
             movement.DirectionAngle = resAngle;
         }
 
-        private void PushEnemy(ref Enemy enemy, GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
+        private void PushEnemy(ref Npc enemy, GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
         {
             Vector3 offset = eventData.firstContactPoint2D.normal * enemy.enemyConfiguration.PushForce;
             enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, enemy.enemyConfiguration.PushTime).SetEase(Ease.Linear);
         }
 
-        private void StunEnemy(ref Enemy enemy)
+        private void StunEnemy(ref Npc enemy)
         {
             EnemyStateSystem.SetStunnedState(ref enemy);
         }

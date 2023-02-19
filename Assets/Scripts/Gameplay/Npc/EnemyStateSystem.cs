@@ -11,8 +11,8 @@ namespace RiderGame.Gameplay
         private const float MaxAgressionRadius = 15.0f;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
-        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fEnemy;
-        private readonly EcsFilter<EcsGameObject, Enemy, DeactivationEvent> _fEnemyDeactivationEvent;
+        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActiveObject> _fEnemy;
+        private readonly EcsFilter<EcsGameObject, Npc, DeactivationEvent> _fEnemyDeactivationEvent;
 
         private GameObject _playerObject;
 
@@ -69,7 +69,7 @@ namespace RiderGame.Gameplay
             }
         }
 
-        public static void SetNormalState(ref Enemy enemy)
+        public static void SetNormalState(ref Npc enemy)
         {
             enemy.state = EnemyState.Normal;
 
@@ -77,7 +77,7 @@ namespace RiderGame.Gameplay
             enemy.stunnedIcon.gameObject.SetActive(false);
         }
 
-        public static void SetAgressiveState(ref Enemy enemy)
+        public static void SetAgressiveState(ref Npc enemy)
         {
             enemy.state = EnemyState.Agressive;
 
@@ -85,7 +85,7 @@ namespace RiderGame.Gameplay
             enemy.stunnedIcon.gameObject.SetActive(false);
         }
 
-        public static void SetStunnedState(ref Enemy enemy)
+        public static void SetStunnedState(ref Npc enemy)
         {
             enemy.state = EnemyState.Stunned;
 

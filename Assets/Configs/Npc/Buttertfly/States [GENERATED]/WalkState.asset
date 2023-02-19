@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
-  m_Name: Buttertfly
+  m_Script: {fileID: 11500000, guid: 733c950f777bf5142a07048a9f0fe593, type: 3}
+  m_Name: WalkState
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 3
-  pushForce: 0.5
-  pushTime: 0.05
-  agressionRadius: 0
-  agressionMovementSpeed: 13
+  AAAAAAAAAAA: 0

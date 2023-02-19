@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
+  m_Name: Buttertfly
+  m_EditorClassIdentifier: 
+  clampAngle: 60
+  movementSpeed: 3
+  agressionRadius: 0
+  agressionMovementSpeed: 13
+  pushForce: 0.5
+  pushTime: 0.02
+  states:
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: 642df23a26758d04da92f45b74a76438, type: 2}
+    previousValueName: WalkState
+    parentDirectory: Assets/Configs/Npc/Buttertfly
+  modifiers:
+  - currentDropdownName: AgressionModifier
+    value: {fileID: 11400000, guid: ce4af8f56bd5e044eb04aff8541e6c33, type: 2}
+    previousValueName: AgressionModifier
+    parentDirectory: Assets/Configs/Npc/Buttertfly

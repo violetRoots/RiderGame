@@ -5,12 +5,12 @@ using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
-    public class EnemyComponent : MonoProvider<Enemy> { }
+    public class NpcComponent : MonoProvider<Npc> { }
 
     [Serializable]
-    public struct Enemy
+    public struct Npc
     {
-        public EnemyConfiguration enemyConfiguration;
+        public NpcConfiguration enemyConfiguration;
 
         [Space(10)]
         public SpriteRenderer agressionIcon;

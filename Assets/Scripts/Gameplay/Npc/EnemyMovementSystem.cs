@@ -6,8 +6,8 @@ namespace RiderGame.Gameplay
 {
     public class EnemyMovementSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActivationEvent> _fEnemyActivationEvent;
-        private readonly EcsFilter<EcsGameObject, Enemy, Movement, ActiveObject> _fActiveEnemy;
+        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActivationEvent> _fEnemyActivationEvent;
+        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActiveObject> _fActiveEnemy;
 
         public void Run()
         {

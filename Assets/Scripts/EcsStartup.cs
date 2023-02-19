@@ -71,6 +71,7 @@ namespace RiderGame
                 .Add(new InputSystem())
 
                 //World
+                .Add(new GenerationSystem())
                 .Add(new ObjectActivationSystem())
                 .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
