@@ -19,12 +19,8 @@ MonoBehaviour:
   pushForce: 0.5
   pushTime: 0.02
   states:
-  - currentDropdownName: WalkState
-    value: {fileID: 11400000, guid: 642df23a26758d04da92f45b74a76438, type: 2}
-    previousValueName: WalkState
+  - currentDropdownName: EmptyState
+    value: {fileID: 11400000, guid: 6c24452751add6843bf196c8d848f484, type: 2}
+    previousValueName: EmptyState
     parentDirectory: Assets/Configs/Npc/Buttertfly
-  modifiers:
-  - currentDropdownName: AgressionModifier
-    value: {fileID: 11400000, guid: ce4af8f56bd5e044eb04aff8541e6c33, type: 2}
-    previousValueName: AgressionModifier
-    parentDirectory: Assets/Configs/Npc/Buttertfly
+  modifiers: []

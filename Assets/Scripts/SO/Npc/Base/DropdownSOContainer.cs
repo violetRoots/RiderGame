@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using RiderGame.Gameplay;
 
 namespace RiderGame.SO
 {
@@ -11,9 +12,10 @@ namespace RiderGame.SO
     {
         private string[] DropdownNames => GetDropdownDictionary().Keys.ToArray();
 
+        public string DropdownName => currentDropdownName;
         public T Value => value;
 
-        [OnValueChanged(nameof(UpdateModifierValue))]
+        [OnValueChanged(nameof(UpdateValue))]
         [Dropdown(nameof(DropdownNames))]
         [SerializeField]
         private string currentDropdownName;
@@ -30,14 +32,24 @@ namespace RiderGame.SO
         [SerializeField]
         private string parentDirectory;
 
+        public void InitValue<S>(string path)
+        {
+            var newDropdownName = DropdownNames.Where(s => s == typeof(S).Name).FirstOrDefault();
+            if (string.IsNullOrEmpty(newDropdownName)) return;
+
+            currentDropdownName = newDropdownName;
+
+            InitValue(path);
+        }
+
         public void InitValue(string path)
         {
             parentDirectory = path;
 
-            UpdateModifierValue();
+            UpdateValue();
         }
 
-        private void UpdateModifierValue()
+        private void UpdateValue()
         {
             if (currentDropdownName == previousValueName) return;
 

@@ -32,6 +32,10 @@ namespace RiderGame.SO
         [SerializeField]
         private float pushTime = 0.1f;
 
+        [Dropdown(nameof(StateNames))]
+        [SerializeField]
+        private string startStateName;
+
         [ReorderableList]
         [SerializeField]
         private List<StateContainer> states;
