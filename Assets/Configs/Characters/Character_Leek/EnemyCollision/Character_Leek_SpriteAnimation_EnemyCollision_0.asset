@@ -12,20 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: Character_Leek_SpriteAnimation_EnemyCollision_0
   m_EditorClassIdentifier: 
-  fps: 10
+  fps: 8
   frames:
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
-  - {fileID: 21300000, guid: 87c2b9ba82ff246b38dee53fd9526186, type: 3}
-  - {fileID: 21300000, guid: 948d08a2bdcd94b549cd1017a1c95352, type: 3}
+  - {fileID: 21300000, guid: e5b04e4353e954290bd3a738075221aa, type: 3}
+  - {fileID: 21300000, guid: b335d4faa0c744fc4af8906f801e1904, type: 3}
+  - {fileID: 21300000, guid: e5b04e4353e954290bd3a738075221aa, type: 3}
+  - {fileID: 21300000, guid: b335d4faa0c744fc4af8906f801e1904, type: 3}
+  - {fileID: 21300000, guid: e5b04e4353e954290bd3a738075221aa, type: 3}
+  - {fileID: 21300000, guid: b335d4faa0c744fc4af8906f801e1904, type: 3}
+  - {fileID: 21300000, guid: e5b04e4353e954290bd3a738075221aa, type: 3}
+  - {fileID: 21300000, guid: b335d4faa0c744fc4af8906f801e1904, type: 3}
+  - {fileID: 21300000, guid: e5b04e4353e954290bd3a738075221aa, type: 3}
+  - {fileID: 21300000, guid: b335d4faa0c744fc4af8906f801e1904, type: 3}
   triggers: []
