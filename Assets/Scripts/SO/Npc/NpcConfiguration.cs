@@ -32,7 +32,7 @@ namespace RiderGame.SO
         [SerializeField]
         private float pushTime = 0.1f;
 
-        [Dropdown(nameof(StateNames))]
+        [Dropdown(nameof(AttachedStatesNames))]
         [SerializeField]
         private string startStateName;
 

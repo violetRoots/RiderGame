@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using NaughtyAttributes;
 using Voody.UniLeo;
 using RiderGame.SO;
 
@@ -10,14 +11,23 @@ namespace RiderGame.Gameplay
     [Serializable]
     public struct Npc
     {
+        private bool IsConfigValid => enemyConfiguration != null;
+
         public NpcConfiguration enemyConfiguration;
 
-        [Space(10)]
-        public SpriteRenderer agressionIcon;
-        public SpriteRenderer stunnedIcon;
 
         [HideInInspector]
         public EnemyState state;
+
+        private bool ShowAggressionState => IsConfigValid && enemyConfiguration.HasState<AggressionState>();
+        [AllowNesting]
+        [ShowIf(nameof(ShowAggressionState))]
+        public AggressionStateInfo aggressionState;
+
+        private bool ShowStunnedState => IsConfigValid && enemyConfiguration.HasState<StunnedState>();
+        [AllowNesting]
+        [ShowIf(nameof(ShowStunnedState))]
+        public StunnedStateInfo stunnedState;
     }
 
     public enum EnemyState

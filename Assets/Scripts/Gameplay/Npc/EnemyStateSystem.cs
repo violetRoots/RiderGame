@@ -73,24 +73,24 @@ namespace RiderGame.Gameplay
         {
             enemy.state = EnemyState.Normal;
 
-            enemy.agressionIcon.gameObject.SetActive(false);
-            enemy.stunnedIcon.gameObject.SetActive(false);
+            enemy.aggressionState.icon.gameObject.SetActive(false);
+            enemy.stunnedState.icon.gameObject.SetActive(false);
         }
 
         public static void SetAgressiveState(ref Npc enemy)
         {
             enemy.state = EnemyState.Agressive;
 
-            enemy.agressionIcon.gameObject.SetActive(true);
-            enemy.stunnedIcon.gameObject.SetActive(false);
+            enemy.aggressionState.icon.gameObject.SetActive(true);
+            enemy.stunnedState.icon.gameObject.SetActive(false);
         }
 
         public static void SetStunnedState(ref Npc enemy)
         {
             enemy.state = EnemyState.Stunned;
 
-            enemy.agressionIcon.gameObject.SetActive(false);
-            enemy.stunnedIcon.gameObject.SetActive(true);
+            enemy.aggressionState.icon.gameObject.SetActive(false);
+            enemy.stunnedState.icon.gameObject.SetActive(true);
         }
     }
 }
