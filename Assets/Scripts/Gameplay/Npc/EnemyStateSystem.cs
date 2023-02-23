@@ -31,16 +31,16 @@ namespace RiderGame.Gameplay
 
                 if (enemy.state == EnemyState.Normal)
                 {
-                    if (enemy.enemyConfiguration.AgressionRadius == 0.0f) continue;
+                    if (enemy.npcConfiguration.AgressionRadius == 0.0f) continue;
 
                     var raycastOrigin = gameObject.instance.transform.position;
-                    var angleStep = ((float)(enemy.enemyConfiguration.ClampAngle * 2) / (RaysCount - 1));
+                    var angleStep = ((float)(enemy.npcConfiguration.ClampAngle * 2) / (RaysCount - 1));
 
                     for (var rayIndex = 0; rayIndex < RaysCount; rayIndex++)
                     {
-                        var angle = enemy.enemyConfiguration.ClampAngle - rayIndex * angleStep;
+                        var angle = enemy.npcConfiguration.ClampAngle - rayIndex * angleStep;
                         var raycastDirection = Quaternion.Euler(0, 0, angle) * Vector2.down;
-                        var hits = Physics2D.RaycastAll(raycastOrigin, raycastDirection, enemy.enemyConfiguration.AgressionRadius);
+                        var hits = Physics2D.RaycastAll(raycastOrigin, raycastDirection, enemy.npcConfiguration.AgressionRadius);
 
                         if (hits.Count((hit) => hit.collider.gameObject == _playerObject) == 0) continue;
 
@@ -73,24 +73,24 @@ namespace RiderGame.Gameplay
         {
             enemy.state = EnemyState.Normal;
 
-            enemy.aggressionState.icon.gameObject.SetActive(false);
-            enemy.stunnedState.icon.gameObject.SetActive(false);
+            //enemy.aggressionState.icon.gameObject.SetActive(false);
+            //enemy.stunnedState.icon.gameObject.SetActive(false);
         }
 
         public static void SetAgressiveState(ref Npc enemy)
         {
             enemy.state = EnemyState.Agressive;
 
-            enemy.aggressionState.icon.gameObject.SetActive(true);
-            enemy.stunnedState.icon.gameObject.SetActive(false);
+            //enemy.aggressionState.icon.gameObject.SetActive(true);
+            //enemy.stunnedState.icon.gameObject.SetActive(false);
         }
 
         public static void SetStunnedState(ref Npc enemy)
         {
             enemy.state = EnemyState.Stunned;
 
-            enemy.aggressionState.icon.gameObject.SetActive(false);
-            enemy.stunnedState.icon.gameObject.SetActive(true);
+            //enemy.aggressionState.icon.gameObject.SetActive(false);
+            //enemy.stunnedState.icon.gameObject.SetActive(true);
         }
     }
 }

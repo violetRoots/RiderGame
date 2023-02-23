@@ -2,7 +2,7 @@ using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
-    public abstract class States : DerivedClassesCollector<State>
+    public abstract class StatesInfo : DerivedClassesCollector<State>
     {
         public const string StateDirectoryName = "States [GENERATED]";
 

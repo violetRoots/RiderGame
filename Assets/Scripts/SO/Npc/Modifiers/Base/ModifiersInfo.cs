@@ -2,7 +2,7 @@ using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
-    public abstract class Modifiers : DerivedClassesCollector<Modifier>
+    public abstract class ModifiersInfo : DerivedClassesCollector<Modifier>
     {
         public const string ModifierDirectoryName = "Modifiers [GENERATED]";
 

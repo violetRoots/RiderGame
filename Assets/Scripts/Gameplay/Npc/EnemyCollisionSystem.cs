@@ -82,8 +82,8 @@ namespace RiderGame.Gameplay
 
         private void PushEnemy(ref Npc enemy, GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
         {
-            Vector3 offset = eventData.firstContactPoint2D.normal * enemy.enemyConfiguration.PushForce;
-            enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, enemy.enemyConfiguration.PushTime).SetEase(Ease.Linear);
+            Vector3 offset = eventData.firstContactPoint2D.normal * enemy.npcConfiguration.PushForce;
+            enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, enemy.npcConfiguration.PushTime).SetEase(Ease.Linear);
         }
 
         private void StunEnemy(ref Npc enemy)

@@ -18,14 +18,24 @@ MonoBehaviour:
   agressionMovementSpeed: 13
   pushForce: 0.5
   pushTime: 0.02
-  startStateName: EmptyState
+  startStateName: AggressionState
   states:
+  - currentDropdownName: AggressionState
+    value: {fileID: 11400000, guid: cb64432841ea0be4e826831abc3455df, type: 2}
+    previousValueName: AggressionState
+    parentDirectory: Assets/Configs/Npc/Buttertfly
   - currentDropdownName: EmptyState
     value: {fileID: 11400000, guid: 6c24452751add6843bf196c8d848f484, type: 2}
     previousValueName: EmptyState
     parentDirectory: Assets/Configs/Npc/Buttertfly
+  hasStateDublicatesMessage: 'List of State has dublicates
+
+'
   modifiers:
   - currentDropdownName: EmptyModifier
     value: {fileID: 11400000, guid: 453064fbed8824942af6d7e03cd2a90d, type: 2}
     previousValueName: EmptyModifier
     parentDirectory: Assets/Configs/Npc/Buttertfly
+  hasModifierDublicatesMessage: 'List of Modifier has dublicates
+
+'

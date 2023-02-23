@@ -9,22 +9,22 @@ namespace RiderGame.Gameplay
     {
         protected override string GetCurrentDirectoryName()
         {
-            return States.StateDirectoryName;
+            return StatesInfo.StateDirectoryName;
         }
 
         protected override string GetCurrentDirectoryPath(string parentDictionary)
         {
-            return States.GetStatesDirectoryPath(parentDictionary);
+            return StatesInfo.GetStatesDirectoryPath(parentDictionary);
         }
 
         protected override string GetCurrentValuePath(string parentDirectory, string currentDropdown)
         {
-            return States.GetStatePath(parentDirectory, currentDropdown);
+            return StatesInfo.GetStatePath(parentDirectory, currentDropdown);
         }
 
         protected override Dictionary<string, Type> GetDropdownDictionary()
         {
-            return States.All;
+            return StatesInfo.All;
         }
     }
 }

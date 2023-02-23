@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using RiderGame.Gameplay;
 
 namespace RiderGame.SO
 {
-    public abstract class DropdownSOContainer<T> where T : ScriptableObject
+    public class DropdownSOContainer<T> where T : ContainerElement
     {
-        private string[] DropdownNames => GetDropdownDictionary().Keys.ToArray();
+        public string[] DropdownNames => GetDropdownDictionary().Keys.ToArray();
 
         public string DropdownName => currentDropdownName;
         public T Value => value;
@@ -75,9 +74,9 @@ namespace RiderGame.SO
             previousValueName = currentDropdownName;
         }
 
-        protected abstract Dictionary<string, Type> GetDropdownDictionary();
-        protected abstract string GetCurrentDirectoryName();
-        protected abstract string GetCurrentDirectoryPath(string parentDictionary);
-        protected abstract string GetCurrentValuePath(string parentDirectory, string currentDropdown);
+        protected virtual Dictionary<string, Type> GetDropdownDictionary() => null;
+        protected virtual string GetCurrentDirectoryName() => null;
+        protected virtual string GetCurrentDirectoryPath(string parentDictionary) => null;
+        protected virtual string GetCurrentValuePath(string parentDirectory, string currentDropdown) => null;
     }
 }

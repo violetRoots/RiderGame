@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
     [Serializable]
-    public abstract class Modifier : ScriptableObject
+    public abstract class Modifier : ContainerElement
     {
         public bool IsActive => _isActive;
 

@@ -8,6 +8,11 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "Npc_1", menuName = "RiderGame/Npc", order = 3)]
     public partial class NpcConfiguration : ScriptableObject
     {
+        public List<StateContainer> States => states;
+        public State StartState { get; private set; }
+
+        public List<ModifierContainer> Modifiers => modifiers;
+
         public float ClampAngle => clampAngle;
         public float MovementSpeed => movementSpeed;
         public float PushForce => pushForce;
@@ -32,7 +37,8 @@ namespace RiderGame.SO
         [SerializeField]
         private float pushTime = 0.1f;
 
-        [Dropdown(nameof(AttachedStatesNames))]
+        [AllowNesting]
+        [ReadOnly]
         [SerializeField]
         private string startStateName;
 
@@ -40,8 +46,26 @@ namespace RiderGame.SO
         [SerializeField]
         private List<StateContainer> states;
 
+        [ShowIf(nameof(HasStateDublicates))]
+        [TextArea]
+        [ReadOnly]
+        [InfoBox("States has dublicates", EInfoBoxType.Warning)]
+        [SerializeField]
+        private string hasStateDublicatesMessage;
+
+
         [ReorderableList]
         [SerializeField]
         private List<ModifierContainer> modifiers;
+
+        [ShowIf(nameof(HasModifierDublicates))]
+        [TextArea]
+        [ReadOnly]
+        [InfoBox("Modifiers has dublicates", EInfoBoxType.Warning)]
+        [SerializeField]
+        private string hasModifierDublicatesMessage;
+
+        [Button("Update")]
+        private void Update() => OnValidate();
     }
 }

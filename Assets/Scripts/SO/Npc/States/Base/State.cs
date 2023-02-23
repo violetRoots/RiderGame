@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
-    public class State : ScriptableObject
+    public class State : ContainerElement
     {
 
     }

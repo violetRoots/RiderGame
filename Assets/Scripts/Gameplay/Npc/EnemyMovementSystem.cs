@@ -16,7 +16,7 @@ namespace RiderGame.Gameplay
                 ref var enemy = ref _fEnemyActivationEvent.Get2(i);
                 ref var movement = ref _fEnemyActivationEvent.Get3(i);
 
-                var clampDirection = enemy.enemyConfiguration.ClampAngle;
+                var clampDirection = enemy.npcConfiguration.ClampAngle;
                 movement.DirectionAngle = Random.Range(-clampDirection, clampDirection);
             }
 
@@ -33,11 +33,11 @@ namespace RiderGame.Gameplay
 
                 if (enemy.state == EnemyState.Normal)
                 {
-                    translation *= enemy.enemyConfiguration.MovementSpeed;
+                    translation *= enemy.npcConfiguration.MovementSpeed;
                 }
                 else if (enemy.state == EnemyState.Agressive)
                 {
-                    translation *= enemy.enemyConfiguration.AgressionMovementSpeed;
+                    translation *= enemy.npcConfiguration.AgressionMovementSpeed;
                 }
 
                 transform.Translate(translation * Time.deltaTime);

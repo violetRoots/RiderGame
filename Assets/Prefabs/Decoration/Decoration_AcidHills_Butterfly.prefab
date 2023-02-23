@@ -114,9 +114,10 @@ GameObject:
   - component: {fileID: 714289481862489158}
   - component: {fileID: -1526778492292717715}
   - component: {fileID: 279385890246780532}
-  - component: {fileID: 8536998393854301056}
   - component: {fileID: 413391173752885786}
   - component: {fileID: 4642688623446399540}
+  - component: {fileID: 2124901714823114325}
+  - component: {fileID: 8536998393854301056}
   - component: {fileID: 714289481862489159}
   - component: {fileID: 714289481862489152}
   - component: {fileID: 714289481862489153}
@@ -189,10 +190,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    enemyConfiguration: {fileID: 11400000, guid: 3e1f555f44e7d4e8f93a2195ed04fd81, type: 2}
-    agressionIcon: {fileID: 8130358587690751633}
-    stunnedIcon: {fileID: 1087452321690915767}
+    npcConfiguration: {fileID: 11400000, guid: 3e1f555f44e7d4e8f93a2195ed04fd81, type: 2}
+    stateController:
+      elements:
+      - {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
+      - {fileID: 11400000, guid: 6c24452751add6843bf196c8d848f484, type: 2}
+      startState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
+      currentState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
+    modifierController:
+      elements:
+      - {fileID: 11400000, guid: 453064fbed8824942af6d7e03cd2a90d, type: 2}
     state: 0
+    modifiersCount: 1
+    statesCount: 2
+    aggressionState:
+      icon: {fileID: 8130358587690751633}
+    stunnedState:
+      icon: {fileID: 0}
 --- !u!114 &279385890246780532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,18 +221,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     drawer: {fileID: 8536998393854301056}
---- !u!114 &8536998393854301056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &413391173752885786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +247,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     spriteAnimator: {fileID: 714289480939590231}
+--- !u!114 &2124901714823114325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41f493f714b4e4b8c7339f1c8c7d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    spriteRenderer: {fileID: 714289480939590230}
+    layerEdgeOffset: 0.43
+--- !u!114 &8536998393854301056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &714289481862489159
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,14 +11,14 @@ namespace RiderGame.SO
         {
             get
             {
-                if (modifiers == null)
-                    modifiers = GetModifierTypes();
-                return modifiers;
+                if (classes == null)
+                    classes = GetDerivedClasses();
+                return classes;
             }
         }
 
-        private static Dictionary<string, Type> modifiers;
-        private static Dictionary<string, Type> GetModifierTypes()
+        private static Dictionary<string, Type> classes;
+        private static Dictionary<string, Type> GetDerivedClasses()
         {
             var derivedClasses = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(domainAssembly => domainAssembly.GetTypes())
