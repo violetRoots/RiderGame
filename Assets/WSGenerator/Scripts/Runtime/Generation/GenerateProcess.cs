@@ -127,6 +127,8 @@ namespace SkyCrush.WSGenerator
         {
             yield return new WaitUntil(() => _pointer != null && (_pointer.ReadyToSpawn || _spawnAttempts > MaxSpawnAttempts));
 
+            if (PoolContainer == null) yield break;
+
             if(_spawnAttempts > MaxSpawnAttempts)
             {
                 Debug.LogWarning($"Object {GenerateObjectInfo.InstanceName} cannot be spawn in area {_area.name}: doesn't free area enough");
