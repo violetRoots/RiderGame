@@ -21,10 +21,10 @@ namespace RiderGame.Gameplay
 
         private void ResetControllers()
         {
-            value.stateController = null;
+            value.StateController = null;
             value.statesCount = 0;
 
-            value.modifierController = null;
+            value.ModifierController = null;
             value.modifiersCount = 0;
         }
     }

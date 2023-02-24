@@ -8,14 +8,14 @@ namespace RiderGame.Gameplay
     {
         private void ValidateModifierController(NpcConfiguration npcConfiguration)
         {
-            value.modifierController = new ModifierRuntimeController(npcConfiguration.Modifiers);
-            value.modifiersCount = value.modifierController.GetCount();
+            value.ModifierController = new ModifierRuntimeController(npcConfiguration.Modifiers);
+            value.modifiersCount = value.ModifierController.GetCount();
         }
     }
 
     public partial struct Npc
     {
-        private bool ModifierControllerValid => modifierController != null;
+        private bool ModifierControllerValid => ModifierController != null;
 
         [Header("MODIFIERS")]
         [AllowNesting]

@@ -86,8 +86,8 @@ namespace RiderGame
                 .Add(new BringQuestSystem())
 
                 //Enemy
-                .Add(new EnemyMovementSystem())
-                .Add(new EnemyStateSystem())
+                .Add(new NpcWalkStateSystem())
+                .Add(new NpcAggressionStateSystem())
 
                 //Animation
                 .Add(new BaseAnimatorControllerSystem())

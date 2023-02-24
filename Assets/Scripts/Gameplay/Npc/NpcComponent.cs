@@ -15,8 +15,8 @@ namespace RiderGame.Gameplay
         public NpcConfiguration npcConfiguration;
 
         [Header("RUNTIME DATA")]
-        public StateRuntimeController stateController;
-        public ModifierRuntimeController modifierController;
+        public StateRuntimeController StateController;
+        public ModifierRuntimeController ModifierController;
 
         [HideInInspector]
         public EnemyState state;

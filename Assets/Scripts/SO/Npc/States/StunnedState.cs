@@ -6,7 +6,10 @@ namespace RiderGame.Gameplay
     [Serializable]
     public class StunnedState : State
     {
-        public float movementSpeed = 3.0f;
+        public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
+
+        [SerializeField]
+        private float movementSpeed = 3.0f;
     }
 
     [Serializable]

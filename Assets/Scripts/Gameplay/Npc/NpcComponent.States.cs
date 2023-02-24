@@ -9,27 +9,27 @@ namespace RiderGame.Gameplay
     {
         private void ValidateStateController(NpcConfiguration npcConfiguration)
         {
-            value.stateController = new StateRuntimeController(npcConfiguration.States, npcConfiguration.StartState);
+            value.StateController = new StateRuntimeController(npcConfiguration.States, npcConfiguration.StartState);
 
-            value.statesCount = value.stateController.GetCount();
+            value.statesCount = value.StateController.GetCount();
         }
     }
 
     public partial struct Npc
     {
-        private bool StateControllerValid => stateController != null;
+        private bool StateControllerValid => StateController != null;
 
         [Header("STATES")]
         [AllowNesting]
         [ReadOnly]
         public int statesCount;
 
-        private bool HasAggressionState => StateControllerValid && stateController.Has<AggressionState>();
+        private bool HasAggressionState => StateControllerValid && StateController.Has<AggressionState>();
         [AllowNesting]
         [ShowIf(nameof(HasAggressionState))]
-        public AggressionStateInfo aggressionState;
+        public AggressionStateRefs aggressionStateRefs;
 
-        private bool HasStunnedState => StateControllerValid && stateController.Has<StunnedState>();
+        private bool HasStunnedState => StateControllerValid && StateController.Has<StunnedState>();
         [AllowNesting]
         [ShowIf(nameof(HasStunnedState))]
         public StunnedStateInfo stunnedState;

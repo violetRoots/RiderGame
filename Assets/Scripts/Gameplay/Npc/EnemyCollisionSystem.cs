@@ -88,7 +88,7 @@ namespace RiderGame.Gameplay
 
         private void StunEnemy(ref Npc enemy)
         {
-            EnemyStateSystem.SetStunnedState(ref enemy);
+            NpcAggressionStateSystem.SetStunnedState(ref enemy);
         }
     }
 }
