@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Enemy_1_SpriteAnimation_-60
+  m_EditorClassIdentifier: 
+  fps: 12
+  frames:
+  - {fileID: 21300000, guid: 81f588888d31041338d4fd4952e54985, type: 3}
+  - {fileID: 21300000, guid: 84b760f1300ea4b18ac990062816f37e, type: 3}
+  - {fileID: 21300000, guid: 0158c2acb67464e71a955d84d11cac72, type: 3}
+  - {fileID: 21300000, guid: c9790292bfa4c464b9208761b8cdf484, type: 3}
+  - {fileID: 21300000, guid: f89ca6e3fe95f48769a0c7960e0cb27a, type: 3}
+  - {fileID: 21300000, guid: ae8182ca789d54a918143ab257f85605, type: 3}
+  - {fileID: 21300000, guid: ef1b076ed605f41bc8107eceb6511e02, type: 3}
+  - {fileID: 21300000, guid: 6e486bc25182745e18b92d1957b2cc2a, type: 3}
+  triggers: []

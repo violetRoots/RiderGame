@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
-  m_Name: Enemy_1_AnimationConfigs
+  m_Name: Enemy_HeartKeeper_AnimationConfigs
   m_EditorClassIdentifier: 
   animationsInfo:
   - angle: -60
-    animation: {fileID: 11400000, guid: 17380b38a0033ec45814cb5fb8ee2017, type: 2}
+    animation: {fileID: 11400000, guid: cbf1c583b61c746aa92afdaad7f857ca, type: 2}
     isFlip: 1
   - angle: -45
-    animation: {fileID: 11400000, guid: a54fd0ace9241ed47ad0c004a31d8f26, type: 2}
+    animation: {fileID: 11400000, guid: e763e09a2f49e4414891a89e5af47f0e, type: 2}
     isFlip: 1
   - angle: -30
-    animation: {fileID: 11400000, guid: e6259d20b24709843896203bccffa48f, type: 2}
+    animation: {fileID: 11400000, guid: 17380b38a0033ec45814cb5fb8ee2017, type: 2}
     isFlip: 1
   - angle: -15
-    animation: {fileID: 11400000, guid: c5a738be66ff6c64f951248e099523d8, type: 2}
+    animation: {fileID: 11400000, guid: a54fd0ace9241ed47ad0c004a31d8f26, type: 2}
     isFlip: 1
   - angle: 0
     animation: {fileID: 11400000, guid: a29afc9b8e8a8da4bb504db17e0f0f89, type: 2}
-    isFlip: 0
+    isFlip: 1
   - angle: 15
     animation: {fileID: 11400000, guid: c5a738be66ff6c64f951248e099523d8, type: 2}
-    isFlip: 0
+    isFlip: 1
   - angle: 30
     animation: {fileID: 11400000, guid: e6259d20b24709843896203bccffa48f, type: 2}
-    isFlip: 0
+    isFlip: 1
   - angle: 45
-    animation: {fileID: 11400000, guid: a54fd0ace9241ed47ad0c004a31d8f26, type: 2}
-    isFlip: 0
+    animation: {fileID: 11400000, guid: aecedfb3ccc7942e69b56b69a1a00ea0, type: 2}
+    isFlip: 1
   - angle: 60
-    animation: {fileID: 11400000, guid: 17380b38a0033ec45814cb5fb8ee2017, type: 2}
-    isFlip: 0
+    animation: {fileID: 11400000, guid: a073ed0248dc340c2b4afd739091c080, type: 2}
+    isFlip: 1

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Enemy_HeartKeeper_SpriteAnimation_0
+  m_EditorClassIdentifier: 
+  fps: 12
+  frames:
+  - {fileID: 21300000, guid: 19b318f41e4784005bc4d2fee93d8496, type: 3}
+  - {fileID: 21300000, guid: aef5359754749456a8d57a61acceadcf, type: 3}
+  - {fileID: 21300000, guid: d2c3bcd844147409e9886bc3e52b740c, type: 3}
+  - {fileID: 21300000, guid: 9e51e1e07169c4247959c07cf20aa3b5, type: 3}
+  - {fileID: 21300000, guid: 94f82bbd8fefd4e0cbff3a403fd7e281, type: 3}
+  - {fileID: 21300000, guid: 5e6a0e171093d4c33957add6a1e4adbb, type: 3}
+  - {fileID: 21300000, guid: cb52279095e80444a9e10b91a9fd0a54, type: 3}
+  - {fileID: 21300000, guid: 14b83941533d643c09457655834cb274, type: 3}
+  triggers: []

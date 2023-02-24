@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094c16e7aaab447bc1e4f73b6d1cce, type: 3}
   m_Name: Character_Leek
   m_EditorClassIdentifier: 
-  walkAnimationConfigs: {fileID: 11400000, guid: 357696b8954f54495bb0188e3ff23eae, type: 2}
+  walkAnimationConfigs: {fileID: 11400000, guid: 0e5ec82803f5043f9aa8a68effa7a053, type: 2}
   dashAnimationConfigs: {fileID: 11400000, guid: f9fbaee05e3c04c4db23979600401608, type: 2}
   obstacleCollisionAnimationConfigs: {fileID: 11400000, guid: 0cf371c8252db904b930080a20c32718, type: 2}
   enemyCollisionAnimationConfigs: {fileID: 11400000, guid: fff5e88852254be41bd95bed492e63c1, type: 2}

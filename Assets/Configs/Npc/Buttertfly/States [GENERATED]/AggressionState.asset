@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<<< HEAD:Assets/Configs/Npc/Buttertfly/States [GENERATED]/AggressionState.asset
   m_Script: {fileID: 11500000, guid: 7c5fc2f3adf5656408699cfe95daeb10, type: 3}
   m_Name: AggressionState
+========
+  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
+  m_Name: Enemy_HeartKeeper
+>>>>>>>> 6d64967 ([+] HeartKeeper animation):Assets/Configs/Npc/Enemy_HeartKeeper/Enemy_HeartKeeper.asset
   m_EditorClassIdentifier: 
   movementSpeed: 3
