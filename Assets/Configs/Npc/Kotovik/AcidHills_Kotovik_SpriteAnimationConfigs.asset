@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
-  m_Name: Enemy_7_SpriteAnimationConfigs
+  m_Name: AcidHills_Kotovik_SpriteAnimationConfigs
   m_EditorClassIdentifier: 
   animationsInfo:
   - angle: -60

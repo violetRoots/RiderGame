@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
-  m_Name: Enemy_2_SpriteAnimation_15
+  m_Name: AcidHills_Kotovik_SpriteAnimation_0
   m_EditorClassIdentifier: 
-  fps: 10
+  fps: 4
   frames:
-  - {fileID: 3518049574302149171, guid: e889d231e66b34c4da5a4da3a64ff0f1, type: 3}
-  - {fileID: 6352318580196037983, guid: e889d231e66b34c4da5a4da3a64ff0f1, type: 3}
-  - {fileID: 4294529060201502677, guid: e889d231e66b34c4da5a4da3a64ff0f1, type: 3}
-  - {fileID: -1955324749383734378, guid: e889d231e66b34c4da5a4da3a64ff0f1, type: 3}
+  - {fileID: 21300000, guid: 6ff1f31b864394bbfa2644c25ee9484a, type: 3}
+  - {fileID: 21300000, guid: 33a4dda78b8b740e9803465869761a1f, type: 3}
   triggers: []

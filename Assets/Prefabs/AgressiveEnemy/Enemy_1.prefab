@@ -190,10 +190,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    enemyConfiguration: {fileID: 11400000, guid: 9985261ac0257df47ba54deed16d3eff, type: 2}
-    agressionIcon: {fileID: 8130358587690751633}
-    stunnedIcon: {fileID: 1087452321690915767}
+    npcConfiguration: {fileID: 11400000, guid: 9985261ac0257df47ba54deed16d3eff, type: 2}
+    stateController:
+      elements: []
+      startState: {fileID: 0}
+      currentState: {fileID: 0}
+    modifierController:
+      elements: []
     state: 0
+    modifiersCount: 0
+    statesCount: 0
+    aggressionState:
+      icon: {fileID: 0}
+    stunnedState:
+      icon: {fileID: 0}
 --- !u!114 &6019604115984068091
 MonoBehaviour:
   m_ObjectHideFlags: 0

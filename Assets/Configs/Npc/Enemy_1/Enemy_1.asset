@@ -14,7 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clampAngle: 60
   movementSpeed: 3
-  pushForce: 0.5
-  pushTime: 0.05
   agressionRadius: 15
   agressionMovementSpeed: 9
+  pushForce: 0.5
+  pushTime: 0.05
+  startStateName: EmptyState
+  states:
+  - currentDropdownName: EmptyState
+    value: {fileID: 11400000, guid: 2357d45f4b3cd5b4ba5ca464593982fa, type: 2}
+    previousValueName: EmptyState
+    parentDirectory: Assets/Configs/Npc/Enemy_1
+  hasStateDublicatesMessage: 'List of State has dublicates
+
+'
+  modifiers:
+  - currentDropdownName: EmptyModifier
+    value: {fileID: 11400000, guid: 2cbf0f1c88412a74b83a21964280ab1f, type: 2}
+    previousValueName: EmptyModifier
+    parentDirectory: Assets/Configs/Npc/Enemy_1
+  hasModifierDublicatesMessage: 'List of Modifier has dublicates
+
+'

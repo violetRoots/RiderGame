@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 3393584503427092830}
   - component: {fileID: 5551940009806441521}
   m_Layer: 0
-  m_Name: Resource_AcidHills_Kotovik_1
+  m_Name: Currency_AcidHills_Kotovik_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,10 +213,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    enemyConfiguration: {fileID: 11400000, guid: dc167f12948304461abb05190785372f, type: 2}
-    agressionIcon: {fileID: 8130358587690751633}
-    stunnedIcon: {fileID: 1087452321690915767}
+    npcConfiguration: {fileID: 11400000, guid: 4b3e85f5b146c44cfb67031c0c6cf37f, type: 2}
+    stateController:
+      elements:
+      - {fileID: 11400000, guid: ddc2e0bf0acf305498ad64a3be2fd64b, type: 2}
+      startState: {fileID: 11400000, guid: ddc2e0bf0acf305498ad64a3be2fd64b, type: 2}
+      currentState: {fileID: 11400000, guid: ddc2e0bf0acf305498ad64a3be2fd64b, type: 2}
+    modifierController:
+      elements:
+      - {fileID: 11400000, guid: 49446ea1a78d1e14e8f8fdf6f08b7b35, type: 2}
     state: 0
+    modifiersCount: 1
+    statesCount: 1
+    aggressionState:
+      icon: {fileID: 0}
+    stunnedState:
+      icon: {fileID: 0}
 --- !u!114 &6019604115984068091
 MonoBehaviour:
   m_ObjectHideFlags: 0

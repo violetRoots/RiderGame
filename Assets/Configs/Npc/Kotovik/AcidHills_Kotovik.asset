@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
-  m_Name: Caterpillar
+  m_Name: AcidHills_Kotovik
   m_EditorClassIdentifier: 
   clampAngle: 60
-  movementSpeed: 3
-  agressionRadius: 2
+  movementSpeed: 7
+  agressionRadius: 0
   agressionMovementSpeed: 10
   pushForce: 0.5
   pushTime: 0.05
   startStateName: EmptyState
   states:
   - currentDropdownName: EmptyState
-    value: {fileID: 11400000, guid: 134c1971ea5259b478f6c4d9842be679, type: 2}
+    value: {fileID: 11400000, guid: ddc2e0bf0acf305498ad64a3be2fd64b, type: 2}
     previousValueName: EmptyState
-    parentDirectory: Assets/Configs/Npc/Caterpillar
+    parentDirectory: Assets/Configs/Npc/Kotovik
   hasStateDublicatesMessage: 'List of State has dublicates
 
 '
   modifiers:
   - currentDropdownName: EmptyModifier
-    value: {fileID: 11400000, guid: 6c5039504bf66e245a768321f95769e2, type: 2}
+    value: {fileID: 11400000, guid: 49446ea1a78d1e14e8f8fdf6f08b7b35, type: 2}
     previousValueName: EmptyModifier
-    parentDirectory: Assets/Configs/Npc/Caterpillar
+    parentDirectory: Assets/Configs/Npc/Kotovik
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 
 '

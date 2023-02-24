@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 2215449248134015509}
   - component: {fileID: 419282969492487460}
   m_Layer: 0
-  m_Name: Resources_AcidHills_Crystal_1
+  m_Name: Currency_AcidHills_Crystal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

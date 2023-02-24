@@ -194,7 +194,6 @@ MonoBehaviour:
     stateController:
       elements:
       - {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
-      - {fileID: 11400000, guid: 6c24452751add6843bf196c8d848f484, type: 2}
       startState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
       currentState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
     modifierController:
@@ -202,7 +201,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 453064fbed8824942af6d7e03cd2a90d, type: 2}
     state: 0
     modifiersCount: 1
-    statesCount: 2
+    statesCount: 1
     aggressionState:
       icon: {fileID: 8130358587690751633}
     stunnedState:
