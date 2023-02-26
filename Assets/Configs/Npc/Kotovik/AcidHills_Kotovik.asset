@@ -12,17 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: AcidHills_Kotovik
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 7
   agressionRadius: 0
   agressionMovementSpeed: 10
   pushForce: 0.5
   pushTime: 0.05
-  startStateName: EmptyState
+  startStateName: WalkState
   states:
-  - currentDropdownName: EmptyState
-    value: {fileID: 11400000, guid: ddc2e0bf0acf305498ad64a3be2fd64b, type: 2}
-    previousValueName: EmptyState
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: e5f2199e6dab24c4d9d3ca984a61f90f, type: 2}
+    previousValueName: WalkState
     parentDirectory: Assets/Configs/Npc/Kotovik
   hasStateDublicatesMessage: 'List of State has dublicates
 

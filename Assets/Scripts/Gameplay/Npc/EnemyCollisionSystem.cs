@@ -21,54 +21,54 @@ namespace RiderGame.Gameplay
 
         public void Run()
         {
-            _collisionEnemies.Clear();
-            foreach(var i in _fOnCollisionEnter)
-            {
-                ref var eventData = ref _fOnCollisionEnter.Get1(i);
+            //_collisionEnemies.Clear();
+            //foreach(var i in _fOnCollisionEnter)
+            //{
+            //    ref var eventData = ref _fOnCollisionEnter.Get1(i);
 
-                var senderObject = eventData.senderGameObject;
-                var collisionObject = eventData.collider2D.gameObject;
+            //    var senderObject = eventData.senderGameObject;
+            //    var collisionObject = eventData.collider2D.gameObject;
 
-                if (!senderObject.FindActiveEntityWithComponent<Npc>()) continue;
+            //    if (!senderObject.FindActiveEntityWithComponent<Npc>()) continue;
 
-                if (_collisionEnemies.ContainsKey(senderObject)) continue;
+            //    if (_collisionEnemies.ContainsKey(senderObject)) continue;
 
-                if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
-                {
-                    _gameplayRuntimeData.SetWorldIsMovingValue(false);
+            //    if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
+            //    {
+            //        _gameplayRuntimeData.SetWorldIsMovingValue(false);
 
-                    Action endSessionCallback = () => _sessionRuntimeData.Status.Value = SessionStatus.Ended;
+            //        Action endSessionCallback = () => _sessionRuntimeData.Status.Value = SessionStatus.Ended;
 
-                    ref var player = ref playerEntity.Get<Player>();
-                    var enemyCollisionAnimation = player.character.EnemyCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
-                    BaseAnimatorControllerSystem.AddAnimation(playerEntity, enemyCollisionAnimation.animation, CharacterAnimationPriority.EnemyCollision, onEndPlay: endSessionCallback);
-                }
-                else
-                {
-                    _collisionEnemies.Add(senderObject, eventData);
-                }
-            }
+            //        ref var player = ref playerEntity.Get<Player>();
+            //        var enemyCollisionAnimation = player.character.EnemyCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
+            //        BaseAnimatorControllerSystem.AddAnimation(playerEntity, enemyCollisionAnimation.animation, CharacterAnimationPriority.EnemyCollision, onEndPlay: endSessionCallback);
+            //    }
+            //    else
+            //    {
+            //        _collisionEnemies.Add(senderObject, eventData);
+            //    }
+            //}
 
-            foreach (var i in _fEnemy)
-            {
-                ref var gameObject = ref _fEnemy.Get1(i);
-                ref var enemy = ref _fEnemy.Get2(i);
-                ref var movement = ref _fEnemy.Get3(i);
+            //foreach (var i in _fEnemy)
+            //{
+            //    ref var gameObject = ref _fEnemy.Get1(i);
+            //    ref var enemy = ref _fEnemy.Get2(i);
+            //    ref var movement = ref _fEnemy.Get3(i);
 
-                if (!_collisionEnemies.ContainsKey(gameObject.instance)) continue;
+            //    if (!_collisionEnemies.ContainsKey(gameObject.instance)) continue;
 
-                var eventData = _collisionEnemies.GetValueOrDefault(gameObject.instance);
+            //    var eventData = _collisionEnemies.GetValueOrDefault(gameObject.instance);
 
-                if (enemy.state == EnemyState.Normal)
-                {
-                    ChangeDirection(ref movement, eventData);
-                    PushEnemy(ref enemy, gameObject.instance, eventData);
-                }
-                else if(enemy.state == EnemyState.Agressive)
-                {
-                    StunEnemy(ref enemy);
-                }
-            }
+            //    if (enemy.state == EnemyState.Normal)
+            //    {
+            //        ChangeDirection(ref movement, eventData);
+            //        PushEnemy(ref enemy, gameObject.instance, eventData);
+            //    }
+            //    else if(enemy.state == EnemyState.Agressive)
+            //    {
+            //        StunEnemy(ref enemy);
+            //    }
+            //}
         }
 
         private void ChangeDirection(ref Movement movement, OnCollisionEnter2DEvent eventData)

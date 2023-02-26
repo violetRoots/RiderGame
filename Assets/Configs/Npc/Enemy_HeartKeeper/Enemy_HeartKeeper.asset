@@ -12,9 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: Enemy_HeartKeeper
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 3
-  pushForce: 0.5
-  pushTime: 0.05
   agressionRadius: 10
   agressionMovementSpeed: 13
+  pushForce: 0.5
+  pushTime: 0.05
+  startStateName: WalkState
+  states:
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: 2aaaa06fd9c03c64da81a442d200c187, type: 2}
+    previousValueName: WalkState
+    parentDirectory: Assets/Configs/Npc/Enemy_HeartKeeper
+  hasStateDublicatesMessage: 'List of State has dublicates
+
+'
+  modifiers:
+  - currentDropdownName: EmptyModifier
+    value: {fileID: 11400000, guid: d3c9232d9cc23fb40ae7c46bd91d01d7, type: 2}
+    previousValueName: EmptyModifier
+    parentDirectory: Assets/Configs/Npc/Enemy_HeartKeeper
+  hasModifierDublicatesMessage: 'List of Modifier has dublicates
+
+'

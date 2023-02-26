@@ -85,7 +85,8 @@ namespace RiderGame
                 .Add(new CoinCollectionSystem())
                 .Add(new BringQuestSystem())
 
-                //Enemy
+                //Npc
+                .Add(new BaseNpcStateSystem())
                 .Add(new NpcWalkStateSystem())
                 .Add(new NpcAggressionStateSystem())
 

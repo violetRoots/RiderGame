@@ -12,17 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: Buttertfly
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 3
   agressionRadius: 0
   agressionMovementSpeed: 13
   pushForce: 0.5
   pushTime: 0.02
-  startStateName: EmptyState
+  startStateName: WalkState
   states:
-  - currentDropdownName: EmptyState
-    value: {fileID: 11400000, guid: 6c24452751add6843bf196c8d848f484, type: 2}
-    previousValueName: EmptyState
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: 3ccad8268882dcb4d902bbab7f94d303, type: 2}
+    previousValueName: WalkState
     parentDirectory: Assets/Configs/Npc/Buttertfly
   hasStateDublicatesMessage: 'List of State has dublicates
 

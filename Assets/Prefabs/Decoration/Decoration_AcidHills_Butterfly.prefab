@@ -191,19 +191,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: 3e1f555f44e7d4e8f93a2195ed04fd81, type: 2}
-    stateController:
+    StateController:
       elements:
-      - {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
-      startState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
-      currentState: {fileID: 11400000, guid: 3fa12701ca63ef24b80e9cb573c0e8eb, type: 2}
-    modifierController:
+      - {fileID: 11400000, guid: 3ccad8268882dcb4d902bbab7f94d303, type: 2}
+      startState: {fileID: 11400000, guid: 3ccad8268882dcb4d902bbab7f94d303, type: 2}
+    ModifierController:
       elements:
       - {fileID: 11400000, guid: 453064fbed8824942af6d7e03cd2a90d, type: 2}
     state: 0
     modifiersCount: 1
     statesCount: 1
-    aggressionState:
-      icon: {fileID: 8130358587690751633}
+    aggressionStateRefs:
+      icon: {fileID: 0}
     stunnedState:
       icon: {fileID: 0}
 --- !u!114 &279385890246780532

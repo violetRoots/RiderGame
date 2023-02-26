@@ -7,9 +7,21 @@ namespace RiderGame.Gameplay
     {
         private bool NpcConfigNotNull => value.npcConfiguration != null;
 
+        private void Awake()
+        {
+            InitNpc();
+        }
+
         private void OnDrawGizmos()
         {
-            if(!NpcConfigNotNull)
+            if (Application.isPlaying) return;
+
+            InitNpc();
+        }
+
+        private void InitNpc()
+        {
+            if (!NpcConfigNotNull)
             {
                 ResetControllers();
                 return;

@@ -16,7 +16,7 @@ namespace RiderGame.Gameplay
         private readonly GameConfiguration _gameConfigs;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
-        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActiveObject> _fNpc;
+        private readonly EcsFilter<EcsGameObject, Npc, ActiveObject> _fNpc;
         private readonly EcsFilter<EcsGameObject, Npc, ActivationEvent> _fNpcActivationEvent;
         private readonly EcsFilter<EcsGameObject, Npc, DeactivationEvent> _fNpcDeactivationEvent;
 
@@ -79,7 +79,7 @@ namespace RiderGame.Gameplay
 
             foreach (var i in _fNpcDeactivationEvent)
             {
-                _onStateChangedSubscription.Dispose();
+                _onStateChangedSubscription?.Dispose();
             }
         }
 
