@@ -11,6 +11,8 @@ namespace RiderGame.World
 {
     public class ObjectActivationSystem : IEcsInitSystem, IEcsRunSystem, IEcsDestroySystem
     {
+        private const int MaxActivationEventAliveFrames = 1;
+
         public static readonly List<EcsEntity> ActiveObjectEntities = new List<EcsEntity>();
         private static readonly List<ObjectActivationInfo> ObjectsToActivate = new List<ObjectActivationInfo>();
 
@@ -23,6 +25,7 @@ namespace RiderGame.World
         private readonly EcsFilter<EcsGameObject> _fGameObjects;
         private readonly EcsFilter<EcsGameObject, MoveWorldObject> _fWorldObject;
         private readonly EcsFilter<EcsGameObject, ActiveObject> _fActiveObject;
+        private readonly EcsFilter<EcsGameObject, ActivationEvent> _fActivationEvent;
         private readonly EcsFilter<EcsGameObject, DeactivationEvent> _fDeactivationEvent;
 
         private Transform _worldObject;
@@ -58,6 +61,12 @@ namespace RiderGame.World
                 entity.Replace(new DeactivationEvent());
                 entity.Replace(new InactiveObject());
             }
+
+            foreach(var i in _fActivationEvent)
+            {
+                ref var activationEvent = ref _fActivationEvent.Get2(i);
+                activationEvent.aliveFrames++;
+            }
         }
 
         public void Destroy()
@@ -68,7 +77,6 @@ namespace RiderGame.World
 
         private static void ActivateCallback(GameObject poolObject)
         {
-
             ObjectsToActivate.Add(new ObjectActivationInfo(poolObject, false));
 
             var nestedObjectsToActivate = poolObject.GetComponentsInChildren<ConvertToEntity>();
@@ -103,7 +111,10 @@ namespace RiderGame.World
 
                 if (info == null)
                 {
-                    if (entity.Has<ActivationEvent>()) entity.Del<ActivationEvent>();
+                    if (entity.Has<ActivationEvent>() && entity.Get<ActivationEvent>().aliveFrames >= MaxActivationEventAliveFrames)
+                    {
+                        entity.Del<ActivationEvent>();
+                    }
                 }
                 else
                 {

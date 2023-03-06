@@ -138,6 +138,8 @@ namespace SkyCrush.WSGenerator
             var generatedObject = PoolContainer.Get();
 
             generatedObject.transform.position = _pointer.transform.position;
+
+            SetPointerPosition();
         }
 
         private void SetPointerPosition()
