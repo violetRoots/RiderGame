@@ -5,6 +5,7 @@ using Leopotam.Ecs;
 using LeoEcsPhysics;
 using DG.Tweening;
 using RiderGame.World;
+using RiderGame.SO;
 using RiderGame.RuntimeData;
 
 namespace RiderGame.Gameplay
@@ -66,7 +67,7 @@ namespace RiderGame.Gameplay
             //    }
             //    else if(enemy.state == EnemyState.Agressive)
             //    {
-            //        StunEnemy(ref enemy);
+            //        stateController.TrySetActiveStateAs<StunnedState>();
             //    }
             //}
         }
@@ -84,11 +85,6 @@ namespace RiderGame.Gameplay
         {
             Vector3 offset = eventData.firstContactPoint2D.normal * enemy.npcConfiguration.PushForce;
             enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, enemy.npcConfiguration.PushTime).SetEase(Ease.Linear);
-        }
-
-        private void StunEnemy(ref Npc enemy)
-        {
-            NpcAggressionStateSystem.SetStunnedState(ref enemy);
         }
     }
 }

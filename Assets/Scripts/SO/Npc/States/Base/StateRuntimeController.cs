@@ -12,6 +12,7 @@ namespace RiderGame.SO
     public class StateRuntimeController : ContainerElementsController<StateContainer, State>
     {
         public State StartState => startState;
+        public bool IsInited => _isInited;
         public ReactiveProperty<State> ActiveState { get; private set; }
 
         [AllowNesting]
@@ -21,12 +22,9 @@ namespace RiderGame.SO
 
         private bool _isInited;
 
-        public StateRuntimeController(List<StateContainer> containers, State start) : base(containers)
+        public StateRuntimeController(List<StateContainer> containers) : base(containers)
         {
-            if (start != null)
-                startState = start;
-            else
-                startState = Elements.FirstOrDefault();
+            startState = Elements.FirstOrDefault();
         }
 
         public bool TryGetActiveStateAs<T>(out T state) where T : State

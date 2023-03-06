@@ -15,6 +15,8 @@ namespace RiderGame.SO
         [HideInInspector]
         private List<S> elements;
 
+        private List<S> editorElements;
+
         public ContainerElementsController(List<V> containers)
         {
             elements = new List<S>();
@@ -25,6 +27,25 @@ namespace RiderGame.SO
                 if (elements.Contains(newElements[i])) continue;
 
                 elements.Add(newElements[i]);
+            }
+
+            editorElements = new List<S>(elements);
+
+            if (Application.isPlaying) SetRuntimeMode();
+        }
+
+        public void SetRuntimeMode()
+        {
+            if (elements == null || elements.Count == 0) return;
+
+            elements = new List<S>();
+
+            foreach(var editorElement in editorElements)
+            {
+                var runtimeElement = ScriptableObject.Instantiate(editorElement);
+                runtimeElement.hideFlags = HideFlags.HideAndDontSave;
+
+                elements.Add(runtimeElement);
             }
         }
 

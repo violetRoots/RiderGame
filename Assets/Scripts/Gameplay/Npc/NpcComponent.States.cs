@@ -9,7 +9,7 @@ namespace RiderGame.Gameplay
     {
         private void ValidateStateController(NpcConfiguration npcConfiguration)
         {
-            value.StateController = new StateRuntimeController(npcConfiguration.States, npcConfiguration.StartState);
+            value.StateController = new StateRuntimeController(npcConfiguration.States);
 
             value.statesCount = value.StateController.GetCount();
         }

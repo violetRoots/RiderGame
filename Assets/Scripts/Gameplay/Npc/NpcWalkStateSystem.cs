@@ -1,7 +1,7 @@
+using UnityEngine;
 using Leopotam.Ecs;
 using RiderGame.SO;
 using RiderGame.World;
-using UnityEngine;
 
 namespace RiderGame.Gameplay
 {
@@ -20,7 +20,9 @@ namespace RiderGame.Gameplay
 
                 if (!npc.StateController.TryGet(out WalkState walkState)) continue;
 
-                walkState.SetClampDirectionAngle(_gameConfigs.ClampDirectionAngle);
+                var clampValue = _gameConfigs.ClampDirectionAngle;
+                walkState.SetClampDirectionAngle(clampValue);
+                walkState.DirectionAngle = Random.Range(-clampValue, clampValue);
             }
 
             foreach(var i in _fNpc)
