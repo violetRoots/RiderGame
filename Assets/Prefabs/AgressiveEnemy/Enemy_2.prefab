@@ -114,13 +114,9 @@ GameObject:
   - component: {fileID: 714289481862489158}
   - component: {fileID: -1526778492292717715}
   - component: {fileID: 6019604115984068091}
-  - component: {fileID: 279385890246780532}
-  - component: {fileID: 8536998393854301056}
   - component: {fileID: 458436323183430592}
   - component: {fileID: 2625101048030874011}
   - component: {fileID: 714289481862489159}
-  - component: {fileID: 714289481862489152}
-  - component: {fileID: 714289481862489153}
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
@@ -191,16 +187,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: f3be7ce38de15460b92ed2472947bd48, type: 2}
-    stateController:
-      elements: []
-      startState: {fileID: 0}
-      currentState: {fileID: 0}
-    modifierController:
-      elements: []
+    StateController:
+      elements:
+      - {fileID: 11400000, guid: aa56cecf00242674d91718b432d14a61, type: 2}
+      startState: {fileID: 11400000, guid: aa56cecf00242674d91718b432d14a61, type: 2}
+    ModifierController:
+      elements:
+      - {fileID: 11400000, guid: df62a624746ed7a4eb9f71f1568d1a7e, type: 2}
     state: 0
-    modifiersCount: 0
-    statesCount: 0
-    aggressionState:
+    modifiersCount: 1
+    statesCount: 1
+    aggressionStateRefs:
       icon: {fileID: 0}
     stunnedState:
       icon: {fileID: 0}
@@ -219,32 +216,6 @@ MonoBehaviour:
   value:
     spriteRenderer: {fileID: 714289480939590230}
     layerEdgeOffset: 2.89
---- !u!114 &279385890246780532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 8536998393854301056}
---- !u!114 &8536998393854301056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &458436323183430592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,35 +255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    setCustomAnimations: 1
     drawGizmos: 1
     animationConfiguration: {fileID: 11400000, guid: 601d7b1b324169f4a9ca1777490c656f, type: 2}
---- !u!114 &714289481862489152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 714289481862489153}
---- !u!114 &714289481862489153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c43b165fa2f6841937e24d562420d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4936073750136527860
 MonoBehaviour:
   m_ObjectHideFlags: 0

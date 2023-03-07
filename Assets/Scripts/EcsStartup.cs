@@ -9,7 +9,6 @@ using RiderGame.World;
 using RiderGame.RuntimeData;
 using RiderGame.Physics;
 using RiderGame.Gameplay;
-using RiderGame.Editor.CustomGizmos;
 using RiderGame.UI;
 
 namespace RiderGame
@@ -25,7 +24,6 @@ namespace RiderGame
         private EcsWorld _ecsWorld;
         private EcsSystems _UISystems;
         private EcsSystems _gameplaySystems;
-        private EcsSystems _gizmosSystems;
 
         private void Awake()
         {
@@ -97,18 +95,6 @@ namespace RiderGame
                 .Add(new OneFrameEventSystem())
 
                 .Init();
-#if UNITY_EDITOR
-            _gizmosSystems = new EcsSystems(_ecsWorld);
-            _gizmosSystems
-                .Inject(_ecsStartupObject)
-                .Inject(gameConfigs)
-                .Inject(generator)
-                .Inject(sessionStartup.GameplayRuntimeData)
-
-                .Add(new DrawMovementAnimationGizmosSystem())
-                .Add(new DrawOverlayGizmosSystem())
-                .Init();
-#endif
         }
 
         private void Update()
@@ -120,20 +106,9 @@ namespace RiderGame
                 _gameplaySystems?.Run();
         }
 
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            if (!Application.isPlaying) return;
-
-            _gizmosSystems.Run();
-        }
-#endif
-
         private void OnDestroy()
         {
             EcsPhysicsEvents.ecsWorld = null;
-            _gizmosSystems?.Destroy();
-            _gizmosSystems = null;
             _gameplaySystems?.Destroy();
             _gameplaySystems = null;
             _UISystems?.Destroy();

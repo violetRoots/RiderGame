@@ -133,8 +133,6 @@ GameObject:
   - component: {fileID: 3337181898290734690}
   - component: {fileID: 421054232876744090}
   - component: {fileID: 6764765128973675896}
-  - component: {fileID: 5346912460638726505}
-  - component: {fileID: 4506076183681428069}
   - component: {fileID: 7772090329855946196}
   - component: {fileID: 6520015236618883569}
   m_Layer: 0
@@ -203,32 +201,6 @@ MonoBehaviour:
   value:
     spriteRenderer: {fileID: 4862443086523820774}
     layerEdgeOffset: 0.66
---- !u!114 &5346912460638726505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6767068810095633567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 4506076183681428069}
---- !u!114 &4506076183681428069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6767068810095633567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7772090329855946196
 MonoBehaviour:
   m_ObjectHideFlags: 0

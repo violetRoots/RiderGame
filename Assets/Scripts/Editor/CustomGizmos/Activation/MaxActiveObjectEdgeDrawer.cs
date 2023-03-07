@@ -3,7 +3,7 @@ using RiderGame.SO;
 
 namespace RiderGame.Editor.CustomGizmos
 {
-    public class MaxActiveObjectEdgeDrawer : BaseGizmosDrawer
+    public class MaxActiveObjectEdgeDrawer : MonoBehaviour
     {
 #if UNITY_EDITOR
         private const float XPointPos = 1000.0f;

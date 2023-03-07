@@ -113,10 +113,8 @@ GameObject:
   - component: {fileID: 714289481862489157}
   - component: {fileID: 714289481862489158}
   - component: {fileID: -1526778492292717715}
-  - component: {fileID: 279385890246780532}
   - component: {fileID: 4642688623446399540}
   - component: {fileID: 2124901714823114325}
-  - component: {fileID: 8536998393854301056}
   - component: {fileID: 714289481862489159}
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
@@ -202,20 +200,6 @@ MonoBehaviour:
       icon: {fileID: 0}
     stunnedState:
       icon: {fileID: 0}
---- !u!114 &279385890246780532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 8536998393854301056}
 --- !u!114 &4642688623446399540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,18 +229,6 @@ MonoBehaviour:
   value:
     spriteRenderer: {fileID: 714289480939590230}
     layerEdgeOffset: 0.43
---- !u!114 &8536998393854301056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &714289481862489159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value:
-    setCustomAnimations: 1
     drawGizmos: 1
     animationConfiguration: {fileID: 11400000, guid: abb1341d5b6f0489f8b36eebe3255edb, type: 2}
 --- !u!114 &4936073750136527860
