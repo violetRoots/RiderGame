@@ -30,6 +30,8 @@ namespace RiderGame.Gameplay
 
                 if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
                 {
+                    npc.StateController.TrySetActiveStateAs<StunnedState>();
+
                     EndSession(ref playerEntity);
                 }
                 else if (npc.StateController.TryGetActiveStateAs(out WalkState walkState))
