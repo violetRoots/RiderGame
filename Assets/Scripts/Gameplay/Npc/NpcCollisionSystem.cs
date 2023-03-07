@@ -37,6 +37,10 @@ namespace RiderGame.Gameplay
                     ChangeDirection(walkState, eventData);
                     PushEnemy(ref npc, senderObject, eventData);
                 }
+                else if (npc.StateController.TryGetActiveStateAs(out AggressionState aggressionState))
+                {
+                    npc.StateController.TrySetActiveStateAs<StunnedState>();
+                }
             }
         }
 

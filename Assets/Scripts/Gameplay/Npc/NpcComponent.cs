@@ -17,15 +17,5 @@ namespace RiderGame.Gameplay
         [Header("RUNTIME DATA")]
         public StateRuntimeController StateController;
         public ModifierRuntimeController ModifierController;
-
-        [HideInInspector]
-        public EnemyState state;
-    }
-
-    public enum EnemyState
-    {
-        Normal,
-        Agressive,
-        Stunned
     }
 }

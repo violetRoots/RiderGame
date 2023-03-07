@@ -22,6 +22,14 @@ MonoBehaviour:
     value: {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
     previousValueName: WalkState
     parentDirectory: Assets/Configs/Npc/Caterpillar
+  - currentDropdownName: AggressionState
+    value: {fileID: 11400000, guid: b6b9e786a8b69c04a8eaf9fadbe4c6a5, type: 2}
+    previousValueName: AggressionState
+    parentDirectory: Assets/Configs/Npc/Caterpillar
+  - currentDropdownName: StunnedState
+    value: {fileID: 11400000, guid: d2e5fc816d3b78a41a6dbdea109e7f52, type: 2}
+    previousValueName: StunnedState
+    parentDirectory: Assets/Configs/Npc/Caterpillar
   hasStateDublicatesMessage: 'List of State has dublicates
 
 '

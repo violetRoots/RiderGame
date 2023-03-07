@@ -11,9 +11,6 @@ namespace RiderGame.Gameplay
     public class NpcAggressionStateSystem : IEcsInitSystem, IEcsRunSystem
     {
         private const int RaysCount = 9;
-        private const float MaxAgressionRadius = 15.0f;
-
-        private readonly GameConfiguration _gameConfigs;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
         private readonly EcsFilter<EcsGameObject, Npc, ActiveObject> _fNpc;
@@ -21,7 +18,6 @@ namespace RiderGame.Gameplay
         private readonly EcsFilter<EcsGameObject, Npc, DeactivationEvent> _fNpcDeactivationEvent;
 
         private GameObject _playerObject;
-        private IDisposable _onStateChangedSubscription;
 
         public void Init()
         {
@@ -34,9 +30,9 @@ namespace RiderGame.Gameplay
             {
                 var npc = _fNpcActivationEvent.Get2(i);
 
-                if (!npc.StateController.Has<AggressionState>()) continue;
+                if (!npc.StateController.TryGet(out AggressionState aggressionState)) continue;
 
-                _onStateChangedSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(npc, state));
+                aggressionState.changeStateSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(npc, state));
             }
 
             foreach (var i in _fNpc)
@@ -48,7 +44,7 @@ namespace RiderGame.Gameplay
 
                 if (stateController.TryGetActiveStateAs(out WalkState activeWalkState) && stateController.TryGet(out AggressionState attachedAggressionState))
                 {
-                    if (attachedAggressionState.aggressionRadius == 0.0f) continue;
+                    if (attachedAggressionState.startAggressionRadius == 0.0f) continue;
 
                     var raycastOrigin = gameObject.instance.transform.position;
                     var angleStep = ((float)(GameConfiguration.ClampDirectionAngle * 2) / (RaysCount - 1));
@@ -57,7 +53,7 @@ namespace RiderGame.Gameplay
                     {
                         var angle = GameConfiguration.ClampDirectionAngle - rayIndex * angleStep;
                         var raycastDirection = Quaternion.Euler(0, 0, angle) * Vector2.down;
-                        var hits = Physics2D.RaycastAll(raycastOrigin, raycastDirection, attachedAggressionState.aggressionRadius);
+                        var hits = Physics2D.RaycastAll(raycastOrigin, raycastDirection, attachedAggressionState.startAggressionRadius);
 
                         if (hits.Count((hit) => hit.collider.gameObject == _playerObject) == 0) continue;
 
@@ -71,14 +67,19 @@ namespace RiderGame.Gameplay
                     var movementAngle = Vector2.SignedAngle(Vector2.down, toPlayer);
                     activeAggressionState.DirectionAngle = movementAngle;
 
-                    if (toPlayer.magnitude > MaxAgressionRadius)
+                    if (toPlayer.magnitude > activeAggressionState.endAggressionRadius)
                         stateController.TrySetActiveStateAs<WalkState>();
                 }
             }
 
             foreach (var i in _fNpcDeactivationEvent)
             {
-                _onStateChangedSubscription?.Dispose();
+                var npc = _fNpcActivationEvent.Get2(i);
+
+                if (!npc.StateController.TryGet(out AggressionState aggressionState)) continue;
+
+                aggressionState.changeStateSubscription?.Dispose();
+                aggressionState.changeStateSubscription = null;
             }
         }
 
@@ -91,7 +92,7 @@ namespace RiderGame.Gameplay
 
         public static void SetStunnedState(ref Npc enemy)
         {
-            enemy.state = EnemyState.Stunned;
+            //enemy.state = EnemyState.Stunned;
 
             //enemy.aggressionState.icon.gameObject.SetActive(false);
             //enemy.stunnedState.icon.gameObject.SetActive(true);

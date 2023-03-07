@@ -32,6 +32,6 @@ namespace RiderGame.Gameplay
         private bool HasStunnedState => StateControllerValid && StateController.Has<StunnedState>();
         [AllowNesting]
         [ShowIf(nameof(HasStunnedState))]
-        public StunnedStateInfo stunnedState;
+        public StunnedStateInfo stunnedStateRefs;
     }
 }

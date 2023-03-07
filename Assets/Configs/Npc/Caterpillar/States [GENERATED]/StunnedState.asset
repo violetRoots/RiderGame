@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5fc2f3adf5656408699cfe95daeb10, type: 3}
-  m_Name: AggressionState
+  m_Script: {fileID: 11500000, guid: 1eae8f6ac24ed8c48b9b3e601bcaf5d5, type: 3}
+  m_Name: StunnedState
   m_EditorClassIdentifier: 
-  movementAnimation: {fileID: 11400000, guid: 06dd8b0f5350d4a1490fca17f14f30a8, type: 2}
-  movementSpeed: 5
-  startAggressionRadius: 3
-  endAggressionRadius: 15
+  stunnedAnimation: {fileID: 11400000, guid: 06dd8b0f5350d4a1490fca17f14f30a8, type: 2}

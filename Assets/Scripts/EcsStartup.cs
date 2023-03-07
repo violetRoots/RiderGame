@@ -84,8 +84,9 @@ namespace RiderGame
 
                 //Npc
                 .Add(new BaseNpcStateSystem())
-                .Add(new NpcWalkStateSystem())
+                .Add(new NpcMovableStateSystem())
                 .Add(new NpcAggressionStateSystem())
+                .Add(new NpcStunnedStateSystem())
 
                 //Animation
                 .Add(new BaseAnimatorControllerSystem())

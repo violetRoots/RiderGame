@@ -5,7 +5,7 @@ using RiderGame.World;
 
 namespace RiderGame.Gameplay
 {
-    public class NpcWalkStateSystem : IEcsRunSystem
+    public class NpcMovableStateSystem : IEcsRunSystem
     {
         private readonly EcsFilter<EcsGameObject, Npc, ActiveObject> _fNpc;
         private readonly EcsFilter<EcsGameObject, Npc, ActivationEvent> _fNpcActivationEvent;
@@ -31,16 +31,16 @@ namespace RiderGame.Gameplay
 
                 var stateController = npc.StateController;
 
-                if (!stateController.TryGetActiveStateAs(out WalkState walkState)) continue;
+                if (!stateController.TryGetActiveStateAs(out MovableState movableState)) continue;
 
                 var transform = gameObject.instance.transform;
-                var translation = Quaternion.Euler(0, 0, walkState.DirectionAngle) * Vector2.down * walkState.MovementSpeed;
+                var translation = Quaternion.Euler(0, 0, movableState.DirectionAngle) * Vector2.down * movableState.MovementSpeed;
 
                 transform.Translate(translation * Time.deltaTime);
 
-                if (walkState.MovementAnimation == null) continue;
+                if (movableState.MovementAnimation == null) continue;
 
-                var currentAnimationInfo = walkState.MovementAnimation.GetAnimationByAngle(walkState.DirectionAngle);
+                var currentAnimationInfo = movableState.MovementAnimation.GetAnimationByAngle(movableState.DirectionAngle);
 
                 short flipValue = (short)(currentAnimationInfo.isFlip ? -1 : 1);
                 BaseAnimatorControllerSystem.AddAnimation(entity, currentAnimationInfo.animation, CharacterAnimationPriority.Movement, loop: true, continueFrame: true, flipDir: flipValue);
