@@ -6,6 +6,8 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "GameConfigs", menuName = "RiderGame/GameConfigs", order = 0)]
     public class GameConfiguration : SingletonConfiguration<GameConfiguration>
     {
+        public const float ClampDirectionAngle = 60.0f;
+
         public float MouseDirectionSensitivity => mouseDirectionSensitivity;
         public float TouchDirectionSensitivity => touchDirectionSensitivity;
         public float TapDetectTime => tapDetectTime;
@@ -18,7 +20,6 @@ namespace RiderGame.SO
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public float BackgroundSpeedMultiplier => backgroundSpeedMultiplier;
         public float ChangeLayerEdge => changeLayerEdgePosition;
-        public float ClampDirectionAngle => clampDirectionAngle;
         public LevelConfiguration[] Levels => _levelConfigs;
 
         [Header("Input")]
@@ -43,8 +44,6 @@ namespace RiderGame.SO
         private float backgroundSpeedMultiplier = 0.00035f;
         [SerializeField]
         private float changeLayerEdgePosition = 0.0f;
-        [SerializeField]
-        private float clampDirectionAngle = 60.0f;
 
         [Header("Gameplay")]
         [SerializeField]

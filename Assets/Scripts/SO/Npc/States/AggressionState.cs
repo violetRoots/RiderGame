@@ -4,7 +4,7 @@ using UnityEngine;
 namespace RiderGame.Gameplay
 {
     [Serializable]
-    public class AggressionState : WalkState
+    public class AggressionState : MovableState
     {
         public float aggressionRadius = 3.0f;
     }

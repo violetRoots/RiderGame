@@ -43,7 +43,6 @@ namespace RiderGame.Gameplay
             {
                 ref var gameObject = ref _fNpc.Get1(i);
                 ref var npc = ref _fNpc.Get2(i);
-                ref var movement = ref _fNpc.Get3(i);
 
                 var stateController = npc.StateController;
 
@@ -52,11 +51,11 @@ namespace RiderGame.Gameplay
                     if (attachedAggressionState.aggressionRadius == 0.0f) continue;
 
                     var raycastOrigin = gameObject.instance.transform.position;
-                    var angleStep = ((float)(_gameConfigs.ClampDirectionAngle * 2) / (RaysCount - 1));
+                    var angleStep = ((float)(GameConfiguration.ClampDirectionAngle * 2) / (RaysCount - 1));
 
                     for (var rayIndex = 0; rayIndex < RaysCount; rayIndex++)
                     {
-                        var angle = _gameConfigs.ClampDirectionAngle - rayIndex * angleStep;
+                        var angle = GameConfiguration.ClampDirectionAngle - rayIndex * angleStep;
                         var raycastDirection = Quaternion.Euler(0, 0, angle) * Vector2.down;
                         var hits = Physics2D.RaycastAll(raycastOrigin, raycastDirection, attachedAggressionState.aggressionRadius);
 
@@ -70,7 +69,7 @@ namespace RiderGame.Gameplay
                 {
                     var toPlayer = _playerObject.transform.position - gameObject.instance.transform.position;
                     var movementAngle = Vector2.SignedAngle(Vector2.down, toPlayer);
-                    movement.DirectionAngle = movementAngle;
+                    activeAggressionState.DirectionAngle = movementAngle;
 
                     if (toPlayer.magnitude > MaxAgressionRadius)
                         stateController.TrySetActiveStateAs<WalkState>();

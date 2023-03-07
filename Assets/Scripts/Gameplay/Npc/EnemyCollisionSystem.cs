@@ -15,7 +15,7 @@ namespace RiderGame.Gameplay
         private readonly GameplayRuntimeData _gameplayRuntimeData;
         private readonly SessionRuntimeData _sessionRuntimeData;
 
-        private readonly EcsFilter<EcsGameObject, Npc, Movement, ActiveObject> _fEnemy;
+        private readonly EcsFilter<EcsGameObject, Npc, PlayerMovement, ActiveObject> _fEnemy;
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fOnCollisionEnter;
 
         private readonly Dictionary<GameObject, OnCollisionEnter2DEvent> _collisionEnemies = new Dictionary<GameObject, OnCollisionEnter2DEvent>();
@@ -72,7 +72,7 @@ namespace RiderGame.Gameplay
             //}
         }
 
-        private void ChangeDirection(ref Movement movement, OnCollisionEnter2DEvent eventData)
+        private void ChangeDirection(ref PlayerMovement movement, OnCollisionEnter2DEvent eventData)
         {
             var direction = Quaternion.Euler(0, 0, movement.DirectionAngle) * Vector2.down;
             direction = Vector2.Reflect(direction, eventData.firstContactPoint2D.normal);

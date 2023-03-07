@@ -1,13 +1,11 @@
 using System;
 using UnityEngine;
 using Voody.UniLeo;
-using NaughtyAttributes;
 using RiderGame.SO;
-using SkyCrush.Utility;
 
 namespace RiderGame.Gameplay
 {
-    public sealed class MovementAnimationComponent : MonoProvider<MovementAnimation>
+    public sealed class PlayerMovementAnimationComponent : MonoProvider<MovementAnimation>
     {
         public MovementAnimation Value => value;
     }
@@ -15,13 +13,9 @@ namespace RiderGame.Gameplay
     [Serializable]
     public struct MovementAnimation
     {
-        public bool setCustomAnimations;
-
         public bool drawGizmos;
 
-        [Space(10)]
-        [AllowNesting]
-        [ShowIf(nameof(setCustomAnimations))]
+        [HideInInspector]
         public SpriteAnimationConfiguration animationConfiguration;
     }
 }

@@ -8,7 +8,7 @@ namespace RiderGame.Gameplay
     {
         private readonly GameplayRuntimeData _gameplayData;
 
-        private readonly EcsFilter<Player, Movement, MovementAnimation>.Exclude<IgnoreMovementAnimation> _fPlayer;
+        private readonly EcsFilter<Player, PlayerMovement, MovementAnimation>.Exclude<IgnoreMovementAnimation> _fPlayer;
 
         public void Init()
         {
@@ -17,10 +17,7 @@ namespace RiderGame.Gameplay
                 ref var player = ref _fPlayer.Get1(i);
                 ref var animationComponent = ref _fPlayer.Get3(i);
 
-                if (!animationComponent.setCustomAnimations)
-                {
-                    animationComponent.animationConfiguration = player.character.WalkAnimationConfigs;
-                }
+                animationComponent.animationConfiguration = player.character.WalkAnimationConfigs;
             }
         }
 

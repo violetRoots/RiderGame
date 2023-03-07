@@ -18,12 +18,12 @@ namespace RiderGame.Editor.CustomGizmos
         {
             if (!Application.isPlaying)
             {
-                _animationValue = GetComponent<MovementAnimationComponent>().Value;
+                _animationValue = GetComponent<PlayerMovementAnimationComponent>().Value;
             }
 
             if (!_animationValue.drawGizmos) return;
 
-            if (!_animationValue.setCustomAnimations && TryGetComponent(out PlayerComponent player))
+            if (TryGetComponent(out PlayerComponent player))
             {
                 _animationValue.animationConfiguration = player.Value.character.WalkAnimationConfigs;
             }

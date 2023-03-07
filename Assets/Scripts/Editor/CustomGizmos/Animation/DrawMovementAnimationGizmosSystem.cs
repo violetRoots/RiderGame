@@ -11,7 +11,7 @@ namespace RiderGame.Editor.CustomGizmos
     {
         private readonly GameplayRuntimeData _runtimeLevelData;
 
-        private readonly EcsFilter<EcsGameObject, Movement, MovementAnimation, CustomGizmos> _animationFilter;
+        private readonly EcsFilter<EcsGameObject, PlayerMovement, MovementAnimation, CustomGizmos> _animationFilter;
 
         public void Run()
         {

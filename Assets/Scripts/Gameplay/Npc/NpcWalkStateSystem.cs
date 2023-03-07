@@ -20,13 +20,14 @@ namespace RiderGame.Gameplay
 
                 if (!npc.StateController.TryGet(out WalkState walkState)) continue;
 
-                var clampValue = _gameConfigs.ClampDirectionAngle;
-                walkState.SetClampDirectionAngle(clampValue);
+                var clampValue = GameConfiguration.ClampDirectionAngle;
                 walkState.DirectionAngle = Random.Range(-clampValue, clampValue);
             }
 
             foreach(var i in _fNpc)
             {
+                var entity = _fNpc.GetEntity(i);
+
                 ref var gameObject = ref _fNpc.Get1(i);
                 ref var npc = ref _fNpc.Get2(i);
 
@@ -38,6 +39,13 @@ namespace RiderGame.Gameplay
                 var translation = Quaternion.Euler(0, 0, walkState.DirectionAngle) * Vector2.down * walkState.MovementSpeed;
 
                 transform.Translate(translation * Time.deltaTime);
+
+                if (walkState.MovementAnimation == null) continue;
+
+                var currentAnimationInfo = walkState.MovementAnimation.GetAnimationByAngle(walkState.DirectionAngle);
+
+                short flipValue = (short)(currentAnimationInfo.isFlip ? -1 : 1);
+                BaseAnimatorControllerSystem.AddAnimation(entity, currentAnimationInfo.animation, CharacterAnimationPriority.Movement, loop: true, continueFrame: true, flipDir: flipValue);
             }
         }
     }

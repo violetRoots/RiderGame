@@ -12,17 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: Caterpillar
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 3
   agressionRadius: 2
   agressionMovementSpeed: 10
   pushForce: 0.5
   pushTime: 0.05
-  startStateName: EmptyState
+  startStateName: WalkState
   states:
-  - currentDropdownName: EmptyState
-    value: {fileID: 11400000, guid: 134c1971ea5259b478f6c4d9842be679, type: 2}
-    previousValueName: EmptyState
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
+    previousValueName: WalkState
     parentDirectory: Assets/Configs/Npc/Caterpillar
   hasStateDublicatesMessage: 'List of State has dublicates
 

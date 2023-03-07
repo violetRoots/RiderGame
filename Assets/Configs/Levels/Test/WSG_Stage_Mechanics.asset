@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd510c8600edb046b6e549d9c0d92dd, type: 3}
   m_Name: WSG_Stage_Mechanics
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 8
   customData:
     movementSpeed: 8
   generateObjects:
@@ -37,7 +37,7 @@ MonoBehaviour:
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
         value: 10
@@ -45,11 +45,11 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 34
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    x: 'time: 1 unit = duration / 10 (0,8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-    objectsCount: 4+-1
+    objectsCount: 16+-1

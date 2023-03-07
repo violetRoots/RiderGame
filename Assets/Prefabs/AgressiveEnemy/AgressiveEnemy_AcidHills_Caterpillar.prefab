@@ -113,14 +113,7 @@ GameObject:
   - component: {fileID: 714289481862489157}
   - component: {fileID: 714289481862489158}
   - component: {fileID: -1526778492292717715}
-  - component: {fileID: 5430686112914113733}
   - component: {fileID: 6405100200763918657}
-  - component: {fileID: 6019604115984068091}
-  - component: {fileID: 714289481862489159}
-  - component: {fileID: 714289481862489152}
-  - component: {fileID: 279385890246780532}
-  - component: {fileID: 8536998393854301056}
-  - component: {fileID: 714289481862489153}
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
@@ -191,31 +184,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: dc167f12948304461abb05190785372f, type: 2}
-    stateController:
-      elements: []
-      startState: {fileID: 0}
-      currentState: {fileID: 0}
-    modifierController:
-      elements: []
+    StateController:
+      elements:
+      - {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
+      startState: {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
+    ModifierController:
+      elements:
+      - {fileID: 11400000, guid: 6c5039504bf66e245a768321f95769e2, type: 2}
     state: 0
-    modifiersCount: 0
-    statesCount: 0
-    aggressionState:
+    modifiersCount: 1
+    statesCount: 1
+    aggressionStateRefs:
       icon: {fileID: 0}
     stunnedState:
       icon: {fileID: 0}
---- !u!114 &5430686112914113733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8441472720aec40b17ae9b27461ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6405100200763918657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,89 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     spriteAnimator: {fileID: 714289480939590231}
---- !u!114 &6019604115984068091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41f493f714b4e4b8c7339f1c8c7d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    spriteRenderer: {fileID: 714289480939590230}
-    layerEdgeOffset: 0
---- !u!114 &714289481862489159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f959a62794f03f543bf8138a8ca6fb7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    setCustomAnimations: 1
-    drawGizmos: 1
-    animationConfiguration: {fileID: 11400000, guid: 06dd8b0f5350d4a1490fca17f14f30a8, type: 2}
---- !u!114 &714289481862489152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 714289481862489153}
---- !u!114 &279385890246780532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f219cff044b05ef4db2312f30d8f8158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    drawer: {fileID: 8536998393854301056}
---- !u!114 &8536998393854301056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed33a1f3840154eb2a98e13ed75e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &714289481862489153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c43b165fa2f6841937e24d562420d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4936073750136527860
 MonoBehaviour:
   m_ObjectHideFlags: 0

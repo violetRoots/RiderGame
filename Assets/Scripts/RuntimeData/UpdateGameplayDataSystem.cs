@@ -42,7 +42,7 @@ namespace RiderGame.RuntimeData
 #elif UNITY_ANDROID || UNITY_IOS
                 direction += input.mouseDelta.x * _gameConfigs.TouchDirectionSensitivity;
 #endif
-                direction = CustomMath.ClampAngle(direction, -_gameConfigs.ClampDirectionAngle, _gameConfigs.ClampDirectionAngle);
+                direction = CustomMath.ClampAngle(direction, -GameConfiguration.ClampDirectionAngle, GameConfiguration.ClampDirectionAngle);
                 _levelData.SetMovementDirection(direction);
             }
         }
