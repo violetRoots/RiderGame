@@ -1,8 +1,9 @@
 using UnityEngine;
-using RiderGame.SO;
+using RiderGame.Editor;
 
 namespace RiderGame.Gameplay
 {
+    [RequireComponent(typeof(NpcCustomGizmos))]
     public partial class NpcComponent
     {
         private bool NpcConfigNotNull => value.npcConfiguration != null;
@@ -10,6 +11,7 @@ namespace RiderGame.Gameplay
         private void Awake()
         {
             InitNpc();
+            InitNpcCustomGizmos();
         }
 
         private void OnDrawGizmos()
@@ -17,6 +19,7 @@ namespace RiderGame.Gameplay
             if (Application.isPlaying) return;
 
             InitNpc();
+            InitNpcCustomGizmos();
         }
 
         private void InitNpc()
@@ -29,6 +32,12 @@ namespace RiderGame.Gameplay
 
             ValidateStateController(value.npcConfiguration);
             ValidateModifierController(value.npcConfiguration);
+        }
+
+        private void InitNpcCustomGizmos()
+        {
+            var gizmos = GetComponent<NpcCustomGizmos>();
+            gizmos.SetNpcValue(value);
         }
 
         private void ResetControllers()
