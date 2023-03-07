@@ -46,7 +46,10 @@ namespace RiderGame.SO
             bool hasState = TryGet(out T state);
 
             if (hasState)
+            {
+                state.DirectionAngle = ActiveState.Value.DirectionAngle;
                 ActiveState.Value = state;
+            }
 
             return hasState;
         }

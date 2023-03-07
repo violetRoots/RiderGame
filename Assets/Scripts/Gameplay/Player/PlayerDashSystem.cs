@@ -62,7 +62,7 @@ namespace RiderGame.Gameplay
                 InvulnerabilityEffect.AddToEntity(entity, duration);
 
                 var dashAnimationInfo = player.character.DashAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
-                BaseAnimatorControllerSystem.AddAnimation(entity, dashAnimationInfo.animation, CharacterAnimationPriority.Dash);
+                BaseAnimatorControllerSystem.AddAnimation(entity, dashAnimationInfo.animation, PlayerAnimationPriority.Dash);
             }
         }
     }

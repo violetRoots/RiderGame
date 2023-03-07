@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5fc2f3adf5656408699cfe95daeb10, type: 3}
   m_Name: AggressionState
   m_EditorClassIdentifier: 
-  movementAnimation: {fileID: 11400000, guid: 06dd8b0f5350d4a1490fca17f14f30a8, type: 2}
+  movementAnimation: {fileID: 11400000, guid: 3090e52618cff48f79dd04beb765343d, type: 2}
   movementSpeed: 4
   startAggressionRadius: 5
   endAggressionRadius: 10

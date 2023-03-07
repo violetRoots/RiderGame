@@ -12,9 +12,31 @@ namespace RiderGame.Gameplay
     {
         private readonly EcsFilter<BaseAnimatorController, ActiveObject> _fAnimator;
 
-        public static void AddAnimation(EcsEntity entity, 
+        public static void AddAnimation(EcsEntity entity,
+                                        SpriteAnimation animation,
+                                        PlayerAnimationPriority priority,
+                                        bool loop = false,
+                                        bool continueFrame = false,
+                                        int flipDir = 0,
+                                        Action onEndPlay = null)
+        {
+            AddAnimation(entity, animation, (int)priority, loop, continueFrame, flipDir, onEndPlay);
+        }
+
+        public static void AddAnimation(EcsEntity entity,
+                                SpriteAnimation animation,
+                                NpcAnimationPriority priority,
+                                bool loop = false,
+                                bool continueFrame = false,
+                                int flipDir = 0,
+                                Action onEndPlay = null)
+        {
+            AddAnimation(entity, animation, (int)priority, loop, continueFrame, flipDir, onEndPlay);
+        }
+
+        private static void AddAnimation(EcsEntity entity, 
                                         SpriteAnimation animation,  
-                                        CharacterAnimationPriority priority, 
+                                        int priority, 
                                         bool loop = false, 
                                         bool continueFrame = false, 
                                         int flipDir = 0, 
@@ -29,7 +51,7 @@ namespace RiderGame.Gameplay
             BaseAnimatorController.AnimationInfo animationInfo = null;
             animationInfo = new BaseAnimatorController.AnimationInfo()
             {
-                priority = (int) priority,
+                priority = priority,
                 animation = animation,
                 loop = loop,
                 continueFrame = continueFrame,

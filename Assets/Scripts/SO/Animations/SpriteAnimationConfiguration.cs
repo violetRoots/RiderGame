@@ -11,6 +11,8 @@ namespace RiderGame.SO
         [Serializable]
         public struct AnimationConfigurationInfo
         {
+            public int FlipValue => isFlip ? -1 : 1;
+
             public float angle;
             public SpriteAnimation animation;
             public bool isFlip;

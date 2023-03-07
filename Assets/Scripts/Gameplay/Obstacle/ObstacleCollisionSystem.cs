@@ -50,7 +50,7 @@ namespace RiderGame.Gameplay
                     BlinkingEffect.AddToEntity(playerEntity, _playerConfigs.InvunerabilityDuration, _playerConfigs.InvunerabilityBlinkInterval, player.renderer);
 
                     var collisionAnimation = player.character.ObstacleCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
-                    BaseAnimatorControllerSystem.AddAnimation(playerEntity, collisionAnimation.animation, CharacterAnimationPriority.ObstacleCollision);
+                    BaseAnimatorControllerSystem.AddAnimation(playerEntity, collisionAnimation.animation, PlayerAnimationPriority.ObstacleCollision);
                 }
             }
         }

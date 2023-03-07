@@ -28,11 +28,14 @@ namespace RiderGame.Gameplay
 
                 if (!senderObject.FindActiveEntityWithComponent(out Npc npc)) continue;
 
-                if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity) && !playerEntity.Has<Invulnerability>())
+                if (collisionObject.FindActiveEntityWithComponent<Player>(out EcsEntity playerEntity))
                 {
                     npc.StateController.TrySetActiveStateAs<StunnedState>();
 
-                    EndSession(ref playerEntity);
+                    if (!playerEntity.Has<Invulnerability>())
+                    {
+                        EndSession(ref playerEntity);
+                    }
                 }
                 else if (npc.StateController.TryGetActiveStateAs(out WalkState walkState))
                 {
@@ -54,7 +57,7 @@ namespace RiderGame.Gameplay
 
             ref var player = ref playerEntity.Get<Player>();
             var enemyCollisionAnimation = player.character.EnemyCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
-            BaseAnimatorControllerSystem.AddAnimation(playerEntity, enemyCollisionAnimation.animation, CharacterAnimationPriority.EnemyCollision, onEndPlay: endSessionCallback);
+            BaseAnimatorControllerSystem.AddAnimation(playerEntity, enemyCollisionAnimation.animation, PlayerAnimationPriority.EnemyCollision, onEndPlay: endSessionCallback);
         }
 
         private void ChangeDirection(MovableState movableState, OnCollisionEnter2DEvent eventData)

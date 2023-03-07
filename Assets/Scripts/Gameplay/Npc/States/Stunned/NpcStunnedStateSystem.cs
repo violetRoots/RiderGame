@@ -13,18 +13,25 @@ namespace RiderGame.Gameplay
         {
             foreach(var i in _fNpcActivationEvent)
             {
+                var entity = _fNpcActivationEvent.GetEntity(i);
+
                 var npc = _fNpcActivationEvent.Get2(i);
 
                 if (!npc.StateController.TryGet(out StunnedState stunnedState)) continue;
 
-                stunnedState.changeStateSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(npc, state));
+                stunnedState.changeStateSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(entity, npc, state));
             }
         }
 
-        private void OnStateChanged(Npc npc, State newState)
+        private void OnStateChanged(EcsEntity entity, Npc npc, State newState)
         {
-            var stunnedIconActive = newState is StunnedState;
-            npc.stunnedStateRefs.icon.gameObject.SetActive(stunnedIconActive);
+            var stunnedState = newState as StunnedState;
+            npc.stunnedStateRefs.icon.gameObject.SetActive(stunnedState != null);
+
+            if (stunnedState == null) return;
+
+            var currentAnimationInfo = stunnedState.stunnedAnimation.GetAnimationByAngle(stunnedState.DirectionAngle);
+            BaseAnimatorControllerSystem.AddAnimation(entity, currentAnimationInfo.animation, NpcAnimationPriority.Stunned, true, flipDir: currentAnimationInfo.FlipValue);
         }
     }
 }

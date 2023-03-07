@@ -37,6 +37,8 @@ namespace RiderGame.Gameplay
 
             foreach (var i in _fNpc)
             {
+                var entity = _fNpc.GetEntity(i);
+
                 ref var gameObject = ref _fNpc.Get1(i);
                 ref var npc = ref _fNpc.Get2(i);
 
@@ -66,6 +68,9 @@ namespace RiderGame.Gameplay
                     var toPlayer = _playerObject.transform.position - gameObject.instance.transform.position;
                     var movementAngle = Vector2.SignedAngle(Vector2.down, toPlayer);
                     activeAggressionState.DirectionAngle = movementAngle;
+
+                    var currentAnimationInfo = activeAggressionState.MovementAnimation.GetAnimationByAngle(activeAggressionState.DirectionAngle);
+                    BaseAnimatorControllerSystem.AddAnimation(entity, currentAnimationInfo.animation, NpcAnimationPriority.Walk, loop: true, continueFrame: true, flipDir: currentAnimationInfo.FlipValue);
 
                     if (toPlayer.magnitude > activeAggressionState.endAggressionRadius)
                         stateController.TrySetActiveStateAs<WalkState>();
