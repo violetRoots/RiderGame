@@ -7,8 +7,6 @@ namespace RiderGame.Gameplay
 {
     public class NpcWalkStateSystem : IEcsRunSystem
     {
-        private readonly GameConfiguration _gameConfigs;
-
         private readonly EcsFilter<EcsGameObject, Npc, ActiveObject> _fNpc;
         private readonly EcsFilter<EcsGameObject, Npc, ActivationEvent> _fNpcActivationEvent;
 

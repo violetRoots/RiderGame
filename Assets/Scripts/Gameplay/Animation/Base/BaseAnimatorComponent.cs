@@ -17,7 +17,7 @@ namespace RiderGame.Gameplay
             public SpriteAnimation animation;
             public bool loop;
             public bool continueFrame;
-            public short flipDir;
+            public int flipDir;
             public Action onEndPlay;
         }
 

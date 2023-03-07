@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd510c8600edb046b6e549d9c0d92dd, type: 3}
   m_Name: WSG_Stage_Mechanics
   m_EditorClassIdentifier: 
-  duration: 8
+  duration: 2
   customData:
     movementSpeed: 8
   generateObjects:
-  - instanceName: Decoration_AcidHills_Butterfly
+  - instanceName: AgressiveEnemy_AcidHills_Caterpillar
     poolObjectValue:
-      instance: {fileID: 714289481862489155, guid: 892fe377a77f5409dabd856f39022bbc, type: 3}
+      instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
@@ -32,15 +32,24 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 10
-        inSlope: 0
-        outSlope: 0
+        inSlope: -18.0063
+        outSlope: -18.0063
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.55536115
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 10
-        value: 10
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 34
@@ -50,6 +59,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0,8 sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
-    objectsCount: 16+-1
+    objectsCount: 2+-1

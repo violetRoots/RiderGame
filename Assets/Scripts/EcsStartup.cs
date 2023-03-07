@@ -59,7 +59,7 @@ namespace RiderGame
                 //Physics
                 .Add(new OneFramePhysicsSystem())
                 .Add(new ObstacleCollisionSystem())
-                .Add(new EnemyCollisionSystem())
+                .Add(new NpcCollisionSystem())
 
                 //Runtime data updating
                 .Add(new UpdateSessionDataSystem())

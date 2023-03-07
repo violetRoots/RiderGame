@@ -1,5 +1,4 @@
 using RiderGame.SO;
-using SkyCrush.Utility;
 using System;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ namespace RiderGame.Gameplay
         public float DirectionAngle
         {
             get => directionAngle;
-            set => directionAngle = CustomMath.ClampAngle(value, -GameConfiguration.ClampDirectionAngle, GameConfiguration.ClampDirectionAngle);
+            set => directionAngle = Mathf.Clamp(value, -GameConfiguration.ClampDirectionAngle, GameConfiguration.ClampDirectionAngle);
         }
 
         [SerializeField]

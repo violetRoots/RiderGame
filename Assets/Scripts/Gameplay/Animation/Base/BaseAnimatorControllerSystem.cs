@@ -17,7 +17,7 @@ namespace RiderGame.Gameplay
                                         CharacterAnimationPriority priority, 
                                         bool loop = false, 
                                         bool continueFrame = false, 
-                                        short flipDir = 0, 
+                                        int flipDir = 0, 
                                         Action onEndPlay = null)
         {
             if (!TryGetBaseAnimatorController(entity, out BaseAnimatorController animatorController))
@@ -82,7 +82,8 @@ namespace RiderGame.Gameplay
                 if (animsInfo[0] != null)
                     animatorController.currentAnimationInfo = animsInfo[0];
 
-                if (animatorController.spriteAnimator.CurrentAnimation == animatorController.currentAnimationInfo.animation) continue;
+                if (animatorController.spriteAnimator.CurrentAnimation == animatorController.currentAnimationInfo.animation 
+                    && (animatorController.spriteAnimator.Flipped !^ animatorController.currentAnimationInfo.flipDir == -1)) continue;
 
                 PlayAnimation(animatorController.spriteAnimator, animatorController.currentAnimationInfo);
             }

@@ -18,7 +18,7 @@ namespace RiderGame.Gameplay
 
                 var currentAnimationInfo = movementAnimation.animationConfiguration.GetAnimationByAngle(movement.DirectionAngle);
 
-                short flipValue = (short) (currentAnimationInfo.isFlip ? -1 : 1);
+                var flipValue = currentAnimationInfo.isFlip ? -1 : 1;
                 BaseAnimatorControllerSystem.AddAnimation(entity, currentAnimationInfo.animation, CharacterAnimationPriority.Movement, loop: true, continueFrame: true, flipDir: flipValue);
             }
         }
