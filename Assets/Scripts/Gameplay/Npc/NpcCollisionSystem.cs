@@ -6,11 +6,14 @@ using LeoEcsPhysics;
 using DG.Tweening;
 using RiderGame.World;
 using RiderGame.RuntimeData;
+using RiderGame.SO;
 
 namespace RiderGame.Gameplay
 {
     public class NpcCollisionSystem : IEcsRunSystem
     {
+        private readonly GameConfiguration _gameConfigs;
+
         private readonly GameplayRuntimeData _gameplayRuntimeData;
         private readonly SessionRuntimeData _sessionRuntimeData;
 
@@ -34,7 +37,11 @@ namespace RiderGame.Gameplay
 
                     if (!playerEntity.Has<Invulnerability>())
                     {
-                        EndSession(ref playerEntity);
+                        _sessionRuntimeData.LifesCount.Value--;
+                        if (_sessionRuntimeData.LifesCount.Value == 0)
+                            EndSession(ref playerEntity);
+                        else
+                            DamagePlayer(ref playerEntity);
                     }
                 }
                 else if (npc.StateController.TryGetActiveStateAs(out WalkState walkState))
@@ -47,6 +54,15 @@ namespace RiderGame.Gameplay
                     npc.StateController.TrySetActiveStateAs<StunnedState>();
                 }
             }
+        }
+
+        private void DamagePlayer(ref EcsEntity playerEntity)
+        {
+            var playerConfigs = _gameConfigs.PlayerConfiguration;
+            var player = playerEntity.Get<Player>();
+
+            InvulnerabilityEffect.AddToEntity(playerEntity, playerConfigs.InvunerabilityDuration);
+            BlinkingEffect.AddToEntity(playerEntity, playerConfigs.InvunerabilityDuration, playerConfigs.InvunerabilityBlinkInterval, player.renderer);
         }
 
         private void EndSession(ref EcsEntity playerEntity)

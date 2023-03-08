@@ -37,14 +37,18 @@ namespace RiderGame
 
             _UISystems
                 .ConvertScene()
+                .Inject(gameConfigs)
                 .Inject(uiConfigs)
+                .Inject(sessionStartup.GameplayRuntimeData)
+                .Inject(sessionStartup.SessionRuntimeData)
                 .Inject(sessionStartup.GameplayRuntimeData)
                 .Inject(sessionStartup.SessionRuntimeData)
 
                 //UI
-                .Add(new UpperPanelSystem())
+                .Add(new CoinsPanelSystem())
                 .Add(new WayPointPanelSystem())
                 .Add(new EndSessionPanelSystem())
+                .Add(new LifesPanelSystem())
 
                 .Init();
 
@@ -74,6 +78,7 @@ namespace RiderGame
                 .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
+                .Add(new LifesControlSystem())
 
                 //Player
                 .Add(new PlayerAnimationSystem())

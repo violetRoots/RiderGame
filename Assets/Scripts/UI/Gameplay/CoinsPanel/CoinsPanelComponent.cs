@@ -5,10 +5,10 @@ using Voody.UniLeo;
 
 namespace RiderGame.UI
 {
-    public class UpperPanelComponent : MonoProvider<UpperPanel> { }
+    public class CoinsPanelComponent : MonoProvider<CoinsPanel> { }
 
     [Serializable]
-    public struct UpperPanel
+    public struct CoinsPanel
     {
         public TextMeshProUGUI coinsCountText;
     }

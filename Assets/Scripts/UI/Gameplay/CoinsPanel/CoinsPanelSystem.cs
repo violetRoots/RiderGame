@@ -5,11 +5,11 @@ using RiderGame.RuntimeData;
 
 namespace RiderGame.UI
 {
-    public class UpperPanelSystem : IEcsInitSystem, IEcsDestroySystem
+    public class CoinsPanelSystem : IEcsInitSystem, IEcsDestroySystem
     {
         private readonly SessionRuntimeData _sessionData;
 
-        private readonly EcsFilter<UIElement, UpperPanel> _fUpperPanel;
+        private readonly EcsFilter<UIElement, CoinsPanel> _fUpperPanel;
 
         public void Init()
         {

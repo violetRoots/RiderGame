@@ -41,8 +41,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Opyata_2
     poolObjectValue:
@@ -69,8 +69,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Opyata_3
     poolObjectValue:
@@ -106,10 +106,10 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
-  - instanceName: Resources_AcidHills_Crystal_1
+  - instanceName: Currency_AcidHills_Crystal_1
     poolObjectValue:
       instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
       hideInSpawnMenu: 0
@@ -124,18 +124,27 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.0019495
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        value: 4.8349075
+        inSlope: -0.009434128
+        outSlope: -0.009434128
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 4.7405663
+        inSlope: -0.009434128
+        outSlope: -0.009434128
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 0
-      m_PostInfinity: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 2+-1
   - instanceName: Obstacle_AcidHills_Lake_1
     poolObjectValue:
@@ -162,8 +171,8 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Obstacle_AcidHills_Tree_1
     poolObjectValue:
@@ -199,8 +208,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Obstacle_AcidHills_Tree_2
     poolObjectValue:
@@ -227,8 +236,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Obstacle_AcidHills_Volcano_1
     poolObjectValue:
@@ -255,8 +264,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Decoration_AcidHills_Butterfly
     poolObjectValue:
@@ -292,8 +301,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Decoration_AcidHills_Moss_1
     poolObjectValue:
@@ -329,8 +338,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Decoration_AcidHills_Moss_2
     poolObjectValue:
@@ -366,8 +375,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Resource_AcidHills_Kotovik_1
     poolObjectValue:
@@ -394,8 +403,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Obstacle_AcidHills_Skull
     poolObjectValue:
@@ -431,8 +440,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Decoration_AcidHills_Chair
     poolObjectValue:
@@ -459,8 +468,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 2+-1
   - instanceName: AgressiveEnemy_AcidHills_Caterpillar
     poolObjectValue:
@@ -487,6 +496,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    x: 'time: 1 unit = duration / 10 (0,2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0,2 obj/sec)'
     objectsCount: 2+-1

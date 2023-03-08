@@ -15,13 +15,6 @@ namespace RiderGame.SO
         public float SwipeDetectTime => swipeDetectTime;
         public float SwipeSensitivity => swipeSensitivity;
 
-        public PlayerConfiguration PlayerConfiguration => playerConfiguration;
-
-        public float MaxActiveObjectPosition => maxActiveObjectPosition;
-        public float BackgroundSpeedMultiplier => backgroundSpeedMultiplier;
-        public float ChangeLayerEdge => changeLayerEdgePosition;
-        public LevelConfiguration[] Levels => _levelConfigs;
-
         [Header("Input")]
         [SerializeField]
         private float mouseDirectionSensitivity = 0.1f;
@@ -37,6 +30,17 @@ namespace RiderGame.SO
         [SerializeField]
         private float swipeSensitivity = 0.2f;
 
+        public PlayerConfiguration PlayerConfiguration => playerConfiguration;
+
+        [Header("Gameplay")]
+        [SerializeField]
+        private PlayerConfiguration playerConfiguration;
+
+        public float MaxActiveObjectPosition => maxActiveObjectPosition;
+        public float BackgroundSpeedMultiplier => backgroundSpeedMultiplier;
+        public float ChangeLayerEdge => changeLayerEdgePosition;
+        public LevelConfiguration[] Levels => _levelConfigs;
+
         [Header("World")]
         [SerializeField]
         private float maxActiveObjectPosition = 100.0f;
@@ -44,10 +48,6 @@ namespace RiderGame.SO
         private float backgroundSpeedMultiplier = 0.00035f;
         [SerializeField]
         private float changeLayerEdgePosition = 0.0f;
-
-        [Header("Gameplay")]
-        [SerializeField]
-        private PlayerConfiguration playerConfiguration;
 
         [Space(10)]
         [SerializeField]
