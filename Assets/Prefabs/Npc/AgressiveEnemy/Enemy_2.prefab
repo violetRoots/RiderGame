@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
+  - component: {fileID: 1683300935638944323}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Untagged
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: f3be7ce38de15460b92ed2472947bd48, type: 2}
+    spriteRenderer: {fileID: 714289480939590230}
     StateController:
       elements:
       - {fileID: 11400000, guid: aa56cecf00242674d91718b432d14a61, type: 2}
@@ -194,12 +196,11 @@ MonoBehaviour:
     ModifierController:
       elements:
       - {fileID: 11400000, guid: df62a624746ed7a4eb9f71f1568d1a7e, type: 2}
-    state: 0
     modifiersCount: 1
     statesCount: 1
     aggressionStateRefs:
       icon: {fileID: 0}
-    stunnedState:
+    stunnedStateRefs:
       icon: {fileID: 0}
 --- !u!114 &6019604115984068091
 MonoBehaviour:
@@ -306,6 +307,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 2.6737888}
   m_Size: {x: 4.925486, y: 4.5605044}
   m_Direction: 1
+--- !u!114 &1683300935638944323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2742600469778551727
 GameObject:
   m_ObjectHideFlags: 0

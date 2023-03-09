@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: dc167f12948304461abb05190785372f, type: 2}
+    spriteRenderer: {fileID: 714289480939590230}
     StateController:
       elements:
       - {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}

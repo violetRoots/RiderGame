@@ -8,27 +8,40 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "Npc_1", menuName = "RiderGame/Npc", order = 3)]
     public partial class NpcConfiguration : ScriptableObject
     {
-        public List<StateContainer> States => states;
-        public State StartState { get; private set; }
-
-        public List<ModifierContainer> Modifiers => modifiers;
-
         public float PushForce => pushForce;
         public float PushTime => pushTime;
-        public float AgressionRadius => agressionRadius;
-        public float AgressionMovementSpeed => agressionMovementSpeed;
-
-        [Header("Agression Mode")]
-        [SerializeField]
-        private float agressionRadius = 3.0f;
-        [SerializeField]
-        private float agressionMovementSpeed = 10.0f;
 
         [Header("Collision")]
         [SerializeField]
         private float pushForce = 1.0f;
         [SerializeField]
         private float pushTime = 0.1f;
+
+        public bool IsDynamicOverlayModeOn => overlayMode == NpcOverlayMode.Dynamic;
+        public float DynamicOverlayEdgeOffset => dynamicOverlayEdgeOffset;
+
+        public bool IsStaticOverlayModeOn => overlayMode == NpcOverlayMode.Static;
+        public string StaticSortingLayer => staticSortingLayer;
+
+        [Header("Overlay")]
+        [SerializeField]
+        private NpcOverlayMode overlayMode;
+
+        [AllowNesting]
+        [ShowIf(nameof(IsDynamicOverlayModeOn))]
+        [SerializeField]
+        private float dynamicOverlayEdgeOffset;
+
+        [AllowNesting]
+        [ShowIf(nameof(IsStaticOverlayModeOn))]
+        [SortingLayer]
+        [SerializeField]
+        private string staticSortingLayer;
+
+        public List<StateContainer> States => states;
+        public State StartState { get; private set; }
+
+        public List<ModifierContainer> Modifiers => modifiers;
 
         [AllowNesting]
         [ReadOnly]
@@ -60,5 +73,11 @@ namespace RiderGame.SO
 
         [Button("Update")]
         private void Update() => OnValidate();
+    }
+
+    public enum NpcOverlayMode
+    {
+        Dynamic = 0,
+        Static = 1
     }
 }

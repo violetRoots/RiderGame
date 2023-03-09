@@ -14,6 +14,9 @@ namespace RiderGame.Gameplay
     {
         public NpcConfiguration npcConfiguration;
 
+        [Header("GENERAL")]
+        public SpriteRenderer spriteRenderer;
+
         [Header("RUNTIME DATA")]
         public StateRuntimeController StateController;
         public ModifierRuntimeController ModifierController;

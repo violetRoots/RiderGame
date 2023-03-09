@@ -20,6 +20,33 @@ namespace RiderGame.Editor
 
             var npc = (Npc)_npc;
 
+            DrawMovementLines(ref npc);
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (_npc == null) return;
+
+            var npc = (Npc)_npc;
+
+            DrawOverlayLine(ref npc);
+        }
+
+        private void DrawOverlayLine(ref Npc npc)
+        {
+            if (!npc.npcConfiguration.IsDynamicOverlayModeOn) return;
+
+            var xOffset = 100.0f;
+            var yPos = transform.position.y + npc.npcConfiguration.DynamicOverlayEdgeOffset;
+            Vector3 left = new Vector3(transform.position.x - xOffset, yPos, 0);
+            Vector3 right = new Vector3(transform.position.x + xOffset, yPos, 0);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(left, right);
+        }
+
+        private void DrawMovementLines(ref Npc npc)
+        {
             if (npc.StateController.TryGetActiveStateAs(out MovableState movableState) && movableState.MovementAnimation != null)
             {
                 foreach (var animation in movableState.MovementAnimation.animationsInfo)

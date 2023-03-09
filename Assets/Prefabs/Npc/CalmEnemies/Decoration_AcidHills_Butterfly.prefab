@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
+  - component: {fileID: 1683300935638944323}
   m_Layer: 0
   m_Name: Decoration_AcidHills_Butterfly
   m_TagString: Untagged
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     npcConfiguration: {fileID: 11400000, guid: 3e1f555f44e7d4e8f93a2195ed04fd81, type: 2}
+    spriteRenderer: {fileID: 714289480939590230}
     StateController:
       elements:
       - {fileID: 11400000, guid: 3ccad8268882dcb4d902bbab7f94d303, type: 2}
@@ -193,12 +195,11 @@ MonoBehaviour:
     ModifierController:
       elements:
       - {fileID: 11400000, guid: 453064fbed8824942af6d7e03cd2a90d, type: 2}
-    state: 0
     modifiersCount: 1
     statesCount: 1
     aggressionStateRefs:
       icon: {fileID: 0}
-    stunnedState:
+    stunnedStateRefs:
       icon: {fileID: 0}
 --- !u!114 &4642688623446399540
 MonoBehaviour:
@@ -293,6 +294,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.58}
   m_Size: {x: 1.25, y: 1.63}
   m_Direction: 1
+--- !u!114 &1683300935638944323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2742600469778551727
 GameObject:
   m_ObjectHideFlags: 0

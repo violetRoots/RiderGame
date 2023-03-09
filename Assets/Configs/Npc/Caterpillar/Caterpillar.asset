@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: Caterpillar
   m_EditorClassIdentifier: 
-  agressionRadius: 2
-  agressionMovementSpeed: 10
   pushForce: 0.5
   pushTime: 0.05
+  overlayMode: 0
+  dynamicOverlayEdgeOffset: 1.5
+  staticSortingLayer: 
   startStateName: WalkState
   states:
   - currentDropdownName: WalkState
