@@ -12,6 +12,7 @@ namespace RiderGame.Gameplay
         {
             InitNpc();
             InitNpcCustomGizmos();
+            InitGeneralComponentValues();
         }
 
         private void OnDrawGizmos()
@@ -20,6 +21,7 @@ namespace RiderGame.Gameplay
 
             InitNpc();
             InitNpcCustomGizmos();
+            InitGeneralComponentValues();
         }
 
         private void InitNpc()
@@ -38,6 +40,15 @@ namespace RiderGame.Gameplay
         {
             var gizmos = GetComponent<NpcCustomGizmos>();
             gizmos.SetNpcValue(value);
+        }
+
+        private void InitGeneralComponentValues()
+        {
+            value.spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
+            value.collider = GetComponentInChildren<Collider2D>(true);
+
+            if(value.collider != null)
+                value.collider.isTrigger = value.npcConfiguration.IsTrigger;
         }
 
         private void ResetControllers()

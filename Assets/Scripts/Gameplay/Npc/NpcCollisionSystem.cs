@@ -47,7 +47,7 @@ namespace RiderGame.Gameplay
                 else if (npc.StateController.TryGetActiveStateAs(out WalkState walkState))
                 {
                     ChangeDirection(walkState, eventData);
-                    PushEnemy(ref npc, senderObject, eventData);
+                    PushEnemy(senderObject, eventData);
                 }
                 else if (npc.StateController.TryGetActiveStateAs(out AggressionState aggressionState))
                 {
@@ -58,7 +58,7 @@ namespace RiderGame.Gameplay
 
         private void DamagePlayer(ref EcsEntity playerEntity)
         {
-            var playerConfigs = _gameConfigs.PlayerConfiguration;
+            var playerConfigs = _gameConfigs.GeneralCharacterConfiguration;
             var player = playerEntity.Get<Player>();
 
             InvulnerabilityEffect.AddToEntity(playerEntity, playerConfigs.InvunerabilityDuration);
@@ -85,10 +85,10 @@ namespace RiderGame.Gameplay
             movableState.DirectionAngle = resAngle;
         }
 
-        private void PushEnemy(ref Npc npc, GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
+        private void PushEnemy(GameObject enemyGameObject, OnCollisionEnter2DEvent eventData)
         {
-            Vector3 offset = eventData.firstContactPoint2D.normal * npc.npcConfiguration.PushForce;
-            enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, npc.npcConfiguration.PushTime).SetEase(Ease.Linear);
+            Vector3 offset = eventData.firstContactPoint2D.normal * _gameConfigs.GeneralNpcConfiguration.PushForce;
+            enemyGameObject.transform.DOMove(enemyGameObject.transform.position + offset, _gameConfigs.GeneralNpcConfiguration.PushTime).SetEase(Ease.Linear);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace RiderGame.Gameplay
 
         [Header("GENERAL")]
         public SpriteRenderer spriteRenderer;
+        public Collider2D collider;
 
         [Header("RUNTIME DATA")]
         public StateRuntimeController StateController;

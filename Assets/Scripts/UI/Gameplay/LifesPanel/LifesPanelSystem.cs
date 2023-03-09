@@ -17,7 +17,7 @@ namespace RiderGame.UI
 
         public void Init()
         {
-            var maxLifesCount = _gameConfigs.PlayerConfiguration.MaxLifesCount;
+            var maxLifesCount = _gameConfigs.GeneralCharacterConfiguration.MaxLifesCount;
 
             foreach (var i in _fLifesPanel)
             {

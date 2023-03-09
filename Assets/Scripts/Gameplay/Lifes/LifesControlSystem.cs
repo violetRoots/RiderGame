@@ -13,7 +13,7 @@ namespace RiderGame.Gameplay
 
         public void Init()
         {
-            var startLifesCount = _gameConfigs.PlayerConfiguration.MaxLifesCount;
+            var startLifesCount = _gameConfigs.GeneralCharacterConfiguration.MaxLifesCount;
 
             _sessionRuntimeData.LifesCount.Value = startLifesCount;
         }

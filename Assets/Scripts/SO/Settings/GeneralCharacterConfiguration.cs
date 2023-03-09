@@ -4,8 +4,8 @@ using RiderGame.Gameplay;
 
 namespace RiderGame.SO
 {
-    [CreateAssetMenu(fileName = "PlayerConfigs", menuName = "RiderGame/PlayerConfigs", order = 2)]
-    public class PlayerConfiguration : ScriptableObject
+    [CreateAssetMenu(fileName = "GeneralCharacterConfigs", menuName = "RiderGame/GeneralCharacterConfigs", order = 2)]
+    public class GeneralCharacterConfiguration : ScriptableObject
     {
         public int MaxLifesCount => maxLifesCount;
 

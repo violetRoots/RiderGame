@@ -27,7 +27,7 @@ namespace RiderGame.Gameplay
             foreach (var i in _fInput)
             {
                 ref var input = ref _fInput.Get1(i);
-                var playerConfigs = _gameConfigs.PlayerConfiguration;
+                var playerConfigs = _gameConfigs.GeneralCharacterConfiguration;
 
                 if (!input.tap.ended
                     || input.tap.endedTime - input.tap.startedTime >= playerConfigs.DashDetectTime

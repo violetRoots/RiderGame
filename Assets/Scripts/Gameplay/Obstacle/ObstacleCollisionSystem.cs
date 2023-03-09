@@ -22,12 +22,12 @@ namespace RiderGame.Gameplay
         private readonly EcsFilter<OnCollisionEnter2DEvent> _fCollisionEnter;
         private readonly EcsFilter<EcsGameObject, Obstacle> _fObstacle;
 
-        private PlayerConfiguration _playerConfigs;
+        private GeneralCharacterConfiguration _generalCharacterConfigs;
         private GameObject _worldObject;
 
         public void Init()
         {
-            _playerConfigs = _gameConfigs.PlayerConfiguration;
+            _generalCharacterConfigs = _gameConfigs.GeneralCharacterConfiguration;
         }
 
         public void Run()
@@ -46,8 +46,8 @@ namespace RiderGame.Gameplay
                     PushPlayer(ref eventData);
                     DropCoins(ref eventData);
 
-                    InvulnerabilityEffect.AddToEntity(playerEntity, _playerConfigs.InvunerabilityDuration);
-                    BlinkingEffect.AddToEntity(playerEntity, _playerConfigs.InvunerabilityDuration, _playerConfigs.InvunerabilityBlinkInterval, player.renderer);
+                    InvulnerabilityEffect.AddToEntity(playerEntity, _generalCharacterConfigs.InvunerabilityDuration);
+                    BlinkingEffect.AddToEntity(playerEntity, _generalCharacterConfigs.InvunerabilityDuration, _generalCharacterConfigs.InvunerabilityBlinkInterval, player.renderer);
 
                     var collisionAnimation = player.character.ObstacleCollisionAnimationConfigs.GetAnimationByAngle(_gameplayRuntimeData.MovementDirection);
                     BaseAnimatorControllerSystem.AddAnimation(playerEntity, collisionAnimation.animation, PlayerAnimationPriority.ObstacleCollision);
@@ -57,18 +57,18 @@ namespace RiderGame.Gameplay
 
         private void PushPlayer(ref OnCollisionEnter2DEvent eventData)
         {
-            Vector3 offset = -eventData.firstContactPoint2D.normal * _playerConfigs.PushForce;
-            MoveWorldObjectSystem.MoveWorldObjectByOffset(offset, _playerConfigs.PushTime, Ease.OutExpo);
+            Vector3 offset = -eventData.firstContactPoint2D.normal * _generalCharacterConfigs.PushForce;
+            MoveWorldObjectSystem.MoveWorldObjectByOffset(offset, _generalCharacterConfigs.PushTime, Ease.OutExpo);
         }
 
         private void DropCoins(ref OnCollisionEnter2DEvent eventData)
         {
-            int droppedCoinsCount = Random.Range(_playerConfigs.CoinsDropCount.x, _playerConfigs.CoinsDropCount.y);
+            int droppedCoinsCount = Random.Range(_generalCharacterConfigs.CoinsDropCount.x, _generalCharacterConfigs.CoinsDropCount.y);
 
             droppedCoinsCount = Mathf.Clamp(droppedCoinsCount, 0, _sessionRuntimeData.CoinsCount.Value);
             _sessionRuntimeData.CoinsCount.Value = droppedCoinsCount;
 
-            var coinColliderRadius = _playerConfigs.CoinPrefab.Value.collider.radius;
+            var coinColliderRadius = _generalCharacterConfigs.CoinPrefab.Value.collider.radius;
             var dropCoinsSpawnPos = eventData.firstContactPoint2D.point;
             dropCoinsSpawnPos.y = DropPosYOffset;
 
@@ -76,12 +76,12 @@ namespace RiderGame.Gameplay
             {
                 for(var j = 0; j <= MaxSpawnAttempts; j++)
                 {
-                    var randCoinPos = dropCoinsSpawnPos + Random.insideUnitCircle * _playerConfigs.CoinsDropRadius;
+                    var randCoinPos = dropCoinsSpawnPos + Random.insideUnitCircle * _generalCharacterConfigs.CoinsDropRadius;
 
                     if (Physics2D.OverlapCircle(randCoinPos, coinColliderRadius) == null)
                     {
-                        var coin = ObjectActivationSystem.Instantiate(_playerConfigs.CoinPrefab.gameObject, dropCoinsSpawnPos);
-                        coin.transform.DOMove(randCoinPos, _playerConfigs.CoinsDropTime);
+                        var coin = ObjectActivationSystem.Instantiate(_generalCharacterConfigs.CoinPrefab.gameObject, dropCoinsSpawnPos);
+                        coin.transform.DOMove(randCoinPos, _generalCharacterConfigs.CoinsDropTime);
                         break;
                     }
 

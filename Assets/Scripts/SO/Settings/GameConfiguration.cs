@@ -30,11 +30,14 @@ namespace RiderGame.SO
         [SerializeField]
         private float swipeSensitivity = 0.2f;
 
-        public PlayerConfiguration PlayerConfiguration => playerConfiguration;
+        public GeneralCharacterConfiguration GeneralCharacterConfiguration => generalCharacterConfiguration;
+        public GeneralNpcConfiguration GeneralNpcConfiguration => generalNpcConfiguration;
 
         [Header("Gameplay")]
         [SerializeField]
-        private PlayerConfiguration playerConfiguration;
+        private GeneralCharacterConfiguration generalCharacterConfiguration;
+        [SerializeField]
+        private GeneralNpcConfiguration generalNpcConfiguration;
 
         public float MaxActiveObjectPosition => maxActiveObjectPosition;
         public float BackgroundSpeedMultiplier => backgroundSpeedMultiplier;

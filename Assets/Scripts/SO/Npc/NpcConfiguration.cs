@@ -8,14 +8,11 @@ namespace RiderGame.SO
     [CreateAssetMenu(fileName = "Npc_1", menuName = "RiderGame/Npc", order = 3)]
     public partial class NpcConfiguration : ScriptableObject
     {
-        public float PushForce => pushForce;
-        public float PushTime => pushTime;
+        public bool IsTrigger => isTrigger;
 
         [Header("Collision")]
         [SerializeField]
-        private float pushForce = 1.0f;
-        [SerializeField]
-        private float pushTime = 0.1f;
+        private bool isTrigger;
 
         public bool IsDynamicOverlayModeOn => overlayMode == NpcOverlayMode.Dynamic;
         public float DynamicOverlayEdgeOffset => dynamicOverlayEdgeOffset;
@@ -43,6 +40,7 @@ namespace RiderGame.SO
 
         public List<ModifierContainer> Modifiers => modifiers;
 
+        [Header("States")]
         [AllowNesting]
         [ReadOnly]
         [SerializeField]
