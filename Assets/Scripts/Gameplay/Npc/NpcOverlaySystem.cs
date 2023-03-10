@@ -1,6 +1,7 @@
 using UnityEngine;
 using Leopotam.Ecs;
 using RiderGame.Gameplay;
+using RiderGame.SO;
 
 namespace RiderGame.World
 {
@@ -8,6 +9,8 @@ namespace RiderGame.World
     {
         private const string UnderPlayerLayer = "UnderPlayer";
         private const string AbovePlayerLayer = "AbovePlayer";
+
+        private readonly GameConfiguration _gameConfigs;
 
         private readonly EcsFilter<EcsGameObject, Npc, ActiveObject> _fNpc;
 
@@ -23,7 +26,7 @@ namespace RiderGame.World
                 if (npcConfigs.IsDynamicOverlayModeOn)
                 {
                     var layerEdgePos = gameObject.instance.transform.position.y + npcConfigs.DynamicOverlayEdgeOffset;
-                    npc.spriteRenderer.sortingLayerName = layerEdgePos < 0 ? AbovePlayerLayer : UnderPlayerLayer;
+                    npc.spriteRenderer.sortingLayerName = layerEdgePos < _gameConfigs.ChangeLayerEdge ? AbovePlayerLayer : UnderPlayerLayer;
                 }
                 else if (npcConfigs.IsStaticOverlayModeOn)
                 {

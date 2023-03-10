@@ -22,6 +22,6 @@ MonoBehaviour:
   generalNpcConfiguration: {fileID: 11400000, guid: ad1a8893885e3484fbd31cbd74105921, type: 2}
   maxActiveObjectPosition: 100
   backgroundSpeedMultiplier: 0.021
-  changeLayerEdgePosition: 0
+  changeLayerEdgePosition: 7.25
   _levelConfigs:
   - {fileID: 11400000, guid: 76bd132b660bd4f4a8cd28028d4f5202, type: 2}

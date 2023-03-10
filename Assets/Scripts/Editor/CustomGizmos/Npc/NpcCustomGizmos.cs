@@ -21,14 +21,6 @@ namespace RiderGame.Editor
             var npc = (Npc)_npc;
 
             DrawMovementLines(ref npc);
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            if (_npc == null) return;
-
-            var npc = (Npc)_npc;
-
             DrawOverlayLine(ref npc);
         }
 
@@ -36,7 +28,7 @@ namespace RiderGame.Editor
         {
             if (!npc.npcConfiguration.IsDynamicOverlayModeOn) return;
 
-            var xOffset = 100.0f;
+            var xOffset = 5.0f;
             var yPos = transform.position.y + npc.npcConfiguration.DynamicOverlayEdgeOffset;
             Vector3 left = new Vector3(transform.position.x - xOffset, yPos, 0);
             Vector3 right = new Vector3(transform.position.x + xOffset, yPos, 0);

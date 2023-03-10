@@ -87,6 +87,7 @@ namespace RiderGame
 
                 //Npc
                 .Add(new BaseNpcStateSystem())
+                .Add(new NpcOverlaySystem())
                 .Add(new NpcIdleStateSystem())
                 .Add(new NpcMovableStateSystem())
                 .Add(new NpcAggressionStateSystem())
