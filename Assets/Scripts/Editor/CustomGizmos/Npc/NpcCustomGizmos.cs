@@ -47,6 +47,8 @@ namespace RiderGame.Editor
 
         private void DrawMovementLines(ref Npc npc)
         {
+            if (npc.StateController == null) return;
+
             if (npc.StateController.TryGetActiveStateAs(out MovableState movableState) && movableState.MovementAnimation != null)
             {
                 foreach (var animation in movableState.MovementAnimation.animationsInfo)

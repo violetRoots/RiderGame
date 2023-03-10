@@ -37,11 +37,14 @@ namespace RiderGame.Gameplay
 
                     if (!playerEntity.Has<Invulnerability>())
                     {
-                        _sessionRuntimeData.LifesCount.Value--;
-                        if (_sessionRuntimeData.LifesCount.Value == 0)
-                            EndSession(ref playerEntity);
-                        else
+                        if (npc.ModifierController.Has<DamageCollisionModifier>())
                             DamagePlayer(ref playerEntity);
+                        else
+                            ObstacleCollisionSystem.PushPlayer(ref playerEntity,
+                                                               ref eventData,
+                                                               _sessionRuntimeData,
+                                                               _gameplayRuntimeData,
+                                                               _gameConfigs.GeneralCharacterConfiguration);
                     }
                 }
                 else if (npc.StateController.TryGetActiveStateAs(out WalkState walkState))
@@ -57,6 +60,15 @@ namespace RiderGame.Gameplay
         }
 
         private void DamagePlayer(ref EcsEntity playerEntity)
+        {
+            _sessionRuntimeData.LifesCount.Value--;
+            if (_sessionRuntimeData.LifesCount.Value == 0)
+                EndSession(ref playerEntity);
+            else
+                EnableDamageEffect(ref playerEntity);
+        }
+
+        private void EnableDamageEffect(ref EcsEntity playerEntity)
         {
             var playerConfigs = _gameConfigs.GeneralCharacterConfiguration;
             var player = playerEntity.Get<Player>();

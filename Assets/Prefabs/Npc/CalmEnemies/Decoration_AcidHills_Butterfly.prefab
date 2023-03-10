@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 714289481862489158}
   - component: {fileID: -1526778492292717715}
   - component: {fileID: 4642688623446399540}
-  - component: {fileID: 2124901714823114325}
   - component: {fileID: 714289481862489159}
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
@@ -188,6 +187,7 @@ MonoBehaviour:
   value:
     npcConfiguration: {fileID: 11400000, guid: 3e1f555f44e7d4e8f93a2195ed04fd81, type: 2}
     spriteRenderer: {fileID: 714289480939590230}
+    collider: {fileID: 8340038712011541946}
     StateController:
       elements:
       - {fileID: 11400000, guid: 3ccad8268882dcb4d902bbab7f94d303, type: 2}
@@ -215,21 +215,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     spriteAnimator: {fileID: 714289480939590231}
---- !u!114 &2124901714823114325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41f493f714b4e4b8c7339f1c8c7d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    spriteRenderer: {fileID: 714289480939590230}
-    layerEdgeOffset: 0.43
 --- !u!114 &714289481862489159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +273,7 @@ CapsuleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.58}

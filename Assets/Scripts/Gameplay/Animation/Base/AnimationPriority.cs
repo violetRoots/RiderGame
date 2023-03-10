@@ -12,8 +12,9 @@ namespace RiderGame.Gameplay
 
     public enum NpcAnimationPriority
     {
-        Walk = 0,
-        Aggression = 10,
-        Stunned = 20
+        Idle = 0,
+        Walk = 10,
+        Aggression = 20,
+        Stunned = 30
     }
 }

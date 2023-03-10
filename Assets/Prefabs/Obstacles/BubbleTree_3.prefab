@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7112712221519961771}
   - component: {fileID: 4862443086523820774}
-  - component: {fileID: 2220351096938570478}
-  - component: {fileID: 6443883366442958138}
+  - component: {fileID: 8654150733132898817}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -86,41 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &2220351096938570478
-Animation:
+--- !u!114 &8654150733132898817
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183815775041913707}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 4d54c189939644a6d95855afdf4633a9, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &6443883366442958138
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183815775041913707}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3341b46c8ea9845e49481dac224149e2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f349c163a518644f9eb2b9b778fc8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4862443086523820774}
+  animations: []
+  playAnimationOnStart: {fileID: 0}
+  loop: 0
 --- !u!1 &6767068810095633567
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +112,10 @@ GameObject:
   - component: {fileID: 5756532602607234157}
   - component: {fileID: 3337181898290734690}
   - component: {fileID: 421054232876744090}
-  - component: {fileID: 6764765128973675896}
-  - component: {fileID: 7772090329855946196}
+  - component: {fileID: 189345666530420006}
+  - component: {fileID: 5124532486007959947}
+  - component: {fileID: 4947938875859734448}
+  - component: {fileID: 1539303333456706064}
   - component: {fileID: 6520015236618883569}
   m_Layer: 0
   m_Name: BubbleTree_3
@@ -186,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     instance: {fileID: 6767068810095633567}
---- !u!114 &6764765128973675896
+--- !u!114 &189345666530420006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,13 +177,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 6767068810095633567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41f493f714b4e4b8c7339f1c8c7d15, type: 3}
+  m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5124532486007959947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767068810095633567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027d57bd35005b14eb0d8e4bcabd09ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value:
+    npcConfiguration: {fileID: 11400000, guid: ab267a584de00624da2d46314ba90f40, type: 2}
     spriteRenderer: {fileID: 4862443086523820774}
-    layerEdgeOffset: 0.82
---- !u!114 &7772090329855946196
+    collider: {fileID: 6520015236618883569}
+    StateController:
+      elements:
+      - {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+      startState: {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+    ModifierController:
+      elements:
+      - {fileID: 11400000, guid: a7a6c585a45ff154eb658f8e092b92ba, type: 2}
+    modifiersCount: 1
+    statesCount: 1
+    aggressionStateRefs:
+      icon: {fileID: 0}
+    stunnedStateRefs:
+      icon: {fileID: 0}
+--- !u!114 &4947938875859734448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +218,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6767068810095633567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8a84e617405f54ab4e91e7d91b00f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f6969e897abd1d4381b6842d7603324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    spriteAnimator: {fileID: 8654150733132898817}
+--- !u!114 &1539303333456706064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767068810095633567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f196275784471a923a0c7fb1ff079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!70 &6520015236618883569

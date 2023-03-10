@@ -112,12 +112,12 @@ GameObject:
   - component: {fileID: 714289481862489154}
   - component: {fileID: 714289481862489157}
   - component: {fileID: 714289481862489158}
+  - component: {fileID: 1683300935638944323}
   - component: {fileID: -1526778492292717715}
   - component: {fileID: 6405100200763918657}
   - component: {fileID: 4936073750136527860}
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
-  - component: {fileID: 1683300935638944323}
   m_Layer: 0
   m_Name: AgressiveEnemy_AcidHills_Caterpillar
   m_TagString: Untagged
@@ -171,6 +171,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     instance: {fileID: 714289481862489155}
+--- !u!114 &1683300935638944323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714289481862489155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-1526778492292717715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +198,7 @@ MonoBehaviour:
   value:
     npcConfiguration: {fileID: 11400000, guid: dc167f12948304461abb05190785372f, type: 2}
     spriteRenderer: {fileID: 714289480939590230}
+    collider: {fileID: 8340038712011541946}
     StateController:
       elements:
       - {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
@@ -194,7 +207,7 @@ MonoBehaviour:
       startState: {fileID: 11400000, guid: 508557d5b8516fb458a8034d87b67631, type: 2}
     ModifierController:
       elements:
-      - {fileID: 11400000, guid: 6c5039504bf66e245a768321f95769e2, type: 2}
+      - {fileID: 11400000, guid: bc937791d3ccf934f9048f55b8b98a1a, type: 2}
     modifiersCount: 1
     statesCount: 3
     aggressionStateRefs:
@@ -264,18 +277,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.014652962, y: 1.2685696}
   m_Size: {x: 3.460735, y: 3.3143272}
   m_Direction: 1
---- !u!114 &1683300935638944323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2742600469778551727
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,12 @@ namespace RiderGame.SO
 
         private static bool HasDublicateContainers<V, S>(List<V> containers, out string errMess) where V : DropdownSOContainer<S>, new() where S : ContainerElement
         {
+            if (containers == null)
+            {
+                errMess = string.Empty;
+                return false;
+            }
+
             errMess = $"List of {typeof(S).Name} has dublicates\n";
 
             bool hasDublicates = false;

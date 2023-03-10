@@ -10,6 +10,8 @@ namespace RiderGame.Gameplay
 
         private void Awake()
         {
+            if (!NpcConfigNotNull) return;
+
             InitNpc();
             InitNpcCustomGizmos();
             InitGeneralComponentValues();
@@ -17,6 +19,8 @@ namespace RiderGame.Gameplay
 
         private void OnDrawGizmos()
         {
+            if (!NpcConfigNotNull) return;
+
             if (Application.isPlaying) return;
 
             InitNpc();

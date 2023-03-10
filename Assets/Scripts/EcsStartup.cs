@@ -62,7 +62,6 @@ namespace RiderGame
 
                 //Physics
                 .Add(new OneFramePhysicsSystem())
-                .Add(new ObstacleCollisionSystem())
                 .Add(new NpcCollisionSystem())
 
                 //Runtime data updating
@@ -75,7 +74,6 @@ namespace RiderGame
                 //World
                 .Add(new GenerationSystem())
                 .Add(new ObjectActivationSystem())
-                .Add(new ObjectOverlaySystem())
                 .Add(new MoveWorldObjectSystem())
                 .Add(new MoveBackgroundSystem())
                 .Add(new LifesControlSystem())
@@ -89,6 +87,7 @@ namespace RiderGame
 
                 //Npc
                 .Add(new BaseNpcStateSystem())
+                .Add(new NpcIdleStateSystem())
                 .Add(new NpcMovableStateSystem())
                 .Add(new NpcAggressionStateSystem())
                 .Add(new NpcStunnedStateSystem())

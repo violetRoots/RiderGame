@@ -74,6 +74,34 @@ namespace RiderGame.Gameplay
             entity.Replace(animatorController);
         }
 
+        public static void ClearAnimation(EcsEntity entity,
+                                          PlayerAnimationPriority priority)
+        {
+            ClearAnimation(entity, (int)priority);
+        }
+
+        public static void ClearAnimation(EcsEntity entity,
+                                  NpcAnimationPriority priority)
+        {
+            ClearAnimation(entity, (int)priority);
+        }
+
+        private static void ClearAnimation(EcsEntity entity,
+                                           int priority)
+        {
+            if (!TryGetBaseAnimatorController(entity, out BaseAnimatorController animatorController))
+            {
+                Debug.LogError($"You should add {typeof(BaseAnimatorController)} to entity before play animation");
+                return;
+            }
+
+            var samePriorityAnimationInfo = animatorController.animationsInfo.Find(info => info.priority == priority);
+            if (samePriorityAnimationInfo != null)
+                animatorController.animationsInfo.Remove(samePriorityAnimationInfo);
+
+            entity.Replace(animatorController);
+        }
+
         public static bool TryGetBaseAnimatorController(EcsEntity entity, out BaseAnimatorController animatorController)
         {
             if (!entity.Has<BaseAnimatorController>())

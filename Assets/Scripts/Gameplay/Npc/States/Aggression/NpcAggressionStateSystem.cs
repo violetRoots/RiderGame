@@ -28,11 +28,12 @@ namespace RiderGame.Gameplay
         {
             foreach (var i in _fNpcActivationEvent)
             {
+                var entity = _fNpcActivationEvent.GetEntity(i);
                 var npc = _fNpcActivationEvent.Get2(i);
 
                 if (!npc.StateController.TryGet(out AggressionState aggressionState)) continue;
 
-                aggressionState.changeStateSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(npc, state));
+                aggressionState.changeStateSubscription = npc.StateController.ActiveState.Subscribe((state) => OnStateChanged(entity, npc, state));
             }
 
             foreach (var i in _fNpc)
@@ -88,19 +89,18 @@ namespace RiderGame.Gameplay
             }
         }
 
-        public void OnStateChanged(Npc npc, State newState)
+        public void OnStateChanged(EcsEntity entity, Npc npc, State newState)
         {
-            var isAggressionActive = newState is AggressionState;
+            if(newState is AggressionState)
+            {
+                npc.aggressionStateRefs.icon.gameObject.SetActive(true);
+            }
+            else
+            {
+                npc.aggressionStateRefs.icon.gameObject.SetActive(false);
+                BaseAnimatorControllerSystem.ClearAnimation(entity, NpcAnimationPriority.Aggression);
+            }
 
-            npc.aggressionStateRefs.icon.gameObject.SetActive(isAggressionActive);
-        }
-
-        public static void SetStunnedState(ref Npc enemy)
-        {
-            //enemy.state = EnemyState.Stunned;
-
-            //enemy.aggressionState.icon.gameObject.SetActive(false);
-            //enemy.stunnedState.icon.gameObject.SetActive(true);
         }
     }
 }

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
+  m_Name: AcidHills_BubbleTree_1
+  m_EditorClassIdentifier: 
+  isTrigger: 0
+  overlayMode: 0
+  dynamicOverlayEdgeOffset: 0
+  staticSortingLayer: 
+  startStateName: AggressionState
+  states:
+  - currentDropdownName: AggressionState
+    value: {fileID: 11400000, guid: 6727f1afb73a334449f3f4e5b6a8d66b, type: 2}
+    previousValueName: AggressionState
+    parentDirectory: Assets/Configs/Obstacles/BubbleTree
+  hasStateDublicatesMessage: 'List of State has dublicates
+
+'
+  modifiers:
+  - currentDropdownName: DamageCollisionModifier
+    value: {fileID: 11400000, guid: 57f4f70e922e07f4c8f5b695ee021e25, type: 2}
+    previousValueName: DamageCollisionModifier
+    parentDirectory: Assets/Configs/Obstacles/BubbleTree
+  hasModifierDublicatesMessage: 'List of Modifier has dublicates
+
+'
