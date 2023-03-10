@@ -11,6 +11,7 @@ namespace RiderGame.Gameplay
     public class BaseAnimatorControllerSystem : IEcsRunSystem
     {
         private readonly EcsFilter<BaseAnimatorController, ActiveObject> _fAnimator;
+        private readonly EcsFilter<BaseAnimatorController, DeactivationEvent> _fAnimtorDeactivationEvent;
 
         public static void AddAnimation(EcsEntity entity,
                                         SpriteAnimation animation,
@@ -108,6 +109,14 @@ namespace RiderGame.Gameplay
                     && (animatorController.spriteAnimator.Flipped !^ animatorController.currentAnimationInfo.flipDir == -1)) continue;
 
                 PlayAnimation(animatorController.spriteAnimator, animatorController.currentAnimationInfo);
+            }
+
+            foreach(var i in _fAnimtorDeactivationEvent)
+            {
+                ref var animatorController = ref _fAnimtorDeactivationEvent.Get1(i);
+
+                animatorController.animationsInfo.Clear();
+
             }
         }
 

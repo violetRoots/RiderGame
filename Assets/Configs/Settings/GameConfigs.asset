@@ -18,10 +18,10 @@ MonoBehaviour:
   maxTapOffset: 0.05
   swipeDetectTime: 0.1
   swipeSensitivity: 0.95
+  generalCharacterConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}
+  generalNpcConfiguration: {fileID: 11400000, guid: ad1a8893885e3484fbd31cbd74105921, type: 2}
   maxActiveObjectPosition: 100
   backgroundSpeedMultiplier: 0.021
   changeLayerEdgePosition: 0
-  clampDirectionAngle: 60
-  playerConfiguration: {fileID: 11400000, guid: b5225c9ddd8f2ad418a662b295177fde, type: 2}
   _levelConfigs:
   - {fileID: 11400000, guid: 76bd132b660bd4f4a8cd28028d4f5202, type: 2}
