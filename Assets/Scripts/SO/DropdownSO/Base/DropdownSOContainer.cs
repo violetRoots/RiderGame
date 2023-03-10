@@ -50,6 +50,7 @@ namespace RiderGame.SO
 
         private void UpdateValue()
         {
+#if UNITY_EDITOR
             if (currentDropdownName == previousValueName) return;
 
             if (currentDropdownName == string.Empty)
@@ -72,6 +73,7 @@ namespace RiderGame.SO
             }
 
             previousValueName = currentDropdownName;
+#endif
         }
 
         protected virtual Dictionary<string, Type> GetDropdownDictionary() => null;

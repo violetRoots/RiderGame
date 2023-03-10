@@ -15,6 +15,7 @@ namespace RiderGame.SO
 
         private void OnValidate()
         {
+#if UNITY_EDITOR
             var path = AssetDatabase.GetAssetPath(this);
             path = path.Substring(0, path.LastIndexOf('/'));
 
@@ -22,6 +23,7 @@ namespace RiderGame.SO
             UpdateStartState();
 
             modifiers = UpdateContainers<ModifierContainer, Modifier>(modifiers, path);
+#endif
         }
 
         private static List<V> UpdateContainers<V, S>(List<V> containers, string path) where V : DropdownSOContainer<S> where S : ContainerElement
