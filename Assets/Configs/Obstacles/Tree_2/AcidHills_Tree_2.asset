@@ -19,17 +19,17 @@ MonoBehaviour:
   startStateName: IdleState
   states:
   - currentDropdownName: IdleState
-    value: {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+    value: {fileID: 11400000, guid: c41fe86f4bb15544e9b725dc3536a16c, type: 2}
     previousValueName: IdleState
-    parentDirectory: Assets/Configs/Obstacles/BubbleTree_3
+    parentDirectory: Assets/Configs/Obstacles/Tree_2
   hasStateDublicatesMessage: 'List of State has dublicates
 
 '
   modifiers:
   - currentDropdownName: EmptyModifier
-    value: {fileID: 11400000, guid: a7a6c585a45ff154eb658f8e092b92ba, type: 2}
+    value: {fileID: 11400000, guid: 52734b1ef7cdecf469e3a587f40057ba, type: 2}
     previousValueName: EmptyModifier
-    parentDirectory: Assets/Configs/Obstacles/BubbleTree_3
+    parentDirectory: Assets/Configs/Obstacles/Tree_2
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 
 '

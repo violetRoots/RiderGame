@@ -19,7 +19,7 @@ MonoBehaviour:
   startStateName: IdleState
   states:
   - currentDropdownName: IdleState
-    value: {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+    value: {fileID: 11400000, guid: 12e49f15338cb6e4c84226c2e3a860de, type: 2}
     previousValueName: IdleState
     parentDirectory: Assets/Configs/Obstacles/Chair_1
   hasStateDublicatesMessage: 'List of State has dublicates
@@ -27,7 +27,7 @@ MonoBehaviour:
 '
   modifiers:
   - currentDropdownName: EmptyModifier
-    value: {fileID: 11400000, guid: a7a6c585a45ff154eb658f8e092b92ba, type: 2}
+    value: {fileID: 11400000, guid: 141536a6104144f4d8d1a6578f1561f8, type: 2}
     previousValueName: EmptyModifier
     parentDirectory: Assets/Configs/Obstacles/Chair_1
   hasModifierDublicatesMessage: 'List of Modifier has dublicates

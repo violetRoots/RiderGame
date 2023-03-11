@@ -16,7 +16,7 @@ MonoBehaviour:
   overlayMode: 0
   dynamicOverlayEdgeOffset: 0
   staticSortingLayer: 
-  startStateName: IdleState
+  startStateName: AggressionState
   states:
   - currentDropdownName: IdleState
     value: {fileID: 11400000, guid: e5262ec6d8939834cb91da12352ebfab, type: 2}
