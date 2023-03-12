@@ -125,7 +125,7 @@ namespace RiderGame.Gameplay
 
                 var animsInfo = animatorController.animationsInfo;
 
-                if (animsInfo == null) continue;
+                if (animsInfo == null || animsInfo.Count == 0) continue;
 
                 if (animsInfo.Count > 1)
                     animsInfo = animsInfo.OrderByDescending(info => (int) info.priority).ToList();

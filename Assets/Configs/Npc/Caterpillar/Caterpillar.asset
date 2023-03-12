@@ -34,9 +34,9 @@ MonoBehaviour:
 
 '
   modifiers:
-  - currentDropdownName: EmptyModifier
-    value: {fileID: 11400000, guid: 6c5039504bf66e245a768321f95769e2, type: 2}
-    previousValueName: EmptyModifier
+  - currentDropdownName: DamageCollisionModifier
+    value: {fileID: 11400000, guid: bc937791d3ccf934f9048f55b8b98a1a, type: 2}
+    previousValueName: DamageCollisionModifier
     parentDirectory: Assets/Configs/Npc/Caterpillar
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 
