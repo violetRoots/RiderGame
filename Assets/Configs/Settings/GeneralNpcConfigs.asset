@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushForce: 1
   pushTime: 0.1
+  startBringQuestPrefab: {fileID: 624859114981993153, guid: 21ffaaf711bcac944a0290744062b985, type: 3}
+  completeQuestPrefab: {fileID: 7758130653964143713, guid: ea46bf3a4530e984a852b0baa67b4d5e, type: 3}

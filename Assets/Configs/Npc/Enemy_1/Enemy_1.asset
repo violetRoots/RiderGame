@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
   m_Name: Enemy_1
   m_EditorClassIdentifier: 
-  clampAngle: 60
-  movementSpeed: 3
-  agressionRadius: 15
-  agressionMovementSpeed: 9
-  pushForce: 0.5
-  pushTime: 0.05
+  isTrigger: 0
+  overlayMode: 0
+  dynamicOverlayEdgeOffset: 0
+  staticSortingLayer: 
   startStateName: EmptyState
   states:
   - currentDropdownName: EmptyState

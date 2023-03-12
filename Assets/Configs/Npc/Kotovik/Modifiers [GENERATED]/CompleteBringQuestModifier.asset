@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1601f70da9973044baf2b928329474df, type: 3}
-  m_Name: WalkState
+  m_Script: {fileID: 11500000, guid: bee2aac456962ca4397716cb9ce496e6, type: 3}
+  m_Name: CompleteBringQuestModifier
   m_EditorClassIdentifier: 
-  movementAnimation: {fileID: 11400000, guid: 3090e52618cff48f79dd04beb765343d, type: 2}
-  movementSpeed: 3
+  completeQuestObject: {fileID: 0}

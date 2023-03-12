@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c831c9ad00317429b4101d1f3e2666, type: 3}
+  m_Name: StartBringQuestModifier
+  m_EditorClassIdentifier: 
+  questConfigs:
+    targetNpc: {fileID: -1526778492292717715, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
+    radius: 5
+    distance: {x: 40, y: 50}
+    questIcon: {fileID: 21300000, guid: b54be0fe531c00e4ba9bd4eea43e28cc, type: 3}
+    wayPointIcon: {fileID: 21300000, guid: b54be0fe531c00e4ba9bd4eea43e28cc, type: 3}

@@ -16,9 +16,9 @@ MonoBehaviour:
   customData:
     movementSpeed: 8
   generateObjects:
-  - instanceName: AgressiveEnemy_AcidHills_Caterpillar
+  - instanceName: Decoration_AcidHills_Chair
     poolObjectValue:
-      instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
+      instance: {fileID: 6767068810095633567, guid: e6d3f4647733c45aaacb282c68d17d73, type: 3}
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:

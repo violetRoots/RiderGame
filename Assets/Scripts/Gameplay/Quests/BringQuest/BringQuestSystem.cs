@@ -15,12 +15,14 @@ namespace RiderGame.Gameplay
         private const float MaxAngleOffset = 15.0f;
         private const float QuestFailedDistanceOffset = 2.0f;
 
+        private readonly GameConfiguration _gameConfigs;
         private readonly GameplayRuntimeData _gameplayRuntimeData;
 
         private readonly EcsFilter<EcsGameObject, Player> _fPlayer;
-        private readonly EcsFilter<EcsGameObject, StartBringQuest, ActivationEvent> _fQuestActivationEvent;
+        private readonly EcsFilter<EcsGameObject, StartBringQuest, DeactivationEvent> _fStartQuestDeactivationEvent;
+
         private readonly EcsFilter<EcsGameObject, CompleteBringQuest, ActiveObject> _fCompleteQuest;
-        private readonly EcsFilter<EcsGameObject, StartBringQuest, DeactivationEvent> _fQuestDeactivationEvent;
+        private readonly EcsFilter<EcsGameObject, CompleteBringQuest, DeactivationEvent> _fCompleteQuestDeactivationEvent;
         private readonly EcsFilter<OnTriggerEnter2DEvent> _fTriggerEnter;
 
         private ObservableCollection<IQuest> _quests;
@@ -34,18 +36,7 @@ namespace RiderGame.Gameplay
         }
         public void Run()
         {
-            foreach(var i in _fQuestActivationEvent)
-            {
-                ref var gameObject = ref _fQuestActivationEvent.Get1(i);
-                var questConfigs = _fQuestActivationEvent.Get2(i).questConfigs;
-
-                var completetQuestObject = SpawnCompleteQuestObject(gameObject.instance, questConfigs);
-
-                BringQuest quest = new BringQuest(questConfigs, gameObject.instance, completetQuestObject.transform);
-                _quests.Add(quest);
-            }
-
-            foreach(var i in _fTriggerEnter)
+            foreach (var i in _fTriggerEnter)
             {
                 ref var eventData = ref _fTriggerEnter.Get1(i);
 
@@ -54,10 +45,11 @@ namespace RiderGame.Gameplay
 
                 if (!senderObject.FindActiveEntityWithComponent<Player>()) continue;
 
-                if (collider.gameObject.FindActiveEntityWithComponent<StartBringQuest>())
+                if (collider.gameObject.FindActiveEntityWithComponent(out StartBringQuest startBringQuest))
                 {
                     collider.enabled = false;
 
+                    InitCompleteQuestPart(collider.gameObject, startBringQuest.questConfigs);
                     StartQuest(collider.gameObject);
                 }
                 else if (collider.gameObject.FindActiveEntityWithComponent<CompleteBringQuest>())
@@ -66,7 +58,7 @@ namespace RiderGame.Gameplay
                 }
             }
 
-            foreach(var i in _fCompleteQuest)
+            foreach (var i in _fCompleteQuest)
             {
                 ref var gameObject = ref _fCompleteQuest.Get1(i);
                 ref var completeQuestComponent = ref _fCompleteQuest.Get2(i);
@@ -80,11 +72,18 @@ namespace RiderGame.Gameplay
                 }
             }
 
-            foreach (var i in _fQuestDeactivationEvent)
+            foreach (var i in _fCompleteQuestDeactivationEvent)
             {
-                ref var startQuestComponent = ref _fQuestDeactivationEvent.Get2(i);
+                ref var gameObject = ref _fCompleteQuestDeactivationEvent.Get1(i);
 
-                startQuestComponent.collider.enabled = true;
+                GameObject.Destroy(gameObject.instance);
+            }
+
+            foreach (var i in _fStartQuestDeactivationEvent)
+            {
+                ref var gameObject = ref _fStartQuestDeactivationEvent.Get1(i);
+
+                GameObject.Destroy(gameObject.instance);
             }
         }
 
@@ -118,13 +117,25 @@ namespace RiderGame.Gameplay
             _quests.Remove(quest);
         }
 
+        private void InitCompleteQuestPart(GameObject gameObject, BringQuestConfiguration questConfigs)
+        {
+            var completeQuestObject = SpawnCompleteQuestObject(gameObject, questConfigs);
+
+            BringQuest quest = new BringQuest(questConfigs, gameObject, completeQuestObject.transform);
+            _quests.Add(quest);
+        }
+
         private GameObject SpawnCompleteQuestObject(GameObject startQuestObject, BringQuestConfiguration questConfigs)
         {
             var pos = startQuestObject.transform.position;
             var angleOffset = Random.Range(-MaxAngleOffset, MaxAngleOffset);
-            pos += Quaternion.Euler(0, 0, angleOffset) * Vector2.down * questConfigs.Distance;
+            pos += Quaternion.Euler(0, 0, angleOffset) * Vector2.down * questConfigs.DistanceValueFromMinMaxSlider;
 
-            return ObjectActivationSystem.Instantiate(questConfigs.completeQuestPrefab, pos);
+            var npcObj = ObjectActivationSystem.Instantiate(questConfigs.targetNpc.gameObject, pos);
+            var completeBringQuestPrefab = _gameConfigs.GeneralNpcConfiguration.CompleteBringQuestPrefab;
+            var completeBringQuestComponent = ObjectActivationSystem.Instantiate(completeBringQuestPrefab, npcObj.transform, npcObj.transform.position);
+
+            return completeBringQuestComponent.gameObject;
         }
     }
 }

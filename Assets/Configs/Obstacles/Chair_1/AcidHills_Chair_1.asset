@@ -26,9 +26,9 @@ MonoBehaviour:
 
 '
   modifiers:
-  - currentDropdownName: EmptyModifier
-    value: {fileID: 11400000, guid: 141536a6104144f4d8d1a6578f1561f8, type: 2}
-    previousValueName: EmptyModifier
+  - currentDropdownName: StartBringQuestModifier
+    value: {fileID: 11400000, guid: 308b161ce774a0a47b3e0f89d372d5c9, type: 2}
+    previousValueName: StartBringQuestModifier
     parentDirectory: Assets/Configs/Obstacles/Chair_1
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 

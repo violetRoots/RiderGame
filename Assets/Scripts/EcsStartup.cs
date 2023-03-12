@@ -82,8 +82,6 @@ namespace RiderGame
                 .Add(new PlayerAnimationSystem())
                 .Add(new PlayerDashSystem())
                 .Add(new BaseEffectSystem())
-                .Add(new CoinCollectionSystem())
-                .Add(new BringQuestSystem())
 
                 //Npc
                 .Add(new BaseNpcStateSystem())
@@ -92,6 +90,11 @@ namespace RiderGame
                 .Add(new NpcMovableStateSystem())
                 .Add(new NpcAggressionStateSystem())
                 .Add(new NpcStunnedStateSystem())
+                .Add(new NpcStartBringQuestModifierSystem())
+
+                 //Gameplay
+                .Add(new CoinCollectionSystem())
+                .Add(new BringQuestSystem())
 
                 //Animation
                 .Add(new BaseAnimatorControllerSystem())

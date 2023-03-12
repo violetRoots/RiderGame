@@ -30,6 +30,26 @@ namespace RiderGame.World
 
         private Transform _worldObject;
 
+        public static T Instantiate<T>(T monoBehaviour, Vector2 position) where T : Component
+        {
+            var gameObject = Instantiate(monoBehaviour.gameObject, position);
+            return (T) gameObject.GetComponent(monoBehaviour.GetType());
+        }
+
+        public static T Instantiate<T>(T monoBehaviour, Transform parent, Vector2 position) where T : Component
+        {
+            var gameObject = Instantiate(monoBehaviour.gameObject, parent, position);
+            return (T)gameObject.GetComponent(monoBehaviour.GetType());
+        }
+
+        public static GameObject Instantiate(GameObject gameObject, Transform parent, Vector2 position)
+        {
+            var instantiatedObject = GameObject.Instantiate(gameObject, position, Quaternion.identity);
+            instantiatedObject.transform.SetParent(parent);
+            ActivateCallback(instantiatedObject, true);
+            return instantiatedObject;
+        }
+
         public static GameObject Instantiate(GameObject gameObject, Vector2 position)
         {
             var instantiatedObject = GameObject.Instantiate(gameObject, position, Quaternion.identity);
@@ -75,12 +95,25 @@ namespace RiderGame.World
             _generator.PoolManager.OnReturnToPools -= Deactivate;
         }
 
+        private static void ActivateCallback(GameObject poolObject, bool isNested = false)
+        {
+            ObjectsToActivate.Add(new ObjectActivationInfo(poolObject, isNested));
+
+            var nestedObjectsToActivate = poolObject.GetComponentsInChildren<ConvertToEntity>();
+            foreach(var nested in nestedObjectsToActivate)
+            {
+                if (nested.gameObject == poolObject) continue;
+
+                ObjectsToActivate.Add(new ObjectActivationInfo(nested.gameObject, true));
+            }
+        }
+
         private static void ActivateCallback(GameObject poolObject)
         {
             ObjectsToActivate.Add(new ObjectActivationInfo(poolObject, false));
 
             var nestedObjectsToActivate = poolObject.GetComponentsInChildren<ConvertToEntity>();
-            foreach(var nested in nestedObjectsToActivate)
+            foreach (var nested in nestedObjectsToActivate)
             {
                 if (nested.gameObject == poolObject) continue;
 
