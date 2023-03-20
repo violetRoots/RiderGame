@@ -14,29 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationsInfo:
   - angle: -60
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 3cc2a962c3e0042bfa7e110802d9d87a, type: 2}
     isFlip: 0
   - angle: -45
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 3cc2a962c3e0042bfa7e110802d9d87a, type: 2}
     isFlip: 0
   - angle: -30
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 4fecf7da3992c46b0a5a2541f023e060, type: 2}
     isFlip: 0
   - angle: -15
     animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
     isFlip: 0
   - angle: 0
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 903e46b124ba448a98016047070801d0, type: 2}
     isFlip: 0
   - angle: 15
     animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
     isFlip: 1
   - angle: 30
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 4fecf7da3992c46b0a5a2541f023e060, type: 2}
     isFlip: 1
   - angle: 45
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 3cc2a962c3e0042bfa7e110802d9d87a, type: 2}
     isFlip: 1
   - angle: 60
-    animation: {fileID: 11400000, guid: 1c22ac1dd71364697a241cc75f02b921, type: 2}
+    animation: {fileID: 11400000, guid: 3cc2a962c3e0042bfa7e110802d9d87a, type: 2}
     isFlip: 1
