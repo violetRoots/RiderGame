@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: Character_Leek_SpriteAnimation_Walk_45
   m_EditorClassIdentifier: 
-  fps: 8
+  fps: 18
   frames:
-  - {fileID: 21300000, guid: 108521bd1533c4bfa98e2d3ca20ee5fa, type: 3}
-  - {fileID: 21300000, guid: 26a0e22afe9d348c38d88c34ace5efb6, type: 3}
-  - {fileID: 21300000, guid: 048d98d6f801e4803b5143ea22ff1b38, type: 3}
-  - {fileID: 21300000, guid: c9a66d72a034c4fe2a4605d8d381d2f7, type: 3}
+  - {fileID: 21300000, guid: 88ade19508ccc44f19552b22bbcbed41, type: 3}
+  - {fileID: 21300000, guid: b96f7f7e1025541adb0b069babc5b895, type: 3}
+  - {fileID: 21300000, guid: d777832d66c6d411e84875d2c5cd705e, type: 3}
+  - {fileID: 21300000, guid: 13d44902b000441799fb21a92030567e, type: 3}
+  - {fileID: 21300000, guid: 8a7d93a8deffe462db81eb7b92094419, type: 3}
+  - {fileID: 21300000, guid: 9fa7aa0bb12b34da4af209516ba029e9, type: 3}
+  - {fileID: 21300000, guid: 9b5bbc961c1b54186a79088cf17b24b0, type: 3}
+  - {fileID: 21300000, guid: cc2e6ce1128b349d7a4676907351ae28, type: 3}
+  - {fileID: 21300000, guid: f541a8a6ed0ee4eeca4ce8e4534e9240, type: 3}
+  - {fileID: 21300000, guid: eaa0be517daa14713b92cf87a11c0766, type: 3}
+  - {fileID: 21300000, guid: 673dfa98c7bf5425b889c4a9bfc1cf89, type: 3}
+  - {fileID: 21300000, guid: d6a138f5926af472bbc018e927f2c452, type: 3}
   triggers: []
