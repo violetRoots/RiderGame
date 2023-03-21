@@ -38,4 +38,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 72d066261173044c8bc11c370e01ae0d, type: 3}
   - {fileID: 21300000, guid: 0e649fde3e0f54fe9a1ca4d43ee94930, type: 3}
   - {fileID: 21300000, guid: 8d3e1b28e0ae545f9adc67890e75e3bb, type: 3}
+  - {fileID: 21300000, guid: 148233fa70cda4462808b8d8251df1f6, type: 3}
+  - {fileID: 21300000, guid: d4a9b9e0f88d148188a770475f8de21a, type: 3}
   triggers: []

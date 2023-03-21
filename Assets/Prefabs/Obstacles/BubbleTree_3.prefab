@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4862443086523820774}
   animations: []
-  playAnimationOnStart: {fileID: 0}
-  loop: 0
+  playAnimationOnStart: {fileID: 11400000, guid: 7d66c48687da4f140a4a5c35d156b8b3, type: 2}
+  loop: 1
 --- !u!1 &6767068810095633567
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,11 +198,11 @@ MonoBehaviour:
     collider: {fileID: 6520015236618883569}
     StateController:
       elements:
-      - {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
-      startState: {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+      - {fileID: 11400000, guid: 29be7588d7df0244f9dcb53e66a61b84, type: 2}
+      startState: {fileID: 11400000, guid: 29be7588d7df0244f9dcb53e66a61b84, type: 2}
     ModifierController:
       elements:
-      - {fileID: 11400000, guid: a7a6c585a45ff154eb658f8e092b92ba, type: 2}
+      - {fileID: 11400000, guid: 533504acc5f318446adc41155eb2670a, type: 2}
     modifiersCount: 1
     statesCount: 1
     aggressionStateRefs:
