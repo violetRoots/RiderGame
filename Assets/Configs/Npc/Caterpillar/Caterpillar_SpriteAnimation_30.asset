@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Caterpillar_SpriteAnimation_30
+  m_EditorClassIdentifier: 
+  fps: 18
+  frames:
+  - {fileID: 21300000, guid: c7b76d81e8e444dab97aad8d6903db42, type: 3}
+  - {fileID: 21300000, guid: 6e069fbbc4d3d4ed3b60abdeacb0ce28, type: 3}
+  - {fileID: 21300000, guid: f6de3e740753c4671966128e6f871e2f, type: 3}
+  - {fileID: 21300000, guid: c301e32c0ad3d4f7ea23557ac4a57024, type: 3}
+  - {fileID: 21300000, guid: 1fc39d72cd00c4f1f965e80944482a86, type: 3}
+  - {fileID: 21300000, guid: 8248711b57d4645d696b1fb3c30a2c78, type: 3}
+  - {fileID: 21300000, guid: 0d897fbbe926e47788a7449afe9e277c, type: 3}
+  - {fileID: 21300000, guid: f002084b820944fedb14bb9906214f46, type: 3}
+  triggers: []
