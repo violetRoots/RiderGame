@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183815775041913707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 7.06, z: 0}
+  m_LocalPosition: {x: 1.37, y: 6.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -198,11 +198,11 @@ MonoBehaviour:
     collider: {fileID: 6520015236618883569}
     StateController:
       elements:
-      - {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
-      startState: {fileID: 11400000, guid: 81adb0b0636ea864292abdf9e3429fc8, type: 2}
+      - {fileID: 11400000, guid: e5262ec6d8939834cb91da12352ebfab, type: 2}
+      startState: {fileID: 11400000, guid: e5262ec6d8939834cb91da12352ebfab, type: 2}
     ModifierController:
       elements:
-      - {fileID: 11400000, guid: a7a6c585a45ff154eb658f8e092b92ba, type: 2}
+      - {fileID: 11400000, guid: 9fb786d021d5f424dad7141b92f1e500, type: 2}
     modifiersCount: 1
     statesCount: 1
     aggressionStateRefs:
