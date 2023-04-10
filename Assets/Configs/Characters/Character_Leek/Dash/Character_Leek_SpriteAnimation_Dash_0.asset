@@ -32,12 +32,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9f19dfd18c4d442a99fce7b5c6745750, type: 3}
   - {fileID: 21300000, guid: aef45e8cbab97431a91aa9cd7b95662e, type: 3}
   - {fileID: 21300000, guid: 6afc549196c1e40eca66cc1796197c7c, type: 3}
-  - {fileID: 21300000, guid: d0fcba748385c4ec9aa460051bd13c3a, type: 3}
-  - {fileID: 21300000, guid: 5d9004ae76a7944fdb6b1e7201733d1a, type: 3}
-  - {fileID: 21300000, guid: 3c497b18728384ab88cd94cdf4c484e9, type: 3}
-  - {fileID: 21300000, guid: 9f19dfd18c4d442a99fce7b5c6745750, type: 3}
-  - {fileID: 21300000, guid: aef45e8cbab97431a91aa9cd7b95662e, type: 3}
-  - {fileID: 21300000, guid: 6afc549196c1e40eca66cc1796197c7c, type: 3}
-  - {fileID: 21300000, guid: 9bd3cc5d6a3084de7a92e1275c161e94, type: 3}
-  - {fileID: 21300000, guid: 52fda499957b04f39934e3169cfdb515, type: 3}
+  - {fileID: 21300000, guid: 8b092e8442c2646afb7afcbde46ec318, type: 3}
+  - {fileID: 21300000, guid: 23d54721d1f1840039fb37883e9097b6, type: 3}
   triggers: []
