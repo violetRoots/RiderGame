@@ -12,7 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: AcidHills_Tree_2_SpriteAnimation_0
   m_EditorClassIdentifier: 
-  fps: 0
+  fps: 2
   frames:
-  - {fileID: 21300000, guid: dcbb551dd23a44ac597e82b6dc11c98c, type: 3}
+  - {fileID: 21300000, guid: 309e18c6703ee4acba9971f59bc1824a, type: 3}
+  - {fileID: 21300000, guid: 309e18c6703ee4acba9971f59bc1824a, type: 3}
+  - {fileID: 21300000, guid: 669b79c704b10464eb00d5e268cea770, type: 3}
+  - {fileID: 21300000, guid: 94ff1a82c2ca144c68875469650bbdb9, type: 3}
+  - {fileID: 21300000, guid: 509b644ce23ce4af8874bf9ca2da9fe1, type: 3}
+  - {fileID: 21300000, guid: c0b2ffbc681fb41b4a8e6f6d24785203, type: 3}
+  - {fileID: 21300000, guid: c0b2ffbc681fb41b4a8e6f6d24785203, type: 3}
+  - {fileID: 21300000, guid: 509b644ce23ce4af8874bf9ca2da9fe1, type: 3}
+  - {fileID: 21300000, guid: 94ff1a82c2ca144c68875469650bbdb9, type: 3}
+  - {fileID: 21300000, guid: 94ff1a82c2ca144c68875469650bbdb9, type: 3}
+  - {fileID: 21300000, guid: 669b79c704b10464eb00d5e268cea770, type: 3}
   triggers: []
