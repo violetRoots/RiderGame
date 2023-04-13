@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fps: 0
   frames:
-  - {fileID: 21300000, guid: 0feebe2df269145f9bfad96a0520dac4, type: 3}
+  - {fileID: 21300000, guid: 0b314ed20ff354869b0cb9abf2acabf7, type: 3}
   triggers: []
