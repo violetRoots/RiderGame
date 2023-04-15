@@ -72,43 +72,6 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
-  - instanceName: Opyata_3
-    poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: d733f1520ded9467da886017a364b691, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.7017555
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 9.923096
-        value: 0.79923177
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
   - instanceName: Currency_AcidHills_Crystal_1
     poolObjectValue:
       instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
@@ -294,80 +257,6 @@ MonoBehaviour:
         value: 1.3840156
         inSlope: 0.001950046
         outSlope: 0.001950046
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: Decoration_AcidHills_Moss_1
-    poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: bbe4534dc725448ad8c23ae2f4f0b19d, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1.5789566
-        inSlope: 0.017543029
-        outSlope: 0.017543029
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 1.7543869
-        inSlope: 0.017543029
-        outSlope: 0.017543029
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: Decoration_AcidHills_Moss_2
-    poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: 93fa32b8569a343dba898e1e4a023dc6, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 2.0272903
-        inSlope: -0.027290344
-        outSlope: -0.027290344
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 1.7543869
-        inSlope: -0.027290344
-        outSlope: -0.027290344
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
