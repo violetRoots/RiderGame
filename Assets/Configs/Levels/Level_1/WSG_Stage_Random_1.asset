@@ -267,56 +267,37 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
-  - instanceName: Resource_AcidHills_Kotovik_1
-    poolObjectValue:
-      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 2.0467873
-        inSlope: 0.030248644
-        outSlope: 0.030248644
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: AgressiveEnemy_AcidHills_Caterpillar
+  - instanceName: NPC_AcidHills_Caterpillar
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 0
+    areaIndex: 2
     areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.3333056
-        inSlope: 0.003897071
-        outSlope: 0.003897071
+        value: 4.015625
+        inSlope: -0.17544174
+        outSlope: -0.17544174
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 2.2612076
+        inSlope: -0.17544174
+        outSlope: -0.17544174
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0

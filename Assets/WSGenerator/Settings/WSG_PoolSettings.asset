@@ -17,8 +17,6 @@ MonoBehaviour:
     hideInSpawnMenu: 0
   - instance: {fileID: 6767068810095633567, guid: a18bedd3f38a14b0d8bfae3184187c2c, type: 3}
     hideInSpawnMenu: 0
-  - instance: {fileID: 6767068810095633567, guid: d733f1520ded9467da886017a364b691, type: 3}
-    hideInSpawnMenu: 0
   - instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 6767068810095633567, guid: 8c031d07ae06247e586b0c2bbda08c67, type: 3}
@@ -42,6 +40,4 @@ MonoBehaviour:
   - instance: {fileID: 6767068810095633567, guid: e6d3f4647733c45aaacb282c68d17d73, type: 3}
     hideInSpawnMenu: 0
   - instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
-    hideInSpawnMenu: 0
-  - instance: {fileID: 6767068810095633567, guid: f9da69eda267e42c291d58fea1399e96, type: 3}
     hideInSpawnMenu: 0
