@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eae8f6ac24ed8c48b9b3e601bcaf5d5, type: 3}
-  m_Name: StunnedState
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Caterpillar_Stunned_15
   m_EditorClassIdentifier: 
-  stunnedAnimation: {fileID: 11400000, guid: 5531f627fa7a84e819fcb7b7e1f8f1dd, type: 2}
+  fps: 16
+  frames:
+  - {fileID: 21300000, guid: 75e3b901bce79447bb0422772e16dbfd, type: 3}
+  triggers: []
