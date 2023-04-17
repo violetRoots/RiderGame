@@ -14,10 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fps: 18
   frames:
-  - {fileID: 21300000, guid: 9dc0d6ab6d09f45a0a354d4af758e8e8, type: 3}
-  - {fileID: 21300000, guid: 52539f817c45c43bc89433913cf2999f, type: 3}
-  - {fileID: 21300000, guid: be792a2f5a1364e81842f9da7950c627, type: 3}
-  - {fileID: 21300000, guid: 8b0d3e324a6b24046a1f91fcaa1f8a05, type: 3}
   - {fileID: 21300000, guid: 9ff1d2bcfdb2f4a088a6ab1cd09f2f6c, type: 3}
   - {fileID: 21300000, guid: 9088af2a13abd467b848622cde8fc6af, type: 3}
   - {fileID: 21300000, guid: 9dc0d6ab6d09f45a0a354d4af758e8e8, type: 3}

@@ -295,43 +295,6 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
-  - instanceName: Obstacle_AcidHills_Skull
-    poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: 8c031d07ae06247e586b0c2bbda08c67, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 1
-    areaValue:
-      center: {x: 0, y: -85}
-      size: {x: 220, y: 40}
-      color: {r: 0.9772253, g: 0, b: 1, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.56530213
-        inSlope: -0.0019493162
-        outSlope: -0.0019493162
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 0.545809
-        inSlope: -0.0019493162
-        outSlope: -0.0019493162
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
   - instanceName: AgressiveEnemy_AcidHills_Caterpillar
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
