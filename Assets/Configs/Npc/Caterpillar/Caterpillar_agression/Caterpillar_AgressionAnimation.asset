@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
+  m_Name: Caterpillar_AgressionAnimation
+  m_EditorClassIdentifier: 
+  animationsInfo:
+  - angle: -60
+    animation: {fileID: 11400000, guid: 412b6765df30a4972bfd816a17c74f21, type: 2}
+    isFlip: 0
+  - angle: -45
+    animation: {fileID: 11400000, guid: 412b6765df30a4972bfd816a17c74f21, type: 2}
+    isFlip: 0
+  - angle: -30
+    animation: {fileID: 11400000, guid: 073c97a8f3a744c3ea7f4f70a30ea72e, type: 2}
+    isFlip: 0
+  - angle: -15
+    animation: {fileID: 11400000, guid: 2d4e68504597f4ce6860a0e7a0acba9f, type: 2}
+    isFlip: 0
+  - angle: 0
+    animation: {fileID: 11400000, guid: 300ac44285da349b48df1fb2f4e89de4, type: 2}
+    isFlip: 0
+  - angle: 15
+    animation: {fileID: 11400000, guid: 2d4e68504597f4ce6860a0e7a0acba9f, type: 2}
+    isFlip: 1
+  - angle: 30
+    animation: {fileID: 11400000, guid: 073c97a8f3a744c3ea7f4f70a30ea72e, type: 2}
+    isFlip: 1
+  - angle: 45
+    animation: {fileID: 11400000, guid: 412b6765df30a4972bfd816a17c74f21, type: 2}
+    isFlip: 1
+  - angle: 60
+    animation: {fileID: 11400000, guid: 412b6765df30a4972bfd816a17c74f21, type: 2}
+    isFlip: 1

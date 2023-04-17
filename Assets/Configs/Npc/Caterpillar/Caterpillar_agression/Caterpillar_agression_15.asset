@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Caterpillar_agression_15
+  m_EditorClassIdentifier: 
+  fps: 22
+  frames:
+  - {fileID: 21300000, guid: 1e7cef3d2c80740f589bf34538a11480, type: 3}
+  - {fileID: 21300000, guid: a6aad112511d14058b4879d099f0d3cd, type: 3}
+  - {fileID: 21300000, guid: 0d3092a87c3a341c1b537d860539504a, type: 3}
+  - {fileID: 21300000, guid: e95e6c43361b048a6adbabe73d783ac9, type: 3}
+  - {fileID: 21300000, guid: c555d38127aa542769c1667522b45beb, type: 3}
+  - {fileID: 21300000, guid: bdddf68387abb4943b156af4e44e0f79, type: 3}
+  - {fileID: 21300000, guid: d857abcf678ab42d9aa70ef2b876e47c, type: 3}
+  - {fileID: 21300000, guid: 99fdf8755e5934f11b9d9c01e37279e7, type: 3}
+  triggers: []
