@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: Caterpillar_Stunned_45
   m_EditorClassIdentifier: 
-  fps: 16
+  fps: 8
   frames:
-  - {fileID: 21300000, guid: f3528bb1d28ae4645a4f5010fb777cef, type: 3}
+  - {fileID: 21300000, guid: 10c9d23e1800d4595a5ae63baac78ab1, type: 3}
+  - {fileID: 21300000, guid: 0836969b135fe4cb19a353bb0ecda0ed, type: 3}
+  - {fileID: 21300000, guid: 6af836317bd8b40119510f3a7c68fb62, type: 3}
+  - {fileID: 21300000, guid: 7e6a5105bec3f44348c8e96364d9a96f, type: 3}
+  - {fileID: 21300000, guid: 6df2f9704cbbe46fb981c56612c6af9a, type: 3}
+  - {fileID: 21300000, guid: c5b92adf9c4184e1fb8b31c55fcaf341, type: 3}
+  - {fileID: 21300000, guid: 32d2cb5f27bb1473685a80e9fc36448c, type: 3}
+  - {fileID: 21300000, guid: 16c6f71340e3e430a8d74e4129b44b71, type: 3}
   triggers: []
