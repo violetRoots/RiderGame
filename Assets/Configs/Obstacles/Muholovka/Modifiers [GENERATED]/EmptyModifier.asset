@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8b2e4016287f448bbfc7d71e2a2b79, type: 3}
-  m_Name: IdleState
+  m_Script: {fileID: 11500000, guid: 22490b74653ad8b47afc476ddffee284, type: 3}
+  m_Name: EmptyModifier
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 11400000, guid: 212e0782f4e914c6da3131095c780ef8, type: 2}
