@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Character_Leek_SpriteAnimation_EnemyCollision_45
+  m_EditorClassIdentifier: 
+  fps: 18
+  frames:
+  - {fileID: 21300000, guid: 4b7acc3240932458b827adffdc26d513, type: 3}
+  - {fileID: 21300000, guid: 2c8fc87e0d7f5409892b9192a2ab41aa, type: 3}
+  - {fileID: 21300000, guid: 607e2e7734ec14913a09f1bbeddab1a2, type: 3}
+  - {fileID: 21300000, guid: 0c7b1061b2842492bb37da57ded238f3, type: 3}
+  - {fileID: 21300000, guid: b3c2ef038f3ac4c0fa82ee40766a76ba, type: 3}
+  - {fileID: 21300000, guid: d009233cff7104b09a32b99eeb400644, type: 3}
+  - {fileID: 21300000, guid: fd7c375ca63f448329e3459cc3b79c4f, type: 3}
+  - {fileID: 21300000, guid: 1cffa76ae85a44f049aebb54d7a9f8b3, type: 3}
+  - {fileID: 21300000, guid: cea97b31084104e2d9edf484edcd78d8, type: 3}
+  - {fileID: 21300000, guid: 04882c4d2eec346339ddd487241b1330, type: 3}
+  - {fileID: 21300000, guid: 7559743449ff84eca81f966f8e682981, type: 3}
+  - {fileID: 21300000, guid: 72a48debe071a4af5876156ca9435737, type: 3}
+  triggers: []

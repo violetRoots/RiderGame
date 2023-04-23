@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183815775041913707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.52, y: 2.15, z: 0}
+  m_LocalPosition: {x: -0.52, y: 0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -248,8 +248,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.38}
-  m_Size: {x: 8.4, y: 3.06}
+  m_Offset: {x: 0, y: -1.55}
+  m_Size: {x: 8.06, y: 3.27}
   m_Direction: 1
 --- !u!1001 &5122719167625736511
 PrefabInstance:
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.x
-      value: 10.08
+      value: 10.65
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.y
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -2.63
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_AutoTiling
