@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WalkState
   m_EditorClassIdentifier: 
   movementAnimation: {fileID: 11400000, guid: 3090e52618cff48f79dd04beb765343d, type: 2}
-  movementSpeed: 3
+  movementSpeed: 8

@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3640775681054380959}
   - component: {fileID: 8340038712011541946}
   m_Layer: 0
-  m_Name: NPC_AcidHills_Caterpillar
+  m_Name: Npc_AcidHills_Caterpillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: AcidHills_Kotovik_SpriteAnimation_15
   m_EditorClassIdentifier: 
-  fps: 4
+  fps: 16
   frames:
-  - {fileID: 21300000, guid: 6ff1f31b864394bbfa2644c25ee9484a, type: 3}
-  - {fileID: 21300000, guid: 33a4dda78b8b740e9803465869761a1f, type: 3}
+  - {fileID: 21300000, guid: a1a8cefbf4aa24dd589581f0e3afad8c, type: 3}
+  - {fileID: 21300000, guid: dc02f9de434de4642862e34468f1e750, type: 3}
+  - {fileID: 21300000, guid: a591e9a464fa2413698cff456e6c8e6a, type: 3}
+  - {fileID: 21300000, guid: a1db3f5cd614b4e81b3dde7e4facab6c, type: 3}
+  - {fileID: 21300000, guid: 748e09c9a2ed845adaea2f920c91dc27, type: 3}
+  - {fileID: 21300000, guid: 8922db36fb6024b78b06a4bf9d36d102, type: 3}
+  - {fileID: 21300000, guid: bc0944453547f41e98dc2ed1cda28276, type: 3}
+  - {fileID: 21300000, guid: fe0677ff6df654a2daa4a7b75a15ba86, type: 3}
   triggers: []
