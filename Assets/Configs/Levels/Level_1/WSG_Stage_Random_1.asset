@@ -267,9 +267,46 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
-  - instanceName: NPC_AcidHills_Caterpillar
+  - instanceName: Obstacle_AcidHills_Muholovka
     poolObjectValue:
-      instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
+      instance: {fileID: 6767068810095633567, guid: e9fcb4aa35bbe4a36aa1b1f543fc424c, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.826538
+        inSlope: -0.031190014
+        outSlope: -0.031190014
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 2.514638
+        inSlope: 0.16477957
+        outSlope: 0.16477957
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.26126096
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: Npc_Kotovik_1
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
       hideInSpawnMenu: 0
     areaIndex: 0
     areaValue:
@@ -282,9 +319,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.4834595
-        inSlope: -0.0428874
-        outSlope: -0.0428874
+        value: 3.6062622
+        inSlope: 0.044832326
+        outSlope: 0.044832326
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -304,24 +341,24 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.2 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 2+-1
-  - instanceName: Obstacle_AcidHills_Muholovka
+  - instanceName: Npc_AcidHills_Caterpillar
     poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: e9fcb4aa35bbe4a36aa1b1f543fc424c, type: 3}
+      instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 1
+    areaIndex: 0
     areaValue:
-      center: {x: 0, y: -85}
-      size: {x: 220, y: 40}
-      color: {r: 0.9772253, g: 0, b: 1, a: 1}
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
+      color: {r: 1, g: 0, b: 0.030305386, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.6062622
-        inSlope: 0.044832326
-        outSlope: 0.044832326
+        value: 4.210541
+        inSlope: -0.015595531
+        outSlope: -0.015595531
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
