@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8b2e4016287f448bbfc7d71e2a2b79, type: 3}
-  m_Name: IdleState
+  m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
+  m_Name: Flies_animation_config
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 11400000, guid: 016cfdae4adf69844aedf8967bc176c7, type: 2}
+  animationsInfo:
+  - angle: 0
+    animation: {fileID: 11400000, guid: 0a0dd93ce81a14558a8b02396a66d06e, type: 2}
+    isFlip: 0

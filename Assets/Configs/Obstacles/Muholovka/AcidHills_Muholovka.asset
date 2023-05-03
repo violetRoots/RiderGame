@@ -19,9 +19,9 @@ MonoBehaviour:
   startStateName: IdleState
   states:
   - currentDropdownName: IdleState
-    value: {fileID: 11400000, guid: 435e087a6f5f08c4e8bb3b3242aea265, type: 2}
+    value: {fileID: 11400000, guid: 76bb7057f15e0440184a861f55befb67, type: 2}
     previousValueName: IdleState
-    parentDirectory: Assets/Configs/Obstacles/Volcano_1
+    parentDirectory: Assets/Configs/Obstacles/Muholovka
   hasStateDublicatesMessage: 'List of State has dublicates
 
 '
@@ -29,7 +29,7 @@ MonoBehaviour:
   - currentDropdownName: EmptyModifier
     value: {fileID: 11400000, guid: aceae305356527742b0444a4de37e0c0, type: 2}
     previousValueName: EmptyModifier
-    parentDirectory: Assets/Configs/Obstacles/Volcano_1
+    parentDirectory: Assets/Configs/Obstacles/Muholovka
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 
 '
