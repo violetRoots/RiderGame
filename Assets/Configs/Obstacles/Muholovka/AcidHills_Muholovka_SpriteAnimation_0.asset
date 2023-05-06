@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: AcidHills_Muholovka_SpriteAnimation_0
   m_EditorClassIdentifier: 
-  fps: 8
+  fps: 6
   frames:
   - {fileID: 21300000, guid: 26474b100eefc468296d59b4fe88dff0, type: 3}
   - {fileID: 21300000, guid: 70da7f217865d464cb7e4a4a06ee9cf9, type: 3}
