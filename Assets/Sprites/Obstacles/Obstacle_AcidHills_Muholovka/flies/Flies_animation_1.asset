@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: Flies_animation_1
+  m_EditorClassIdentifier: 
+  fps: 8
+  frames:
+  - {fileID: 21300000, guid: 982687750d5a447b9afe4043dd2d4f01, type: 3}
+  - {fileID: 21300000, guid: 45f0f98783e6d41f183bc68fc52cfbd7, type: 3}
+  - {fileID: 21300000, guid: c4c1e0700e6294b29acd25349d5cdfb1, type: 3}
+  - {fileID: 21300000, guid: 020759d8f07204cd6873d9fda1bb7a1c, type: 3}
+  - {fileID: 21300000, guid: b50a1f0fbb2c54f88bf77b4829c0bf74, type: 3}
+  - {fileID: 21300000, guid: b85c5e97576e74ec4951c959f18b1445, type: 3}
+  - {fileID: 21300000, guid: 70c118102f8bb4406b38e0ed676053aa, type: 3}
+  - {fileID: 21300000, guid: edcddce0483bf4051938b4c450f1de47, type: 3}
+  - {fileID: 21300000, guid: 10db37e5774a94a61a09d72c06093fb0, type: 3}
+  - {fileID: 21300000, guid: b23426f329561450f832ec922e877302, type: 3}
+  - {fileID: 21300000, guid: d3a06cb88fc3843f680f643f7af81414, type: 3}
+  - {fileID: 21300000, guid: 92464349ccf3a4bf0b09cf53043bb709, type: 3}
+  - {fileID: 21300000, guid: 698158ab736604994922ae697a5cff30, type: 3}
+  - {fileID: 21300000, guid: 026b516f8c57942b0a62c03cd200c97e, type: 3}
+  - {fileID: 21300000, guid: 66cb29fc6535c4eca85314079713e90e, type: 3}
+  - {fileID: 21300000, guid: fbd973847b1cc47cf8eddaa8b9b6360f, type: 3}
+  - {fileID: 21300000, guid: 086db6df29337458f9cd8637a88dfd1b, type: 3}
+  - {fileID: 21300000, guid: a15190d5fdd2e44cc8ce2b3b6937efae, type: 3}
+  - {fileID: 21300000, guid: 087a3dc360b5d44ec825e2528ccd5dae, type: 3}
+  - {fileID: 21300000, guid: 07b4371c8a3a54802a1a10f0de32a354, type: 3}
+  - {fileID: 21300000, guid: 99c48d727b3b64e2f8d880c0c60dc1ae, type: 3}
+  - {fileID: 21300000, guid: 4363d6839e7f84c819aca84efc34d8a1, type: 3}
+  - {fileID: 21300000, guid: 6838b7948b71a41a8b985957a826c68e, type: 3}
+  - {fileID: 21300000, guid: 6b7ca5148631b4762b22d1146695249a, type: 3}
+  - {fileID: 21300000, guid: 55c09558782f04568aa316315db83e89, type: 3}
+  - {fileID: 21300000, guid: 78a2f2109e8a94094883edb419e78f72, type: 3}
+  triggers: []

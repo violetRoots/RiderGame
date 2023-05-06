@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
   m_Name: AcidHills_Muholovka_SpriteAnimation_0
   m_EditorClassIdentifier: 
-  fps: 0
+  fps: 8
   frames:
-  - {fileID: 21300000, guid: 60f79535e2c05406b8b18b6cddd59b89, type: 3}
+  - {fileID: 21300000, guid: 26474b100eefc468296d59b4fe88dff0, type: 3}
+  - {fileID: 21300000, guid: 70da7f217865d464cb7e4a4a06ee9cf9, type: 3}
+  - {fileID: 21300000, guid: 2bf8430b3fd144585a9eded13392a863, type: 3}
+  - {fileID: 21300000, guid: 1e7b72fff4fa64e08ad9ce4ed085eff7, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
+  - {fileID: 21300000, guid: 87ac5d3a52a8d4bbf9dcb6e540ae7267, type: 3}
   triggers: []
