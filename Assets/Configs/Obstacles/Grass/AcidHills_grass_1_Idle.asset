@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8b2e4016287f448bbfc7d71e2a2b79, type: 3}
-  m_Name: IdleState
+  m_Script: {fileID: 11500000, guid: 57a1a59953333574abe9c0dd991f9ab5, type: 3}
+  m_Name: AcidHills_grass_1_Idle
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 11400000, guid: 369c06095d2804931a1e6a5c6c7e10a8, type: 2}
+  animationsInfo:
+  - angle: 0
+    animation: {fileID: 11400000, guid: 2801fa8d55f5e41b0b85afc20df1c82b, type: 2}
+    isFlip: 0

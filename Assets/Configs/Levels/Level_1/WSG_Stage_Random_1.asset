@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd510c8600edb046b6e549d9c0d92dd, type: 3}
   m_Name: WSG_Stage_Random_1
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 8
   customData:
     movementSpeed: 8
   generateObjects:
@@ -50,7 +50,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Opyata_2
@@ -87,7 +87,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
   - instanceName: Opyata_3
@@ -124,9 +124,46 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 1+-1
+  - instanceName: Obstacle_AcidHills_Grass_1
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: 375e2e13c84aa44fd88496a9293c48e3, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 0
+    areaValue:
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
+      color: {r: 1, g: 0, b: 0.030305386, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.768055
+        inSlope: -0.064331815
+        outSlope: -0.064331815
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 2.1247368
+        inSlope: -0.064331815
+        outSlope: -0.064331815
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 5+-1
   - instanceName: Currency_AcidHills_Crystal_1
     poolObjectValue:
       instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
@@ -161,9 +198,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 2+-1
+    objectsCount: 8+-1
   - instanceName: Obstacle_AcidHills_Lake_1
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 692b85ab40bac48fdb7be94ac37a4fbe, type: 3}
@@ -189,9 +226,9 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 2+-1
   - instanceName: Obstacle_AcidHills_Tree_1
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 1e0c3cc08a8724b589b1d7d1418cccd9, type: 3}
@@ -226,9 +263,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 3+-1
   - instanceName: Obstacle_AcidHills_Tree_2
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 4976920c88b1b4acaa1f808c07295416, type: 3}
@@ -254,9 +291,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 3+-1
   - instanceName: Obstacle_AcidHills_Volcano_1
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: 1e9712a527212441bbf0772f07ab3246, type: 3}
@@ -282,9 +319,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 4+-1
   - instanceName: Decoration_AcidHills_Butterfly
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 892fe377a77f5409dabd856f39022bbc, type: 3}
@@ -319,9 +356,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 3+-1
   - instanceName: Obstacle_AcidHills_Muholovka
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: e9fcb4aa35bbe4a36aa1b1f543fc424c, type: 3}
@@ -356,46 +393,9 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: Npc_Kotovik_1
-    poolObjectValue:
-      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -45}
-      size: {x: 120, y: 40}
-      color: {r: 1, g: 0, b: 0.030305386, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 3.6062622
-        inSlope: 0.044832326
-        outSlope: 0.044832326
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 4.0545855
-        inSlope: 0.16477957
-        outSlope: 0.16477957
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.26126096
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 2+-1
+    objectsCount: 4+-1
   - instanceName: NPC_AcidHills_Caterpillar
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
@@ -430,6 +430,117 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.2 sec)'
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
+    objectsCount: 2+-1
+  - instanceName: Npc_Kotovik_1
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
+      color: {r: 0.9772253, g: 0, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: Decoration_AcidHills_Chair
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: e6d3f4647733c45aaacb282c68d17d73, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: Decoration_AcidHills_Cloud
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: 93fa32b8569a343dba898e1e4a023dc6, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -125}
+      size: {x: 220, y: 40}
+      color: {r: 0, g: 0.6484008, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1

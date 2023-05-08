@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -876002813
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e9efe56131fe443eb26856c3c4ece24, type: 3}
+  m_SortingLayerID: 1033250863
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 368e7b70e051e40848b0680f80f71da4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,8 +132,9 @@ GameObject:
   - component: {fileID: 5756532602607234157}
   - component: {fileID: 3337181898290734690}
   - component: {fileID: 421054232876744090}
+  - component: {fileID: 2075808151478511748}
   m_Layer: 0
-  m_Name: Decoration_AcidHills_Moss_2
+  m_Name: Decoration_AcidHills_Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,6 +184,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     instance: {fileID: 6767068810095633567}
+--- !u!114 &2075808151478511748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767068810095633567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9d4ec557e754f67bc65acf710ceab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5122719167625736511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,11 +253,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Offset.x

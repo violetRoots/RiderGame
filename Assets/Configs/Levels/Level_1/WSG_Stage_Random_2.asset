@@ -12,7 +12,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd510c8600edb046b6e549d9c0d92dd, type: 3}
   m_Name: WSG_Stage_Random_2
   m_EditorClassIdentifier: 
-  duration: 0
+  duration: 8
   customData:
-    movementSpeed: 0
-  generateObjects: []
+    movementSpeed: 8
+  generateObjects:
+  - instanceName: Opyata_1
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: a4eeb0eebdf244b39a401dbc24ba5f36, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 0
+    areaValue:
+      center: {x: 0, y: -45}
+      size: {x: 120, y: 40}
+      color: {r: 1, g: 0, b: 0.030305386, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 1+-1
+  - instanceName: Currency_AcidHills_Crystal_1
+    poolObjectValue:
+      instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
+      color: {r: 0.9772253, g: 0, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.0409393
+        inSlope: -0.007898528
+        outSlope: -0.007898528
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 9.871765
+        value: 2.962967
+        inSlope: -0.007898528
+        outSlope: -0.007898528
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 5+-1
+  - instanceName: Npc_Kotovik_1
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -85}
+      size: {x: 220, y: 40}
+      color: {r: 0.9772253, g: 0, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.0409393
+        inSlope: -0.007898528
+        outSlope: -0.007898528
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 9.871765
+        value: 2.962967
+        inSlope: -0.007898528
+        outSlope: -0.007898528
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 5+-1

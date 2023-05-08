@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8b2e4016287f448bbfc7d71e2a2b79, type: 3}
   m_Name: IdleState
   m_EditorClassIdentifier: 
-  idleAnimation: {fileID: 11400000, guid: 369c06095d2804931a1e6a5c6c7e10a8, type: 2}
+  idleAnimation: {fileID: 11400000, guid: 659fbb3ee2be5324d83f325407b71ac4, type: 2}
