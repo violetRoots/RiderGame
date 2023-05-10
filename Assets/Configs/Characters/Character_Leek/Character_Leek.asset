@@ -18,4 +18,4 @@ MonoBehaviour:
   enemyCollisionAnimationConfigs: {fileID: 11400000, guid: 0cf371c8252db904b930080a20c32718, type: 2}
   dashDistance: 18
   dashDuration: 0.8
-  dashCooldown: 0.5
+  dashCooldown: 2

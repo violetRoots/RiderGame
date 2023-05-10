@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementAnimation: {fileID: 11400000, guid: 9d1b20b5ef3b74cc4a2a8ef62529ef30, type: 2}
   movementSpeed: 8
-  startAggressionRadius: 12
-  endAggressionRadius: 10
+  startAggressionRadius: 16
+  endAggressionRadius: 24
