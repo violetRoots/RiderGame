@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855991ee1c6846b44be2f2c602982148, type: 3}
+  m_Name: Npc_Treoculus
+  m_EditorClassIdentifier: 
+  isTrigger: 0
+  overlayMode: 0
+  dynamicOverlayEdgeOffset: 1.5
+  staticSortingLayer: 
+  startStateName: WalkState
+  states:
+  - currentDropdownName: WalkState
+    value: {fileID: 11400000, guid: 35c3e144fc2cc4c9f9b3448a4b1453a1, type: 2}
+    previousValueName: WalkState
+    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
+  - currentDropdownName: AggressionState
+    value: {fileID: 11400000, guid: 106feefab92ce4546b6939de9bd3b693, type: 2}
+    previousValueName: AggressionState
+    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
+  - currentDropdownName: StunnedState
+    value: {fileID: 11400000, guid: afc3e538a9b674774851bb062a7a994e, type: 2}
+    previousValueName: StunnedState
+    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
+  hasStateDublicatesMessage: 'List of State has dublicates
+
+'
+  modifiers:
+  - currentDropdownName: DamageCollisionModifier
+    value: {fileID: 11400000, guid: 3858f7a4245144bc8b588ba32c656921, type: 2}
+    previousValueName: DamageCollisionModifier
+    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
+  hasModifierDublicatesMessage: 'List of Modifier has dublicates
+
+'
