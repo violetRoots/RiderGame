@@ -26,18 +26,10 @@ MonoBehaviour:
     value: {fileID: 11400000, guid: 106feefab92ce4546b6939de9bd3b693, type: 2}
     previousValueName: AggressionState
     parentDirectory: Assets/Configs/Npc/Npc_Treoculus
-  - currentDropdownName: StunnedState
-    value: {fileID: 11400000, guid: afc3e538a9b674774851bb062a7a994e, type: 2}
-    previousValueName: StunnedState
-    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
   hasStateDublicatesMessage: 'List of State has dublicates
 
 '
-  modifiers:
-  - currentDropdownName: DamageCollisionModifier
-    value: {fileID: 11400000, guid: 3858f7a4245144bc8b588ba32c656921, type: 2}
-    previousValueName: DamageCollisionModifier
-    parentDirectory: Assets/Configs/Npc/Npc_Treoculus
+  modifiers: []
   hasModifierDublicatesMessage: 'List of Modifier has dublicates
 
 '

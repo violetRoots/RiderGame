@@ -16,11 +16,48 @@ MonoBehaviour:
   customData:
     movementSpeed: 8
   generateObjects:
+  - instanceName: Npc_Kotovik_1
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: 0a66eae54fb644085b33034d265dbc1a, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 0
+    areaValue:
+      center: {x: 0, y: 50}
+      size: {x: 50, y: 40}
+      color: {r: 0, g: 0.4620726, b: 1, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.0468025
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 2.1247368
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 4+-1
   - instanceName: Npc_Treoculus
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 88dd1c10cd8e44c5a805e781ad080acb, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 0
+    areaIndex: 1
     areaValue:
       center: {x: 0, y: -60}
       size: {x: 200, y: 40}
@@ -31,18 +68,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 8.050709
-        inSlope: 0.0058395388
-        outSlope: 0.0058395388
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 8.109104
-        inSlope: 0.0058395388
-        outSlope: 0.0058395388
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -52,16 +89,137 @@ MonoBehaviour:
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 13+-1
+    objectsCount: 2+-1
   - instanceName: NPC_AcidHills_Caterpillar
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: 686de3159d0574ee59edf10d16c7de35, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 0
+    areaIndex: 1
     areaValue:
       center: {x: 0, y: -60}
       size: {x: 200, y: 40}
       color: {r: 1, g: 0.049433995, b: 0, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.0468025
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 2.1247368
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 4+-1
+  - instanceName: Obstacle_AcidHills_Tree_1
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: 1e0c3cc08a8724b589b1d7d1418cccd9, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -60}
+      size: {x: 200, y: 40}
+      color: {r: 1, g: 0.049433995, b: 0, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 1+-1
+  - instanceName: Obstacle_AcidHills_Tree_2
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: 4976920c88b1b4acaa1f808c07295416, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -60}
+      size: {x: 200, y: 40}
+      color: {r: 1, g: 0.049433995, b: 0, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 1+-1
+  - instanceName: Obstacle_AcidHills_Lake_1
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: 692b85ab40bac48fdb7be94ac37a4fbe, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -100}
+      size: {x: 200, y: 40}
+      color: {r: 0, g: 1, b: 0.19104314, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 1+-1
+  - instanceName: Currency_AcidHills_Crystal_1
+    poolObjectValue:
+      instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -100}
+      size: {x: 200, y: 40}
+      color: {r: 0, g: 1, b: 0.19104314, a: 1}
       drawGizmos: 1
     frequencyCurve:
       serializedVersion: 2
@@ -90,48 +248,11 @@ MonoBehaviour:
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
     objectsCount: 16+-1
-  - instanceName: Obstacle_AcidHills_Tree_1
+  - instanceName: Decoration_AcidHills_Chair
     poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: 1e0c3cc08a8724b589b1d7d1418cccd9, type: 3}
+      instance: {fileID: 6767068810095633567, guid: e6d3f4647733c45aaacb282c68d17d73, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 0
-    areaValue:
-      center: {x: 0, y: -60}
-      size: {x: 200, y: 40}
-      color: {r: 1, g: 0.049433995, b: 0, a: 1}
-      drawGizmos: 1
-    frequencyCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.56529236
-        inSlope: -0.0019500733
-        outSlope: -0.0019500733
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 0.5457916
-        inSlope: -0.0019500733
-        outSlope: -0.0019500733
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    x: 'time: 1 unit = duration / 10 (0.8 sec)'
-    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: Obstacle_AcidHills_Tree_2
-    poolObjectValue:
-      instance: {fileID: 6767068810095633567, guid: 4976920c88b1b4acaa1f808c07295416, type: 3}
-      hideInSpawnMenu: 0
-    areaIndex: 1
+    areaIndex: 2
     areaValue:
       center: {x: 0, y: -100}
       size: {x: 200, y: 40}
@@ -142,18 +263,18 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.60428655
-        inSlope: -0.0058494927
-        outSlope: -0.0058494927
+        value: 2.0468025
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 10
-        value: 0.5457916
-        inSlope: -0.0058494927
-        outSlope: -0.0058494927
+        value: 2.1247368
+        inSlope: 0.0077934265
+        outSlope: 0.0077934265
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -163,12 +284,123 @@ MonoBehaviour:
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 1+-1
-  - instanceName: Currency_AcidHills_Crystal_1
+    objectsCount: 4+-1
+  - instanceName: Opyata_1
     poolObjectValue:
-      instance: {fileID: 9159886904109001514, guid: 3cf2d56239b4e8843b927821e181e2ec, type: 3}
+      instance: {fileID: 6767068810095633567, guid: a4eeb0eebdf244b39a401dbc24ba5f36, type: 3}
       hideInSpawnMenu: 0
-    areaIndex: 1
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -100}
+      size: {x: 200, y: 40}
+      color: {r: 0, g: 1, b: 0.19104314, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: Opyata_2
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: a18bedd3f38a14b0d8bfae3184187c2c, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -100}
+      size: {x: 200, y: 40}
+      color: {r: 0, g: 1, b: 0.19104314, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: Opyata_3
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: d733f1520ded9467da886017a364b691, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
+    areaValue:
+      center: {x: 0, y: -100}
+      size: {x: 200, y: 40}
+      color: {r: 0, g: 1, b: 0.19104314, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 1.0526276
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 2+-1
+  - instanceName: "Np\u0441_Furball"
+    poolObjectValue:
+      instance: {fileID: 714289481862489155, guid: fa37c287f722d443d847572639553b63, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 2
     areaValue:
       center: {x: 0, y: -100}
       size: {x: 200, y: 40}

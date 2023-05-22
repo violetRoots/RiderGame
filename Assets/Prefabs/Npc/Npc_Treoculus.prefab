@@ -203,13 +203,11 @@ MonoBehaviour:
       elements:
       - {fileID: 11400000, guid: 35c3e144fc2cc4c9f9b3448a4b1453a1, type: 2}
       - {fileID: 11400000, guid: 106feefab92ce4546b6939de9bd3b693, type: 2}
-      - {fileID: 11400000, guid: afc3e538a9b674774851bb062a7a994e, type: 2}
       startState: {fileID: 11400000, guid: 35c3e144fc2cc4c9f9b3448a4b1453a1, type: 2}
     ModifierController:
-      elements:
-      - {fileID: 11400000, guid: 3858f7a4245144bc8b588ba32c656921, type: 2}
-    modifiersCount: 1
-    statesCount: 3
+      elements: []
+    modifiersCount: 0
+    statesCount: 2
     aggressionStateRefs:
       icon: {fileID: 8130358587690751633}
     stunnedStateRefs:
@@ -268,7 +266,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714289481862489155}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

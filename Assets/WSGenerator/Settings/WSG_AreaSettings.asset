@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaPrefab: {fileID: 8260062634424805506, guid: 93d6dafc25a2f7a429ae3a855b07eafb, type: 3}
   areas:
+  - center: {x: 0, y: 50}
+    size: {x: 50, y: 40}
+    color: {r: 0, g: 0.4620726, b: 1, a: 1}
+    drawGizmos: 1
   - center: {x: 0, y: -60}
     size: {x: 200, y: 40}
     color: {r: 1, g: 0.049433995, b: 0, a: 1}

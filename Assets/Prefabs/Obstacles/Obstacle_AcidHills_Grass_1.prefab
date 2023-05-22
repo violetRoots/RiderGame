@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183815775041913707}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.03, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 0.5388, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5756532602607234157}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1553355501
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 96a28cc5164b9484d98a9de29b84f924, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b626d36056f04ef7b2854c41bc82c8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: 3337181898290734690}
   - component: {fileID: 421054232876744090}
   - component: {fileID: 2527274969747806997}
-  - component: {fileID: 5443314347877606612}
   - component: {fileID: 924767907044087935}
   - component: {fileID: 1788615011552708266}
   - component: {fileID: 6520015236618883569}
@@ -180,35 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1831799a180397c4e8df91b612ec1820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5443314347877606612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6767068810095633567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 027d57bd35005b14eb0d8e4bcabd09ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value:
-    npcConfiguration: {fileID: 11400000, guid: a94b0d8bfa3434b0e817ccd719e934d7, type: 2}
-    spriteRenderer: {fileID: 4862443086523820774}
-    collider: {fileID: 6520015236618883569}
-    StateController:
-      elements:
-      - {fileID: 11400000, guid: f7ba1125a2263ab40af9b6ab4da5f772, type: 2}
-      startState: {fileID: 11400000, guid: f7ba1125a2263ab40af9b6ab4da5f772, type: 2}
-    ModifierController:
-      elements:
-      - {fileID: 11400000, guid: 947746c0bffda5848a792c2dec7bf4b6, type: 2}
-    modifiersCount: 1
-    statesCount: 1
-    aggressionStateRefs:
-      icon: {fileID: 0}
-    stunnedStateRefs:
-      icon: {fileID: 0}
 --- !u!114 &924767907044087935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,14 +212,14 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6767068810095633567}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.17, y: 1.58}
+  m_Size: {x: 24, y: 1.5}
   m_Direction: 1
 --- !u!1001 &5122719167625736511
 PrefabInstance:
@@ -308,11 +278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.x
-      value: 4
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Offset.x
@@ -320,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618896871049013960, guid: 26cc6bea953627740a7881f82037487d, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26cc6bea953627740a7881f82037487d, type: 3}

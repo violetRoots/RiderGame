@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AggressionState
   m_EditorClassIdentifier: 
   movementAnimation: {fileID: 11400000, guid: c261644e836224a6d840e15c6bef3bad, type: 2}
-  movementSpeed: 9
-  startAggressionRadius: 16
+  movementSpeed: 7
+  startAggressionRadius: 20
   endAggressionRadius: 24
