@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ed3e1cf61029448a9577909fe10d6, type: 3}
+  m_Name: "Np\u0441_Furball_SpriteAnimation_45"
+  m_EditorClassIdentifier: 
+  fps: 9
+  frames:
+  - {fileID: 21300000, guid: b3ac833586b564bb098a484bf15c2c94, type: 3}
+  - {fileID: 21300000, guid: 331acf07013144960920ce246553086e, type: 3}
+  - {fileID: 21300000, guid: 8e76f2b214b784d5f8760bb01230c20d, type: 3}
+  - {fileID: 21300000, guid: 38e7f48708f524c22b1514a588ab4f5e, type: 3}
+  - {fileID: 21300000, guid: 04cc819f317b541498a5dea47a923984, type: 3}
+  - {fileID: 21300000, guid: 134e34ebf1e4b44908956566ae3d5739, type: 3}
+  - {fileID: 21300000, guid: 5abe569ece243407aab38cfffb303498, type: 3}
+  - {fileID: 21300000, guid: eb8a63524b8c14c17868b0c8048e8fd8, type: 3}
+  triggers: []
