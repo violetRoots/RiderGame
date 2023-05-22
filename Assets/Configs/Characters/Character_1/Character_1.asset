@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094c16e7aaab447bc1e4f73b6d1cce, type: 3}
   m_Name: Character_1
   m_EditorClassIdentifier: 
-  animationConfiguration: {fileID: 11400000, guid: 657bafb189817ed4f9f505d68d84ba4a, type: 2}
+  walkAnimationConfigs: {fileID: 0}
+  dashAnimationConfigs: {fileID: 0}
+  obstacleCollisionAnimationConfigs: {fileID: 0}
+  enemyCollisionAnimationConfigs: {fileID: 0}
+  dashDistance: 1
+  dashDuration: 0.25
+  dashCooldown: 0.1
