@@ -262,29 +262,20 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 2.0468025
-        inSlope: 0.0077934265
-        outSlope: 0.0077934265
-        tangentMode: 34
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 2.1247368
-        inSlope: 0.0077934265
-        outSlope: 0.0077934265
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 4+-1
+    objectsCount: 1+-1
   - instanceName: Opyata_1
     poolObjectValue:
       instance: {fileID: 6767068810095633567, guid: a4eeb0eebdf244b39a401dbc24ba5f36, type: 3}
@@ -373,29 +364,20 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1.0526276
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 1.0526276
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 2+-1
+    objectsCount: 1+-1
   - instanceName: "Np\u0441_Furball"
     poolObjectValue:
       instance: {fileID: 714289481862489155, guid: fa37c287f722d443d847572639553b63, type: 3}
@@ -410,26 +392,45 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1.0526276
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 10
-        value: 1.0526276
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     x: 'time: 1 unit = duration / 10 (0.8 sec)'
     y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
-    objectsCount: 2+-1
+    objectsCount: 1+-1
+  - instanceName: Obstacle_AcidHills_Muholovka
+    poolObjectValue:
+      instance: {fileID: 6767068810095633567, guid: e9fcb4aa35bbe4a36aa1b1f543fc424c, type: 3}
+      hideInSpawnMenu: 0
+    areaIndex: 1
+    areaValue:
+      center: {x: 0, y: -60}
+      size: {x: 200, y: 40}
+      color: {r: 1, g: 0.049433995, b: 0, a: 1}
+      drawGizmos: 1
+    frequencyCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 0.5000032
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    x: 'time: 1 unit = duration / 10 (0.8 sec)'
+    y: 'frequency: 1 unit = 1 obj / 5 sec (0.2 obj/sec)'
+    objectsCount: 1+-1
